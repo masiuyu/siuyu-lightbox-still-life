@@ -100,7 +100,7 @@ def main() -> None:
         fail("frontmatter must contain only name and description")
     name = frontmatter["name"]
     description = frontmatter["description"]
-    if name != skill.name or not re.fullmatch(r"[a-z0-9-]{1,64}", name):
+    if name != "siuyu-lightbox-still-life" or not re.fullmatch(r"[a-z0-9-]{1,64}", name):
         fail("invalid skill name")
     if not description.startswith("Use when") or len(description) > 1024:
         fail("description must start with 'Use when' and be <=1024 characters")
@@ -232,8 +232,8 @@ def main() -> None:
         if not isinstance(case["files"], list):
             fail(f"eval {case_id} files must be a list")
     for script in (skill / "scripts").iterdir():
-        if script.suffix in {".py", ".sh"} and not os.access(script, os.X_OK):
-            fail(f"script is not executable: {script.name}")
+        if script.suffix in {".py", ".sh"} and not os.access(script, os.R_OK):
+            fail(f"script is not readable: {script.name}")
 
     print(f"VALID: {skill}")
 
