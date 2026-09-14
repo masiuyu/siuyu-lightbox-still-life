@@ -1,0 +1,87 @@
+{
+  "intent": "Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation. Make a carefully art-directed physical product research photograph. A close surface study of one real coffee spoon with polished bowl and fine satin handle. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading.",
+  "operation": "concept",
+  "inputs": [],
+  "decisions": {
+    "scope": "open",
+    "content_scope": {
+      "kind": "subject_study",
+      "basis": "The user asks to revise the illustrated Skill examples with 16:9 and 9:16 formats, clear recognizable real-world structures, a clean continuous tabletop and deliberate composition. The existing illustrated example categories include the stated study or hand action."
+    },
+    "identity_sources": [],
+    "subject_basis": "One familiar unbranded stainless-steel demitasse coffee spoon, approximately 120 mm long: a conventional shallow oval bowl, smooth continuous rounded rim, a naturally tapered narrow neck and one slim straight handle ending in a softly rounded tip. The bowl is visibly hollow and faces upward. The handle is gently curved in elevation while its plan-view centerline remains straight. The spoon is one continuous formed metal utensil with a polished bowl and a subtly satin-finished handle, a consistent thin rim and ordinary usable proportions.",
+    "scene": {
+      "carrier": "One complete stainless-steel coffee spoon lying face-up on a clean pale warm-gray tabletop.",
+      "state": "static",
+      "intent": "A close surface study of one real coffee spoon with polished bowl and fine satin handle",
+      "support": "The listed objects have the ordinary material thickness and stable contacts of their recognizable product type. Paper rests on the same continuous horizontal surface; any lifted piece is supported by the stated hands. The physical subject preserves its complete functional parts and continuous construction.",
+      "activity": []
+    },
+    "candidates": [
+      {
+        "id": "contour-study",
+        "source_relations": [
+          "subject_structure",
+          "subject_surface",
+          "fabrication_material"
+        ],
+        "lens": "structure and material correspondence",
+        "cue": "One familiar unbranded stainless-steel demitasse coffee spoon, approximately 120 mm long: a conventional shallow oval bowl, smooth continuous rounded rim, a naturally tapered narrow neck and one slim straight handle ending in a softly rounded tip. The bowl is visibly hollow and faces upward. The handle is gently curved in elevation while its plan-view centerline remains straight. The spoon is one continuous formed metal utensil with a polished bowl and a subtly satin-finished handle, a consistent thin rim and ordinary usable proportions.",
+        "basis": "A familiar physical product with a finite functional structure provides the subject; its studies repeat the same outline, openings and material responses.",
+        "proposal": "The complete spoon is enlarged to show the continuous shallow concave bowl, its smooth thin rim, the gradual neck transition and the satin handle. A broad bright reflection and neighboring dark reflection describe the bowl curvature. The fine aligned handle texture remains shallow and credible. The subject fills most of the long dimension of the image while a narrow continuous tabletop margin explains its finite physical outline.",
+        "contribution": "Recognizable real object, legible related studies, refined material hierarchy and a coherent composed photograph.",
+        "scene_fit": "16:9 close overhead photograph, complete spoon runs almost horizontally on a subtle diagonal from lower-left handle to upper-right bowl. It occupies about 84 percent of image width. Keep the entire bowl, neck, handle tip and thin perimeter in frame, with a continuous tabletop margin around them. Material transitions and reflective curvature are the focus. Camera directly overhead, optical axis perpendicular to the horizontal tabletop, sensor parallel to it. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading."
+      },
+      {
+        "id": "surface-study",
+        "source_relations": [
+          "subject_surface"
+        ],
+        "lens": "surface emphasis",
+        "cue": "The same physical object can be studied through its finish.",
+        "basis": "The chosen real product retains the stated construction and surface finish.",
+        "proposal": "Emphasize the same subject through one close surface comparison and a smaller corresponding study.",
+        "contribution": "Concentrate attention on one material response.",
+        "scene_fit": "Keep the same recognizable object and continuous tabletop, adapting the grouping to the requested image orientation."
+      }
+    ],
+    "selected": [
+      "contour-study"
+    ],
+    "selection_reason": "The selected grouping makes the real object recognizable first, connects each study to a specific structural feature and organizes clear visual hierarchy within the requested format."
+  },
+  "design": {
+    "idea": "A close surface study of one real coffee spoon with polished bowl and fine satin handle",
+    "pairings": [
+      {
+        "sources": [],
+        "decisions": [
+          "contour-study"
+        ],
+        "relation": "The complete spoon is enlarged to show the continuous shallow concave bowl, its smooth thin rim, the gradual neck transition and the satin handle. A broad bright reflection and neighboring dark reflection describe the bowl curvature. The fine aligned handle texture remains shallow and credible. The subject fills most of the long dimension of the image while a narrow continuous tabletop margin explains its finite physical outline.",
+        "purpose": "Connect the subject and its related study within one deliberate material composition."
+      }
+    ],
+    "composition": "Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation. 16:9 close overhead photograph, complete spoon runs almost horizontally on a subtle diagonal from lower-left handle to upper-right bowl. It occupies about 84 percent of image width. Keep the entire bowl, neck, handle tip and thin perimeter in frame, with a continuous tabletop margin around them. Material transitions and reflective curvature are the focus. Camera directly overhead, optical axis perpendicular to the horizontal tabletop, sensor parallel to it. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading.",
+    "materials": "The spoon is credible formed stainless steel: a smooth shallow hollow bowl with a continuous thin rounded rim, a gradual neck transition and a slim satin handle. A broad neutral reflection sweeps through the concave bowl and a darker neighboring reflection makes its depth legible; the fine brushed handle keeps subtle directional texture.  The single pale warm-gray tabletop remains matte and smooth, with short soft contact shadows at the spoon resting points.",
+    "palette": "A controlled neutral palette: luminous warm-white tabletop, pale translucent paper, graphite and the stated authentic product colors. Reflection brightness and material density set a clear primary and secondary hierarchy. Color accents, when specified, stay on their stated materials."
+  },
+  "photography": {
+    "profile": "material_macro",
+    "camera_format": "A digital product photograph delivered as an exact 16:9 output crop, 2048 by 1152 pixels.",
+    "shot_scale": "Close-focus product detail with the entire spoon occupying most of the long image dimension.",
+    "viewpoint": "Exact perpendicular overhead view; the sensor is parallel to the continuous horizontal tabletop. Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation.",
+    "focus_and_depth": "Keep the complete bowl rim, tapered neck, satin handle and finishing texture readable in the selected nearly coplanar overhead view.",
+    "visible_result": "Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation. A recognizable physical object with clear construction, a clean tabletop filling every image edge, intentional visual hierarchy and the stated related study.",
+    "lighting_setup": "A broad lateral neutral 5000 K diffusion panel creates a clean continuous bright reflection on the hollow bowl and a controlled neighboring dark reflection. Soft fill preserves the neck and satin handle. The tabletop has restrained matte illumination and short contact shadows."
+  },
+  "review_targets": [
+    "The image follows the requested 16:9 landscape format; record the native pixel dimensions and any integer-pixel rounding.",
+    "The stated familiar object is immediately recognizable through complete continuous functional parts and plausible manufacture.",
+    "The clean continuous tabletop fills every canvas edge and corner.",
+    "The complete image has an evident primary subject, deliberate grouping and useful negative space.",
+    "The complete subject remains immediately recognizable as an ordinary functional spoon.",
+    "The polished concave bowl and fine satin handle join continuously through a realistic tapered neck.",
+    "Fine finishing texture, thin rim and reflection gradients remain readable at close viewing size."
+  ]
+}
