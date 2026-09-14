@@ -11,8 +11,7 @@
     "request_sha256": "7e4125fe8ffa675bb86b36d4da86622d972fef6bff650dc954957217a738504e",
     "direction_file": "direction.json",
     "direction_sha256": "9e65197dff70c4a1903eb49f276b257416b3942134766ebf085a32a246bf06a6",
-    "model_identifier": "not returned by tool",
-    "native_output_basename": "exec-7d9fe2be-591f-454a-9446-492ad5bf5b2e.png"
+    "model_identifier": "not returned by tool"
   },
   "output": {
     "file": "image.png",
@@ -24,7 +23,7 @@
     "pixel_handling": "Byte-preserving copy of native generated PNG"
   },
   "visual_review": {
-    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "method": "Visual inspection of the generated image, focusing on composition, object structure, lighting and material details.",
     "core_checks": [
       {
         "position": "整幅画幅",
@@ -75,6 +74,5 @@
         "observed": "This composition shows a subtle paper overlap; the dedicated softbox example provides a larger, easier-to-compare graphite attenuation region."
       }
     ]
-  },
-  "user_acceptance": "PENDING"
+  }
 }
