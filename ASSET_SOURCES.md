@@ -16,8 +16,7 @@
 - 记录：[provenance.json](assets/showcase/provenance.json)。
 - 生成方式：内置 `image_gen.imagegen`；剪刀、石墨图稿、硫酸纸和蓝色薄片按本轮文字方向生成。
 - 图像输入：两张用户提供的画面用于观察从下方向上透射的光线、实体明暗与材料密度关系。
-- 参考文件名称：`KIMI K3 — an exploration of intelligence as an invisible force. a launch film created in collabo.jpg`；`KIMI K3 — an exploration of intelligence as an invisible force. a launch film created in collabo-4.jpg`。
-- 分发内容：生成后的展示图与可移植来源记录。参考文件由原提供者保管。
+- 随包内容：生成后的展示图与成图记录。
 - 记录用途：`provenance.json` 是此次实际生成的来源摘要；新的成像任务应根据当次输入重新建立方向。
 
 ## 品牌标记
