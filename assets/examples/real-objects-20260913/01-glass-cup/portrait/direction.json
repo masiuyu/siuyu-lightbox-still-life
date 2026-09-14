@@ -1,0 +1,87 @@
+{
+  "intent": "Create an actual 1152 by 2048 pixel photograph, exact 9:16 aspect ratio, portrait orientation. Make a carefully art-directed physical product research photograph. A familiar clear glass espresso cup, glass samples and a precise top-view study on a luminous tabletop. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading.",
+  "operation": "concept",
+  "inputs": [],
+  "decisions": {
+    "scope": "open",
+    "content_scope": {
+      "kind": "subject_study",
+      "basis": "The user asks to revise the illustrated Skill examples with 16:9 and 9:16 formats, clear recognizable real-world structures, a clean continuous tabletop and deliberate composition. The existing illustrated example categories include the stated study or hand action."
+    },
+    "identity_sources": [],
+    "subject_basis": "One ordinary clear borosilicate espresso cup, approximately 60 mm tall and 62 mm in diameter, with a circular open rim, straight thin cylindrical wall, flat transparent base and a simple rounded loop handle joined securely to the side at two points. The empty hollow interior faces upward. The clear wall and base retain coherent ordinary glass thickness and smooth finished edges.",
+    "scene": {
+      "carrier": "Five study pieces: one complete clear glass espresso cup, two slim flat rectangular glass samples in clear and very pale smoke-green glass, one small matte charcoal paper card, and one translucent tracing-paper sheet with an accurate circular cup outline, side handle and a simple wall-section drawing.",
+      "state": "static",
+      "intent": "A familiar clear glass espresso cup, glass samples and a precise top-view study on a luminous tabletop",
+      "support": "The listed objects have the ordinary material thickness and stable contacts of their recognizable product type. Paper rests on the same continuous horizontal surface; any lifted piece is supported by the stated hands. The physical subject preserves its complete functional parts and continuous construction.",
+      "activity": []
+    },
+    "candidates": [
+      {
+        "id": "contour-study",
+        "source_relations": [
+          "subject_structure",
+          "subject_surface",
+          "fabrication_material"
+        ],
+        "lens": "structure and material correspondence",
+        "cue": "One ordinary clear borosilicate espresso cup, approximately 60 mm tall and 62 mm in diameter, with a circular open rim, straight thin cylindrical wall, flat transparent base and a simple rounded loop handle joined securely to the side at two points. The empty hollow interior faces upward. The clear wall and base retain coherent ordinary glass thickness and smooth finished edges.",
+        "basis": "A familiar physical product with a finite functional structure provides the subject; its studies repeat the same outline, openings and material responses.",
+        "proposal": "The transparent cup is the primary object. Its circular opening, visible base and rounded side handle correspond directly to the graphite top-view drawing. The two slim glass samples partially overlap in a small denser area beside the drawing; the charcoal card is a restrained small dark material comparison. All five pieces form one compact asymmetrical group. Glass edges and refracted tabletop light distinguish the real hollow vessel from its flat paper study. The graphite remains sparse and geometric on otherwise blank paper.",
+        "contribution": "Recognizable real object, legible related studies, refined material hierarchy and a coherent composed photograph.",
+        "scene_fit": "Create a 9:16 portrait overhead product-research photograph. The complete clear glass espresso cup is the dominant object in the upper-left, with its full single handle facing right. The complete small rectangular tracing-paper sheet is centered at 62 percent canvas width and 66 percent canvas height, occupying about 44 percent canvas width and 38 percent canvas height. Its graphite top-view rim, handle and simple wall section are compact and clear. Two small overlapping glass samples sit in the middle-left, with the small charcoal card below them. Fit every cup part, sample edge, card corner and all four tracing-sheet corners entirely within a clean eight percent tabletop margin. The study group is a modest compact companion to the real cup. A continuous clean softly illuminated warm-white tabletop fills all four canvas boundaries and corners. Camera is exactly perpendicular overhead with sensor parallel to the same tabletop."
+      },
+      {
+        "id": "surface-study",
+        "source_relations": [
+          "subject_surface"
+        ],
+        "lens": "surface emphasis",
+        "cue": "The same physical object can be studied through its finish.",
+        "basis": "The chosen real product retains the stated construction and surface finish.",
+        "proposal": "Emphasize the same subject through one close surface comparison and a smaller corresponding study.",
+        "contribution": "Concentrate attention on one material response.",
+        "scene_fit": "Keep the same recognizable object and continuous tabletop, adapting the grouping to the requested image orientation."
+      }
+    ],
+    "selected": [
+      "contour-study"
+    ],
+    "selection_reason": "The selected grouping makes the real object recognizable first, connects each study to a specific structural feature and organizes clear visual hierarchy within the requested format."
+  },
+  "design": {
+    "idea": "A familiar clear glass espresso cup, glass samples and a precise top-view study on a luminous tabletop",
+    "pairings": [
+      {
+        "sources": [],
+        "decisions": [
+          "contour-study"
+        ],
+        "relation": "The transparent cup is the primary object. Its circular opening, visible base and rounded side handle correspond directly to the graphite top-view drawing. The two slim glass samples partially overlap in a small denser area beside the drawing; the charcoal card is a restrained small dark material comparison. All five pieces form one compact asymmetrical group. Glass edges and refracted tabletop light distinguish the real hollow vessel from its flat paper study. The graphite remains sparse and geometric on otherwise blank paper.",
+        "purpose": "Connect the subject and its related study within one deliberate material composition."
+      }
+    ],
+    "composition": "Create a 9:16 portrait overhead product-research photograph. The complete clear glass espresso cup is the dominant object in the upper-left, with its full single handle facing right. The complete small rectangular tracing-paper sheet is centered at 62 percent canvas width and 66 percent canvas height, occupying about 44 percent canvas width and 38 percent canvas height. Its graphite top-view rim, handle and simple wall section are compact and clear. Two small overlapping glass samples sit in the middle-left, with the small charcoal card below them. Fit every cup part, sample edge, card corner and all four tracing-sheet corners entirely within a clean eight percent tabletop margin. The study group is a modest compact companion to the real cup. A continuous clean softly illuminated warm-white tabletop fills all four canvas boundaries and corners. Camera is exactly perpendicular overhead with sensor parallel to the same tabletop.",
+    "materials": "Clear borosilicate glass has a thin continuous rim, open hollow cup interior, a flat base and a rounded handle with coherent fused contacts. Broad neutral reflections describe its rim and handle, while the diffusing tabletop is visible through the glass. The thin rectangular glass samples have polished safe edges and a subtle denser overlap. The small charcoal card is matte opaque paper. Tracing paper has a thin milky edge, gentle scattering and precise graphite contours. Every material has its own local contact and optical response.",
+    "palette": "A controlled neutral palette: luminous warm-white tabletop, pale translucent paper, graphite and the stated authentic product colors. Reflection brightness and material density set a clear primary and secondary hierarchy. Color accents, when specified, stay on their stated materials."
+  },
+  "photography": {
+    "profile": "transmitted_inventory",
+    "camera_format": "A digital product photograph delivered as an exact 9:16 output crop, 1152 by 2048 pixels.",
+    "shot_scale": "Create a 9:16 portrait overhead product-research photograph. The complete clear glass espresso cup is the dominant object in the upper-left, with its full single handle facing right. The complete small rectangular tracing-paper sheet is centered at 62 percent canvas width and 66 percent canvas height, occupying about 44 percent canvas width and 38 percent canvas height. Its graphite top-view rim, handle and simple wall section are compact and clear. Two small overlapping glass samples sit in the middle-left, with the small charcoal card below them. Fit every cup part, sample edge, card corner and all four tracing-sheet corners entirely within a clean eight percent tabletop margin. The study group is a modest compact companion to the real cup. A continuous clean softly illuminated warm-white tabletop fills all four canvas boundaries and corners. Camera is exactly perpendicular overhead with sensor parallel to the same tabletop.",
+    "viewpoint": "Exact perpendicular overhead view; the sensor is parallel to the continuous horizontal tabletop. Create an actual 1152 by 2048 pixel photograph, exact 9:16 aspect ratio, portrait orientation.",
+    "focus_and_depth": "Keep the recognizable subject structure, required material edges and corresponding paper study readable at delivery size. The main subject has a crisp coherent silhouette; scattering through covering paper explains the softer covered graphite.",
+    "visible_result": "Create a 9:16 portrait overhead product-research photograph. The complete clear glass espresso cup is the dominant object in the upper-left, with its full single handle facing right. The complete small rectangular tracing-paper sheet is centered at 62 percent canvas width and 66 percent canvas height, occupying about 44 percent canvas width and 38 percent canvas height. Its graphite top-view rim, handle and simple wall section are compact and clear. Two small overlapping glass samples sit in the middle-left, with the small charcoal card below them. Fit every cup part, sample edge, card corner and all four tracing-sheet corners entirely within a clean eight percent tabletop margin. The study group is a modest compact companion to the real cup. A continuous clean softly illuminated warm-white tabletop fills all four canvas boundaries and corners. Camera is exactly perpendicular overhead with sensor parallel to the same tabletop."
+  },
+  "review_targets": [
+    "The image follows the requested 9:16 portrait format; record the native pixel dimensions and any integer-pixel rounding.",
+    "The stated familiar object is immediately recognizable through complete continuous functional parts and plausible manufacture.",
+    "The clean continuous tabletop fills every canvas edge and corner.",
+    "The complete image has an evident primary subject, deliberate grouping and useful negative space.",
+    "The cup has an unmistakable open rim, hollow glass wall, visible base and a single handle with credible attachments.",
+    "The graphite drawing repeats the same circular rim and handle relationship.",
+    "Glass sample overlap, clear cup transmission and the opaque charcoal card have distinct optical responses.",
+    "The entire rectangular tracing sheet, including all four corners, is visibly contained within a clear continuous tabletop margin."
+  ]
+}
