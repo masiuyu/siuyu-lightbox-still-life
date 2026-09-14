@@ -11,8 +11,7 @@
     "request_sha256": "bac318b9c07615c9f66d40a37cbaff63edc9159791c17785b89ec935aee55ab2",
     "direction_file": "direction.json",
     "direction_sha256": "7db67dc1d9f25705e59110f32e29d7d00ddc4db711e1fdeac25d96a31c8d44e7",
-    "model_identifier": "not returned by tool",
-    "native_output_basename": "exec-63164adc-b371-48b1-9365-78ae21bbdf7a.png"
+    "model_identifier": "not returned by tool"
   },
   "output": {
     "file": "image.png",
@@ -24,7 +23,7 @@
     "pixel_handling": "Byte-preserving copy of native generated PNG"
   },
   "visual_review": {
-    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "method": "Visual inspection of the generated image, focusing on composition, object structure, lighting and material details.",
     "core_checks": [
       {
         "position": "整幅画幅",
@@ -69,6 +68,5 @@
         "observed": "The generated cup contains espresso. This is a plausible cup-content choice within the familiar tableware scene; the porcelain interior floor is covered and is not visually verified."
       }
     ]
-  },
-  "user_acceptance": "PENDING"
+  }
 }
