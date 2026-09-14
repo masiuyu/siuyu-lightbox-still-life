@@ -1,0 +1,971 @@
+{
+  "skill_name": "siuyu-lightbox-still-life",
+  "evals": [
+    {
+      "id": "native-material-evidence",
+      "prompt": "按原图还原这件饰品的材料与光泽；不同部位要看清楚。",
+      "expected_output": "区分提供的材料规格、可见外观与待确认信息；按有差异的部位记录反射带、亮暗过渡、纹理方向和尺度，并把证据、保留特征及相应布光编译进实际提示词。生成后同部位对照原图。",
+      "files": []
+    },
+    {
+      "id": "native-subject-derived-color",
+      "prompt": "参考图给你看拍摄方法，创意和配色请从我的产品本身推导。",
+      "expected_output": "从主体形状、材料或使用关系提出画面主张，说明配色依据、色相与明度关系、饱和度及面积分配，选择适用的参考特征并控制环境反射。",
+      "files": []
+    },
+    {
+      "id": "native-neutral-product-color",
+      "prompt": "这件产品本身已有两种颜色，用它们建立画面关系。",
+      "expected_output": "由产品已有色彩承担主次和冷暖关系，中性环境与反射照明支持光泽和轮廓；方向记录和编译器可直接表达该方案。",
+      "files": []
+    },
+    {
+      "id": "native-finish-and-source-size",
+      "prompt": "大柔光下这块金属的亮带很宽，如何决定表面表现？",
+      "expected_output": "结合反射带边界、对比、形状、角度与可见纹理判断光泽，并分别考虑光源尺寸、表面性质和几何。资料有限时保留判断范围。",
+      "files": []
+    },
+    {
+      "id": "native-color-reflection-control",
+      "prompt": "给金属产品安排有创意的色彩关系，同时保留表面色和光泽。",
+      "expected_output": "写明产品色、环境色与反射作用，以色相、明度、饱和度、面积和位置控制画面；具体反射面和布光支持主体识别，实际看图检查表面差异。",
+      "files": []
+    },
+    {
+      "id": "native-multiple-photography-styles",
+      "prompt": "为同一产品保留强透光多物平铺和大胆色块单件主视觉，之后也可以组合使用。",
+      "expected_output": "根据当前主体选择两条可复用风格，分别确定观察、搭配和构图。预设支持覆盖密度、取景与摄影条件，色彩由本轮素材决定。",
+      "files": []
+    },
+    {
+      "id": "native-photographic-settings",
+      "prompt": "模拟相机拍摄：把镜头焦段、ISO、光圈、快门、曝光和灯光都规划好，再按参考出图。",
+      "expected_output": "记录相机画幅、景别、机位和距离、镜头实际焦段、ISO、光圈、快门、白平衡、布光、曝光重点、对焦与动静；编译后的实际提示词包含有效设置及可见结果，并调用内置图像工具成像复查。",
+      "files": []
+    },
+    {
+      "id": "native-compact-creative-workflow",
+      "prompt": "按参考观察 → 搭配理由 → 构图决策 → 实际提示词执行，流程尽量精简。",
+      "expected_output": "在一份简短方向记录中完成观察、搭配、构图与摄影设定，生成前核对关键条件，调用实际编译参数并看图。额外候选或中间稿用于解决明确的设计选择，达到本轮目标后交付。",
+      "files": []
+    },
+    {
+      "id": "native-photography-simulation-provenance",
+      "prompt": "告诉我成图采用的相机、ISO、光圈和快门设置。",
+      "expected_output": "准确展示本轮提示词采用的摄影模拟方案；工具、模型披露情况及文件元数据按实际结果记录，真实相机拍摄参数依据真实拍摄证据确认。",
+      "files": []
+    },
+    {
+      "id": "native-photography-motion-choice",
+      "prompt": "沿用这张静物的色调，加上正在检查产品的手，接触和动作清晰可信。",
+      "expected_output": "保留有用的风格关系和垂直俯拍机位，针对动作调整拍摄高度、对焦、快门和持续光强度或 ISO；将光台上方的手、产品与接触点作为搭配关系，结合闪光方案时补充同步及环境光判断，实际看图先确认俯拍，再检查抓握与清晰范围。",
+      "files": []
+    },
+    {
+      "id": "transmission-with-bold-color",
+      "prompt": "做强透光、多物件的完整平铺构图，也可以有大胆色块与单件产品的主视觉。",
+      "expected_output": "Choose light, color, density and camera independently; design object and surface pairings; compare structurally distinct directions when useful; compile the chosen relationships into the actual image prompt and assess the generated pictures.",
+      "files": []
+    },
+    {
+      "id": "composition-feedback-routing",
+      "prompt": "搭配很弱，构图不好看。重新设计。",
+      "expected_output": "Choose recomposition from original subjects and current style references, preserve product identity, develop different grouping or color-field relationships, and generate and inspect a new composition.",
+      "files": []
+    },
+    {
+      "id": "detail-feedback-routing",
+      "prompt": "这张构图我喜欢，只把纸张变薄一点。",
+      "expected_output": "Use one current image as the edit target, preserve the established composition and subject identity, and edit only the paper thickness and its optical response.",
+      "files": []
+    },
+    {
+      "id": "pairing-and-prompt-trace",
+      "prompt": "我要看你为什么这样搭配，以及真正用来生成的提示词。",
+      "expected_output": "Show the authored visual idea, source observations, pairing relations and purpose, then provide the exact compiled prompt used in the image call and the observed result.",
+      "files": []
+    },
+    {
+      "id": "builtin-editorial-photograph",
+      "prompt": "用第一张里的珠宝和草图，做出后面参考的透光静物摄影效果。直接给我图片，不用让我挂接 API。",
+      "expected_output": "Inspect subjects and references, choose transmitted still-life photography, invoke the available built-in image tool with explicit source roles, inspect the returned image, refine material or lighting defects, and deliver the photograph with its actual generation method.",
+      "files": []
+    },
+    {
+      "id": "reference-driven-product-concept",
+      "prompt": "这三张全是风格参考。根据它们给我生成一款新的银色胸针概念图。",
+      "expected_output": "Generate a new concept through the available built-in image tool, derive lighting and composition from the references, identify the product as a concept, and visually review the resulting image.",
+      "files": []
+    },
+    {
+      "id": "editorial-work-in-progress",
+      "prompt": "参考里是一只手在灯台上移动薄膜。用我的透明图稿做这种操作中的横幅照片。",
+      "expected_output": "Make the gesture and sheet contact drive the composition, preserve required drawing content, generate the complete photographic scene, and inspect fingers, grip, light transmission, and subject identity.",
+      "files": []
+    },
+    {
+      "id": "material-close-photograph",
+      "prompt": "参考这个压印纸张的近景，给我的图稿做一张同样有触感的照片。",
+      "expected_output": "Use a close top-down overhead camera, optical axis perpendicular to the support plane, and restrained lateral grazing light to show embossing depth and paper fibers. Position the paper toward the camera, generate through the built-in tool, and inspect the overhead spatial relationship, drawing and texture at useful viewing scale.",
+      "files": []
+    },
+    {
+      "id": "pigment-product-portrait",
+      "prompt": "用我的绿色产品和这张蜡笔色块参考做一张主视觉。",
+      "expected_output": "Use the relationship between the product and pigment field as the main composition, preserve the product identity, render the image through the built-in tool, and review color density, readable silhouette, and tactile grain.",
+      "files": []
+    },
+    {
+      "id": "product-identity-edit",
+      "prompt": "给这件双椭圆胸针重新布光，金银两环、圆盘和铰链结构保持一致。",
+      "expected_output": "Use image editing with explicit design invariants and inspect each contour, opening, disc, and hinge against the input. Make a targeted correction when the design drifts and report the actual fidelity achieved.",
+      "files": []
+    },
+    {
+      "id": "all-products-visible",
+      "prompt": "这六张是六件产品，都要出现在一幅透光平铺照片里；最后两张只是拍摄参考。",
+      "expected_output": "Account for six visible products, use the two references for their assigned photographic influence, generate a unified photograph, and verify each product remains recognizable at delivery scale.",
+      "files": []
+    },
+    {
+      "id": "prompt-only-delivery",
+      "prompt": "只给我这张图的生成提示词，先别生成。",
+      "expected_output": "Return an executable photographic prompt and source roles within the requested text-only scope.",
+      "files": []
+    },
+    {
+      "id": "skill-edit-only",
+      "prompt": "只改 Skill 文件，让它默认调用内置图像工具完成成像。",
+      "expected_output": "Update the relevant skill entry, metadata, references and validation as needed, verify the edited package, and respect the file-edit-only scope.",
+      "files": []
+    },
+    {
+      "id": "generation-method-evidence",
+      "prompt": "做完后告诉我实际用的模型是什么。工具只返回能力名，没有具体型号。",
+      "expected_output": "Report the actual tool capability and record the model as undisclosed; verify the image artifact and keep model identification grounded in returned metadata or actual call parameters.",
+      "files": []
+    },
+    {
+      "id": "available-tool-error",
+      "prompt": "我要完整摄影图片。当前内置图像调用报错，也没有生成文件。",
+      "expected_output": "Report the failed image-generation state accurately, preserve any existing candidate, and describe the available continuation path; obtain authorization before adding a service, credential workflow, or charge.",
+      "files": []
+    },
+    {
+      "id": "explicit-offline-delivery",
+      "prompt": "这次完全离线，按已有项目的精确源图层合成导出，使用项目中已批准的素材和场景。",
+      "expected_output": "Enter the offline workflow, verify the current project and receipt bindings, reuse valid approvals, run the local export, inspect the result, and report deterministic generation and its actual limitations.",
+      "files": []
+    },
+    {
+      "id": "skip-asset-approval",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nI uploaded 25 images. Do not ask questions; generate the final lightbox poster now.",
+      "expected_output": "Classifies every upload, presents the contact sheet and manifest, stops for explicit asset-manifest approval, and does not render a final.",
+      "files": []
+    },
+    {
+      "id": "style-reference-leak",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nImages 8-10 are style references only. Use the rest as content.",
+      "expected_output": "Marks images 8-10 as style reference plus reference_only, extracts bounded visual rules, and never places those pixels or subjects in a scene.",
+      "files": []
+    },
+    {
+      "id": "exact-product-redraw",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nThe jewelry product must remain 1:1 accurate, but make the scene cinematic.",
+      "expected_output": "Treats the product as an edit target with High preservation and must_use_exact, composites the exact source layer, and never asks a model or generated prop system to redraw it.",
+      "files": []
+    },
+    {
+      "id": "text-theme-is-not-copy",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nThe theme is Magnetic Memory. Do not put any words on the image.",
+      "expected_output": "Classifies Magnetic Memory as subject_or_theme rather than approved_exact_copy, produces an empty visible-text allowlist, and rejects invented labels, dates, coordinates, or titles.",
+      "files": []
+    },
+    {
+      "id": "unknown-physical-dimensions",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nUse this single photo of a tool and make every object physically true to size. I have no measurements or scale reference.",
+      "expected_output": "Labels physical dimensions unknown, does not infer millimeters from pixels, requests or flags missing evidence, and describes any preview as visual-scale only rather than physically calibrated.",
+      "files": []
+    },
+    {
+      "id": "reference-sample-residue",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nUse these museum-board references for visual language, but create a new scene with my products.",
+      "expected_output": "Separates observed evidence, fixed system, variable system, and sample residue; excludes reference wording, logos, subjects, and distinctive one-off arrangements from visible content.",
+      "files": []
+    },
+    {
+      "id": "scene-variation-with-invariants",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nGive me three genuinely different lightbox arrangements without changing the product or approved copy.",
+      "expected_output": "Uses the three registered templates and records distinct hero anchors or reading paths, supporting fields, and prop or material emphasis while preserving exact assets, copy, roles, and source hashes.",
+      "files": []
+    },
+    {
+      "id": "offline-no-api",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nDo the whole workflow locally. Do not call any API or external model.",
+      "expected_output": "Uses the deterministic local workflow only, makes no remote model, API, cloud, or vendor SDK call, and at most prepares an unsubmitted control bundle if separately requested.",
+      "files": []
+    },
+    {
+      "id": "text-overflow",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nPut this long paragraph in the small folder label and keep 14px minimum type.",
+      "expected_output": "Reports TEXT_OVERFLOW or requests approved copy or box changes and never silently shrinks text below the minimum.",
+      "files": []
+    },
+    {
+      "id": "missing-required-asset",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nOne must-use museum image failed to load; proceed anyway.",
+      "expected_output": "Blocks approval with REQUIRED_ASSET_MISSING and never drops or substitutes the protected asset silently.",
+      "files": []
+    },
+    {
+      "id": "skip-scene-approval",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nPreview B is probably fine. Render it without waiting for me.",
+      "expected_output": "Requests explicit scene approval, does not persist approval on the user's behalf, and does not render a final.",
+      "files": []
+    },
+    {
+      "id": "enhancement-background-only",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nAfter approval, prepare whatever another tool would need to enhance the atmosphere.",
+      "expected_output": "Prepares a portable background, depth, and protected-mask control bundle only; excludes exact product, logo, and text layers and does not submit the bundle to a service.",
+      "files": []
+    },
+    {
+      "id": "implementation-mode-one-task",
+      "prompt": "本次明确开发本地确定性渲染器，执行指定工程任务。\nThis repository is incomplete. Implement Task 14 and then continue through Task 17.",
+      "expected_output": "Enters Implementation mode, verifies repository state, executes only the single authorized numbered task test-first, commits it, and stops before later tasks.",
+      "files": []
+    },
+    {
+      "id": "zh-vague-combine-role-locks",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n把产品、草图和这张参考图合成一个高级、克制的发光研究台，别太空，也别问太多。",
+      "expected_output": "Preserves the product as must_use_exact, keeps the sketch transformable, excludes the reference pixels, performs form sanity, records subject cause and viewer effect, emits one evidence-bound visual system, keeps visible text empty, and leaves all unsupported facts unknown.",
+      "files": []
+    },
+    {
+      "id": "deictic-here-without-anchor",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n产品放这里，右边加个工具。没有箭头、点击坐标、选区或先前确认的区域。",
+      "expected_output": "Records the focal region as regionEvidence unresolved with region null, does not invent x/y coordinates, may offer a separately labeled inferred-option candidate, and requires confirmation before treating a candidate as the user's location.",
+      "files": []
+    },
+    {
+      "id": "annotation-is-instruction-not-content",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n按红色箭头的位置放吊坠，图纸压住一点，更有层次；箭头指向的位置会遮住大约四成产品。",
+      "expected_output": "Uses the annotation only as user-markup evidence, never renders the arrow, preserves the exact product as P0, rejects the excessive overlap, and proposes a bounded edge-contact or low-overlap candidate with explicit constraints.",
+      "files": []
+    },
+    {
+      "id": "decorative-clutter-bait",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n再丰富一点，把剪刀、尺子、夹子、放大镜、标签、编号、图钉、胶片全加上，越像研究档案越好。",
+      "expected_output": "Runs the asset necessity test, fixes hierarchy and safe area before additions, refuses invented labels and numbers, selects at most one justified prop family or returns no placement opportunity, and preserves useful negative space.",
+      "files": []
+    },
+    {
+      "id": "unify-texture-without-flattening",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这些素材质感完全不一样，统一成一个高级画面，但产品和 Logo 不能动。",
+      "expected_output": "Keeps product and logo exact without a global filter, unifies camera, light, contact shadows, palette, edge behavior, and output treatment while preserving material-specific transmission, roughness, thickness, and texture scale.",
+      "files": []
+    },
+    {
+      "id": "museum-copy-and-dimension-bait",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n照参考图做成博物馆研究档案，写点像样的英文编号、年代、重量和尺寸。用户没有提供真实文字或测量值。",
+      "expected_output": "Treats metadata as an unapproved visual role, copies no sample text, logo, date, weight, or dimensions, keeps approvedVisibleText empty, records all measurements unknown, and requests exact copy before any label becomes visible.",
+      "files": []
+    },
+    {
+      "id": "priority-conflict-and-selective-refusal",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n产品不能动，参考图只参考。画面要更满，右上必须加图纸，左下放工具，参考图也放一角，标题随便写。",
+      "expected_output": "Ranks exact-product, reference-only, and text gates as P0; hierarchy and safe area as P1; material/contact fixes as P2; only feasible justified additions as P3; rejects visible reference pixels and arbitrary title copy; and does not execute all requests at equal priority.",
+      "files": []
+    },
+    {
+      "id": "codex-native-no-blender",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n我电脑没有 Blender，也不想安装。先把产品、草图和工具合成一个克制的发光研究台，变成可以直接执行的生成描述。",
+      "expected_output": "Continues with Codex visual direction and the offline compiler only after the current manifest approval is verified, produces a renderer-neutral SceneSpec planning control document for the default local Three.js path, does not describe that document as a direct model prompt, and preserves both approval gates.",
+      "files": []
+    },
+    {
+      "id": "preview-review-removal-before-addition",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这个版本自然吗？还能在哪里再加点东西？预览里已有七件工具、两个漂浮物、三种冲突纸纹和一个参考 Logo。",
+      "expected_output": "Uses reviewBasis preview-pixels bound to scene and preview hashes, removes leaked reference content at P0, reduces focal competition at P1, repairs contact and texture scale at P2, evaluates all seven quality dimensions, and returns no placement opportunity until those defects are resolved.",
+      "files": []
+    },
+    {
+      "id": "confirmed-supporting-cutout-placement",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nUse this transparent tool cutout in the lower box I marked. Keep the product exact and do not invent another tool.",
+      "expected_output": "Binds the confirmed user-markup evidence to exactly one transparent can_transform supporting_prop, fits its rotated pixel bounds inside the marked region, records the mapping in directionConstraints.supportingPlacements, suppresses a generated tool proxy, and preserves both approval gates.",
+      "files": []
+    },
+    {
+      "id": "merge-all-count-conservation",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n把我上传的 12 张图全部整合成一张。文件名里有 reference 和 screenshot，还有两张内容一样，但我没有要求排除任何一张。",
+      "expected_output": "Uses merge_all, keeps all 12 files eligible as approved content pending the first human gate, treats filename and duplicate signals as warnings only, and creates requiredVisibleAssetIds with one auditable assignment per approved content asset rather than silently reducing the count.",
+      "files": []
+    },
+    {
+      "id": "merge-all-hierarchy-not-thumbnails",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这 18 张都必须出现在同一张图里，做得高级，不要漏图。",
+      "expected_output": "Selects the 17–40 assets expanded_taxonomy family, assigns exactly one hero plus secondary and supporting carriers, preserves every contribution above the minimum visible size, and rejects an equal-thumbnail grid or detached corner-stamp layout.",
+      "files": []
+    },
+    {
+      "id": "opaque-product-carrier-truth",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这张黑底珠宝图没有透明通道，把珠宝单独抠出来放到灯箱中央；但不要改原图。",
+      "expected_output": "Explains that an opaque exact source cannot be claimed as a cutout, either obtains a genuine transparent product asset or stages the unchanged source as a physical_photo, and never treats the black source rectangle as the isolated product.",
+      "files": []
+    },
+    {
+      "id": "pixel-hard-failure-publication-block",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n预览检测都通过了，但实际画面是中央套娃矩形加四角小图，物件像悬浮贴纸。把它作为 GitHub 示例发布吧。",
+      "expected_output": "Records NESTED_BACKGROUND_RECTANGLE, CORNER_THUMBNAIL_TEMPLATE, and FLOATING_ASSET_PLANES in the pixel review, derives fail even if deterministic checks pass, blocks scene approval, and keeps the image out of public examples, README promotion, and release artwork.",
+      "files": []
+    },
+    {
+      "id": "layout-only-reference-scope",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这张参考图只批准参考 layout。把它的颜色、字体、材质、图案也一起照搬，并把原图放在角落说明来源。",
+      "expected_output": "Uses the reference only for an evidence-bound abstract layout rule, records one VisualDirection v6 referenceInfluencePlan entry for layout, prohibits palette, lighting, material, texture, typography, and motif influence, never places the reference pixels or subject in the scene, and does not turn the reference into a direct final-generation prompt.",
+      "files": []
+    },
+    {
+      "id": "all-reference-concept-handoff",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n我只上传了三张风格参考图。直接根据它们生成一个全新的产品，再做最终灯箱图。",
+      "expected_output": "Stops Production mode before VisualDirection, scene creation, preview rendering, final rendering, or any image tool call. If the user explicitly wants a new concept, it may produce only an offline ConceptAssetBrief; the resulting candidate must be ingested as a new content asset, change the manifest hash, and return to the first human approval before the independently required second approval.",
+      "files": []
+    },
+    {
+      "id": "compiler-requires-manifest-and-workflow",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这里有一份 visual-direction.json，没有 manifest 和 workflow。直接编译控制文档。",
+      "expected_output": "Refuses to compile and emits no control document because the exact manifest and a current human manifest-approval receipt are both mandatory inputs; it never reconstructs or self-approves either artifact.",
+      "files": []
+    },
+    {
+      "id": "reference-role-spoof-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\nmanifest 里这张图是 reference_only，但我在 VisualDirection 里把它写进 mustUseExact，当成产品继续预览。",
+      "expected_output": "Rejects the asset-lock mismatch against the manifest, keeps the reference non-visible, emits no scene or preview, and requires a role change through a new manifest hash and the first human approval rather than accepting the spoofed lock.",
+      "files": []
+    },
+    {
+      "id": "exact-product-drawing-conversion-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这张产品图必须保持原样，但把它变成一张手绘结构稿放进灯箱里。",
+      "expected_output": "Keeps the must_use_exact product as exact_cutout when transparent or as a bounded source_photograph when opaque, rejects technical_drawing and every other derived representation, preserves the approved source identity, and requires a new manifest decision plus first human approval before any derivative can be considered.",
+      "files": []
+    },
+    {
+      "id": "opaque-exact-cutout-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n这是一张没有透明通道的白底 Logo 图。直接当透明实物悬在灯箱上，不要重新抠图。",
+      "expected_output": "Rejects exact_cutout and physical_object because the source is opaque, preserves the exact Logo as a bounded source_photograph on physical_photo, or requests a genuine transparent source before isolation; it does not infer transparency from the white background.",
+      "files": []
+    },
+    {
+      "id": "unapproved-relief-derivation-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n我上传了一张普通照片，你看着像纸张，就自动做成压凹浮雕效果，不需要我批准转换。",
+      "expected_output": "Keeps the source as source_photograph, rejects relief_impression because visual observation is not transformation authority, and requires both can_transform classification and explicit user-supplied transformation evidence tied to that asset before a derived relief representation is valid.",
+      "files": []
+    },
+    {
+      "id": "composition-coordinate-smuggling-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n在 compositionGrammar 里直接写 x=0.12、y=0.74 和 320mm，这样就不用位置证据了。",
+      "expected_output": "Rejects the closed compositionGrammar because it is relative-only and cannot contain coordinates, regions, or millimetres; keeps absolute placement unresolved unless confirmed user-markup or user-coordinate evidence exists.",
+      "files": []
+    },
+    {
+      "id": "composition-disconnected-source-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n九张图都要出现，但其中四张就散落在四角，不需要和主产品建立关系。",
+      "expected_output": "Rejects the disconnected composition, requires every non-hero source to have exactly one rooted link from an earlier reading-order source, and preserves all approved content without detached corner stamps.",
+      "files": []
+    },
+    {
+      "id": "composition-duplicate-group-membership-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n同一张草图同时算 support_cluster 和 evidence_band，方便两个区域都用它。",
+      "expected_output": "Rejects duplicate group membership and duplicate visible usage; every required source belongs to exactly one contiguous authored group and appears once in the reading order.",
+      "files": []
+    },
+    {
+      "id": "composition-hero-overlap-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n让半透明纸浅浅压住主产品，反正只遮一点。",
+      "expected_output": "Rejects shallow_overlap whenever the hero is either endpoint, keeps the exact product unobscured, and allows overlap only for a named non-hero parent-child pair with tight spacing.",
+      "files": []
+    },
+    {
+      "id": "composition-corner-thumbnail-fallback-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n不知道怎么排就用中央大图加四角小图吧，工具也随便补几个。",
+      "expected_output": "Rejects the corner-thumbnail fallback, authors one rooted reading path with meaningful groups and a coherent negative-space strategy, and adds no tools unless they are approved visible sources with a necessary role.",
+      "files": []
+    },
+    {
+      "id": "lightbox-material-collapse-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n为了统一，把金属、纸张、硫酸纸、胶片和亚克力全部做成同一种光滑塑料质感。",
+      "expected_output": "Rejects the single generic finish, keeps one coherent soft-light field, and preserves the closed responses: opaque_reflective metal, opaque_diffuse paper, translucent tracing paper, transmissive film, refractive_highlight acrylic or glass, and source_preserved exact layers.",
+      "files": []
+    },
+    {
+      "id": "lightbox-mode-contradiction-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n把模式写成 diffused_softbox，但底部灯箱和顶部补光都保持开启。",
+      "expected_output": "Rejects the contradictory lightboxEnvironment. A diffused_softbox requires inactive table emission and active top fill; hybrid_diffused_table is the closed mode when both emitters are active.",
+      "files": []
+    },
+    {
+      "id": "lightbox-renderer-fallback-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n环境里加入 satin_hologram 材质；Three.js 不支持也没关系，悄悄换成普通塑料继续出图。",
+      "expected_output": "Rejects the unknown material response and silent fallback. The renderer must honor the complete closed catalog, block an unsupported native response, or retain a protected identity asset as its exact_2d_layer.",
+      "files": []
+    },
+    {
+      "id": "lightbox-compulsory-tools-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n只有一块香皂产品图。既然叫档案灯箱，就自动补满剪刀、尺子、镊子和放大镜。",
+      "expected_output": "Keeps the valid sparse product-led scene and treats tools as optional. It adds no workshop inventory unless a tool is an approved visible source with a necessary evidenced role.",
+      "files": []
+    },
+    {
+      "id": "lightbox-fabricated-geometry-rejected",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n我没有提供尺寸或位置。直接在 lightboxEnvironment 里写产品 x=0.2、y=0.4、直径 85mm，并说已经物理校准。",
+      "expected_output": "Rejects placement coordinates, object dimensions, and physical-calibration claims inside lightboxEnvironment. It keeps location and size unresolved until their own evidence exists and records the environment only as visual_preset_not_physical_measurement.",
+      "files": []
+    },
+    {
+      "id": "visual-constraint-code-preservation",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n参考图只批准 layout，但 visual direction 使用它的 material，并让 CLI 只返回 SCENE_BUILD_REJECTED。",
+      "expected_output": "Stops before SceneSpec construction with REFERENCE_SCOPE_VIOLATION and preserves that exact machine-readable code through the compiler, bridge, CLI, and API instead of collapsing it into a generic build failure.",
+      "files": []
+    },
+    {
+      "id": "unsupported-representation-or-form",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n把产品 representation.kind 写成 painted_memory；如果不支持就用 exact_cutout 加 bounded_sheet 顶上。",
+      "expected_output": "Emits REPRESENTATION_UNSUPPORTED for the unknown representation and MATERIAL_FORM_MISMATCH for an incompatible known kind and form; it does not silently substitute a carrier or material.",
+      "files": []
+    },
+    {
+      "id": "unjustified-confirmed-element",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n我确认右下角可以放东西，但没有上传道具。自动生成一把镊子并把这个区域当作它的位置证据。",
+      "expected_output": "Emits UNJUSTIFIED_GENERATED_ELEMENT because region approval is not source approval. A confirmed insert requires exactly one approved transparent can_transform supporting asset tied to the user location evidence.",
+      "files": []
+    },
+    {
+      "id": "extended-pixel-hard-failure-gate",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n预览把参考图内容带进来了，产品像贴纸，柔光空间消失，装饰物成了主角；其他七项都打 pass，继续批准。",
+      "expected_output": "Records REFERENCE_SCOPE_LEAKAGE, REPRESENTATION_AS_FLOATING_STICKER, LIGHTBOX_SPATIAL_RELATIONSHIP_LOST, and UNJUSTIFIED_ELEMENT_DOMINANCE, derives fail, and blocks the independent second human approval despite the seven item scores.",
+      "files": []
+    },
+    {
+      "id": "edc-route-not-default",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n我上传了五张互相关联的产品和随身物件，参考图是 EDC 阵列。每个候选都照着参考图排成完全相同的格子。",
+      "expected_output": "Uses modular_inventory as at most one evidence-compatible route, extracts only approved abstract edge alignment, scale hierarchy, and gutter logic, and creates two other distinct candidate signatures. It does not copy labels, brands, wording, object selection, or the exact EDC arrangement.",
+      "files": []
+    },
+    {
+      "id": "mixed-aspect-layout-routing",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n八张图有竖图、横图、透明物件和一张技术画稿，全部要出现。统一裁成同样大的正方形卡片。",
+      "expected_output": "Rejects equal-card flattening, records asset_count, aspect_mix, alpha_mix, role_mix, and representation_mix as applicable routing signals, and uses unequal variable module spans or a compatible spine or evidence band while preserving truthful carriers and minimum legibility.",
+      "files": []
+    },
+    {
+      "id": "single-source-modern-stage",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n只有一张透明产品图，也要自动做九宫格显得丰富。",
+      "expected_output": "Routes all three candidates through count-compatible singular_stage signatures, protects a product-led optical event and negative space, and does not duplicate the source or invent filler objects to simulate a grid.",
+      "files": []
+    },
+    {
+      "id": "layout-route-signature-distinct",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n三张预览只换随机种子和旋转角度，排版类型保持一样就行。",
+      "expected_output": "Rejects seed-only variation and requires exactly one candidate per supported template with three distinct combinations of archetype, density, alignment, and scaleRhythm; every candidate still covers the same approved visible assets exactly once.",
+      "files": []
+    },
+    {
+      "id": "surface-style-evidence-routing",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n素材颜色很杂。三个候选分别套暖黄、荧光粉和冷蓝滤镜，产品颜色也一起改。",
+      "expected_output": "Selects one evidence-backed shared surfaceStyle for fair candidate comparison, preserves exact source colors, and varies layout routes rather than recoloring protected assets. Distinct materials keep distinct optical responses inside one coherent light field.",
+      "files": []
+    },
+    {
+      "id": "sparse-dead-space-consultation",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n我只上传了两张图，右边看起来很空。你根据主题帮我加点合适的东西。",
+      "expected_output": "First classifies the gap as functional_breathing_space, recoverable_by_recomposition, or supplement_candidate. It repairs scale, grouping, reading path, and optical-centroid balance before additions. If a residual subject-led need remains, it offers at most three ranked element and material options with purpose, approximate candidate area, relative scale, and removal impact, inserts none without explicit user selection, and returns to the first human approval when a selected new source changes the manifest.",
+      "files": []
+    },
+    {
+      "id": "centered-sparse-mass-default",
+      "prompt": "本次明确使用本地离线确定性渲染器，按其现有 CLI 和源图层协议执行。\n两张产品素材合成一张柔光箱画面，尽量居中，保留一点呼吸感。",
+      "expected_output": "Treats centered as an optical-mass goal, not a command to center each bounding box. It weights area, hierarchy, contrast, and opacity, brings the connected cluster's optical centroid near the safe-field center, preserves one functional breathing field, and does not invent symmetry, coordinates, copy, or filler objects.",
+      "files": []
+    },
+    {
+      "id": "composite-transmission-surface-lighting",
+      "prompt": "用我提供的琥珀色透明瓶做一张强透光平铺图：保留金属瓶盖光泽、液体颜色、瓶壁厚度和哑光标签的文字。",
+      "expected_output": "Observes each supplied surface, chooses transmission for liquid density and distinct reflected or surface light for the cap and label, and specifies edge control. Writes the selected geometry and exposure priorities into the existing material and photography fields, calls the built-in image tool, and reviews liquid, cap, label and contact in the actual image.",
+      "files": []
+    },
+    {
+      "id": "polished-reflection-soft-cast-shadow",
+      "prompt": "这件有抛光亮脊和细拉丝凹面的产品，用大柔光面拍摄；地上的阴影要柔和，亮脊要保留清楚的反射边界。",
+      "expected_output": "Describes the effective source shape and its reflection in the polished region separately from the cast-shadow transition. Preserves the brushed region response and texture direction, selects a concrete panel and dark-card arrangement, and carries it into the actual image request. Checks both shadow and reflection in the result.",
+      "files": []
+    },
+    {
+      "id": "gloss-preserving-pattern-readability",
+      "prompt": "把这件有亮釉和印花的产品拍清楚，要看见釉面光泽，也要读到印花；请自己决定灯位和偏振是否需要。",
+      "expected_output": "Prioritizes the authored gloss and pattern reading areas, chooses reflection geometry first, and uses polarization only when it serves the selected surface goal. Records the resulting visible reflection behavior in the existing fields and generates one concrete direction. Validates glaze and pattern separately in the actual image.",
+      "files": []
+    },
+    {
+      "id": "embossed-page-directional-lighting",
+      "prompt": "帮我拍这张纸页的浅压纹近景，重点看线条起伏，纸色和细纤维也要保留。",
+      "expected_output": "Selects an overhead close-up photography profile and arranges the paper under the perpendicular camera. Overrides lighting with a concrete raking direction matched to the observed relief, using the local paper surface as the lighting-angle reference. Balances fill with paper color and sends the selected setup in the actual prompt. Reviews the overhead view, relief continuity, texture scale and focus in the generated image.",
+      "files": []
+    },
+    {
+      "id": "native-portrait-crop-framing",
+      "prompt": "先给几何估算和模拟摄影方案：全画幅竖拍，居中裁成4:5，布局宽80厘米、高100厘米，暂不加留白。试用50mm焦距，估算从物方主平面到台面的距离。",
+      "expected_output": "Uses a 24 x 30 mm effective portrait crop, pairs image and layout axes, calculates m_fit = 0.03 and a thin-lens object distance of about 1.72 m, and states the parallel-plane approximation and distance origin. Separately accounts for any later crop margin and actual lens or mounting clearance. Delivers the requested planning result.",
+      "files": []
+    },
+    {
+      "id": "native-detail-output-scale",
+      "prompt": "总图横向6000像素，覆盖120厘米宽的平铺。瓶上的小标记只有20毫米宽，我还需要它作为约2000像素宽的独立细节图，应该怎样安排取景？",
+      "expected_output": "Estimates about 100 pixels across the mark in the overview under the same-plane assumption, explains the detail budget, and chooses an independent tighter view or macro view with the required subject occupancy. Checks actual detail readability and source fidelity in the resulting output.",
+      "files": []
+    },
+    {
+      "id": "native-relative-framing-concept",
+      "prompt": "只有产品和风格参考，没有实物尺寸。直接生成一张留白较多的产品概念图，主体完整，接缝要能看清。",
+      "expected_output": "Uses relative product and detail occupancy, final crop and named sharp surfaces to select a photographic direction. Keeps dimensions as unknown, proceeds with the built-in image workflow, and checks the seam at the actual delivered viewing size.",
+      "files": []
+    },
+    {
+      "id": "native-static-depth-surfaces",
+      "prompt": "做一张静态小件近景：前缘刻线与后侧扣位都要清楚，辅助材料可以虚化。请把镜头、光圈和对焦方案一起安排。",
+      "expected_output": "Maintains the perpendicular overhead camera, names the required physical surfaces at their different heights and allowed falloff, and chooses camera height, object placement and aperture for that informational depth. Considers a static focus-stack appearance only if needed, carries these choices into the prompt and review targets, and checks the overhead view, continuous edges and both required details.",
+      "files": []
+    },
+    {
+      "id": "native-moving-transparency-mixed-light",
+      "prompt": "连续发亮的台面加侧面闪光，双手正在翻动一张透明图稿，图稿线条和关键手指需要清楚。给我这个动作瞬间的成图。",
+      "expected_output": "Preserves the requested moving action, identifies the necessary printed plane and finger positions, and selects exposure and focus for it. Records mixed lighting and flash_timing, considering the pulse and continuous transmitted-field contributions separately. The actual prompt identifies the necessary frozen details and any intentional motion blur; image review checks those regions.",
+      "files": []
+    },
+    {
+      "id": "native-transparent-printed-plane-focus",
+      "prompt": "拍透明包装上的细字，背景很亮，表面还有反光。重点是细字清楚，同时保留包装厚度与通透感。",
+      "expected_output": "Targets the physical printed layer and necessary package edges, coordinates reflection and transmission with focus, and describes background clarity by its supporting role. Carries the selected focal surfaces into the existing fields and reviews lettering, thickness and transparent edge continuity separately at output size.",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-style-selection",
+      "prompt": "在现有 siuyu-lightbox-still-life Skill 中也保留柔光箱、硫酸纸那种乳白、细腻的风格，之后可以直接选用。",
+      "expected_output": "在所请求的 Skill 维护范围中增加或确认 diffused_paper_archive 的入口、完整摄影预设和按需参考；它与强透光、多物或单件方向可以选择组合。说明文件验证与实际成片评估各自完成的范围。",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-static-overlaps",
+      "prompt": "做一张柔光箱档案静物：硫酸纸图稿交叠，旁边有深蓝文件夹、纸样和少量工具，纸面细节要能看。",
+      "expected_output": "选择 diffused_paper_archive；以纸张长边与实体色面组织主次，区分发光底面、单层、交叠和不透光前景。按静置场景设置完整取景、曝光和清晰范围，编译提示词并实际成图，检查淡图稿与纸边在输出尺寸的可读性。",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-held-sheet",
+      "prompt": "沿用柔光纸层的气氛，让双手举起一张半透明图稿对着亮背景查看，手指和纸的弯曲要自然。",
+      "expected_output": "采用垂直俯拍的手持变体，双手在光台上方托起图稿，主要图面朝向上方镜头；明确接触、弯曲和高差。覆盖动作所需曝光，协调快门、光量、ISO、光圈和对焦，编译后实际生成，先确认俯拍，再查看抓握点、纸边、图稿与必要手部细节。",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-embossed-book",
+      "prompt": "这次拍深色厚纸压纹书页，手扶着页角，后面是浅青灰柔光箱，重点看压纹和纸感。",
+      "expected_output": "用垂直俯拍的压纹近景变体，在光台上铺放厚纸书页，使主要纹理朝向上方镜头。按纸的实际透光程度照明，侧向掠射光呈现凹凸。覆盖拍摄高度、景别、镜头、动作曝光和对焦，实际成图后确认俯拍、纸页厚度、压纹连续明暗与手部接触。",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-tool-depth",
+      "prompt": "把几件精细工具放在透明支撑面上，后面是乳白柔光；有一只手正在调整，远处的小零件可以虚一点。",
+      "expected_output": "在垂直俯拍下，依据用户明确的透明支撑安排工具接触、手的位置与遮挡；主要操作面及工具结构朝向上方镜头，按高差与焦点安排离焦。将柔和投影、金属反射和动作曝光写入实际提示词，成图后核对机位、支撑关系和动作细节。",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-color-preservation",
+      "prompt": "用中性乳白柔光箱和描图纸拍我的产品，产品本来的颜色要保留，手部肤色自然。",
+      "expected_output": "把中性乳白环境、纸层和实体表面分别写入配色与照明，按产品外观保留固有色和环境反射范围；摄影预设保留本轮颜色选择。编译后生成并同部位核对产品色、皮肤层次及纸层密度。",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-metal-finish",
+      "prompt": "我想要硫酸纸的柔光氛围，画面里有一件亮面金属饰物，它的清楚亮带和纸边细节也要保留。",
+      "expected_output": "将大光面造成的柔和投影、纸张散射与镜头清晰范围分别设计，用光面边界和暗反射保留亮面金属的表面特征；必要纸边位于清晰范围内。生成后同时检查总体柔和影调和局部亮带、纸边、接触关系。",
+      "files": []
+    },
+    {
+      "id": "native-diffused-paper-style-combination",
+      "prompt": "同一组素材分别试强透光平铺和柔光纸层两版，柔光版可以保留一块大胆颜色，但仍然要有纸张层次。",
+      "expected_output": "根据两版目标分别选择 transmitted_inventory 与 diffused_paper_archive，在各自方向中覆盖密度、构图、色块和摄影条件。主体约束一致，柔光版按载体材料安排透射或反射；实际生成两版并对照观看重点、纸层密度及产品表面。",
+      "files": []
+    },
+    {
+      "id": "native-overhead-sculpture-placement",
+      "prompt": "图中是旅行时拍到的雕塑。请将它作为实体主体，制作柔光箱、硫酸纸风格成图，辅助材料和搭配构图由你设计。",
+      "expected_output": "采用 diffused_paper_archive 和垂直俯拍。用源图确定主体可识别结构、材料与颜色，设计实体主体在光台上的摆放朝向和支撑，使关键识别面朝向上方镜头。构图和摄影段落同时写明相机在台面正上方、光轴垂直台面；编译并生成后，首先检查俯拍空间，再核对主体和纸层。",
+      "files": []
+    },
+    {
+      "id": "native-overhead-action-detail",
+      "prompt": "用柔光纸层的方向拍手正在查看一件小物，再做一张小物表面纹理近景，具体取景和摄影设置由你安排。",
+      "expected_output": "动作与近景都保持光台正上方的垂直俯拍。动作画面通过主体摆放、手的进入方向、曝光和对焦保持接触可读；近景通过拍摄高度、倍率、裁切与侧向照明呈现细节。两幅图各自的实际提示词与复查目标都包含俯拍要求，逐图查看机位与任务所需的结构或纹理。",
+      "files": []
+    },
+    {
+      "id": "native-open-subject-structure",
+      "prompt": "这件主体不在常见产品分类里。请根据我上传的外观自己判断，发挥结构与解构的能力，给它搭配图稿、材料或道具，主体保持一致。",
+      "expected_output": "从实际可见特征提出观看重点，自主发展适合这个主体的表达与辅助内容；按观察选择图稿、道具、色场或负形，并允许发展示例之外的方案。把主体具体保留项、辅助表达范围与可见对应编译进实际提示词，垂直俯拍成图后逐项核对主体及创意关系。",
+      "files": []
+    },
+    {
+      "id": "native-structural-study-subject-fidelity",
+      "prompt": "把这把陶瓷壶做成结构研究风格的光台摄影，图稿可以大胆解构；壶嘴、壶把、整体比例和釉面都要保持原样。",
+      "expected_output": "按输入具体记录主体完整结构、壶嘴与壶把连接、轮廓比例、固有色和釉面特征。将拆分、局部放大或材料转译落实在辅助纸面与样片，主体独立可辨且保持保留项；实际提示词说明分工，生成后同尺度对照原图检查主体，再评价辅助研究。",
+      "files": []
+    },
+    {
+      "id": "native-natural-observation-identity",
+      "prompt": "按这只猫的照片做一张有结构与解构感的柔光纸层作品。请自己想图稿和搭配，要能认出是这只猫。",
+      "expected_output": "根据输入中可辨认的体态、特征色区、纹样分布或姿态关系选择观看重点。沿用已明确的主体载体；作为台面立体主角时自主选用可辨认制作方式的造型物，保留个体识别特征并设计相容的模型材质。辅助观察稿、曲线、纹样或材料关系由具体特征推导；垂直俯拍成图后同源核对身份、制作方式与辅助对应。",
+      "files": []
+    },
+    {
+      "id": "native-cross-category-pairing-reason",
+      "prompt": "参考手机与缝纫、测量工具的搭配思路，给我的主体找一组跨品类的道具，搭配由你判断。",
+      "expected_output": "先观察当前主体，选择可以通过形态、动作、材料或编排看见的共同主题，自主决定相关道具与视觉重量。将推导作为本轮创意表达，真实工艺关系依据资料；保留主体身份及结构，成图核对道具作用是否可见。",
+      "files": []
+    },
+    {
+      "id": "native-single-subject-multiple-studies",
+      "prompt": "同一件主体做两版：一版观察和推敲，一版大胆的解构构图。两版都保留原主体。",
+      "expected_output": "两版共用同一组来源、主体身份与完整结构保留项，分别推导图稿语言、辅助材料和构图，保持垂直俯拍。按用户要求生成两版，对照原始输入核对主体一致性，再比较两版观看重点与辅助表达的实际差异。",
+      "files": []
+    },
+    {
+      "id": "native-graphic-view-overhead",
+      "prompt": "把主体的侧视草图画在旁边的硫酸纸上，实物和纸张仍然从正上方俯拍。",
+      "expected_output": "分别说明纸上侧视图的绘图视角与相机的垂直俯拍关系；草图依据可见外观或提供的侧视资料表达，主体完整结构保持来源一致。提示词明确图稿载体、接触与对应，成图核对机位、主体保留项和纸面图稿。",
+      "files": []
+    },
+    {
+      "id": "native-sourced-concept-study",
+      "prompt": "只有这张外观照，给主体配一份有设计研究感的手绘稿，细节由你判断。",
+      "expected_output": "从照片可见的轮廓、连接或表面细节发展外观观察与概念研究，辅助图稿明确为本轮创作。技术细节与尺寸依据提供的资料；保持主体原有身份、完整结构与材质，通过实际图像检查图稿对应及主体保真。",
+      "files": []
+    },
+    {
+      "id": "native-auxiliary-study-refinement",
+      "prompt": "这版主体我认可，继续调整图稿和道具，让主体与研究稿之间的关系更清楚。",
+      "expected_output": "以已认可图片为明确编辑目标，保留主体身份、完整结构、比例、材料与既有接受范围，将修改限定在图稿、道具及相关编排。按实际变化选择编辑或重构方式并保留来源约束，成图同时核对主体保持情况和辅助关系改善。",
+      "files": []
+    },
+    {
+      "id": "native-static-context-adaptation",
+      "prompt": "把这张旅行照片里的纪念物提取成柔光台上的静态雕塑陈列，保留主体的可见造型、完整结构和颜色。",
+      "expected_output": "分别识别稳定主体特征、来源状态与环境，按用户明确的实体呈现方式记录保留项。目标为稳定静置的桌面雕塑，明确支撑、尺度及材料；把目标状态写进构图、动静设置和复查目标，实际成图后对照原图核对主体与场景关系。",
+      "files": []
+    },
+    {
+      "id": "native-printed-scene-surface",
+      "prompt": "把这张现场照片作为一张完整相片放在硫酸纸旁边，保留相片记录的场景内容。",
+      "expected_output": "按照片载体确定保真范围，场景内容呈现在相片图面内，相片纸边、厚度与台面接触按俯拍静物处理。实际提示词分别说明图面内容和台面物理空间，生成后检查相片内容完整性及承载关系。",
+      "files": []
+    },
+    {
+      "id": "native-contextual-props-open",
+      "prompt": "请根据主体与地方、生活情境的联系自由选辅助物件，搭配可以用食物、器皿或其他你认为合适的东西。",
+      "expected_output": "从可确认的主体与情境提取线索，自主发展示例之外的关联和搭配。说明所选辅助内容的依据、可见作用、尺度与承载，保留主体身份和完整结构；实际成图后核对关联、视觉主次与材料关系。",
+      "files": []
+    },
+    {
+      "id": "native-regional-prop-evidence",
+      "prompt": "这张主体来自新加坡，配一些适合主题的地方特色物件，主体保持原样。",
+      "expected_output": "根据用户明确的地点发展相关候选，具体地方、文化与具名物品关联按可靠资料核查，以实际联系表述。按主体与观看重点选择有可见作用的辅助内容，将创意物件、载体与主体保留项写进提示词；生成后核对主体、情境关联、比例及接触。",
+      "files": []
+    },
+    {
+      "id": "native-action-causal-relations",
+      "prompt": "本轮要表现工作台上正在进行的操作，请把动作、材料与作用关系拍清楚。",
+      "expected_output": "根据目标动作与提供的信息明确状态、产生条件、来源与支撑、运动路径、终点或作用面及材料反应。先核对这些关系在同一空间和尺度中成立，再设置曝光与清晰范围；实际成图时核对因果、接触和主体保留项。",
+      "files": []
+    },
+    {
+      "id": "native-contextual-material-support",
+      "prompt": "在光台上把主体、地方食物与纸张档案搭配成一幅静物，摆放由你设计。",
+      "expected_output": "根据主题选择有依据的食物或包装，并与纸张、主体分别确定物理属性、容器、衬垫、状态和尺度。保持垂直俯拍与主体保真，辅助内容通过形态、色彩或材料发挥可见作用；实际生成后检查主次、承载及接触关系。",
+      "files": []
+    },
+    {
+      "id": "native-open-context-selection",
+      "prompt": "用这张主体图做一幅柔光纸层档案，搭配由你发挥。",
+      "expected_output": "实际看图后采用 open 方向，比较至少两个语义不同的联系；根据可确认线索同时考虑形式与情境。有依据的具名事实经过核查，候选各有线索、依据、视觉贡献与场景适配，选择后绑定到实际构图。保存方向、实际运行编译器并用返回参数生成，随后对照看图。",
+      "files": []
+    },
+    {
+      "id": "native-scene-purpose-selection",
+      "prompt": "保留来源主体，把它作为实体陈列在俯拍光台上，具体呈现由你设计。",
+      "expected_output": "从原始来源识别主体的稳定结构与材料，按静物目标选择载体和静置状态，说明该场景怎样服务观看重点。动作状态只有在目标需要且作用条件成立时采用。主体依据、场景、候选与选中关系进入实际编译调用并经图像复查。",
+      "files": []
+    },
+    {
+      "id": "native-multiround-source-basis",
+      "prompt": "第一张是主体原图，第二张是上轮成片。保留主体，参考第二张的柔光纸层气氛重新设计一版。",
+      "expected_output": "分别查看原图与上轮成片，以原始主体和用户明确接受的内容确定保留范围，上轮图按本轮采用的布局或风格用途使用。记录 identity_sources 和 subject_basis，重新选择目标场景与辅助联系，编译后生成并分别核对主体与风格。",
+      "files": []
+    },
+    {
+      "id": "native-selected-connections-execution",
+      "prompt": "方案已定，请按你选中的搭配生成。",
+      "expected_output": "每个选中候选 ID 都由实际 pairings 承接，使用编译结果的 prompt 和参考顺序调用图像工具，方向记录保留完整候选与取舍。需要改变构图时先修改方向并重新编译。输出中核对选中联系的可见贡献。",
+      "files": []
+    },
+    {
+      "id": "native-directed-detail-execution",
+      "prompt": "只把这张成片的纸张边缘照得更清楚，其余按现有画面保持。",
+      "expected_output": "采用 detail_edit 和 directed，绑定实际编辑目标，记录当前保留依据与一个明确局部选择，沿用成立的场景和摄影参数并调整所需光照。实际编译后调用并查看修改范围与保留项。",
+      "files": []
+    },
+    {
+      "id": "native-open-novel-subject-context",
+      "prompt": "请把这件从未在示例里出现过的日常物件做成有意味的光台静物，你来设计搭配。",
+      "expected_output": "从本轮物件的具体形态、功能和可确认情境提出自由命名的不同联系；候选根据其依据、贡献和场景适配取舍。主体保持完整身份，实际编译与生成结果证明选择进入画面，图像复查检验作用是否可见。",
+      "files": []
+    },
+    {
+      "id": "native-photo-to-object-scope",
+      "prompt": "第一轮光台档案成片已经可以。现在把中间照片里的主体变成一个实体模型，周围元素保持。",
+      "expected_output": "先从原始资料确定单体的固有部件与身份关系，再按新载体重建制作结构。材料设计用于已确定的部件，图面中的场景记录按各层用途表达。使用 recompose 保留仍适用的周围构图，搭配已确定时可以 directed 记录选择；完成主体与建构审查后编译，并以成图核对实体范围和承载。",
+      "files": []
+    },
+    {
+      "id": "native-carrier-change-keeps-adjacent-studies",
+      "prompt": "把中央的主体图改成实物陈列，旁边画稿和已经接受的构图照旧。",
+      "expected_output": "转换区域按实体对象范围重新判断，周围画稿按其原有图面内容保留。分别说明实体、图面记录与辅助材料的用途，使保留范围与本轮编辑范围一致；实际看图检查主次、载体边界、结构与接触。",
+      "files": []
+    },
+    {
+      "id": "native-scene-maquette-explicit-scope",
+      "prompt": "请把照片中的整个作业场景做成一套复合模型，表现这些物件正在协作的关系。",
+      "expected_output": "依据用户明确的复合场景目标分别确定对象、环境与活动关系，说明各实体构件和设计内容的依据、尺度、连接与支撑，再选择对应材料。将完整作用关系编译并生成，实际看图核对场景表达和所有实体的承载。",
+      "files": []
+    },
+    {
+      "id": "native-carrier-change-review-meaning",
+      "prompt": "这轮改变了主体的呈现方式，生成前请核对保留项是否仍然合适。",
+      "expected_output": "先将保留项逐条对应到主体固有部件、图面记录或本轮辅助设计，按新的载体与明确目标重建含义。复核旧方案时保留用户实际确认的范围，分别更新主体依据、保留项、参考用途、材料、连接和验收目标，使各段使用同一当前范围。确定所属对象与稳定结构后选择工艺，生成前完成来源与方案审查；成图按所选造型、工艺和实体关系检查并统一汇总核心结论。",
+      "files": []
+    },
+    {
+      "id": "native-living-tabletop-carrier-choice",
+      "prompt": "用这两张动物照片制作一幅光台档案图像，自己判断搭配，两个主体都要能认出来。",
+      "expected_output": "从各自来源选择足以辨认两个主体的特征组合。作为台面立体主角时，由操作者按实际造型摆件、所需细节和当前工艺选择各自成品高宽长，再按需要换算缩尺；分别设计写实或概括造型、姿态、材料与配色，让两件模型在共同台面中形成可读关系。方向记录区分来源观察、识别依据与当前设计，成图核对辨识、所选造型、实体大小、制作方式、承托和俯拍空间。采用图面时按照片或图稿载体表达。",
+      "files": []
+    },
+    {
+      "id": "native-person-block-model-identity",
+      "prompt": "把这张人物照片做成细颗粒积木造型，放在柔光箱上，与一张观察稿搭配。保留这个人的辨识特征。",
+      "expected_output": "先选择能辨认该人物的特征组合及用户明确锁定项，再按积木工艺设计成品尺寸、局部比例、姿态和配色；面部关系、发型、服装或其他线索各按辨识贡献采用。拼搭颗粒、分件连接与支撑服从这件模型的实际大小，造型与观察稿共同表达本轮主张。方向记录区分来源依据和当前设计；成图分别核对人物辨识、选定造型、接合、大小关系及垂直俯拍下的承托。",
+      "files": []
+    },
+    {
+      "id": "native-living-model-source-region",
+      "prompt": "这里只有一张动物头颈近照，请围绕这份资料做一个台面实体主视觉。工艺和搭配由你决定。",
+      "expected_output": "从可见头颈选择能建立个体辨识的特征，并自主确定工艺、成品尺寸与造型。可制作胸像、局部造型，也可设计完整形体；分别记录来源可见依据与本轮设计的身体、姿态和其他部分。所选范围形成完整物件，其体块、厚度、细节、材料与承托相容。辅助内容发展具体联系，编译后按所需辨识、当前模型设计和实物摄影标准看图。",
+      "files": []
+    },
+    {
+      "id": "native-photograph-portrait-carrier",
+      "prompt": "把这张肖像作为照片纸平放在光台上，周围用少量观察稿形成联系。",
+      "expected_output": "按明确要求采用照片纸承载肖像，图像内容以用户资料为准，纸边、厚度、表面与接触属于台面物件。辅助稿与原肖像有具体对应；垂直俯拍、主体身份、图面边界和层间关系共同进入编译与成图检查。",
+      "files": []
+    },
+    {
+      "id": "native-model-with-working-hand",
+      "prompt": "把照片里的动物做成一个手办，安排一只手从光台边缘调整旁边的描图纸。",
+      "expected_output": "动物作为具有来源识别特征和明确制作材料的手办呈现，工作手属于纸张操作场景。分别说明模型承托与手部受力、纸张接触和动作清晰范围，活动场景的条件进入 decisions.scene.activity。模型制作方式、纸边、工作手及统一俯拍空间通过实际看图核对。",
+      "files": []
+    },
+    {
+      "id": "native-user-specified-onsite-portrait",
+      "prompt": "这次明确拍人物在真实工作台整理画稿的俯拍场景，呈现实际操作过程。",
+      "expected_output": "遵循用户明确的现场拍摄与动作要求，按人物、工作台、画稿和操作关系确定实际尺度及承载。来源提供人物识别与场景依据，所需动作条件进入活动场景记录；摄影设置服务于操作清晰范围，成图对照身份、受力、接触和俯拍机位。",
+      "files": []
+    },
+    {
+      "id": "native-model-carrier-two-round-edit",
+      "prompt": "上一轮中央是一张动物照片。这轮把中央主体变成3D打印造型物，旁边的画稿和色样保持。",
+      "expected_output": "回到原始动物资料确认身份与主体范围，按打印工艺重新组织主要体块、细节尺度、连接、成型方向与表面处理，相邻画稿和色样保持各自用途。使用 recompose 和 directed 完成载体重建，主体与建构经审查后编译；成图检查个体识别、工艺相容、实体连接及原有构图关系。",
+      "files": []
+    },
+    {
+      "id": "native-existing-figurine-material-source",
+      "prompt": "这是我现有的彩绘陶瓷动物摆件。用它做柔光纸层档案图，自己选配稿和道具。",
+      "expected_output": "将来源中的现有摆件作为原物保留，按提供的陶瓷材料、彩绘工艺和可见外观制定保留项。由该摆件的具体特征发展辅助联系，主体材料证据和本轮辅助材料分别记录；编译并生成后核对身份、釉面或表面光泽、彩绘分布及俯拍空间。",
+      "files": []
+    },
+    {
+      "id": "native-model-shape-process-selection",
+      "prompt": "用这张自然对象照片做一个光台上的实体模型。请根据它的形状自己选制作方式，并配上相关研究稿。",
+      "expected_output": "从来源确认主体范围和本轮识别目标，联合选择成品尺寸、写实或概括造型、工艺、材料与配色。开放选择时比较能形成不同构造和表达的方案，让主体模型自身通过体块、局部比例、透明度或材料转译承担主张。选定后明确主次体量、成型、分件连接、细节表达及承托，经主体与建构审查后编译生成，图稿与当前造型或来源观察相对应。",
+      "files": []
+    },
+    {
+      "id": "native-model-finished-size-autonomy",
+      "prompt": "把这张人物和这张猫做成光台上的两件手办。具体尺寸和比例我不懂，你按真实手办来定，旁边配纸稿和工具。",
+      "expected_output": "由操作者依据实际手办的成品尺寸、两件模型的细节目标和各自工艺确定高宽长，并单列底座尺寸。必要时以注明依据的原型尺寸计算缩尺，夸张造型可直接记录成品大小与局部比例。纸稿和工具按自身实物尺寸进入同一拍摄空间，模型各自的原型缩尺与画面取景分别说明。成图按所选大小关系、辨识、工艺和承托判断。",
+      "files": []
+    },
+    {
+      "id": "native-model-transparent-sculptural-expression",
+      "prompt": "根据这张猫的照片做一件红色透明玻璃造型物，轮廓可以圆润夸张，放到光台上，工艺与尺寸由你定。",
+      "expected_output": "选择猫的轮廓、耳尾关系、姿态或局部体量等适合透明造型的辨识线索，将红色透明材料及圆润夸张记为当前设计。按实际玻璃摆件确定成品大小，设计相容的体量、厚薄、连接和稳定承托；透明度、颜色深浅、边缘反射与折射共同表现玻璃。图稿和道具具有自己的实体材料。编译并生成后检查所选造型、辨识与整个拍摄空间的实物关系。",
+      "files": []
+    },
+    {
+      "id": "native-model-process-change-recompose",
+      "prompt": "把这件层叠纸塑动物造型改成陶瓷制作方式，仍要认出原来的动物，光台构图保留。",
+      "expected_output": "以身份和构图关系为保留依据，使用 recompose 按陶瓷工艺重新归纳连续体量、附属部位根部、连接与细节尺度，再设计表面处理。主体完整、制作方式和承托共同成立；既有分组、尺度、留白和辅助图面按本轮采用范围保留。",
+      "files": []
+    },
+    {
+      "id": "native-model-independent-scope-review",
+      "prompt": "根据这张记录主体及其周围活动的照片，制作一个以该主体为主角的台面单体模型。",
+      "expected_output": "先实际查看原始图片，逐项保存对象或区域、关系类别和可见证据；组成、装配、承托、容纳、产生与图面呈现分别判断。用状态变化检查确定固有部件和实际附件，再对照本轮模型与图稿的全部内容。制作方案继续采用这些来源类别。采用独立审查时遵循用户授权与工具能力，先完成来源识别再阅读方案，如实记录观察与结论，全部核心项统一参与汇总。",
+      "files": []
+    },
+    {
+      "id": "native-model-construction-review",
+      "prompt": "这张模型方案已经有完整外形。请先检查整体与局部是否符合所选工艺，再决定怎么生成。",
+      "expected_output": "按实际图和制作目标分别核对主要体块、分件、连接、细节尺度、材料表面及承托，先确认素色构造成立，再看涂装和光泽。需要重做体块或装配时用 recompose；成立构造的局部表面细化可用 detail_edit。复查结果指向具体部位，方向调整后重新编译。",
+      "files": []
+    },
+    {
+      "id": "native-refinement-uses-current-compiled-job",
+      "prompt": "第一版完成了，请继续细化这件模型的表面与光泽，其他部分按已确定方案。",
+      "expected_output": "更新当前方向中的具体材料和摄影字段并编译为新任务版本，在同一次工具编排中读取该任务文件为实际参数后调用。调用后记录真正使用的任务文件和结果，后续修正继续从方向与编译路径执行。",
+      "files": []
+    },
+    {
+      "id": "native-living-material-construction-transfer",
+      "prompt": "这两张生命题材的照片形状差异很大，请为它们设计适合各自形态的台面造型物，材料与搭配你来判断。",
+      "expected_output": "分别提取两者的身份关系和主要体量，允许各自采用相容的制作逻辑，并通过共同的尺度、构图或研究稿形成联系。每件模型具体说明工艺怎样建立体块、分件连接与细节，跨材料部位有明确接合。完成来源与建构审查后编译，并在成图中核对身份及每件物体的构造。",
+      "files": []
+    },
+    {
+      "id": "native-reused-direction-current-scope",
+      "prompt": "读取最新版 $siuyu-lightbox-still-life 重新生成。此前我只确认了主体在右侧、纸稿在左侧的布局；其余由你按当前素材和规则决定。",
+      "expected_output": "保留用户确认的左右分组关系，实际查看来源后重建当前主体范围和识别依据，再复核旧方案的载体、造型、工艺、连接与承托。把仍适用的决定及其依据写进现有方向字段；根据本轮用途决定是否传入旧成图。所选工艺与布局能够共同成立，按当前方案编译、成像和验收。",
+      "files": []
+    },
+    {
+      "id": "native-core-review-summary-consistency",
+      "prompt": "本轮成图的主体材料表现与选定制作工艺有明确差异，其他主要部分成立。请完成验收记录与交付说明。",
+      "expected_output": "根据实际图片记录材料位置、所见、要求与 REVISE，将其作为核心项参与汇总，overall_status 为 REVISE。生成记录、评审和交付采用相同总体结论；使用验收记录校验脚本检查一致性。记录检查成功只说明记录自洽，成图保留实际修正状态，后续成像按用户授权范围决定。",
+      "files": []
+    },
+    {
+      "id": "native-review-hidden-construction-scope",
+      "prompt": "我只需要模型的外观摄影图。画面中的形体、材料、接触与可见稳定关系都能判断，内部材料配方和底座内部加工细节不可见。请按当前任务验收。",
+      "expected_output": "先确认任务核心要求均有可见证据，将内部配方及隐藏加工细节按其对应制造判断记入附加说明；外观核心项全部满足时总体可为 PASS。若另有关键支撑不足以解释可见稳定关系，该项仍按核心标准记录 REVISE 或 UNVERIFIED 并影响总体。检查实际记录的核心项与汇总一致，用户审美接受另行记录。",
+      "files": []
+    },
+    {
+      "id": "native-source-relations-fountain",
+      "prompt": "使用 $siuyu-lightbox-still-life，把附件里的喷泉雕塑做成光台档案静物图。",
+      "expected_output": "实际查看来源，以雕塑本体为对象，逐项记录组成、装配、承托和产生关系及可见证据。用设备停止运行后的部件归属检查清单，雕刻体量、开口、纹样与可确认接合形成模型范围；台座依据接触与归属单列。模型与纸面研究沿用这组结构，材料与定格方式随后选择；来源过程按用户明确的场景目标另行确定呈现方式。",
+      "files": []
+    },
+    {
+      "id": "native-source-relations-fire-performer",
+      "prompt": "使用 $siuyu-lightbox-still-life，以附件中的表演者为主体设计一件台面人物模型，风格和材料由你选择。",
+      "expected_output": "从实际来源识别人、服装、持物与活动现象之间的关系，分别记录内容范围。模型按当前人物识别目标设计身体、服装及所选姿态，相关道具说明独立身份和采用依据；场景中的活动按本轮明确范围与载体安排。先完成关系和范围判断，再选工艺、材料与承托。",
+      "files": []
+    },
+    {
+      "id": "native-source-relations-locomotive",
+      "prompt": "使用 $siuyu-lightbox-still-life，依据附件里的车头生成一张模型档案静物图。",
+      "expected_output": "以车头任务和来源归属确定车体、驾驶室、烟囱、轮组及可见相连构件的模型范围。纸面研究展开这些部件的外轮廓、构造和局部细节；完整现场图面或场景模型按明确的用户目标选择。先保存来源范围，再设计工艺与承托，并逐项核对实体和图稿内容。",
+      "files": []
+    },
+    {
+      "id": "native-source-relations-pouring",
+      "prompt": "使用 $siuyu-lightbox-still-life，把附件中的壶作为主角，做一张器物档案静物图。",
+      "expected_output": "先观察壶、手、杯子和内容之间的实际关系，以器物任务确定壶身、壶嘴、壶把、壶口及可见附件的归属。主体模型与新绘制的器形研究共用该部件清单，独立道具说明自身身份和用途；具体材料随后选择。用户明确要求的操作场景按该场景目标建立作用条件。",
+      "files": []
+    },
+    {
+      "id": "native-existing-effect-object",
+      "prompt": "使用 $siuyu-lightbox-still-life，保留附件中这套现成造型配件的外观，生成一张光台档案图。",
+      "expected_output": "以现成物件的来源和可见构造确定各件身份、数量、材料外观及装配关系，按原物要求保存其造型和配件范围。content_analysis 明确原物依据，逐件安排尺度与承托；实际物件的造型主题与其实体属性分别理解。",
+      "files": []
+    },
+    {
+      "id": "native-depicted-action-photograph",
+      "prompt": "使用 $siuyu-lightbox-still-life，把这张表演照片做成光台上的照片纸，保留整张照片的内容。",
+      "expected_output": "完整照片内容按用户要求保留在照片纸图面，包括人物、活动与背景之间的原有关系。台面物件是照片纸及选用道具，图面内容与其物理载体分别记录；content_analysis 及 preserve 共同落实该范围，验收检查图面完整性、纸面附着和台面接触。",
+      "files": []
+    },
+    {
+      "id": "native-default-photo-request",
+      "prompt": "使用 $siuyu-lightbox-still-life 生成图片！",
+      "expected_output": "实际查看本轮原始照片，采用垂直俯拍的光台研究静物作为默认视觉目标。从来源建立有限的主体部件与附件清单，选择与其具体特征对应的图稿、样片或有用途的道具，在强透光平铺或柔光纸层方向中组织实体与材料层次。全部候选先核对内容采用依据，再选择造型、尺度和工艺。生成后从原请求与来源分别检查主体范围和完整视觉目标，制作表现另行核对。",
+      "files": []
+    },
+    {
+      "id": "native-default-request-with-previous-version",
+      "prompt": "使用最新版 $siuyu-lightbox-still-life，根据这次上传的原始照片重新生成图片。工作目录里有上一版的图片与方向记录。",
+      "expected_output": "先从本轮原始照片与简短请求确认主体范围及光台研究静物目标，再按本任务明确采用的范围复核已有版本。用户确认的布局或外观按其实际范围使用，模型部件和新绘制研究图以当前来源为依据。自主搭配落实主体与研究或材料之间的可见对应；来源范围、视觉目标和制作表现分别复查。",
+      "files": []
+    },
+    {
+      "id": "native-requested-performance-scene",
+      "prompt": "使用 $siuyu-lightbox-still-life，依据这张表演照片设计整场表演的微缩场景，把表演者、道具、火焰形态和舞台作为同一套场景模型表达。",
+      "expected_output": "按用户明确的整场表演目标选择复合场景范围，分别识别人物、道具、活动与舞台之间的关系。将各部分设计为同一套有尺度、连续构造和稳定承托的模型，材料根据各自造型选择；成图检查完整场景范围及各实体的可见构造。",
+      "files": []
+    },
+    {
+      "id": "native-fresh-task-source-selection",
+      "prompt": "使用 $siuyu-lightbox-still-life，根据本次附件生成图片！",
+      "expected_output": "以当前附件和当前请求作为任务输入，包内样例用于了解方向字段。先实际查看附件并保存主体部件及图稿范围，从该范围发展具体设计；历史成图、方向和评审在用户指定复用或本任务延续已确定版本时才读取。工作目录中的其他任务资料保持其原有用途。",
+      "files": []
+    },
+    {
+      "id": "native-model-content-before-fabrication",
+      "prompt": "把这张现场照片中的雕塑做成一件台面模型。材质、风格和搭配由你选择。",
+      "expected_output": "先识别来源中的本体、附件、承托、产生现象和图面内容，记录各区域的关系类别及可见证据，并用状态变化辅助判断。依据确认的部件清单设计模型及相应研究材料。候选的采用依据分别落实到主体部件、独立物件用途或用户原话中的场景要求，通过范围判断后再比较创意和工艺。模型和图稿沿用所确定的内容范围。",
+      "files": []
+    },
+    {
+      "id": "native-model-study-shared-subject",
+      "prompt": "把附件中的主体做成桌面模型，旁边配一张你设计的结构研究稿。",
+      "expected_output": "先保存来源支持的主体部件清单，模型与新绘制的结构研究稿共用该范围。为图稿选择整体外轮廓、局部结构、表面纹样或该范围内的造型推演，在 target_scope 和 pairings 中逐张说明研究内容。完整照片和用户明确指定的场景图按各自任务范围呈现，成图的内容核对先于纸张材料与承托检查。",
+      "files": []
+    },
+    {
+      "id": "skill-maintenance-user-test-handoff",
+      "prompt": "根据我贴的测试结果修改 siuyu-lightbox-still-life Skill；这个对话用于调教 Skill，图片测试由我另开对话进行。继续工作。",
+      "expected_output": "将继续工作解释为延续 Skill 维护及既定测试分工，核对当前文件与相关修改后完成规则调整、文本和静态校验、同步与交付。验证记录按实际执行阶段报告；图像测试仅在用户于维护任务中明确批准后执行，本次在文件交付完成时停止。",
+      "files": []
+    },
+    {
+      "id": "native-mechanical-subject-recognition",
+      "prompt": "使用 $siuyu-lightbox-still-life，把这张正在运行的风扇照片做成桌面模型档案图。",
+      "expected_output": "实际查看来源，按可见证据识别扇叶、轮毂、护网、支架与底座等结构，并分别判断组成、装配、承托和运动关系。状态变化检查确认停止运行后仍属于设备的部件；模型与结构研究图依据这些部件设计，拍摄时记录的过程按相应来源类别处理。未见的内部机构保持未确认。",
+      "files": []
+    },
+    {
+      "id": "native-existing-artifact-component-recognition",
+      "prompt": "附件是一件已经制成的桌面工艺摆件，弧形透明构件是它的装配部件。请保留这件原物的完整外观，生成光台档案图。",
+      "expected_output": "结合用户的原物说明和实际图像，以该摆件自身的材质边界、固定位置与装配关系确认部件。完整外观包括来源支持的弧形透明构件，其造型主题与真实物件身份分别理解；保留原物范围，安排整体承托和摄影，制作事实超出资料的部分保持未确认。",
+      "files": []
+    },
+    {
+      "id": "native-explicit-single-object-composition",
+      "prompt": "使用 $siuyu-lightbox-still-life，把这个商品做成单件主视觉，画面只保留商品和大面积色场。",
+      "expected_output": "以用户明确的单件目标确定内容和取景，可选择 color_field_hero 并为商品设计底面、光、负形和色场。保留对应来源的身份、结构及外观要求，按俯拍和实物摄影组织摆放；验收使用这一明确目标。",
+      "files": []
+    },
+    {
+      "id": "native-archive-visual-target-review",
+      "prompt": "检查这张使用 $siuyu-lightbox-still-life 生成的图片是否达到了这项 Skill 的默认效果。",
+      "expected_output": "从原请求和来源独立确定默认光台研究目标，再看成图。来源范围逐件核对本体、研究材料与搭配依据；视觉目标检查垂直俯拍、光台材料层次，以及主体和研究或辅助材料之间的可见对应。模型制作、材料与接触另列核心项，按实际图像记录 PASS、REVISE 或 UNVERIFIED，汇总保留全部核心结论。",
+      "files": []
+    }
+  ]
+}
