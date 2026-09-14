@@ -1,0 +1,89 @@
+{
+  "intent": "Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation. Make a carefully art-directed physical product research photograph. A stainless-steel coffee spoon and its precise contour studies, composed with quiet product-photography discipline. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading.",
+  "operation": "concept",
+  "inputs": [],
+  "decisions": {
+    "scope": "open",
+    "content_scope": {
+      "kind": "subject_study",
+      "basis": "The user asks to revise the illustrated Skill examples with 16:9 and 9:16 formats, clear recognizable real-world structures, a clean continuous tabletop and deliberate composition. The existing illustrated example categories include the stated study or hand action."
+    },
+    "identity_sources": [],
+    "subject_basis": "One familiar unbranded stainless-steel demitasse coffee spoon, approximately 120 mm long: a conventional shallow oval bowl, smooth continuous rounded rim, a naturally tapered narrow neck and one slim straight handle ending in a softly rounded tip. The bowl is visibly hollow and faces upward. The handle is gently curved in elevation while its plan-view centerline remains straight. The spoon is one continuous formed metal utensil with a polished bowl and a subtly satin-finished handle, a consistent thin rim and ordinary usable proportions.",
+    "scene": {
+      "carrier": "Exactly three study pieces: one complete stainless-steel coffee spoon and two thin translucent tracing-paper sheets carrying geometric graphite contour and bowl-section studies of that same spoon.",
+      "state": "static",
+      "intent": "A stainless-steel coffee spoon and its precise contour studies, composed with quiet product-photography discipline",
+      "support": "The listed objects have the ordinary material thickness and stable contacts of their recognizable product type. Paper rests on the same continuous horizontal surface; any lifted piece is supported by the stated hands. The physical subject preserves its complete functional parts and continuous construction.",
+      "activity": []
+    },
+    "candidates": [
+      {
+        "id": "contour-study",
+        "source_relations": [
+          "subject_structure",
+          "subject_surface",
+          "fabrication_material"
+        ],
+        "lens": "structure and material correspondence",
+        "cue": "One familiar unbranded stainless-steel demitasse coffee spoon, approximately 120 mm long: a conventional shallow oval bowl, smooth continuous rounded rim, a naturally tapered narrow neck and one slim straight handle ending in a softly rounded tip. The bowl is visibly hollow and faces upward. The handle is gently curved in elevation while its plan-view centerline remains straight. The spoon is one continuous formed metal utensil with a polished bowl and a subtly satin-finished handle, a consistent thin rim and ordinary usable proportions.",
+        "basis": "A familiar physical product with a finite functional structure provides the subject; its studies repeat the same outline, openings and material responses.",
+        "proposal": "The complete spoon is the strongest, largest and most reflective object. One translucent sheet carries an accurate modestly sized top-view graphite outline of its oval bowl, tapered neck and straight rounded handle. A smaller second sheet has a simple graphite oval and a shallow curved bowl cross-section. The two papers partially overlap across part of the lower graphite study, creating visibly denser transmission and softened covered lines. Align the long physical spoon and its smaller drawing into one gently staggered visual sequence. The surrounding paper remains blank.",
+        "contribution": "Recognizable real object, legible related studies, refined material hierarchy and a coherent composed photograph.",
+        "scene_fit": "Use a sophisticated 16:9 landscape layout with a single connected asymmetrical group occupying about two thirds of the image width. Place the real spoon on a gentle lower-left to upper-right diagonal in the left half, its complete silhouette separated from the paper by a narrow luminous interval. Its bowl is near the upper center-left and its handle extends toward the lower-left. The large tracing sheet sits offset to the right, rotated about six degrees, with the smaller sheet partly beneath its lower-left corner. The real spoon dominates; the drawing is visibly smaller and lighter. Open tabletop at the upper-left and lower-right balances the compact grouping. Every study piece and all meaningful contours fit completely in frame. Camera directly overhead, optical axis perpendicular to the horizontal tabletop, sensor parallel to it. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading."
+      },
+      {
+        "id": "surface-study",
+        "source_relations": [
+          "subject_surface"
+        ],
+        "lens": "surface emphasis",
+        "cue": "The same physical object can be studied through its finish.",
+        "basis": "The chosen real product retains the stated construction and surface finish.",
+        "proposal": "Emphasize the same subject through one close surface comparison and a smaller corresponding study.",
+        "contribution": "Concentrate attention on one material response.",
+        "scene_fit": "Keep the same recognizable object and continuous tabletop, adapting the grouping to the requested image orientation."
+      }
+    ],
+    "selected": [
+      "contour-study"
+    ],
+    "selection_reason": "The selected grouping makes the real object recognizable first, connects each study to a specific structural feature and organizes clear visual hierarchy within the requested format."
+  },
+  "design": {
+    "idea": "A stainless-steel coffee spoon and its precise contour studies, composed with quiet product-photography discipline",
+    "pairings": [
+      {
+        "sources": [],
+        "decisions": [
+          "contour-study"
+        ],
+        "relation": "The complete spoon is the strongest, largest and most reflective object. One translucent sheet carries an accurate modestly sized top-view graphite outline of its oval bowl, tapered neck and straight rounded handle. A smaller second sheet has a simple graphite oval and a shallow curved bowl cross-section. The two papers partially overlap across part of the lower graphite study, creating visibly denser transmission and softened covered lines. Align the long physical spoon and its smaller drawing into one gently staggered visual sequence. The surrounding paper remains blank.",
+        "purpose": "Connect the subject and its related study within one deliberate material composition."
+      }
+    ],
+    "composition": "Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation. Use a sophisticated 16:9 landscape layout with a single connected asymmetrical group occupying about two thirds of the image width. Place the real spoon on a gentle lower-left to upper-right diagonal in the left half, its complete silhouette separated from the paper by a narrow luminous interval. Its bowl is near the upper center-left and its handle extends toward the lower-left. The large tracing sheet sits offset to the right, rotated about six degrees, with the smaller sheet partly beneath its lower-left corner. The real spoon dominates; the drawing is visibly smaller and lighter. Open tabletop at the upper-left and lower-right balances the compact grouping. Every study piece and all meaningful contours fit completely in frame. Camera directly overhead, optical axis perpendicular to the horizontal tabletop, sensor parallel to it. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading.",
+    "materials": "The spoon is credible formed stainless steel: a smooth shallow hollow bowl with a continuous thin rounded rim, a gradual neck transition and a slim satin handle. A broad neutral reflection sweeps through the concave bowl and a darker neighboring reflection makes its depth legible; the fine brushed handle keeps subtle directional texture. Two tracing-paper sheets have delicate fibers, clean thin edges and geometric graphite drawings. The upper sheet attenuates and softens lower graphite only within the actual overlap. The warm-white diffusing tabletop stays clean and smooth, with short soft shadows at the actual spoon and paper contact points.",
+    "palette": "A controlled neutral palette: luminous warm-white tabletop, pale translucent paper, graphite and the stated authentic product colors. Reflection brightness and material density set a clear primary and secondary hierarchy. Color accents, when specified, stay on their stated materials."
+  },
+  "photography": {
+    "profile": "diffused_paper_archive",
+    "camera_format": "A digital product photograph delivered as an exact 16:9 output crop, 2048 by 1152 pixels.",
+    "shot_scale": "Use a sophisticated 16:9 landscape layout with a single connected asymmetrical group occupying about two thirds of the image width. Place the real spoon on a gentle lower-left to upper-right diagonal in the left half, its complete silhouette separated from the paper by a narrow luminous interval. Its bowl is near the upper center-left and its handle extends toward the lower-left. The large tracing sheet sits offset to the right, rotated about six degrees, with the smaller sheet partly beneath its lower-left corner. The real spoon dominates; the drawing is visibly smaller and lighter. Open tabletop at the upper-left and lower-right balances the compact grouping. Every study piece and all meaningful contours fit completely in frame.",
+    "viewpoint": "Exact perpendicular overhead view; the sensor is parallel to the continuous horizontal tabletop. Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation.",
+    "focus_and_depth": "Keep the recognizable subject structure, required material edges and corresponding paper study readable at delivery size. The main subject has a crisp coherent silhouette; scattering through covering paper explains the softer covered graphite.",
+    "visible_result": "Create an actual 2048 by 1152 pixel photograph, exact 16:9 aspect ratio, landscape orientation. A recognizable physical object with clear construction, a clean tabletop filling every image edge, intentional visual hierarchy and the stated related study.",
+    "lighting_setup": "A broad softly luminous 5000 K diffusion tabletop supplies restrained transmitted paper light. A large overhead-left diffusion panel creates a continuous neutral reflection across the hollow spoon bowl, while a narrow reflected dark field describes the interior curvature. Gentle fill keeps the satin handle and thin paper edges readable. All lighting equipment belongs beyond the photographed field.",
+    "exposure_intent": "Retain concave bowl detail, a crisp thin rim, soft satin texture and the subtle density difference between single paper and overlap."
+  },
+  "review_targets": [
+    "The actual bitmap has exact 16:9 aspect ratio.",
+    "The stated familiar object is immediately recognizable through complete continuous functional parts and plausible manufacture.",
+    "The clean continuous tabletop fills every canvas edge and corner.",
+    "The complete image has an evident primary subject, deliberate grouping and useful negative space.",
+    "The real spoon has a shallow hollow oval bowl, a smooth neck transition and a complete usable handle, with consistent metal thickness.",
+    "The graphite top-view outline corresponds to the same spoon parts and proportions.",
+    "Paper overlap shows denser transmission and softer covered graphite with coherent physical boundaries.",
+    "The metal reflection describes a concave bowl and fine satin handle; all objects have credible stable contact."
+  ]
+}
