@@ -1,0 +1,74 @@
+{
+  "case_id": "03-porcelain-cup",
+  "orientation": "portrait",
+  "version": "v1",
+  "recorded_at_utc": "2026-09-13T13:58:52.746416+00:00",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "operation": "concept",
+    "image_inputs": [],
+    "request_file": "image-job.json",
+    "request_sha256": "bac318b9c07615c9f66d40a37cbaff63edc9159791c17785b89ec935aee55ab2",
+    "direction_file": "direction.json",
+    "direction_sha256": "7db67dc1d9f25705e59110f32e29d7d00ddc4db711e1fdeac25d96a31c8d44e7",
+    "model_identifier": "not returned by tool",
+    "native_output_basename": "exec-63164adc-b371-48b1-9365-78ae21bbdf7a.png"
+  },
+  "output": {
+    "file": "image.png",
+    "sha256": "e3cb1fd39ea04de180af3022f64a5b1a8aaad033a9ad9b953cca24559c4ce933",
+    "width": 941,
+    "height": 1672,
+    "target_aspect_ratio": "9:16",
+    "long_edge_rounding_delta_pixels": 0.8888888888889142,
+    "pixel_handling": "Byte-preserving copy of native generated PNG"
+  },
+  "visual_review": {
+    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "core_checks": [
+      {
+        "position": "整幅画幅",
+        "observed": "原生 PNG 为 941×1672，目标 9:16；长边相对 16/9 比例的整数像素取整差为 0.888889 像素。",
+        "requirement": "横竖方向符合请求，保留实际原生像素并记录与目标比例的取整差。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "瓷杯与杯碟结构",
+        "observed": "白瓷杯有连续圆口与侧把，稳定置于完整圆形杯碟中央；杯内盛有咖啡。",
+        "requirement": "杯与杯碟组成辨识清楚、接触稳定的现实器物。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "整体色场与构图",
+        "observed": "完整白色器物组在哑光灰蓝桌面上形成清楚主视觉，圆形轮廓、侧把和周围留白共同组织画面。",
+        "requirement": "色场服务于完整器物结构与明确主次。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "材质与接触",
+        "observed": "白瓷釉面高光连续，杯碟相接处与桌面接触处保持细软阴影。",
+        "requirement": "釉面、哑光桌面和接触具有各自可信光响应。",
+        "conclusion": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "additional_checks": [
+      {
+        "topic": "Physical fabrication",
+        "conclusion": "UNVERIFIED",
+        "observed": "The image supports a judgment about visible construction and material appearance. Physical manufacturing measurements and material composition were not supplied."
+      },
+      {
+        "topic": "Output dimensions",
+        "conclusion": "UNVERIFIED",
+        "observed": "The tool returned its native raster size. Requested numerical rendering dimensions are design intent; the output section records the actual delivered pixels."
+      },
+      {
+        "topic": "Observed contents",
+        "conclusion": "PASS",
+        "observed": "The generated cup contains espresso. This is a plausible cup-content choice within the familiar tableware scene; the porcelain interior floor is covered and is not visually verified."
+      }
+    ]
+  },
+  "user_acceptance": "PENDING"
+}
