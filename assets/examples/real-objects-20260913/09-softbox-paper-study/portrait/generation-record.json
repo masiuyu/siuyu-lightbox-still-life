@@ -11,8 +11,7 @@
     "request_sha256": "37a00e15d5949445555ab0ba522f1106d66770f167ee09acb984ae4cabe5ec73",
     "direction_file": "direction.json",
     "direction_sha256": "4112a9e9792a4f3a40679c82c2c44ee7da268fc59922b2f2e07eda9846e19ecf",
-    "model_identifier": "not returned by tool",
-    "native_output_basename": "exec-e88d1f05-7da5-4ff8-8ab2-bb83ec04b509.png"
+    "model_identifier": "not returned by tool"
   },
   "output": {
     "file": "image.png",
@@ -24,7 +23,7 @@
     "pixel_handling": "Byte-preserving copy of native generated PNG"
   },
   "visual_review": {
-    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "method": "Visual inspection of the generated image, focusing on composition, object structure, lighting and material details.",
     "core_checks": [
       {
         "position": "整幅画幅",
@@ -70,6 +69,5 @@
         "observed": "The tool returned its native raster size. Requested numerical rendering dimensions are design intent; the output section records the actual delivered pixels."
       }
     ]
-  },
-  "user_acceptance": "PENDING"
+  }
 }
