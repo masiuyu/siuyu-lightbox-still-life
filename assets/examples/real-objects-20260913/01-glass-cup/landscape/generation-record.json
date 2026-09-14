@@ -11,8 +11,7 @@
     "request_sha256": "13c776d56cdb3387fd2360388ddbd0ea3f718e9de82523834605580227b8ef3b",
     "direction_file": "direction.json",
     "direction_sha256": "9fb0f606a831fefa31fcf989889eef6190b289750f31d39aa14668a83aac801e",
-    "model_identifier": "not returned by tool",
-    "native_output_basename": "exec-6b23b6ff-c177-4aad-939e-b8a209ed4320.png"
+    "model_identifier": "not returned by tool"
   },
   "output": {
     "file": "image.png",
@@ -24,7 +23,7 @@
     "pixel_handling": "Byte-preserving copy of native generated PNG"
   },
   "visual_review": {
-    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "method": "Visual inspection of the generated image, focusing on composition, object structure, lighting and material details.",
     "core_checks": [
       {
         "position": "整幅画幅",
@@ -69,6 +68,5 @@
         "observed": "The drawing includes generated cup-study labels and dimensions. They are authored concept annotations rather than physical measurements."
       }
     ]
-  },
-  "user_acceptance": "PENDING"
+  }
 }
