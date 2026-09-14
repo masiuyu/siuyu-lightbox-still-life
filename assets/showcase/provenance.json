@@ -8,17 +8,10 @@
   "tool": "image_gen.imagegen",
   "model_identifier": "not returned by tool",
   "image_input_count": 2,
-  "reference_use": "Two user-supplied frames informed transmitted-light behavior and density relationships. The still-life arrangement and graphite study were specified in the generation direction.",
-  "reference_files": [
-    "KIMI K3 — an exploration of intelligence as an invisible force. a launch film created in collabo.jpg",
-    "KIMI K3 — an exploration of intelligence as an invisible force. a launch film created in collabo-4.jpg"
-  ],
-  "reference_files_in_distribution": false,
-  "source_request_sha256": "d149b80db87044009da92ff0c1f50a21e1abfff4b7e563b28eddd3d9a25f9225",
-  "source_direction_sha256": "ef9919bb0b8d955451cde73142a204c74f2cbc08d67ccbf0b13516265661490e",
+  "reference_use": "Two lighting references informed transmitted light, object shading and the appearance of overlapping translucent paper.",
   "visual_review_status": "PASS",
   "visual_review": {
-    "method": "Main assistant visually compared the actual generated bitmap with both supplied references, concentrating on whole-frame lighting hierarchy, transmitting layers and realistic physical structures.",
+    "method": "Visual inspection of lighting, translucent layers, object structure and composition in the generated image.",
     "core_checks": [
       {
         "position": "整幅底光与实体明暗",
@@ -71,6 +64,5 @@
       }
     ]
   },
-  "user_acceptance": "PENDING",
-  "record_scope": "Portable description of an existing generated showcase image. This file is provenance, not an executable generation request."
+  "record_scope": "Showcase image metadata and visual observations."
 }
