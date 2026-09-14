@@ -1,0 +1,69 @@
+{
+  "case_id": "08-cotton-paper-embossing",
+  "orientation": "portrait",
+  "version": "v1",
+  "recorded_at_utc": "2026-09-13T14:08:08.215237+00:00",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "operation": "concept",
+    "image_inputs": [],
+    "request_file": "image-job.json",
+    "request_sha256": "d0df126e5f9a27bd51832f318fce348dc7c8624374e561d68d6adc52f4a294fd",
+    "direction_file": "direction.json",
+    "direction_sha256": "b41ff366e8e45464789bec30e2288f5939cf63fc8832b9b1a0693effadf198cb",
+    "model_identifier": "not returned by tool",
+    "native_output_basename": "exec-59bf4204-ea5d-41ab-a7a6-44fac6f370b9.png"
+  },
+  "output": {
+    "file": "image.png",
+    "sha256": "270a36e157efbe7ae26b68b865820f89ba03c1a7ba174384c254ff3bdcbaa963",
+    "width": 941,
+    "height": 1672,
+    "target_aspect_ratio": "9:16",
+    "long_edge_rounding_delta_pixels": 0.8888888888889142,
+    "pixel_handling": "Byte-preserving copy of native generated PNG"
+  },
+  "visual_review": {
+    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "core_checks": [
+      {
+        "position": "整幅画幅",
+        "observed": "原生 PNG 为 941×1672，目标 9:16；长边相对 16/9 比例的整数像素取整差为 0.888889 像素。",
+        "requirement": "横竖方向符合请求，保留实际原生像素并记录与目标比例的取整差。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "完整字形结构",
+        "observed": "单个大写衬线 A 具有连续双斜干、横杠、三角字腔与底部衬线，浅压纹跟随同一纸面。",
+        "requirement": "常规可辨字形与同一张厚纸的浅层压纹同时成立。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "材质与侧光",
+        "observed": "棉纸纤维、压纹侧缘与压缩边界可见，侧向软光形成细窄连贯明暗，背衬纸具有不同明度。",
+        "requirement": "浅层工艺、纸纤维与边缘厚度具有可信尺度和光响应。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "整幅构图",
+        "observed": "完整厚纸卡片与灰色背衬均置于连续浅色桌面内，字形位置与空白纸面形成清楚主次。",
+        "requirement": "横竖各自构图，完整卡片和必要背衬边界有桌面余量。",
+        "conclusion": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "additional_checks": [
+      {
+        "topic": "Physical fabrication",
+        "conclusion": "UNVERIFIED",
+        "observed": "The image supports a judgment about visible construction and material appearance. Physical manufacturing measurements and material composition were not supplied."
+      },
+      {
+        "topic": "Output dimensions",
+        "conclusion": "UNVERIFIED",
+        "observed": "The tool returned its native raster size. Requested numerical rendering dimensions are design intent; the output section records the actual delivered pixels."
+      }
+    ]
+  },
+  "user_acceptance": "PENDING"
+}

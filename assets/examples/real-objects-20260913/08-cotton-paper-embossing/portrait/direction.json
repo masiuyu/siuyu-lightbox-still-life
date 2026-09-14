@@ -1,0 +1,91 @@
+{
+  "intent": "Create an actual 1152 by 2048 pixel photograph, exact 9:16 aspect ratio, portrait orientation. Make a carefully art-directed physical product research photograph. A refined cotton-paper embossing study with one familiar uppercase serif A. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading.",
+  "operation": "concept",
+  "inputs": [],
+  "decisions": {
+    "scope": "open",
+    "content_scope": {
+      "kind": "subject_study",
+      "basis": "The user asks to revise the illustrated Skill examples with 16:9 and 9:16 formats, clear recognizable real-world structures, a clean continuous tabletop and deliberate composition. The existing illustrated example categories include the stated study or hand action."
+    },
+    "identity_sources": [],
+    "subject_basis": "One rectangular warm-white cotton-paper card bearing a single large classic uppercase serif A as a shallow blind embossing. The letter has two straight diagonal stems, a continuous crossbar, a clear triangular counter and conventional small serifs. It is physically pressed into the same sheet with fine compressed fiber edges. The card has ordinary paper thickness and clean straight cut edges.",
+    "scene": {
+      "carrier": "Two paper pieces: one complete thick cotton-paper card with a single embossed uppercase A, resting partly over a thin pale-gray paper backing sheet.",
+      "state": "static",
+      "intent": "A refined cotton-paper embossing study with one familiar uppercase serif A",
+      "support": "The listed objects have the ordinary material thickness and stable contacts of their recognizable product type. Paper rests on the same continuous horizontal surface; any lifted piece is supported by the stated hands. The physical subject preserves its complete functional parts and continuous construction.",
+      "activity": []
+    },
+    "candidates": [
+      {
+        "id": "contour-study",
+        "source_relations": [
+          "subject_structure",
+          "subject_surface",
+          "fabrication_material"
+        ],
+        "lens": "structure and material correspondence",
+        "cue": "One rectangular warm-white cotton-paper card bearing a single large classic uppercase serif A as a shallow blind embossing. The letter has two straight diagonal stems, a continuous crossbar, a clear triangular counter and conventional small serifs. It is physically pressed into the same sheet with fine compressed fiber edges. The card has ordinary paper thickness and clean straight cut edges.",
+        "basis": "A familiar physical product with a finite functional structure provides the subject; its studies repeat the same outline, openings and material responses.",
+        "proposal": "The familiar letterform is the clear focal structure. Shallow relief edges and compressed cotton fibers describe the A and its triangular counter. A small offset of the backing sheet explains layer thickness and contact. The large quiet paper field and carefully placed letter give the close study a restrained typographic hierarchy.",
+        "contribution": "Recognizable real object, legible related studies, refined material hierarchy and a coherent composed photograph.",
+        "scene_fit": "9:16 overhead close study. A complete portrait-oriented cotton card occupies the middle two thirds of the frame, with a single large embossed A in its upper-middle region and calm paper space below. A thin offset gray backing is visible along two edges. Keep the full paper corners within a continuous tabletop margin and show the shallow letterform, triangular counter and fibers clearly. Camera directly overhead, optical axis perpendicular to the horizontal tabletop, sensor parallel to it. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading."
+      },
+      {
+        "id": "surface-study",
+        "source_relations": [
+          "subject_surface"
+        ],
+        "lens": "surface emphasis",
+        "cue": "The same physical object can be studied through its finish.",
+        "basis": "The chosen real product retains the stated construction and surface finish.",
+        "proposal": "Emphasize the same subject through one close surface comparison and a smaller corresponding study.",
+        "contribution": "Concentrate attention on one material response.",
+        "scene_fit": "Keep the same recognizable object and continuous tabletop, adapting the grouping to the requested image orientation."
+      }
+    ],
+    "selected": [
+      "contour-study"
+    ],
+    "selection_reason": "The selected grouping makes the real object recognizable first, connects each study to a specific structural feature and organizes clear visual hierarchy within the requested format."
+  },
+  "design": {
+    "idea": "A refined cotton-paper embossing study with one familiar uppercase serif A",
+    "pairings": [
+      {
+        "sources": [],
+        "decisions": [
+          "contour-study"
+        ],
+        "relation": "The familiar letterform is the clear focal structure. Shallow relief edges and compressed cotton fibers describe the A and its triangular counter. A small offset of the backing sheet explains layer thickness and contact. The large quiet paper field and carefully placed letter give the close study a restrained typographic hierarchy.",
+        "purpose": "Connect the subject and its related study within one deliberate material composition."
+      }
+    ],
+    "composition": "Create an actual 1152 by 2048 pixel photograph, exact 9:16 aspect ratio, portrait orientation. 9:16 overhead close study. A complete portrait-oriented cotton card occupies the middle two thirds of the frame, with a single large embossed A in its upper-middle region and calm paper space below. A thin offset gray backing is visible along two edges. Keep the full paper corners within a continuous tabletop margin and show the shallow letterform, triangular counter and fibers clearly. Camera directly overhead, optical axis perpendicular to the horizontal tabletop, sensor parallel to it. The continuous clean warm-white tabletop extends beyond the image on all four sides and occupies every canvas edge and every corner. The photograph contains the finite listed study objects within that surface. Its illumination is softly transmitted through a smooth diffusing tabletop, with restrained surface reflections and fine local contact shading.",
+    "materials": "Warm-white cotton paper roughly half a millimeter thick has fine short visible fibers, clean cut edges and shallow physically pressed relief. The embossed uppercase A is the same paper material, with delicate side-lit highlights and narrow recess shadows. The thin pale-gray backing sheet has a crisp edge and stable contact. The luminous warm-white tabletop stays smooth and continuous around both full paper pieces.",
+    "palette": "A controlled neutral palette: luminous warm-white tabletop, pale translucent paper, graphite and the stated authentic product colors. Reflection brightness and material density set a clear primary and secondary hierarchy. Color accents, when specified, stay on their stated materials."
+  },
+  "photography": {
+    "profile": "diffused_paper_archive",
+    "camera_format": "A digital product photograph delivered as an exact 9:16 output crop, 1152 by 2048 pixels.",
+    "shot_scale": "9:16 overhead close study. A complete portrait-oriented cotton card occupies the middle two thirds of the frame, with a single large embossed A in its upper-middle region and calm paper space below. A thin offset gray backing is visible along two edges. Keep the full paper corners within a continuous tabletop margin and show the shallow letterform, triangular counter and fibers clearly.",
+    "viewpoint": "Exact perpendicular overhead view; the sensor is parallel to the continuous horizontal tabletop. Create an actual 1152 by 2048 pixel photograph, exact 9:16 aspect ratio, portrait orientation.",
+    "focus_and_depth": "Keep the complete embossed letter, its counter, nearby cotton fibers and necessary paper edges readable together.",
+    "visible_result": "Create an actual 1152 by 2048 pixel photograph, exact 9:16 aspect ratio, portrait orientation. A recognizable physical object with clear construction, a clean tabletop filling every image edge, intentional visual hierarchy and the stated related study.",
+    "focal_length_mm": 85,
+    "lens": "A rectilinear close-focusing prime lens for paper surface detail.",
+    "lighting_setup": "A broad neutral 5000 K lateral diffusion panel sends a restrained low-angle light across the cotton paper. Fine shallow highlights and recess shadows describe the pressed letter; soft fill retains detail. The continuous diffusing tabletop provides a quiet luminous surround.",
+    "support_and_motion": "Fixed overhead camera, static flat paper pieces and stable lighting."
+  },
+  "review_targets": [
+    "The image follows the requested 9:16 portrait format; record the native pixel dimensions and any integer-pixel rounding.",
+    "The stated familiar object is immediately recognizable through complete continuous functional parts and plausible manufacture.",
+    "The clean continuous tabletop fills every canvas edge and corner.",
+    "The complete image has an evident primary subject, deliberate grouping and useful negative space.",
+    "The A is a coherent conventional serif letterform with two stems, crossbar and triangular counter.",
+    "The relief is shallow embossing in one continuous cotton-paper sheet.",
+    "Fine fibers, consistent thickness and cut edges preserve realistic paper scale.",
+    "Side-light direction consistently reveals the letter relief, while both paper pieces have stable contact."
+  ]
+}
