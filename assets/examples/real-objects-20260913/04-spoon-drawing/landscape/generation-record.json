@@ -1,0 +1,69 @@
+{
+  "case_id": "04-spoon-drawing",
+  "orientation": "landscape",
+  "version": "v1",
+  "recorded_at_utc": "2026-09-13T13:58:52.801316+00:00",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "operation": "concept",
+    "image_inputs": [],
+    "request_file": "image-job.json",
+    "request_sha256": "e3c97cc68817f95e2ae3b6a0aead1957e879f87bc3c791080a6265e4bc59eedb",
+    "direction_file": "direction.json",
+    "direction_sha256": "e613b1fc2e8951fb977e7fa5477419731758b8033599d1d0d236d70f85eade50",
+    "model_identifier": "not returned by tool",
+    "native_output_basename": "exec-56365abe-069b-4e7e-8655-1ee8fda65b00.png"
+  },
+  "output": {
+    "file": "image.png",
+    "sha256": "b76715b13ce117358386048e569d60c924c6d447c6fee0c99859e336b92eb955",
+    "width": 1672,
+    "height": 941,
+    "target_aspect_ratio": "16:9",
+    "long_edge_rounding_delta_pixels": 0.8888888888889142,
+    "pixel_handling": "Byte-preserving copy of native generated PNG"
+  },
+  "visual_review": {
+    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "core_checks": [
+      {
+        "position": "整幅画幅",
+        "observed": "原生 PNG 为 1672×941，目标 16:9；长边相对 16/9 比例的整数像素取整差为 0.888889 像素。",
+        "requirement": "横竖方向符合请求，保留实际原生像素并记录与目标比例的取整差。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "实体结构",
+        "observed": "椭圆凹勺碗、连续细边、收窄勺颈与圆端长柄完整连贯，金属明暗反射表现凹面。",
+        "requirement": "现实咖啡勺具有可辨识的功能部件、连贯结构和可信表面。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "描绘动作与对应",
+        "observed": "右手以拇指、食指和中指控制木质铅笔，笔尖触及勺碗轮廓；另一只手稳住图纸，旁边完整实物提供对应。",
+        "requirement": "手部支撑、握笔与接触关系真实，图稿对应同一勺形。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "纸层与完整画面",
+        "observed": "两张图纸在主体右侧交叠，下层截面研究透出；完整勺与研究图共同置于连续桌面，手腕在操作位置进入。",
+        "requirement": "两层纸、完整主体与必要手部接触共同构成一次清楚的描绘动作。",
+        "conclusion": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "additional_checks": [
+      {
+        "topic": "Physical fabrication",
+        "conclusion": "UNVERIFIED",
+        "observed": "The image supports a judgment about visible construction and material appearance. Physical manufacturing measurements and material composition were not supplied."
+      },
+      {
+        "topic": "Output dimensions",
+        "conclusion": "UNVERIFIED",
+        "observed": "The tool returned its native raster size. Requested numerical rendering dimensions are design intent; the output section records the actual delivered pixels."
+      }
+    ]
+  },
+  "user_acceptance": "PENDING"
+}
