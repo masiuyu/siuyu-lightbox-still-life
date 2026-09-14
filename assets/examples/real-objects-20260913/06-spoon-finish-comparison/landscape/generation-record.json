@@ -1,0 +1,75 @@
+{
+  "case_id": "06-spoon-finish-comparison",
+  "orientation": "landscape",
+  "version": "v1",
+  "recorded_at_utc": "2026-09-13T13:58:53.023769+00:00",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "operation": "concept",
+    "image_inputs": [],
+    "request_file": "image-job.json",
+    "request_sha256": "7c26e936d20e4e54d0f82451d97582ddf41f4b0bc70aee3de3ffcc86efcdd743",
+    "direction_file": "direction.json",
+    "direction_sha256": "0d954550df04f25302d2b747b096f4d928afa449720ed35094ea06507febb7c9",
+    "model_identifier": "not returned by tool",
+    "native_output_basename": "exec-afcc05d9-cccd-461a-bea4-449799678f0a.png"
+  },
+  "output": {
+    "file": "image.png",
+    "sha256": "615798447d393445c6d405caa1d9cce3e6fbe4bae951c713c896126006371e8f",
+    "width": 1672,
+    "height": 941,
+    "target_aspect_ratio": "16:9",
+    "long_edge_rounding_delta_pixels": 0.8888888888889142,
+    "pixel_handling": "Byte-preserving copy of native generated PNG"
+  },
+  "visual_review": {
+    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "core_checks": [
+      {
+        "position": "整幅画幅",
+        "observed": "原生 PNG 为 1672×941，目标 16:9；长边相对 16/9 比例的整数像素取整差为 0.888889 像素。",
+        "requirement": "横竖方向符合请求，保留实际原生像素并记录与目标比例的取整差。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "实体结构",
+        "observed": "椭圆凹勺碗、连续细边、收窄勺颈与圆端长柄完整连贯，金属明暗反射表现凹面。",
+        "requirement": "现实咖啡勺具有可辨识的功能部件、连贯结构和可信表面。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "整体构图与桌面",
+        "observed": "主次物件形成完整分组，必要物件边界位于画面内，周围连续浅色桌面提供留白。",
+        "requirement": "整幅画面具有明确主体、完整必要物件及连续桌面余量。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "工艺比较",
+        "observed": "两片方形钢样分别呈现连续抛光反射与细拉丝；图稿上的两处排线与实物表面建立对应。",
+        "requirement": "样片与图稿比较当前咖啡勺的实际表面做法。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "覆盖排线",
+        "observed": "右下小型覆盖纸横过下方排线的右侧，覆盖部分比露出部分更浅更柔和。",
+        "requirement": "覆盖纸作用于真实存在的下层排线。",
+        "conclusion": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "additional_checks": [
+      {
+        "topic": "Physical fabrication",
+        "conclusion": "UNVERIFIED",
+        "observed": "The image supports a judgment about visible construction and material appearance. Physical manufacturing measurements and material composition were not supplied."
+      },
+      {
+        "topic": "Output dimensions",
+        "conclusion": "UNVERIFIED",
+        "observed": "The tool returned its native raster size. Requested numerical rendering dimensions are design intent; the output section records the actual delivered pixels."
+      }
+    ]
+  },
+  "user_acceptance": "PENDING"
+}
