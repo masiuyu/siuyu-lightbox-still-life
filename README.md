@@ -186,5 +186,3 @@ siuyu-lightbox-still-life/
 ## 配图与发布信息
 
 案例图片均为实际 AI 生成产物。九组横竖案例由文字概念生成；底光展示图使用两张用户提供的光线参考。详细情况见 [素材来源](ASSET_SOURCES.md)。当前版本为 `1.0.0-rc.1`。
-
-介绍的组织方式参考 [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)：先看作品，再了解安装、使用与适用场景。本页文案、品牌标记和配图说明为本项目编写。
