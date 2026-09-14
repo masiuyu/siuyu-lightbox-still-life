@@ -1,0 +1,471 @@
+{
+  "version": 6,
+  "projectId": "project_demo",
+  "manifestHash": "sha256:8e6609abc4558c0485a9fb0573e310b556ecae435204d28b86e1484189b95f6e",
+  "sourceRequest": "把这几个东西合成一张克制的档案灯箱画面，产品在这里。",
+  "deliverable": {
+    "kind": "generation-description",
+    "description": "一张以原始产品为主角的竖版档案灯箱画面",
+    "viewerAction": "先识别产品，再理解草图与制作工具的关系",
+    "viewingContext": "手机竖屏和全尺寸审核图"
+  },
+  "canvas": {
+    "width": 1600,
+    "height": 2000,
+    "aspectRatio": "4:5",
+    "orientation": "portrait"
+  },
+  "lightboxEnvironment": {
+    "mode": "hybrid_diffused_table",
+    "calibration": "visual_preset_not_physical_measurement",
+    "camera": {
+      "projection": "orthographic",
+      "tiltDeg": 1.2
+    },
+    "emissiveSurface": {
+      "state": "active",
+      "intensity": 0.82,
+      "temperatureKelvin": 4700
+    },
+    "topFill": {
+      "state": "active",
+      "intensity": 1.23,
+      "temperatureKelvin": 5200
+    },
+    "falloff": {
+      "model": "radial",
+      "edge": 0.18
+    },
+    "surface": {
+      "material": "frosted_acrylic",
+      "transmission": 0.9,
+      "roughness": 0.72,
+      "diffuserLayers": 2
+    },
+    "contactShadow": {
+      "model": "material_specific",
+      "opacityScale": 1,
+      "edgeFeather": 0.12
+    },
+    "materialResponses": {
+      "metal": {
+        "opticalModel": "opaque_reflective",
+        "renderStrategy": "native_material",
+        "contactShadow": "defined"
+      },
+      "paper": {
+        "opticalModel": "opaque_diffuse",
+        "renderStrategy": "native_material",
+        "contactShadow": "soft"
+      },
+      "tracingPaper": {
+        "opticalModel": "translucent",
+        "renderStrategy": "native_material",
+        "contactShadow": "soft"
+      },
+      "film": {
+        "opticalModel": "transmissive",
+        "renderStrategy": "native_material",
+        "contactShadow": "minimal"
+      },
+      "acrylicGlass": {
+        "opticalModel": "refractive_highlight",
+        "renderStrategy": "native_material",
+        "contactShadow": "minimal"
+      },
+      "sourcePreserved": {
+        "opticalModel": "source_preserved",
+        "renderStrategy": "exact_2d_layer",
+        "contactShadow": "source_alpha"
+      }
+    },
+    "evidenceIds": ["evidence_lightbox_environment"]
+  },
+  "approvedVisibleText": [],
+  "assetLocks": {
+    "mustUseExact": ["asset_product"],
+    "canTransform": ["asset_sketch"],
+    "referenceOnly": ["asset_style"],
+    "excluded": ["asset_duplicate"]
+  },
+  "referenceInfluencePlan": [
+    {
+      "assetId": "asset_style",
+      "scope": "layout",
+      "rule": "Use an asymmetrical reading path with one dominant event and protected negative space.",
+      "evidenceId": "evidence_reference_layout"
+    },
+    {
+      "assetId": "asset_style",
+      "scope": "lighting",
+      "rule": "Use broad transmitted light with restrained edge falloff.",
+      "evidenceId": "evidence_reference_lighting"
+    }
+  ],
+  "integrationPlan": {
+    "mode": "merge_all",
+    "intentEvidenceId": "evidence_merge_all",
+    "requiredVisibleAssetIds": ["asset_product", "asset_sketch"],
+    "layoutFamily": "asymmetric_cluster",
+    "overflowPolicy": "adapt_or_block",
+    "minimumVisibleShortEdgePx": 72,
+    "assignments": [
+      {
+        "assetId": "asset_product",
+        "hierarchy": "hero",
+        "carrier": "cutout",
+        "evidenceId": "evidence_merge_all",
+        "representation": {
+          "kind": "exact_cutout",
+          "form": "isolated_object",
+          "materialFamily": "source_preserved",
+          "renderStrategy": "exact_source_layer",
+          "lightBehavior": "source_preserved",
+          "transformationEvidenceId": "evidence_product_lock",
+          "scaleEvidenceId": "evidence_physical_size",
+          "scaleEvidenceStatus": "unknown",
+          "rationale": "The transparent product remains an exact isolated source layer."
+        }
+      },
+      {
+        "assetId": "asset_sketch",
+        "hierarchy": "supporting",
+        "carrier": "tracing_sheet",
+        "evidenceId": "evidence_merge_all",
+        "representation": {
+          "kind": "technical_drawing",
+          "form": "linework_overlay",
+          "materialFamily": "paper",
+          "renderStrategy": "authorized_source_derivation",
+          "lightBehavior": "translucent",
+          "transformationEvidenceId": "evidence_sketch_transformation",
+          "scaleEvidenceId": "evidence_sketch_scale",
+          "scaleEvidenceStatus": "unknown",
+          "rationale": "The user authorized the transformable sketch as a translucent technical drawing."
+        }
+      }
+    ],
+    "materialRelation": {
+      "dominant": "brushed silver lightbox surface",
+      "supporting": ["pale pink acrylic", "translucent archival paper"],
+      "relationship": "Every approved source carrier shares one light direction, physical contact field, and restrained material family."
+    },
+    "layoutRouting": {
+      "surfaceStyle": "luminous_neutral",
+      "selectionSignals": ["asset_count", "aspect_mix", "representation_mix", "material_evidence", "user_direction"],
+      "styleRationale": "A neutral luminous field preserves the exact product colors while allowing reflective and translucent carriers to remain materially distinct.",
+      "candidates": [
+        {
+          "templateId": "archive_research_v1",
+          "archetype": "paired_dialogue",
+          "density": "balanced",
+          "alignment": "optical_axis",
+          "scaleRhythm": "progressive",
+          "rationale": "Treat product and drawing as an unequal explanatory pair with one stable optical axis.",
+          "compositionGrammar": {
+            "rootAssetId": "asset_product",
+            "flow": "horizontal",
+            "readingOrder": ["asset_product", "asset_sketch"],
+            "groups": [
+              {
+                "groupId": "group_hero",
+                "role": "hero_event",
+                "arrangement": "singular",
+                "assetIds": ["asset_product"],
+                "purpose": "Keep the exact product as the singular optical event."
+              },
+              {
+                "groupId": "group_support",
+                "role": "support_cluster",
+                "arrangement": "singular",
+                "assetIds": ["asset_sketch"],
+                "purpose": "Let the approved drawing explain the product without equal-card treatment."
+              }
+            ],
+            "links": [
+              {
+                "parentAssetId": "asset_product",
+                "childAssetId": "asset_sketch",
+                "axis": "right",
+                "contact": "separated",
+                "spacing": "regular",
+                "purpose": "Carry the eye from the exact product to its approved drawing evidence."
+              }
+            ],
+            "negativeSpace": {
+              "mode": "single_breathing_field",
+              "anchorAssetId": "asset_product",
+              "purpose": "Protect one coherent breathing field around the paired event."
+            }
+          }
+        },
+        {
+          "templateId": "product_focus_v1",
+          "archetype": "asymmetric_constellation",
+          "density": "airy",
+          "alignment": "radial",
+          "scaleRhythm": "hero_dominant",
+          "rationale": "Keep the product dominant while the drawing acts as one quiet, semantically linked satellite.",
+          "compositionGrammar": {
+            "rootAssetId": "asset_product",
+            "flow": "radial",
+            "readingOrder": ["asset_product", "asset_sketch"],
+            "groups": [
+              {
+                "groupId": "group_hero",
+                "role": "hero_event",
+                "arrangement": "singular",
+                "assetIds": ["asset_product"],
+                "purpose": "Keep the exact product as the dominant optical event."
+              },
+              {
+                "groupId": "group_satellite",
+                "role": "support_cluster",
+                "arrangement": "singular",
+                "assetIds": ["asset_sketch"],
+                "purpose": "Use the drawing as a restrained explanatory satellite."
+              }
+            ],
+            "links": [
+              {
+                "parentAssetId": "asset_product",
+                "childAssetId": "asset_sketch",
+                "axis": "diagonal_down",
+                "contact": "separated",
+                "spacing": "open",
+                "purpose": "Preserve product breathing room before the viewer reaches process evidence."
+              }
+            ],
+            "negativeSpace": {
+              "mode": "single_breathing_field",
+              "anchorAssetId": "asset_product",
+              "purpose": "Keep one large, coherent field around the exact product."
+            }
+          }
+        },
+        {
+          "templateId": "art_lab_v1",
+          "archetype": "material_stage",
+          "density": "compact",
+          "alignment": "optical_axis",
+          "scaleRhythm": "modular",
+          "rationale": "Let the translucent drawing act as a physical material bridge under the exact product.",
+          "compositionGrammar": {
+            "rootAssetId": "asset_product",
+            "flow": "vertical",
+            "readingOrder": ["asset_product", "asset_sketch"],
+            "groups": [
+              {
+                "groupId": "group_hero",
+                "role": "hero_event",
+                "arrangement": "singular",
+                "assetIds": ["asset_product"],
+                "purpose": "Keep the exact product as the singular optical event."
+              },
+              {
+                "groupId": "group_material_bridge",
+                "role": "material_bridge",
+                "arrangement": "singular",
+                "assetIds": ["asset_sketch"],
+                "purpose": "Use the approved tracing-sheet representation as the physical bridge."
+              }
+            ],
+            "links": [
+              {
+                "parentAssetId": "asset_product",
+                "childAssetId": "asset_sketch",
+                "axis": "below",
+                "contact": "edge_touch",
+                "spacing": "tight",
+                "purpose": "Create one supported product-and-material event without arbitrary overlap."
+              }
+            ],
+            "negativeSpace": {
+              "mode": "perimeter_relief",
+              "anchorAssetId": "asset_product",
+              "purpose": "Keep a clean perimeter around the compact material event."
+            }
+          }
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "evidence_lightbox_environment",
+      "claim": "用户批准以混合柔光台统一表现透射层、纸张、金属与精确产品层。",
+      "status": "user-supplied",
+      "sourceAssetIds": ["asset_product", "asset_sketch"]
+    },
+    {
+      "id": "evidence_reference_layout",
+      "claim": "参考图观察到单一主事件、非对称阅读路径和保留负空间。",
+      "status": "observed",
+      "sourceAssetIds": ["asset_style"]
+    },
+    {
+      "id": "evidence_reference_lighting",
+      "claim": "参考图观察到宽幅透射柔光和克制的边缘衰减。",
+      "status": "observed",
+      "sourceAssetIds": ["asset_style"]
+    },
+    {
+      "id": "evidence_merge_all",
+      "claim": "用户要求把全部获批内容素材整合到同一张图中",
+      "status": "user-supplied",
+      "sourceAssetIds": ["asset_product", "asset_sketch"]
+    },
+    {
+      "id": "evidence_product_lock",
+      "claim": "原始产品必须保持轮廓、比例和表面标记不变",
+      "status": "user-supplied",
+      "sourceAssetIds": ["asset_product"]
+    },
+    {
+      "id": "evidence_physical_size",
+      "claim": "产品真实物理尺寸尚未提供",
+      "status": "unknown",
+      "sourceAssetIds": ["asset_product"]
+    },
+    {
+      "id": "evidence_sketch_scale",
+      "claim": "草图的真实物理尺寸尚未提供",
+      "status": "unknown",
+      "sourceAssetIds": ["asset_sketch"]
+    },
+    {
+      "id": "evidence_sketch_transformation",
+      "claim": "用户批准把可变换草图表现为技术画稿",
+      "status": "user-supplied",
+      "sourceAssetIds": ["asset_sketch"]
+    },
+    {
+      "id": "evidence_deictic_location",
+      "claim": "“产品在这里”缺少箭头、点击坐标、选区或已确认区域",
+      "status": "unknown",
+      "sourceAssetIds": []
+    },
+    {
+      "id": "evidence_candidate_region",
+      "claim": "右上区域可作为不遮挡产品的测量工具候选区，但尚未获用户确认",
+      "status": "inferred",
+      "sourceAssetIds": ["asset_product", "asset_sketch"]
+    },
+    {
+      "id": "evidence_material_relation",
+      "claim": "产品、草图与制作工具需要通过共享光向和接触逻辑形成一个材料事件",
+      "status": "inferred",
+      "sourceAssetIds": ["asset_product", "asset_sketch"]
+    }
+  ],
+  "designRationale": {
+    "subjectCause": "产品身份必须保持精确，同时让草图与工具解释制作过程",
+    "viewerEffect": "先看到产品，再读到制作证据，最后停在保留的负空间",
+    "carrierReason": "单幅竖版生成描述适合当前的一次性构图目标和手机观看条件",
+    "dominantRelation": "原始产品置于受控灯箱表面，草图与工具以接触和共享光向建立制作关系",
+    "rejectedAlternative": "拒绝把所有素材排成均权目录或用档案标签填满画面"
+  },
+  "visualSystem": {
+    "camera": "竖版近正交俯拍，保持产品正面结构",
+    "hierarchy": "产品为唯一一级焦点，画稿和工具均为二、三级信息",
+    "componentDetail": "工具保留可辨识结构，但不超过产品的局部细节密度",
+    "textureScale": "纸张、金属和灯箱颗粒按各自物理尺度呈现，避免统一噪点覆盖",
+    "materials": "磨砂灯箱、半透明描图纸与拉丝金属形成明确差异",
+    "lighting": "4700K 柔和背光，物体接触处有克制阴影，金属仅有弱顶光高光",
+    "palette": "暖白、灰绿和少量深灰，产品原色保持不变",
+    "edgeAndShadow": "边缘清楚但不锐化过度；阴影方向、软硬和高度一致",
+    "evidenceIds": ["evidence_product_lock", "evidence_material_relation"]
+  },
+  "composition": {
+    "heroAssetId": "asset_product",
+    "focalPlacement": {
+      "region": null,
+      "regionEvidence": "unresolved",
+      "evidenceId": "evidence_deictic_location",
+      "confirmation": "unresolved",
+      "relationship": "只知道产品是主角；具体‘这里’必须等待可定位证据"
+    },
+    "readingPath": "产品位置确认后，从产品向画稿，再到测量工具形成短路径",
+    "occupiedMass": "产品位置未解析；现阶段只锁定单一主角和支撑层级",
+    "negativeSpace": "保留至少一处可呼吸区域，不用装饰物填满",
+    "density": "restrained"
+  },
+  "optimizationActions": [
+    {
+      "id": "action_resolve_focal_anchor",
+      "priority": "P0",
+      "issue": "指示词‘这里’没有可定位证据",
+      "action": "在生成场景前取得箭头、点击坐标、选区或用户确认的候选区域",
+      "subjectCause": "产品是必须精确保留的唯一主角",
+      "viewerEffect": "避免主角位置由模型擅自决定",
+      "targetAssetIds": ["asset_product"],
+      "evidenceIds": ["evidence_deictic_location"],
+      "constraints": [
+        "未确认前不得写入确定坐标",
+        "不得把候选区伪装成用户指定位置"
+      ]
+    }
+  ],
+  "placementOpportunities": [
+    {
+      "id": "opportunity_measurement_tool",
+      "priority": "P3",
+      "region": { "x": 0.7, "y": 0.16, "width": 0.18, "height": 0.24 },
+      "regionEvidence": "inferred-option",
+      "evidenceId": "evidence_candidate_region",
+      "confirmation": "candidate",
+      "element": "一件小型拉丝金属测量工具",
+      "purpose": "建立产品与画稿之间的制作语义和视觉尺度参照",
+      "subjectCause": "现有产品与画稿之间缺少一件说明制作过程的中介物",
+      "viewerEffect": "让视线从产品自然转向画稿，同时不产生第二主角",
+      "removalImpact": "移除后画面仍成立，但产品与画稿的制作关系会更弱",
+      "anchor": {
+        "targetAssetId": "asset_product",
+        "relation": "right-of",
+        "minimumGapFraction": 0.03,
+        "maximumOverlapFraction": 0,
+        "contactMode": "separated"
+      },
+      "scale": {
+        "basis": "canvas-short-edge",
+        "minFraction": 0.08,
+        "maxFraction": 0.12
+      },
+      "material": "低反射拉丝金属",
+      "orientation": { "minDegrees": -12, "maxDegrees": 12 },
+      "confidence": "medium",
+      "constraints": [
+        "不得遮挡产品",
+        "不得添加品牌文字",
+        "没有尺寸证据时不得标注刻度数值"
+      ]
+    }
+  ],
+  "qualityReview": {
+    "reviewBasis": "direction-plan",
+    "sceneId": null,
+    "sceneHash": null,
+    "previewHash": null,
+    "hardFailures": [],
+    "items": {
+      "visualUnity": { "status": "pending", "note": "等待实际预览像素，当前只记录统一规则。" },
+      "componentDetail": { "status": "pending", "note": "等待像素复核支撑组件的细节强度。" },
+      "textureScale": { "status": "pending", "note": "等待像素复核各材料纹理的输出尺度。" },
+      "naturalness": { "status": "pending", "note": "等待像素复核接触、方向和语义关系。" },
+      "restraint": { "status": "pending", "note": "等待像素复核负空间和道具数量。" },
+      "readingFlow": { "status": "pending", "note": "等待像素复核第一注意力和阅读路径。" },
+      "physicalPlausibility": { "status": "pending", "note": "真实尺寸未知，等待像素复核视觉尺度。" }
+    }
+  },
+  "negativeConstraints": [
+    "不得重绘、变形或遮挡原始产品",
+    "不得把风格参考图的主体、文字或独特构图复制进画面",
+    "不得生成未批准的文字、数字、坐标或品牌标记",
+    "不得用装饰物填满全部负空间"
+  ],
+  "unknowns": [
+    "产品真实物理尺寸尚未提供",
+    "草图的真实物理尺寸尚未提供",
+    "“产品在这里”缺少箭头、点击坐标、选区或已确认区域"
+  ]
+}

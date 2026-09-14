@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "projectId": "project_demo",
+  "phase": "manifest_approved",
+  "approvedSceneId": null,
+  "manifestApprovedAt": "2026-08-31T10:00:00.000Z",
+  "sceneApprovedAt": null,
+  "manifestApproval": {
+    "kind": "asset_manifest",
+    "projectId": "project_demo",
+    "manifestHash": "sha256:8e6609abc4558c0485a9fb0573e310b556ecae435204d28b86e1484189b95f6e",
+    "approvedAt": "2026-08-31T10:00:00.000Z",
+    "approvedBy": "human"
+  }
+}

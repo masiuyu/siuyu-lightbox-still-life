@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "kind": "concept_asset_brief",
+  "projectId": "project_demo",
+  "sourceManifestHash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "request": "Create one truthful candidate product asset before any lightbox scene planning.",
+  "referenceInfluences": [
+    {
+      "assetId": "asset_style_reference",
+      "influenceScopes": [
+        "layout",
+        "lighting"
+      ],
+      "rules": [
+        "Preserve one dominant event with protected negative space.",
+        "Use broad transmitted light with restrained edge falloff."
+      ]
+    }
+  ],
+  "outputRole": "candidate_content_asset",
+  "preservationRequirements": [
+    "Do not reproduce reference subjects, wording, logos, or identifiable source pixels.",
+    "Do not represent the candidate as an approved product asset."
+  ],
+  "requiredNextStep": "Ingest the candidate as a new content asset, recompute the manifest hash, and return to the first human approval before VisualDirection or scene creation."
+}

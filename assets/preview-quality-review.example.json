@@ -1,0 +1,37 @@
+{
+  "reviewBasis": "preview-pixels",
+  "sceneId": "scene_archive_731",
+  "sceneHash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "previewHash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "hardFailures": [],
+  "items": {
+    "visualUnity": {
+      "status": "pass",
+      "note": "冷白背光、暖灰纸张和低反射金属共享同一克制的档案视觉语言。"
+    },
+    "componentDetail": {
+      "status": "pass",
+      "note": "辅助工具轮廓清楚，但内部细节与对比度均低于产品主体。"
+    },
+    "textureScale": {
+      "status": "warning",
+      "note": "右下角纸张纤维在当前输出尺寸略显粗大，建议缩小约三分之一。"
+    },
+    "naturalness": {
+      "status": "pass",
+      "note": "物件朝向、接触阴影和叠放关系一致，没有悬浮或穿插。"
+    },
+    "restraint": {
+      "status": "pass",
+      "note": "负空间足够，新增道具都承担尺度、材料或阅读引导功能。"
+    },
+    "readingFlow": {
+      "status": "pass",
+      "note": "视线先到产品，再沿引导关系进入支持材料，最后停在批准文字。"
+    },
+    "physicalPlausibility": {
+      "status": "pass",
+      "note": "画面未虚构毫米标定；已知与未知物件之间的相对尺度保持可信。"
+    }
+  }
+}

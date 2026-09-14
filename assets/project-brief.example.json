@@ -1,0 +1,30 @@
+{
+  "projectId": "project_001",
+  "goal": "Create a restrained archival light-table composition from uploaded product and research materials.",
+  "output": {
+    "width": 1600,
+    "height": 2000,
+    "format": "png",
+    "colorSpace": "srgb"
+  },
+  "style": {
+    "layoutFamily": "archive_research",
+    "lighting": "soft_backlit",
+    "palette": ["pale-mint-white", "kraft", "off-white", "deep-cyanotype", "muted-metal"],
+    "geometry": "low-poly-supporting-props",
+    "realismPriority": "high"
+  },
+  "text": {
+    "language": "zh-CN",
+    "minimumFontPx": 14,
+    "exactCopy": true
+  },
+  "enhancement": {
+    "allowed": true,
+    "scope": "background-only"
+  },
+  "approvals": {
+    "requireManifest": true,
+    "requireScene": true
+  }
+}

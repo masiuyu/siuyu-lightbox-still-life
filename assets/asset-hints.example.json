@@ -1,0 +1,28 @@
+{
+  "integrationIntent": "merge_all",
+  "userHints": [
+    {
+      "assetId": "asset_product_front",
+      "role": "product",
+      "required": true
+    },
+    {
+      "assetId": "asset_brand_logo",
+      "role": "branding_asset",
+      "required": true
+    },
+    {
+      "assetId": "asset_designer_sketch",
+      "role": "document_sketch"
+    },
+    {
+      "assetId": "asset_lighting_reference",
+      "role": "style_reference",
+      "influenceScopes": ["layout", "lighting"]
+    },
+    {
+      "assetId": "asset_explicit_duplicate",
+      "role": "ignore"
+    }
+  ]
+}
