@@ -11,8 +11,7 @@
     "request_sha256": "3d324dae1561e42016504eeff9fc15c3f7ce7661f74360972f6e4293b29811fb",
     "direction_file": "direction.json",
     "direction_sha256": "8211e8dd995e199c5b1bad5a59ec905f76aa589dcbefa0ec11b9d6ec71990a27",
-    "model_identifier": "not returned by tool",
-    "native_output_basename": "exec-fd147afb-3e39-48d4-b244-8e287af0c570.png"
+    "model_identifier": "not returned by tool"
   },
   "output": {
     "file": "image.png",
@@ -24,7 +23,7 @@
     "pixel_handling": "Byte-preserving copy of native generated PNG"
   },
   "visual_review": {
-    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "method": "Visual inspection of the generated image, focusing on composition, object structure, lighting and material details.",
     "core_checks": [
       {
         "position": "整幅画幅",
@@ -69,6 +68,5 @@
         "observed": "The full drawing sheet now has visible tabletop on each side. The right margin is narrower than the approximate eight-percent layout suggestion; the user-facing full-sheet requirement is visibly satisfied."
       }
     ]
-  },
-  "user_acceptance": "PENDING"
+  }
 }
