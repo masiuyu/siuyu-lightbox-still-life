@@ -1,0 +1,76 @@
+{
+  "type": "showcase-provenance",
+  "image": "transmitted-paper.png",
+  "sha256": "8677b669b7c9d72097347612bb37e0d196c6f5db1c2e4f0c2a60f1343cb295e5",
+  "width": 1672,
+  "height": 941,
+  "target_aspect_ratio": "16:9",
+  "tool": "image_gen.imagegen",
+  "model_identifier": "not returned by tool",
+  "image_input_count": 2,
+  "reference_use": "Two user-supplied frames informed transmitted-light behavior and density relationships. The still-life arrangement and graphite study were specified in the generation direction.",
+  "reference_files": [
+    "KIMI K3 — an exploration of intelligence as an invisible force. a launch film created in collabo.jpg",
+    "KIMI K3 — an exploration of intelligence as an invisible force. a launch film created in collabo-4.jpg"
+  ],
+  "reference_files_in_distribution": false,
+  "source_request_sha256": "d149b80db87044009da92ff0c1f50a21e1abfff4b7e563b28eddd3d9a25f9225",
+  "source_direction_sha256": "ef9919bb0b8d955451cde73142a204c74f2cbc08d67ccbf0b13516265661490e",
+  "visual_review_status": "PASS",
+  "visual_review": {
+    "method": "Main assistant visually compared the actual generated bitmap with both supplied references, concentrating on whole-frame lighting hierarchy, transmitting layers and realistic physical structures.",
+    "core_checks": [
+      {
+        "position": "整幅底光与实体明暗",
+        "observed": "明亮的浅青灰乳白光面包围深色剪刀，剪刀正面主要呈深炭黑，仅刃边和转轴保留窄反光；两只指环内露出与周围同样明亮的光面。",
+        "requirement": "参考中的强底光明亮场与较暗不透光实体关系在整幅图中清楚成立。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "硫酸纸与蓝色片的透射密度",
+        "observed": "下层薄纸被照亮并保留细微纤维，右上交叠区明显较深；蓝色薄片在与纸相交处和直接覆盖光面处具有不同密度。",
+        "requirement": "单层、双层和有色透射材料通过明确的密度差表现下方光照。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "纸层与下层石墨轮廓",
+        "observed": "剪刀图稿的刃部轮廓实际进入右上覆盖纸区域，露出部分线条较清楚，覆盖部分变淡；纸边界与柔化区域相符。",
+        "requirement": "上层纸覆盖真实存在的下层笔迹，使同一轮廓在边界两侧有可比较的变化。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "现实剪刀与图稿结构",
+        "observed": "实物具有两只完整椭圆指环、一个相接转轴和两片略微张开的连续尖刃；图稿对应相同的指环、转轴和刃部关系。",
+        "requirement": "现实工具的功能部件和连续连接可信，研究图与其结构对应。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "完整构图与台面",
+        "observed": "一件剪刀、两张图纸和一片蓝色薄片形成左侧工具与右侧研究的分组；所有必要轮廓完整，四角露出连续发光台面。",
+        "requirement": "有限物件、完整结构、清楚分组与连续干净台面共同构成横幅静物。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "实际画幅",
+        "observed": "原生 PNG 为 1672×941，保留原生字节；相对 16:9 的长边整数取整差约 0.888889 像素。",
+        "requirement": "采用 16:9 横向构图，并记录实际原生尺寸与取整差。",
+        "conclusion": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "additional_checks": [
+      {
+        "topic": "Upper margin",
+        "conclusion": "PASS",
+        "observed": "The upper overlay corner is fully visible but close to the upper image boundary; its spacing remains a possible aesthetic refinement."
+      },
+      {
+        "topic": "Physical lighting measurements",
+        "conclusion": "UNVERIFIED",
+        "observed": "The bitmap depicts the requested transmitted-light appearance. A real measured light ratio, material composition and physical lightbox setup are not supplied."
+      }
+    ]
+  },
+  "user_acceptance": "PENDING",
+  "record_scope": "Portable description of an existing generated showcase image. This file is provenance, not an executable generation request."
+}
