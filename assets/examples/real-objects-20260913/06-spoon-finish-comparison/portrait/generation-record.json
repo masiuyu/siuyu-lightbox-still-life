@@ -1,0 +1,69 @@
+{
+  "case_id": "06-spoon-finish-comparison",
+  "orientation": "portrait",
+  "version": "v2",
+  "recorded_at_utc": "2026-09-13T14:45:49.592711+00:00",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "operation": "concept",
+    "image_inputs": [],
+    "request_file": "image-job.json",
+    "request_sha256": "04eae9592e44b4998c7e5eb160090fe1cf948ea2d108325ff8d17a85e9b96724",
+    "direction_file": "direction.json",
+    "direction_sha256": "8d741cadea9122e5b9a95bef5963b7e745c7dfab4838dd897dd3e7c450f26d0d",
+    "model_identifier": "not returned by tool",
+    "native_output_basename": "exec-a326e6ba-7bfe-4c49-a07d-1f628cfedeb9.png"
+  },
+  "output": {
+    "file": "image.png",
+    "sha256": "0fcfd9af5348ec69cc72ae1fedac0292f4e7624e9410587ca20eee8e7e33615e",
+    "width": 941,
+    "height": 1672,
+    "target_aspect_ratio": "9:16",
+    "long_edge_rounding_delta_pixels": 0.8888888888889142,
+    "pixel_handling": "Byte-preserving copy of native generated PNG"
+  },
+  "visual_review": {
+    "method": "Main assistant inspected the actual generated bitmap at full composition and checked the stated visual relations.",
+    "core_checks": [
+      {
+        "position": "整幅画幅",
+        "observed": "原生 PNG 为 941×1672，目标 9:16；长边相对 16/9 比例的整数像素取整差为 0.888889 像素。",
+        "requirement": "横竖方向符合请求，保留实际原生像素并记录与目标比例的取整差。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "主体与工艺",
+        "observed": "完整金属勺置于左侧，两片小钢样位于右上，抛光反射与细拉丝表面区别清楚。",
+        "requirement": "现实器物及其表面比较具有明确功能结构与材料响应。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "图稿与覆盖关系",
+        "observed": "完整石墨勺形与两处排线在同一图纸上，小覆盖纸完整位于主纸内部，覆盖下方排线右半部分并使其变淡。",
+        "requirement": "覆盖纸作用于实际下层笔迹，完整边界位于主纸之内。",
+        "conclusion": "PASS"
+      },
+      {
+        "position": "整体构图与桌面",
+        "observed": "五件物品均具有完整可见边界，紧凑分组四周露出连续浅色桌面，上、下留白保持安静节奏。",
+        "requirement": "完整研究分组、清楚主次和连续桌面满足竖版取景。",
+        "conclusion": "PASS"
+      }
+    ],
+    "overall_status": "PASS",
+    "additional_checks": [
+      {
+        "topic": "Physical fabrication",
+        "conclusion": "UNVERIFIED",
+        "observed": "The image supports a judgment about visible construction and material appearance. Physical manufacturing measurements and material composition were not supplied."
+      },
+      {
+        "topic": "Output dimensions",
+        "conclusion": "UNVERIFIED",
+        "observed": "The tool returned its native raster size. Requested numerical rendering dimensions are design intent; the output section records the actual delivered pixels."
+      }
+    ]
+  },
+  "user_acceptance": "PENDING"
+}
