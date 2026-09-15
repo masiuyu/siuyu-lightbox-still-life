@@ -15,12 +15,15 @@ For a local installation, see [Codex installation](README.md#codex-installation)
 Start a regular Chat conversation in ChatGPT, attach photographs or describe your idea, and send:
 
 ```text
-Read https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md
-and follow this guide to work with my attachments and request in this conversation.
+Read
+https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md
+and follow this guide to work with my attachments and request in this
+conversation.
 Subject: [describe the object].
 Format and quantity: [for example, one 16:9 landscape image].
 Preserve: [shape, color, structure, or an existing layout].
-Show: [design drawings, transmitted light, soft paper layers, tools, or other details].
+Show: [design drawings, transmitted light, soft paper layers, tools, or
+other details].
 Generate the image and continue refining it with my feedback.
 ```
 
@@ -113,11 +116,15 @@ Deliver the images or prompts requested. Report dimensions from the actual file.
 ### Generate a light-table still life
 
 ```text
-Use the Siuyu Lightbox Still Life conversation workflow to create a 16:9 still life from my attachments.
-Preserve the subject's real structure and materials. Arrange matching design drawings on complete rectangular tracing paper.
-Use a perpendicular top-down view and a milky tabletop filling the frame, with light passing upward through the paper.
+Use the Siuyu Lightbox Still Life conversation workflow to create a 16:9
+still life from my attachments.
+Preserve the subject's real structure and materials. Arrange matching design
+drawings on complete rectangular tracing paper.
+Use a perpendicular top-down view and a milky tabletop filling the frame,
+with light passing upward through the paper.
 Make overlaps darker and lower sketch lines paler where they are covered.
-Keep natural spacing and the subject and all paper edges fully in frame. Generate one complete image.
+Keep natural spacing and the subject and all paper edges fully in frame.
+Generate one complete image.
 ```
 
 <a id="为已有图片整理放大指令"></a>
@@ -126,8 +133,10 @@ Keep natural spacing and the subject and all paper edges fully in frame. Generat
 
 ```text
 Write a faithful upscaling prompt for this image.
-Preserve the composition, object count, positions, proportions, all four paper edges, and transmitted-light relationships.
-Describe how to retain clear product textures, tool construction, metallic reflections, and contact shadows.
+Preserve the composition, object count, positions, proportions, all four
+paper edges, and transmitted-light relationships.
+Describe how to retain clear product textures, tool construction, metallic
+reflections, and contact shadows.
 The target size is [pixel dimensions]. Deliver one complete copyable prompt.
 ```
 

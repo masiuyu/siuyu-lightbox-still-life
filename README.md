@@ -40,9 +40,13 @@ For the Codex desktop app, CLI, or IDE extension with access to local files. Cho
 Send this request to Codex:
 
 ```text
-Install this skill from https://github.com/masiuyu/siuyu-lightbox-still-life.
-Read the repository instructions and run the package validator, then install the complete skill in ~/.agents/skills/siuyu-lightbox-still-life.
-If a version with the same name already exists, back it up in full first. Check that Codex can discover the skill, and report its actual installation path and invocation.
+Install this skill from
+https://github.com/masiuyu/siuyu-lightbox-still-life.
+Read the repository instructions and run the package validator, then install
+the complete skill in ~/.agents/skills/siuyu-lightbox-still-life.
+If a version with the same name already exists, back it up in full first.
+Check that Codex can discover the skill, and report its actual installation
+path and invocation.
 ```
 
 After installation, start a new Codex conversation and use `$siuyu-lightbox-still-life`. If it has not appeared, restart Codex. See [installation locations and updates](#codex-installation-locations-and-updates) for user and project directories.
@@ -70,19 +74,26 @@ Send these requests in a Codex conversation where the skill is loaded. `$siuyu-l
 If you have a specific object:
 
 ```text
-Use $siuyu-lightbox-still-life to create a 16:9 light-table still life from the attached images.
-Photograph it directly from above. Preserve the subject's actual structure and arrange a matching contour drawing and material samples nearby.
-Lay the tracing paper on a luminous table, with light passing upward through it and clear tonal differences at the overlaps.
-Let the table fill every edge of the image. Keep the subject and drawings completely in frame, with space between objects.
+Use $siuyu-lightbox-still-life to create a 16:9 light-table still life from
+the attached images.
+Photograph it directly from above. Preserve the subject's actual structure
+and arrange a matching contour drawing and material samples nearby.
+Lay the tracing paper on a luminous table, with light passing upward through
+it and clear tonal differences at the overlaps.
+Let the table fill every edge of the image. Keep the subject and drawings
+completely in frame, with space between objects.
 Generate the image, then open it and inspect the result.
 ```
 
 If you are starting from an idea:
 
 ```text
-Use $siuyu-lightbox-still-life to design a 9:16 material study of a glass cup.
+Use $siuyu-lightbox-still-life to design a 9:16 material study of a glass
+cup.
 Make the opening, walls, base, and handle clearly readable.
-Arrange a contour drawing, glass samples, and translucent paper layers beside the cup to reveal its structure and the way light passes through the glass.
+Arrange a contour drawing, glass samples, and translucent paper layers
+beside the cup to reveal its structure and the way light passes through the
+glass.
 ```
 
 <a id="codex-cli-使用"></a>
@@ -158,24 +169,30 @@ Send these examples to Codex. Copyable requests for regular ChatGPT Chat are in 
 **Preserve a product's shape and materials:**
 
 ```text
-Use $siuyu-lightbox-still-life to turn the attached product into a light-table material study.
-Preserve its actual structure and colors. Match the drawing to the product's contour,
+Use $siuyu-lightbox-still-life to turn the attached product into a
+light-table material study.
+Preserve its actual structure and colors. Match the drawing to the product's
+contour,
 and choose material samples that relate to its surfaces.
 ```
 
 **Create a landscape and portrait pair:**
 
 ```text
-Use $siuyu-lightbox-still-life to create one 16:9 image and one 9:16 image of the same subject.
-Keep the materials and colors consistent, and arrange the objects, paper layers, and surrounding space for each format.
+Use $siuyu-lightbox-still-life to create one 16:9 image and one 9:16 image
+of the same subject.
+Keep the materials and colors consistent, and arrange the objects, paper
+layers, and surrounding space for each format.
 ```
 
 **Refine the transmission in an existing image:**
 
 ```text
 Use $siuyu-lightbox-still-life to continue editing this version.
-Keep the subject and drawing in place, and strengthen the light passing through the tracing paper from below.
-The overlap should be darker than a single sheet, and the covered pencil lines should be paler.
+Keep the subject and drawing in place, and strengthen the light passing
+through the tracing paper from below.
+The overlap should be darker than a single sheet, and the covered pencil
+lines should be paler.
 Inspect the edited image and check both relationships.
 ```
 
@@ -189,9 +206,12 @@ Open [ChatGPT](https://chatgpt.com/), start a regular **Chat** conversation, and
 Read the Siuyu Lightbox Still Life guide for ChatGPT:
 https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md
 
-Follow the guide to create a 16:9 light-table still life from my attachments.
-Preserve the subject's structure and arrange a matching design drawing on complete rectangular tracing paper.
-Show light passing upward through single and overlapping sheets. Keep the subject, tools, and all paper edges fully in frame, with natural spacing.
+Follow the guide to create a 16:9 light-table still life from my
+attachments.
+Preserve the subject's structure and arrange a matching design drawing on
+complete rectangular tracing paper.
+Show light passing upward through single and overlapping sheets. Keep the
+subject, tools, and all paper edges fully in frame, with natural spacing.
 Generate the image and continue refining it with my feedback.
 ```
 

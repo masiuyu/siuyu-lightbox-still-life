@@ -39,9 +39,12 @@ codex
 Enter `/skills` in the Codex input box to check that `siuyu-lightbox-still-life` is loaded, then send:
 
 ```text
-Use $siuyu-lightbox-still-life to design a 16:9 light-table still life of a glass cup.
-Keep the cup, matching design drawing, and complete tracing paper in frame, with light passing upward through single and overlapping sheets.
-Generate the image, check the rim, walls, handle connections, and paper edges, and save the result.
+Use $siuyu-lightbox-still-life to design a 16:9 light-table still life of a
+glass cup.
+Keep the cup, matching design drawing, and complete tracing paper in frame,
+with light passing upward through single and overlapping sheets.
+Generate the image, check the rim, walls, handle connections, and paper
+edges, and save the result.
 ```
 
 <a id="带参考图片启动"></a>
