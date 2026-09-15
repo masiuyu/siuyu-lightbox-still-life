@@ -2,19 +2,47 @@
 
 **用光台静物图，呈现物件的结构与质感。**
 
-Siuyu Lightbox Still Life 是一个在 Codex 中使用的图像创作 Skill。你可以上传物件照片和风格参考，也可以从文字想法开始。它会根据你的要求设计构图，调用图像工具生成图片，再检查画面中的结构、光线和材料细节。
+Siuyu Lightbox Still Life 是一个图像创作 Skill。你可以在 Codex 中安装使用，也可以在 ChatGPT 网页版的普通 Chat 对话中读取本仓库的创作说明。上传物件照片和风格参考，或从文字想法开始，按照说明设计构图、生成图片，再检查结构、光线和材料细节。
 
 默认采用从光台正上方俯拍的构图，把主体与对应的图稿、材料样片放在一起。光线从下方穿过纸张和薄片，物件的轮廓、表面与纸层的交叠成为画面的重点。你也可以选择单件主视觉、操作场景或材质特写。
 
 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.0.0-rc.1`
 
-[快速安装](#快速安装) · [开始生成](#开始生成) · [查看完整图库](references/example-gallery.md) · [素材来源](ASSET_SOURCES.md)
+[ChatGPT 网页版使用](#chatgpt-网页版使用) · [Codex 快速安装](#快速安装) · [开始生成](#开始生成) · [查看完整图库](references/example-gallery.md)
 
 ![剪刀与硫酸纸的底光透射研究](assets/showcase/transmitted-paper.png)
 
 *光从下方透过硫酸纸。两张纸交叠的区域更暗，被覆盖的铅笔线条也更淡，剪刀表面仍能看见金属反光。图片信息见 [配图说明](ASSET_SOURCES.md)。*
 
+## ChatGPT 网页版使用
+
+打开 [ChatGPT](https://chatgpt.com/)，新建普通 **Chat** 对话，把下面的指令与参考图片一起发送。这个入口通过读取文档在当前对话中使用创作流程；本机可以不安装 Codex、Node.js 或 Python。
+
+```text
+请在当前 Chat 对话中使用 Siuyu Lightbox Still Life：
+https://github.com/masiuyu/siuyu-lightbox-still-life
+
+先打开并阅读仓库中的 CHATGPT.md：
+https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md
+按其中的主体、构图、透光纸层和实物细节要求处理我上传的图片。
+只在当前对话使用这些说明；需要更多细节时再读取相关文档。
+如果文档无法读取，请明确告诉我需要粘贴哪一份内容。
+有图像生成能力时请实际生成图片；如果当前只能处理文字，就交付完整提示词。
+
+本次任务：根据附件制作一张 16:9 的光台静物图。
+保留主体结构，配上对应设计稿和完整的矩形描图纸；底光透过单层与叠层纸张。
+物件与纸张完整入镜，留出自然间距。只交付一张成图和必要的简短说明。
+```
+
+把最后两段换成自己的主体、画幅和制作要求即可。也可以先让模型只整理提示词，再把提示词与图片交给自己选用的图像工具。
+
+链接读取受当前对话的联网能力影响。读取不完整时，可以打开 [网页版说明](CHATGPT.md)，把全文复制到 Chat，或下载后上传该文件。图像生成、附件读取和消息用量以当前 ChatGPT 套餐及对话能力为准，见 [官方图像功能说明](https://learn.chatgpt.com/docs/image-generation)。
+
+**关于额度：** 此处介绍的是普通 Chat 的文档使用方式。ChatGPT Work 与 Codex 共享使用额度；需要区分所选模式，具体规则见 [OpenAI 用量说明](https://learn.chatgpt.com/docs/pricing)。
+
 ## 快速安装
+
+需要在 Codex 中保存方向文件、编译提示词并维护生成记录时，可以安装完整 Skill。
 
 已安装 Node.js 和 npm 时，可在终端运行：
 
@@ -96,7 +124,7 @@ npx skills add https://github.com/masiuyu/siuyu-lightbox-still-life --skill siuy
 2. **设计并生成画面。** 安排光线、材料和物件的位置，将这些选择保存为方向记录，编译成图像任务，再调用当前环境的图像生成工具。
 3. **打开图片检查。** 核对主体结构、纸层透光和构图，再检查物件与台面的接触，以及操作场景中手与工具的位置。有具体问题时，再据此调整画面。
 
-常规交付包含生成图片、画面方向、实际成像任务和简短的看图记录。图片生成情况、视觉检查结果和你的审阅意见分别记录，方便继续修改。
+在 Codex 中，常规交付包含生成图片、画面方向、实际成像任务和简短的看图记录。网页版按当前对话的能力提供成图、提示词和必要说明，见 [ChatGPT 对话流程](CHATGPT.md)。
 
 ## 几种实用请求
 
@@ -132,12 +160,13 @@ Skill 提供构图流程、提示词编译和检查脚本，图像生成能力�
 
 | 用途 | 所需条件 |
 |---|---|
+| 在 ChatGPT 网页 Chat 中使用创作说明 | 能读取链接、粘贴文本或上传文档；实际成图还需要当前对话提供图像生成能力 |
 | 在 Codex 中生成和检查图片 | 本地文件读写、图片查看和内置图像生成工具 |
 | 通过 `npx skills` 安装 | Node.js 与 npm |
 | 编译画面方向、检查记录 | Python 3.10 或更新版本，脚本使用标准库 |
 | 使用本地确定性渲染流程 | 另行准备配套渲染器工程，见 [离线工作流](references/offline-workflow.md) |
 
-已验证的使用环境是 Codex。其他 Agent 需要按自身工具接口适配，兼容情况以实际验证为准。
+完整脚本流程已在 Codex 中验证。ChatGPT 网页 Chat 使用 [网页版说明](CHATGPT.md) 中的对话流程，实际可用工具受套餐、平台和工作区设置影响。其他 Agent 可按自身工具接口适配。
 
 ### 克隆仓库安装
 
@@ -177,6 +206,7 @@ python3 scripts/install_skill.py --backup-existing
 siuyu-lightbox-still-life/
 ├── SKILL.md                 # Agent 执行本 Skill 的说明
 ├── README.md                # 介绍与使用方法
+├── CHATGPT.md               # 网页 Chat 可直接读取或粘贴的创作说明
 ├── ASSET_SOURCES.md         # 配图来源
 ├── agents/openai.yaml       # 名称、图标与默认调用
 ├── assets/                  # 配置样例、摄影预设与生成图片
