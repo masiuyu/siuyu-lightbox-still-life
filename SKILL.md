@@ -45,8 +45,8 @@ description: Use when a user wants overhead light-table research still lifes or 
 
 先确定当前使用环境：
 
-- **Codex 或具备文件与 Python 执行能力的 Agent：** 使用下方完整流程，保存方向、编译任务和实际生成记录。
-- **ChatGPT 网页普通 Chat，用户通过链接、粘贴或上传文档使用：** 先读 [网页版对话流程](CHATGPT.md)。沿用主体、构图、材料、光线与看图要求，以当前对话能实际执行的方式整理提示词和生成图片。该路径可以直接使用自然语言提示词，方向文件与 Python 编译步骤按可用能力执行。
+- **Codex 桌面端、Codex CLI、IDE 扩展：** 具备本地文件、Python、图片查看与图像工具时，使用下方完整流程，保存方向、编译任务和实际生成记录。安装见 [Codex 安装](README.md#codex-安装)，终端调用见 [Codex CLI](CLI.md#codex-cli)。其他 Agent 按相应工具接口适配。
+- **ChatGPT 网页普通 Chat，用户通过链接、粘贴或上传文档使用：** 先读 [ChatGPT 网页 Chat 创作说明](CHATGPT.md)。沿用主体、构图、材料、光线与看图要求，以当前对话能实际执行的方式整理提示词和生成图片。该路径可以直接使用自然语言提示词，方向文件与 Python 编译步骤按可用能力执行。
 - 用户只要提示词时，交付所需文本；实际生图需要当前对话提供图像工具。记录和说明准确对应已读取的资料、已执行的步骤与真实图片。
 
 **查看来源中的对象与关系 → 确定视觉目标与内容范围 → 组织整幅画面的物件关系 → 细化模型、材料与摄影 → 编译成像 → 对照任务检查整体目标和来源范围，再检查实物表现。**
@@ -54,7 +54,7 @@ description: Use when a user wants overhead light-table research still lifes or 
 - 默认相机在承载面正上方，光轴垂直于台面，传感器平行台面。构图与摄影字段描述同一个机位；主体通过摆放与稳固承托向镜头展示识别面。用户明确指定机位时按其要求执行。
 - 先读 [全场景实物真实性](references/physical-realism.md)。主体身份、指定载体、画幅与完整构图、机位、构造、材料及物理关系都属于核心要求；核心项逐项成立后才判定成图达到要求。
 - 需要新建模型、转换载体或重做构造时，读 [模型尺度与建构](references/model-construction.md) 和 [主体与建构审查](references/scene-context.md#主体与建构审查)。识别要求、造型取向、缩尺、实体尺寸、制作工艺和材料一起确定；画面中的放大程度另由摄影决定。
-- 完整脚本流程每轮成像保存当前版本的 `direction.json`，实际运行 `scripts/build_image_job.py`，原样使用返回的提示词与参考顺序调用图像工具。方向变动后重新编译。网页版对话流程依照 [CHATGPT.md](CHATGPT.md) 组织实际提示词与附件顺序。
+- 完整脚本流程每轮成像保存当前版本的 `direction.json`，实际运行 `scripts/build_image_job.py`，原样使用返回的提示词与参考顺序调用图像工具。方向变动后重新编译。网页版对话流程依照 [ChatGPT 网页 Chat 创作说明](CHATGPT.md) 组织实际提示词与附件顺序。
 - 方向、审查和执行记录属于工作文件。画面文字仅承载用户指定或本轮授权创作的场景内容，并落在明确的纸张、包装或其他表面上。
 
 ## 按交付目标选择流程
@@ -63,8 +63,8 @@ description: Use when a user wants overhead light-table research still lifes or 
 |---|---|
 | 生成图片、把素材做成参考效果、修好现有画面 | 默认采用下方图像成片流程，实际调用内置图像工具。 |
 | 只分析、只写提示词、只修改 Skill | 完成所请求的分析或文件。Skill 维护以修改、静态校验和同步为完成条件；图像测试按用户在维护任务中明确批准的范围执行。 |
-| 明确要求完全离线、确定性导出、精确源图层合成 | 读取 [离线工作流](references/offline-workflow.md)，使用已有本地渲染器。 |
-| 明确要求开发或修复本地渲染器 | 读取 [工程执行](references/codex-execution.md) 和用户指定任务。 |
+| 明确要求完全离线、确定性导出、精确源图层合成 | 读取 [配套渲染器工作流](references/offline-workflow.md)，使用已有本地渲染器工程。 |
+| 明确要求开发或修复本地渲染器 | 读取 [本地渲染器工程开发](references/codex-execution.md) 和用户指定任务。 |
 
 图像成片流程可在普通工作目录执行。仓库、Node、Blender、SceneSpec 与工程 readiness 检查按对应工程任务使用。
 
@@ -121,7 +121,7 @@ description: Use when a user wants overhead light-table research still lifes or 
 
 ## 4. 编译当前方向并实际成像
 
-按 [提示词执行](references/prompt-execution.md) 完成方向记录，运行：
+在具备文件和 Python 执行能力的环境中，按 [Python 方向编译与成像调用](references/prompt-execution.md) 完成方向记录，再在本地终端运行。`<skill-dir>` 替换为实际 Skill 安装目录：
 
 ```bash
 python3 <skill-dir>/scripts/build_image_job.py /path/to/direction.json --output /path/to/image-job.json
@@ -153,4 +153,4 @@ python3 <skill-dir>/scripts/build_image_job.py /path/to/direction.json --output 
 
 - [评估用例](evals/evals.json) 提供行为场景；实际执行证据按各次运行记录。
 - `scripts/validate_skill.py` 检查包结构、链接、样例和编译器可执行性。
-- 工程 schema、审批与 CLI 从 [离线工作流](references/offline-workflow.md) 按需进入。
+- 配套渲染器的 schema、审批与 `@lightbox/cli` 从 [本地渲染器工作流](references/offline-workflow.md) 按需进入；各类命令的执行环境见 [命令行说明](CLI.md)。
