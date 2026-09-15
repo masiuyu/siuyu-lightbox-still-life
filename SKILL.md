@@ -1,6 +1,6 @@
 ---
 name: siuyu-lightbox-still-life
-description: Use when a user wants overhead light-table research still lifes or material studies from supplied subjects and references. Compose the subject with related studies, samples or purposeful props, using tangible objects and transmitting layers. Preserve source identity, design credible models when needed, compile the direction and inspect the actual image. Follow explicitly requested hero photographs, actions, close-ups, offline composition or renderer development through the relevant workflow.
+description: Use when a user wants overhead light-table research still lifes or material studies from supplied subjects and references. Default to transmitted light from a milky luminous tabletop, translucent study layers and opaque objects with readable reflections. Compose complete subjects and related studies, preserve source identity, design credible models when needed, compile the direction and inspect the actual image. Follow explicitly requested styles, hero photographs, actions, close-ups, offline composition or renderer development through the relevant workflow.
 ---
 
 # Siuyu Lightbox Still Life
@@ -9,7 +9,7 @@ description: Use when a user wants overhead light-table research still lifes or 
 
 ## 默认视觉目标
 
-简短要求使用本 Skill 生成图片时，默认交付**垂直俯拍的光台研究静物**，整体画面同时呈现：
+简短要求使用本 Skill 生成图片时，默认交付**底光透射的光台研究静物**，采用 `transmitted_inventory` 摄影预设，从台面正上方垂直俯拍。整体画面同时呈现：
 
 - **主体与研究的对应**：图稿、材料样片或有具体用途的道具展开主体的一项可见特征，通过形状、纹样、材料或摆放让联系可辨。
 - **透光与实体的层次**：底光穿过具体材料，边界与交叠表现透射密度，实体保留自身表面、暗部和接触。
@@ -17,12 +17,15 @@ description: Use when a user wants overhead light-table research still lifes or 
 
 根据主体选择研究语言、搭配、密度和配色；参考物件提供方法与关系，具体物件由本轮设计。将这三项落实为本图可见的物件和关系，再细化模型造型与工艺。
 
-先依据参考在强透光平铺与柔光纸层档案之间选择光线方向。用户明确选择单件主视觉、动作、材质特写、完整照片或活动场景时，按该目标执行。主体模型的造型、工艺与摆放服务于当前光台构图；来源照片提供身份与结构依据。
+默认光面为明亮乳白、略偏冷的连续扩散台面，底光是主要光源。半透明纸张的单层与交叠区域有清楚的明暗差别，下层线稿经过上层纸张后变淡；不透明物件保留暗部、窄亮边、表面反射和接触。先用主体、相关图稿与留白建立清楚的主次，按需要加入材料样片和工具；具体题材、纸张数量和强调色由当前任务决定。
+
+用户明确指定的风格或明确指定沿用的已确认效果优先。选择柔光纸层档案时采用 `diffused_paper_archive`；单件主视觉、动作、材质特写、完整照片或活动场景按对应目标执行。仅提到柔光箱、硫酸纸或描图纸时，沿用底光透射默认预设，并落实纸层要求。主体模型的造型、工艺与摆放服务于当前光台构图；来源照片提供身份与结构依据。
 
 ## 画幅、桌面与现实结构
 
 - 默认横幅采用 16:9；需要竖幅时采用 9:16。用户指定的其他比例或精确尺寸优先。横竖分别安排主体、图稿、材料与留白，生成记录填写实际原生像素。
 - 默认让同一连续干净的台面铺满四边与四角。主体及必要研究物件保留完整可读边界和桌面余量；动作场景按实际握持位置安排手腕进入。特写取景按用户明确选择的重点确定。
+- 默认纸张为完整的长方形或正方形，四角为直角、对边平行，四条边及四角均在画幅内。可以整体旋转或错位交叠，纸张本身保持矩形；端正摆放时顶边与底边水平。先按画幅缩小纸张或调整间距，保证整张纸和周围台面余量。
 - 器物题材先明确现实类别、功能部件、轮廓、开口、厚度和连续连接，再选择工艺与表面。例如咖啡勺有凹勺碗、收窄勺颈与圆端长柄；玻璃杯有杯口、容腔、杯底和相接的把手。模型的造型转译继续依据当前来源和用户要求。
 - 整幅画面先建立主次：主体的面积、明暗或反射成为观看重点，图稿和样片分别解释具体特征；间距、错位轴线与留白服务这组关系。构图、结构和材料分别进入核心视觉复查。
 - 柔光箱方向让乳白扩散面连续覆盖取景，通过单层纸、叠层密度、跨越纸边界的下层笔迹与实体接触显示透光关系。见 [柔光箱横竖示例](references/example-gallery.md#example-09)。
@@ -111,7 +114,7 @@ description: Use when a user wants overhead light-table research still lifes or 
 - 配色说明主体依据、色相关系、明度与饱和度、面积分配和环境反射。原物按来源色呈现；新建模型按识别目标选择写实涂装、色区概括、单色或材料本色，用户明确的色彩要求逐项落实。
 - 逐物件按 [全场景实物真实性](references/physical-realism.md) 检查形体、材质、尺度、承托与光影，并将本图最容易失真的位置写成具体复查目标。
 
-按 [摄影设定](references/photography.md) 选择预设并覆盖：强透光多物平铺、柔光纸层档案、大色块主视觉、工作台动作或材质近摄。用户提到柔光箱、硫酸纸、描图纸或参考突出乳白光面与纸层时，读 [柔光纸层档案](references/diffused-paper-archive.md)，采用 `diffused_paper_archive`。
+按 [摄影设定](references/photography.md) 将默认底光透射写为 `photography.profile: transmitted_inventory`，再按主体覆盖取景、光线和清晰范围。用户明确选择其他方向时使用对应预设。涉及柔光箱、硫酸纸或描图纸时，读取 [纸层与透光要求](references/diffused-paper-archive.md)；这些材料要求适用于默认底光透射和明确选择的柔光纸层档案。
 
 配套 [示例图库](references/example-gallery.md) 提供各预设、方向候选和纸层变体的实际成图。按当前目标选择相关图片，观察机位、材料与物件对应；主体身份和内容范围继续从本轮输入建立。
 
