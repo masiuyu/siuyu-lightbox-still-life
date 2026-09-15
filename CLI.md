@@ -1,111 +1,127 @@
-# 命令行使用说明
+<a id="命令行使用说明"></a>
 
-本文适合在终端使用 Codex 或执行本仓库脚本的用户。以下 Shell 命令以 macOS、Linux 或 Windows WSL 为例；把示例路径换成自己的实际路径。
+# Command-line guide
 
-[Codex 安装](README.md#codex-安装) · [Codex 图像创作](README.md#codex-使用) · [ChatGPT 网页 Chat](CHATGPT.md)
+[简体中文](CLI.zh-CN.md) | [English](CLI.md)
 
-## 先确认命令属于哪个工具
+For users running Codex or this repository's scripts from a terminal. The shell examples target macOS, Linux, or Windows WSL. Replace example paths with your actual paths.
 
-| 命令 | 使用的软件 | 执行位置与作用 |
+[Codex installation](README.md#codex-installation) · [Create images in Codex](README.md#codex-usage) · [ChatGPT web](CHATGPT.md)
+
+<a id="先确认命令属于哪个工具"></a>
+
+## Choose the right tool
+
+| Command | Software | Where it runs and what it does |
 |---|---|---|
-| `codex` | OpenAI Codex CLI | 在系统终端启动 Codex 对话，读取 Skill、处理素材并执行任务 |
-| `/skills`、`$siuyu-lightbox-still-life` | Codex 的交互界面 | 在 Codex 输入框查看或调用 Skill |
-| `npx skills add ...` | 第三方 skills 安装工具 | 在系统终端下载并安装 Skill，参数指定 Codex |
-| `python3 scripts/...` | 本仓库的 Python 脚本 | 在本地终端安装、编译方向或检查记录，具体输入与输出见下表 |
-| `pnpm ... --filter @lightbox/cli ...` | 配套本地渲染器 CLI | 在单独准备的渲染器工程中处理素材、预览和导出 |
+| `codex` | OpenAI Codex CLI | Starts a Codex conversation from the system terminal to read skills, work with assets, and perform tasks |
+| `/skills`, `$siuyu-lightbox-still-life` | Codex interactive interface | Lists or invokes a skill from the Codex input box |
+| `npx skills add ...` | Third-party skills installer | Downloads and installs a skill from the system terminal; arguments select Codex |
+| `python3 scripts/...` | This repository's Python scripts | Installs the skill, compiles a direction, or checks records locally; see the script table below |
+| `pnpm ... --filter @lightbox/cli ...` | Companion local renderer CLI | In a separately prepared renderer project, processes assets, creates previews, and exports images |
 
 <a id="codex-cli"></a>
 
 ## Codex CLI
 
-先按 [Codex CLI 官方说明](https://learn.chatgpt.com/docs/codex/cli) 安装客户端并登录，再按 [本项目的 Codex 安装说明](README.md#codex-安装) 安装 Skill。
+Install and sign in to the client using the [official Codex CLI guide](https://learn.chatgpt.com/docs/codex/cli), then follow this project's [Codex installation instructions](README.md#codex-installation) to install the skill.
 
-### 进入对话后调用
+<a id="进入对话后调用"></a>
 
-在要保存本次作品的工作目录打开终端，运行：
+### Invoke it in an interactive conversation
+
+Open a terminal in the working directory where you want to save the images:
 
 ```bash
 codex
 ```
 
-在出现的 Codex 输入框中发送 `/skills`，检查 `siuyu-lightbox-still-life` 是否已加载，再输入：
+Enter `/skills` in the Codex input box to check that `siuyu-lightbox-still-life` is loaded, then send:
 
 ```text
-使用 $siuyu-lightbox-still-life，设计一张 16:9 的玻璃杯光台静物图。
-杯子、对应设计稿和完整描图纸共同入镜，底光穿过单层与叠层纸张。
-请生成图片，检查杯口、杯壁、把手连接和纸张边缘，并保存结果。
+Use $siuyu-lightbox-still-life to design a 16:9 light-table still life of a glass cup.
+Keep the cup, matching design drawing, and complete tracing paper in frame, with light passing upward through single and overlapping sheets.
+Generate the image, check the rim, walls, handle connections, and paper edges, and save the result.
 ```
 
-### 带参考图片启动
+<a id="带参考图片启动"></a>
 
-在系统终端运行；将图片路径换成自己的文件：
+### Start with a reference image
+
+Run this in the system terminal, replacing the image path with your file:
 
 ```bash
-codex --image /absolute/path/reference.png '使用 $siuyu-lightbox-still-life，根据这张参考图生成一张 16:9 的光台静物图，保留主体结构，搭配对应设计稿和完整透光纸层。'
+codex --image /absolute/path/reference.png 'Use $siuyu-lightbox-still-life to create a 16:9 light-table still life from this reference. Preserve the subject structure and arrange a matching design drawing with complete translucent paper layers.'
 ```
 
-Shell 命令中的任务文字用单引号包围，以保留 `$siuyu-lightbox-still-life` 的原样内容。在 Codex 对话框里输入任务时，直接输入正文即可。`--image` 用于提供参考图；成图由当前会话实际可用的图像生成工具完成。图片输入与生成见 [官方图像功能说明](https://learn.chatgpt.com/docs/image-generation)。
+Single quotes keep `$siuyu-lightbox-still-life` literal in the shell command. When typing in a Codex conversation, enter the request directly. `--image` supplies the reference; generation uses the image tool actually available in that session. See the [official image guide](https://learn.chatgpt.com/docs/image-generation).
 
 <a id="skills-installer"></a>
 
-## skills 安装工具
+<a id="skills-安装工具"></a>
 
-需要 Node.js 与 npm。在要使用本 Skill 的项目目录运行：
+## skills installer
+
+Requires Node.js and npm. Run in the project where you want to use the skill:
 
 ```bash
 npx skills add https://github.com/masiuyu/siuyu-lightbox-still-life --skill siuyu-lightbox-still-life --agent codex
 ```
 
-这条命令安装当前项目的 Codex Skill，项目入口位于 `.agents/skills/`。安装完成后，在同一项目中启动 Codex。用户级安装及备份更新见 [Codex 其他安装方式](README.md#codex-其他安装方式)；第三方工具的参数见 [skills 官方仓库](https://github.com/vercel-labs/skills)。
+This installs the skill for Codex in the current project, available through `.agents/skills/`. Start Codex in the same project after installation. For user-level installation and updates with a backup, see [other Codex installation methods](README.md#other-codex-installation-methods). Installer arguments are documented in the [skills repository](https://github.com/vercel-labs/skills).
 
 <a id="python-scripts"></a>
 
-## 本仓库的 Python 脚本
+<a id="本仓库的-python-脚本"></a>
 
-需要 Python 3.10 或更新版本。以下相对路径命令在本仓库根目录执行，也就是包含 `SKILL.md` 的目录。
+## Repository Python scripts
 
-| 脚本 | 实际作用与输出 |
+Requires Python 3.10 or newer. Run the following relative-path commands from this repository's root, the directory containing `SKILL.md`.
+
+| Script | Purpose and output |
 |---|---|
-| `scripts/install_skill.py` | 复制完整 Skill 到指定目录，支持备份已有版本 |
-| `scripts/validate_skill.py` | 校验 Skill 包结构、文档链接、样例和编译器 |
-| `scripts/build_image_job.py` | 读取 `direction.json`，输出含提示词与参考图片顺序的 `image-job.json` |
-| `scripts/validate_image_review.py` | 检查已有生成记录中视觉评审条目和汇总状态是否一致 |
-| `scripts/verify_project.py` | 检查另行准备的本地渲染器工程条件 |
+| `scripts/install_skill.py` | Copies the complete skill to the chosen directory and can back up an existing version |
+| `scripts/validate_skill.py` | Validates the skill package, documentation links, examples, and compiler |
+| `scripts/build_image_job.py` | Reads `direction.json` and produces `image-job.json` with the prompt and ordered reference images |
+| `scripts/validate_image_review.py` | Checks that visual review entries and the overall status agree in an existing generation record |
+| `scripts/verify_project.py` | Checks prerequisites for a separately prepared local renderer project |
 
-包校验：
+Validate the package:
 
 ```bash
 python3 scripts/validate_skill.py .
 ```
 
-编译已经准备好的方向文件：
+Compile a direction file you have prepared:
 
 ```bash
 python3 scripts/build_image_job.py /absolute/path/direction.json --output /absolute/path/image-job.json
 ```
 
-取得任务 JSON 后，由 Codex 或适配的 Agent 将其中的提示词与图片顺序传入图像生成工具。方向字段、调用接口和记录方法见 [Python 方向编译与成像调用](references/prompt-execution.md)。
+Codex or an adapted agent passes the resulting prompt and ordered images to its image tool. For direction fields, invocation, and records, see [direction compilation and image invocation (Chinese)](references/prompt-execution.md).
 
-检查已经保存的生成与看图记录：
+Check a saved generation and visual review record:
 
 ```bash
 python3 scripts/validate_image_review.py /absolute/path/generation-record.json
 ```
 
-这项检查核对记录的一致性，图像质量仍由实际打开图片后判断。
+This checks consistency in the record. Image quality is assessed by opening and inspecting the actual image.
 
 <a id="renderer-cli"></a>
 
-## 配套本地渲染器 CLI
+<a id="配套本地渲染器-cli"></a>
 
-本节面向需要确定性渲染、精确源图层合成或工程开发的用户。`@lightbox/cli` 属于另行准备的渲染器工程，运行前需要该工程及其 Node.js、pnpm 和依赖；本仓库提供 Skill、文档与调用脚本。
+## Companion local renderer CLI
 
-先在本地终端核对渲染器工程：
+For deterministic rendering, precise source-layer composition, or renderer development. `@lightbox/cli` belongs to a separately prepared renderer project and requires that project, Node.js, pnpm, and its dependencies. This repository supplies the skill, documentation, and wrapper scripts.
+
+Check the renderer project from a local terminal first:
 
 ```bash
 python3 /absolute/path/siuyu-lightbox-still-life/scripts/verify_project.py --repo /absolute/path/lightbox-archive --json
 ```
 
-本 Skill 的 `ingest.sh`、`preview.sh`、`review.sh`、`final.sh` 通过 `pnpm --filter @lightbox/cli` 调用工程。脚本按 `LIGHTBOX_REPO_ROOT` 指定的路径定位渲染器，或从当前目录向上寻找包含 `pnpm-workspace.yaml` 与 `apps/cli/package.json` 的工程根目录。
+The skill's `ingest.sh`, `preview.sh`, `review.sh`, and `final.sh` call the project through `pnpm --filter @lightbox/cli`. They locate the renderer using `LIGHTBOX_REPO_ROOT`, or search upward from the current directory for a project containing `pnpm-workspace.yaml` and `apps/cli/package.json`.
 
-已具备工程时，按 [本地渲染器工作流](references/offline-workflow.md) 执行；需要开发或集成工程时，按 [本地渲染器工程开发](references/codex-execution.md) 处理。
+With the project ready, follow the [local renderer workflow (Chinese)](references/offline-workflow.md). For development or integration, use the [renderer development guide (Chinese)](references/codex-execution.md).

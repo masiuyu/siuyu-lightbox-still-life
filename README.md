@@ -1,203 +1,237 @@
 # Siuyu Lightbox Still Life
 
-**用光台静物图，呈现物件的结构与质感。**
+[简体中文](README.zh-CN.md) | [English](README.md)
 
-Siuyu Lightbox Still Life 是面向 Codex 的图像创作 Skill。上传物件照片和风格参考，或从文字想法开始，设计构图、生成图片，再检查结构、光线和材料细节。仓库也提供适合 ChatGPT 网页普通 Chat 阅读的创作说明。
+**Reveal form and texture through light.**
 
-默认风格是**底光透射**：从明亮乳白、略偏冷的光台正上方俯拍，把主体与对应图稿、材料样片有序摆放。光从下方穿过纸张和薄片，交叠处更暗，被覆盖的线稿更淡；实体保留暗部与真实反光。纸张采用完整矩形，主体、工具和纸张四周留出余量。你也可以指定柔光纸层、单件主视觉、操作场景或材质特写。
+A Codex skill for creating lightbox still-life images, with a companion guide for ChatGPT. Start with a reference photo or a written idea, arrange the subject with matching sketches and material samples, then generate and refine the composition, lighting, and physical details.
 
-Codex 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.0.0-rc.1`
+The default style is **transmitted light from below**: a top-down view of a bright, milky, slightly cool light table. Light passes through tracing paper and translucent sheets; overlaps become darker and covered sketch lines become paler. Opaque objects retain their dark tones and natural reflections. Complete rectangular sheets, objects, and tools sit comfortably within the frame. You can also request soft paper layers, a single-object hero image, a workbench action, or a material close-up.
 
-[Codex 安装](#codex-安装) · [Codex 使用](#codex-使用) · [Codex CLI](#codex-cli-使用) · [ChatGPT 网页版](#chatgpt-网页版使用) · [完整图库](references/example-gallery.md)
+Codex invocation: `$siuyu-lightbox-still-life` · Author: siuyu · Version: `1.0.0-rc.1`
 
-![剪刀与硫酸纸的底光透射研究](assets/showcase/transmitted-paper.png)
+[Install in Codex](#codex-installation) · [Use in Codex](#codex-usage) · [Codex CLI](#codex-cli-usage) · [ChatGPT web](#chatgpt-web-usage) · [Full gallery](references/example-gallery.md)
 
-*光从下方透过硫酸纸。两张纸交叠的区域更暗，被覆盖的铅笔线条也更淡，剪刀表面仍能看见金属反光。图片信息见 [配图说明](ASSET_SOURCES.md)。*
+![Scissors and tracing paper illuminated from below](assets/showcase/transmitted-paper.png)
 
-## 选择使用方式
+*Light passes through the tracing paper from below. The overlapping sheets are darker, the covered pencil lines are paler, and the scissors retain readable metallic reflections. See [image details (Chinese)](ASSET_SOURCES.md).*
 
-| 使用的软件或环境 | 怎样开始 | 对应说明 |
+<a id="选择使用方式"></a>
+
+## Choose how to use it
+
+| Software or environment | Getting started | Guide |
 |---|---|---|
-| Codex 桌面端、IDE 扩展 | 安装 Skill，在 Codex 对话中调用 | [Codex 安装](#codex-安装)与[使用示例](#codex-使用) |
-| Codex CLI | 安装 Skill，在终端启动 `codex` 后输入任务 | [Codex CLI 使用](#codex-cli-使用) |
-| ChatGPT 网页普通 Chat | 把文档链接与参考图发进对话，按说明创作 | [ChatGPT 网页版使用](#chatgpt-网页版使用) |
-| 本地脚本、配套渲染器 | 在终端执行对应程序，编译方向、检查记录或运行渲染器 | [命令行工具说明](CLI.md) |
+| Codex desktop app or IDE extension | Install the skill and invoke it in a Codex conversation | [Installation](#codex-installation) and [examples](#codex-usage) |
+| Codex CLI | Install the skill, then start `codex` in a terminal | [Codex CLI usage](#codex-cli-usage) |
+| Regular Chat in ChatGPT on the web | Share the guide link and reference images in the conversation | [ChatGPT web usage](#chatgpt-web-usage) |
+| Local scripts or the companion renderer | Run the relevant program to compile directions, check records, or operate the renderer | [Command-line guide](CLI.md) |
 
-## Codex 安装
+<a id="codex-安装"></a>
 
-适用于已能访问本地文件的 Codex 桌面端、CLI 和 IDE 扩展。下面两种方式任选一种。首次使用 Codex CLI，可先阅读 [Codex CLI 官方安装说明](https://learn.chatgpt.com/docs/codex/cli)。
+## Codex installation
 
-### 在 Codex 对话中安装
+For the Codex desktop app, CLI, or IDE extension with access to local files. Choose one of the following methods. If you are new to Codex CLI, start with the [official Codex CLI setup guide](https://learn.chatgpt.com/docs/codex/cli).
 
-把下面这段话发送给 Codex：
+<a id="在-codex-对话中安装"></a>
+
+### Install from a Codex conversation
+
+Send this request to Codex:
 
 ```text
-请从 https://github.com/masiuyu/siuyu-lightbox-still-life 安装这个 Skill。
-先读取仓库说明并运行包校验，将完整 Skill 安装到 ~/.agents/skills/siuyu-lightbox-still-life。
-如果已有同名版本，先完整备份。完成后检查 Codex 是否能发现它，告诉我实际安装位置和调用方式。
+Install this skill from https://github.com/masiuyu/siuyu-lightbox-still-life.
+Read the repository instructions and run the package validator, then install the complete skill in ~/.agents/skills/siuyu-lightbox-still-life.
+If a version with the same name already exists, back it up in full first. Check that Codex can discover the skill, and report its actual installation path and invocation.
 ```
 
-安装完成后新建 Codex 对话，使用 `$siuyu-lightbox-still-life`。尚未显示时重新启动 Codex。用户级与项目级目录见 [Codex 安装位置与更新](#codex-安装位置与更新)。
+After installation, start a new Codex conversation and use `$siuyu-lightbox-still-life`. If it has not appeared, restart Codex. See [installation locations and updates](#codex-installation-locations-and-updates) for user and project directories.
 
-### 用终端安装到当前项目
+<a id="用终端安装到当前项目"></a>
 
-已安装 Node.js 与 npm 时，在需要使用这个 Skill 的项目目录打开终端，运行：
+### Install into the current project from a terminal
+
+With Node.js and npm installed, open a terminal in the project where you want to use the skill:
 
 ```bash
 npx skills add https://github.com/masiuyu/siuyu-lightbox-still-life --skill siuyu-lightbox-still-life --agent codex
 ```
 
-这里使用第三方 [skills 安装工具](https://github.com/vercel-labs/skills)，`--agent codex` 指定目标软件，当前项目的安装入口为 `.agents/skills/`。完成后在同一项目中打开 Codex。
+This uses the third-party [skills installer](https://github.com/vercel-labs/skills). The `--agent codex` flag selects Codex, and the project installation is available through `.agents/skills/`. Open Codex in that project after installation.
 
-下载 ZIP 或使用 Python 脚本安装到用户目录，请看 [Codex 其他安装方式](#codex-其他安装方式)。
+For a ZIP download or installation into your user directory with Python, see [other Codex installation methods](#other-codex-installation-methods).
 
-## Codex 使用
+<a id="codex-使用"></a>
 
-以下文字发送到已经加载本 Skill 的 Codex 对话中。`$siuyu-lightbox-still-life` 用于调用 Skill；参考照片作为附件上传。
+## Codex usage
 
-有明确的物件时，可以这样描述：
+Send these requests in a Codex conversation where the skill is loaded. `$siuyu-lightbox-still-life` invokes the skill; attach your reference photographs to the conversation.
 
-```text
-使用 $siuyu-lightbox-still-life，根据附件生成一张 16:9 的光台研究静物图。
-从台面正上方俯拍，保留主体的实际结构，在旁边安排对应的轮廓图和材料样片。
-硫酸纸平铺在透光台面上，光从下面穿过纸张，交叠处的明暗差别清楚。
-台面铺满画面四周，主体和图稿完整入镜，物件之间留出间距。
-请实际生成图片，并打开结果检查。
-```
-
-还没有照片时，可以先描述想做的物件：
+If you have a specific object:
 
 ```text
-使用 $siuyu-lightbox-still-life，自主设计一张 9:16 的玻璃杯材料研究图。
-杯子的开口、杯壁、杯底和把手都要清楚可辨。
-在杯子旁边安排轮廓图、玻璃样片和透光纸层，展示杯子的结构与玻璃的透光效果。
+Use $siuyu-lightbox-still-life to create a 16:9 light-table still life from the attached images.
+Photograph it directly from above. Preserve the subject's actual structure and arrange a matching contour drawing and material samples nearby.
+Lay the tracing paper on a luminous table, with light passing upward through it and clear tonal differences at the overlaps.
+Let the table fill every edge of the image. Keep the subject and drawings completely in frame, with space between objects.
+Generate the image, then open it and inspect the result.
 ```
 
-## Codex CLI 使用
+If you are starting from an idea:
 
-在终端使用 Codex 时，先完成上面的 Skill 安装，再进入要保存本次作品的工作目录，运行：
+```text
+Use $siuyu-lightbox-still-life to design a 9:16 material study of a glass cup.
+Make the opening, walls, base, and handle clearly readable.
+Arrange a contour drawing, glass samples, and translucent paper layers beside the cup to reveal its structure and the way light passes through the glass.
+```
+
+<a id="codex-cli-使用"></a>
+
+## Codex CLI usage
+
+Install the skill first. Open a terminal in the directory where you want to save the work, then run:
 
 ```bash
 codex
 ```
 
-在打开的 Codex 交互界面中输入 `/skills` 检查已加载的 Skill，再发送上方 [Codex 使用示例](#codex-使用)。带图片启动、直接传入任务及脚本用法见 [命令行使用说明](CLI.md#codex-cli)。
+Enter `/skills` in the Codex interface to check the loaded skills, then send one of the [usage examples](#codex-usage). For starting with an image, passing a request on the command line, and using local scripts, see the [CLI guide](CLI.md#codex-cli).
 
-## 五种画面方向
+<a id="五种画面方向"></a>
 
-| 画面方向 | 适合怎样的画面 |
+## Five visual directions
+
+| Direction | Visual emphasis |
 |---|---|
-| **底光透射（默认）** | 明亮乳白光台从下方照亮纸张和透明薄片，交叠处更暗，下层线稿更淡，实体物件保留表面反光与暗部。 |
-| 柔光纸层 | 乳白台面上铺着描图纸，用柔和光线呈现纸张纹理，以及下层线条透过上层纸张的效果。 |
-| 色场主视觉 | 用大面积的统一底色衬托物件，例如以蓝灰色台面突出白瓷杯的轮廓与明暗。 |
-| 工作台动作 | 把描图、摆放或手持纸稿的动作放入画面，表现手、工具与物件的实际接触。 |
-| 材质近摄 | 靠近物件，观察金属反光、拉丝纹理或纸张纤维，围绕指定细节安排取景。 |
+| **Transmitted light (default)** | A bright milky table lights paper and translucent sheets from below. Overlaps become darker, covered sketch lines become paler, and opaque objects retain reflections and dark tones. |
+| Soft paper layers | Tracing paper on a milky surface, with subtle texture and lower drawings visible through the upper sheets. |
+| Color-field hero image | A broad field of color supports the subject, such as a blue-gray surface framing the shape and shading of a white porcelain cup. |
+| Workbench action | Drawing, arranging, or holding a sheet, with credible contact between hands, tools, and objects. |
+| Material close-up | Reflections, brushed metal, paper fibers, or another selected detail, framed at a useful scale. |
 
-直接描述主体即可采用底光透射默认风格；也可以按表中的其他方向提出要求。图稿、样片、工具和摆放方式围绕本次主体设计，横竖画幅分别安排完整构图。
+Describe your subject to use the default transmitted-light style, or request another direction. Drawings, samples, tools, and placement are designed around the current subject. Landscape and portrait images receive their own complete compositions.
 
-## 横幅与竖幅，分别构图
+<a id="横幅与竖幅分别构图"></a>
 
-| 16:9 横幅 | 9:16 竖幅 |
+## Compose separately for landscape and portrait
+
+| Landscape · 16:9 | Portrait · 9:16 |
 |---|---|
-| ![咖啡勺横幅](assets/examples/real-objects-20260913/02-spoon-paper/landscape/image.png) | ![咖啡勺竖幅](assets/examples/real-objects-20260913/02-spoon-paper/portrait/image.png) |
+| ![Coffee spoon study in landscape](assets/examples/real-objects-20260913/02-spoon-paper/landscape/image.png) | ![Coffee spoon study in portrait](assets/examples/real-objects-20260913/02-spoon-paper/portrait/image.png) |
 
-横幅和竖幅各自安排主体、图稿与纸层的位置。制作一组图片时，可以保持物件、材料和色调一致，再根据画幅调整分组和间距。
+Each format has its own arrangement of the subject, drawings, and paper layers. A pair can share objects, materials, and color while adapting its grouping and spacing to each frame.
 
-## 随包提供的案例
+<a id="随包提供的案例"></a>
 
-图库收录九组主题，每组各有一张横幅和一张竖幅，共十八张图片。你可以在 [完整图库](references/example-gallery.md) 中并排查看构图，并打开每张图的生成记录和看图记录。
+## Included examples
 
-| 案例 | 观察重点 |
+The gallery contains nine subjects and studies, each with a landscape and portrait image: eighteen images in total. Open the [full gallery](references/example-gallery.md) to compare the compositions and inspect each image's original generation and review records.
+
+| Example | What to look for |
 |---|---|
-| [玻璃杯透光研究](references/example-gallery.md#example-01) | 杯口、杯底和把手怎样连接，玻璃样片叠放后怎样透光。 |
-| [咖啡勺轮廓与纸层](references/example-gallery.md#example-02) | 勺子的轮廓怎样对应纸上的石墨图稿。 |
-| [瓷杯色场主视觉](references/example-gallery.md#example-03) | 蓝灰色台面怎样衬托白瓷杯与杯碟。 |
-| [咖啡勺描绘操作](references/example-gallery.md#example-04) | 一只手压住纸张，另一只手握笔描绘时的接触位置。 |
-| [咖啡勺表面近摄](references/example-gallery.md#example-05) | 勺碗的抛光反射与长柄的拉丝纹理。 |
-| [咖啡勺工艺比较](references/example-gallery.md#example-06) | 抛光钢片、拉丝钢片和纸上铅笔排线之间的比较。 |
-| [手持咖啡勺图稿](references/example-gallery.md#example-07) | 双手托起纸稿时的纸张弯曲，以及下层线条在覆盖区域内外的深浅。 |
-| [棉纸字形压纹](references/example-gallery.md#example-08) | 字母压纹的深浅、纸张纤维与切边。 |
-| [柔光箱透光纸层](references/example-gallery.md#example-09) | 单层纸与叠层纸的明暗差别，以及跨过纸边界的铅笔线条。 |
+| [Glass cup transmission study](references/example-gallery.md#example-01) | Connections between the rim, base, and handle, and the transmission of overlapping glass samples. |
+| [Coffee spoon contour and paper layers](references/example-gallery.md#example-02) | Correspondence between the physical spoon and its graphite drawing. |
+| [Porcelain cup color-field hero](references/example-gallery.md#example-03) | A blue-gray surface supporting the form and shading of a white cup and saucer. |
+| [Drawing a coffee spoon](references/example-gallery.md#example-04) | One hand steadies the paper while the other holds a pencil, with readable contact points. |
+| [Coffee spoon surface detail](references/example-gallery.md#example-05) | Polished reflections in the bowl and brushed texture along the handle. |
+| [Coffee spoon finish comparison](references/example-gallery.md#example-06) | Polished steel, brushed steel, and graphite hatching as related surface studies. |
+| [Holding a coffee spoon drawing](references/example-gallery.md#example-07) | Supported paper curvature and the difference between exposed and covered drawing lines. |
+| [Embossed letter on cotton paper](references/example-gallery.md#example-08) | Shallow embossing, paper fibers, and cut edges. |
+| [Translucent paper on a lightbox](references/example-gallery.md#example-09) | Single and overlapping paper densities, with a pencil line continuing across an overlay boundary. |
 
-## 它怎样工作
+<a id="它怎样工作"></a>
 
-1. **确认主体与参考用途。** 查看你提供的附件，确认物件的部件和外形，以及各张参考用于说明什么。只有文字要求时，先确定要呈现的物件及其结构。
-2. **设计并生成画面。** 安排光线、材料和物件的位置，整理完整提示词，再调用当前环境的图像生成工具。Codex 完整流程会保存方向记录，并通过脚本编译图像任务。
-3. **打开图片检查。** 核对主体结构、纸层透光和构图，再检查物件与台面的接触，以及操作场景中手与工具的位置。有具体问题时，再据此调整画面。
+## How it works
 
-在 Codex 中，常规交付包含生成图片、画面方向、实际成像任务和简短的看图记录。网页版按当前对话的能力提供成图、提示词和必要说明，见 [ChatGPT 网页 Chat 创作说明](CHATGPT.md)。
+1. **Identify the subject and the role of each reference.** Inspect the attachments to establish the object's parts and shape, and what each reference contributes. For a written idea, define the object and its structure first.
+2. **Design and generate the image.** Arrange the lighting, materials, and objects, assemble a complete prompt, and use the image tool available in the current environment. The full Codex workflow saves the direction and compiles an image job through a script.
+3. **Open and inspect the result.** Check identity, structure, paper transmission, and composition, then examine physical contact and any interaction between hands, tools, and objects. Refine specific issues when needed.
 
-## Codex 常用请求
+The usual Codex delivery includes the image, authored direction, actual image job, and a short visual review. The web workflow provides images, prompts, and relevant notes according to the conversation's available tools; see the [ChatGPT guide](CHATGPT.md).
 
-以下示例发送到 Codex 对话。ChatGPT 网页 Chat 的复制指令见[对应入口](#chatgpt-网页版使用)。
+<a id="codex-常用请求"></a>
 
-**保留产品的外形和材料特点：**
+## More Codex requests
+
+Send these examples to Codex. Copyable requests for regular ChatGPT Chat are in the [web section](#chatgpt-web-usage).
+
+**Preserve a product's shape and materials:**
 
 ```text
-使用 $siuyu-lightbox-still-life，把附件中的产品做成光台材料研究图。
-保留产品的实际结构和颜色，纸上图稿与产品轮廓对应，
-材料样片选用与产品表面相符的材质。
+Use $siuyu-lightbox-still-life to turn the attached product into a light-table material study.
+Preserve its actual structure and colors. Match the drawing to the product's contour,
+and choose material samples that relate to its surfaces.
 ```
 
-**制作一组横幅和竖幅：**
+**Create a landscape and portrait pair:**
 
 ```text
-使用 $siuyu-lightbox-still-life，为同一主体分别设计一张 16:9 和一张 9:16 的图片。
-两张图保持材料和色调一致，根据各自的画幅安排物件、纸层和周围的留白。
+Use $siuyu-lightbox-still-life to create one 16:9 image and one 9:16 image of the same subject.
+Keep the materials and colors consistent, and arrange the objects, paper layers, and surrounding space for each format.
 ```
 
-**调整已有图片的透光效果：**
+**Refine the transmission in an existing image:**
 
 ```text
-使用 $siuyu-lightbox-still-life，继续修改这一版。
-保持主体与图稿的位置，增强光线从下方穿过硫酸纸的效果。
-两张纸交叠的位置要比单层更暗，被盖住的铅笔线条要更淡。
-请查看修改后的图片，核对这两处变化。
+Use $siuyu-lightbox-still-life to continue editing this version.
+Keep the subject and drawing in place, and strengthen the light passing through the tracing paper from below.
+The overlap should be darker than a single sheet, and the covered pencil lines should be paler.
+Inspect the edited image and check both relationships.
 ```
 
-## ChatGPT 网页版使用
+<a id="chatgpt-网页版使用"></a>
 
-打开 [ChatGPT](https://chatgpt.com/)，新建普通 **Chat** 对话，上传参考图片，再把下面这段话发送给模型。网页方式通过读取创作说明在当前对话中使用；准备好链接和附件即可开始。
+## ChatGPT web usage
+
+Open [ChatGPT](https://chatgpt.com/), start a regular **Chat** conversation, and attach your reference images. Share this request so the model can read the creative guide and apply it in the current conversation:
 
 ```text
-请读取 Siuyu Lightbox Still Life 的 ChatGPT 网页创作说明：
+Read the Siuyu Lightbox Still Life guide for ChatGPT:
 https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md
 
-按照文档要求，根据附件生成一张 16:9 的光台静物图。
-保留主体结构，搭配对应设计稿和完整的矩形描图纸。
-底光透过单层与叠层纸张，主体、工具和全部纸边完整入镜，物件之间留出自然间距。
-请实际生成图片，并按我的反馈继续调整。
+Follow the guide to create a 16:9 light-table still life from my attachments.
+Preserve the subject's structure and arrange a matching design drawing on complete rectangular tracing paper.
+Show light passing upward through single and overlapping sheets. Keep the subject, tools, and all paper edges fully in frame, with natural spacing.
+Generate the image and continue refining it with my feedback.
 ```
 
-把主体、画幅和画面要求换成自己的需求。完整操作与更多示例见 [ChatGPT 网页 Chat 创作说明](CHATGPT.md)。
+Replace the subject, format, and visual requirements with your own. See the [ChatGPT guide](CHATGPT.md) for the complete workflow and more examples.
 
-### 链接读取与图片生成
+<a id="链接读取与图片生成"></a>
 
-- **链接读取失败：** 打开 [CHATGPT.md](CHATGPT.md)，把全文粘贴到对话，或下载后作为附件上传，再发送创作要求。
-- **当前对话只能处理文字：** 可以先索取完整提示词，再交给自己选用的图像工具；需要在 ChatGPT 内完成成图时，使用支持图像生成的对话。功能可用性取决于套餐与工作区设置，见 [ChatGPT 图像功能说明](https://learn.chatgpt.com/docs/image-generation)。
-- **用量：** 普通 Chat 按当前账号的消息与图像用量规则使用。ChatGPT Work 与 Codex 共享使用额度，具体规则见 [OpenAI 用量说明](https://learn.chatgpt.com/docs/pricing)。
+### Reading links and generating images
 
-## 运行环境
+- **If the link cannot be read:** Open [CHATGPT.md](CHATGPT.md), paste its full text into the conversation or upload the downloaded file, then send your request.
+- **If the conversation only supports text:** Ask for a complete prompt to use with your chosen image tool. To generate within ChatGPT, use a conversation with image generation available. Availability depends on the plan and workspace settings; see the [ChatGPT image guide](https://learn.chatgpt.com/docs/image-generation).
+- **Usage limits:** Regular Chat follows the account's current messaging and image limits. ChatGPT Work and Codex share usage limits; see [OpenAI's usage guide](https://learn.chatgpt.com/docs/pricing).
 
-Skill 提供创作流程与配套脚本。各软件负责提供文件访问、图片查看及图像生成能力。
+<a id="运行环境"></a>
 
-| 使用方式 | 所需条件 |
+## Requirements
+
+The skill supplies the creative workflow and supporting scripts. The host software provides file access, image viewing, and image generation.
+
+| Workflow | Requirements |
 |---|---|
-| Codex 桌面端、CLI、IDE 扩展的完整流程 | Codex 能加载 Skill、读写文件并查看图片；Python 3.10 或更新版本；实际成图需要可调用的图像生成工具 |
-| 通过 `npx skills` 安装 | 终端、Node.js 与 npm；安装命令指定 Codex |
-| 运行仓库 Python 脚本 | 本地 Python 3.10 或更新版本，脚本使用标准库；各命令的输入与输出见 [Python 脚本说明](CLI.md#python-scripts) |
-| ChatGPT 网页普通 Chat | 能读取链接、粘贴文本或上传文档；实际成图需要当前对话支持图像生成 |
-| 配套本地渲染器 | 单独准备并验证渲染器工程、Node.js、pnpm 及工程依赖，见 [渲染器 CLI](CLI.md#renderer-cli) |
+| Full workflow in Codex desktop, CLI, or IDE extension | Skill loading, local file access, and image viewing; Python 3.10 or newer; an available image tool for generation |
+| Installation with `npx skills` | A terminal, Node.js, and npm; select Codex in the installation command |
+| Repository Python scripts | Local Python 3.10 or newer; scripts use the standard library. See [script inputs and outputs](CLI.md#python-scripts). |
+| Regular ChatGPT Chat on the web | Access to the guide through a link, pasted text, or an uploaded document; image generation must be available to produce images |
+| Companion local renderer | A separately prepared renderer project with Node.js, pnpm, and its dependencies; see [renderer CLI](CLI.md#renderer-cli) |
 
-本项目的完整图像流程已在 Codex 桌面环境验证；其他客户端按实际工具配置使用。需要适配其他 Agent 时，按其 Skills 目录、附件接口、脚本执行和图像工具要求配置。
+The complete image workflow has been used and checked in the Codex desktop environment. Other clients depend on their available tools. To adapt it to another agent, configure that agent's skill directory, attachments, script execution, and image tool interface.
 
-## Codex 其他安装方式
+<a id="codex-其他安装方式"></a>
 
-以下命令在 macOS、Linux 或 Windows WSL 终端执行。目标是将本 Skill 安装到 Codex 可发现的用户目录，供本机各项目使用。
+## Other Codex installation methods
 
-### 从 GitHub 克隆后安装
+Run these commands in a macOS, Linux, or Windows WSL terminal. They install the skill in a user directory discoverable by Codex, for use across local projects.
 
-需要 Git 与 Python 3.10 或更新版本：
+<a id="从-github-克隆后安装"></a>
+
+### Clone from GitHub and install
+
+Requires Git and Python 3.10 or newer:
 
 ```bash
 git clone https://github.com/masiuyu/siuyu-lightbox-still-life.git
@@ -206,69 +240,84 @@ python3 scripts/validate_skill.py .
 python3 scripts/install_skill.py --target-root "$HOME/.agents/skills"
 ```
 
-### 从 ZIP 安装
+<a id="从-zip-安装"></a>
 
-下载仓库 ZIP，解压后在包含 `SKILL.md` 的目录打开终端，再运行：
+### Install from a ZIP
+
+Download and extract the repository ZIP. Open a terminal in the directory containing `SKILL.md`, then run:
 
 ```bash
 python3 scripts/validate_skill.py .
 python3 scripts/install_skill.py --target-root "$HOME/.agents/skills"
 ```
 
-### Codex 安装位置与更新
+<a id="codex-安装位置与更新"></a>
 
-上面的用户级安装位置为 `~/.agents/skills/siuyu-lightbox-still-life`。项目级安装放在该项目的 `.agents/skills/siuyu-lightbox-still-life`。目录规则见 [Codex Skills 官方说明](https://learn.chatgpt.com/docs/build-skills)。
+### Codex installation locations and updates
 
-更新通过本仓库 Python 脚本安装的版本时，先取得最新仓库文件，再在仓库目录运行：
+The user installation above goes into `~/.agents/skills/siuyu-lightbox-still-life`. A project installation lives in that project's `.agents/skills/siuyu-lightbox-still-life`. See the [official Codex skills guide](https://learn.chatgpt.com/docs/build-skills) for directory conventions.
+
+To update an installation made with this repository's Python script, get the latest repository files, then run from its root:
 
 ```bash
 python3 scripts/validate_skill.py .
 python3 scripts/install_skill.py --target-root "$HOME/.agents/skills" --backup-existing
 ```
 
-旧版完整保存在目标 Skills 目录旁的 `skill-backups/` 中，脚本会输出实际位置。使用自定义目录时，将 `--target-root` 换成当前安装位置的父目录。通过第三方 `skills` 工具安装的版本，按该工具的更新方式管理。
+The complete previous version is saved in `skill-backups/` beside the target skills directory, and the script reports the actual location. For a custom installation, set `--target-root` to the parent of your skill directory. Manage installations made with the third-party `skills` tool through that tool's update process.
 
-脚本自身未指定 `--target-root` 时，使用 `$CODEX_HOME/skills`，或环境变量未设置时的 `~/.codex/skills`。上述命令通过显式指定目录，与当前 Codex 本地 Skills 目录说明保持一致。安装后新建对话；Skill 尚未显示时重新启动 Codex。
+When `--target-root` is omitted, the Python script uses `$CODEX_HOME/skills`, or `~/.codex/skills` if the environment variable is unset. The commands above select the directory explicitly to follow the current Codex local skills convention. Start a new conversation after installation; restart Codex if the skill has not appeared.
 
-## 按用途查阅文档
+<a id="按用途查阅文档"></a>
 
-| 文档 | 适合谁阅读 |
+## Documentation
+
+| Document | Audience |
 |---|---|
-| [Codex 安装与调用](#codex-安装) | 在 Codex 桌面端、CLI 或 IDE 扩展中使用本 Skill 的用户 |
-| [命令行使用说明](CLI.md) | 使用 Codex CLI、安装工具、Python 脚本或配套渲染器的用户 |
-| [ChatGPT 网页 Chat 创作说明](CHATGPT.md) | 通过文档链接、粘贴或上传方式创作的网页用户 |
-| [Agent 执行说明](SKILL.md) | 执行本 Skill 的 Codex，或正在适配完整流程的 Agent |
-| [Python 方向编译与成像调用](references/prompt-execution.md) | 需要整理方向文件、编译图像任务和保存生成记录的操作者 |
-| [配套渲染器工作流](references/offline-workflow.md) | 已有本地渲染器工程、需要确定性导出或源图层合成的开发者 |
-| [本地渲染器工程开发](references/codex-execution.md) | 需要开发、安装或集成配套渲染器的开发者 |
-| [示例图库](references/example-gallery.md) | 查看成图、构图与材料表现的所有读者 |
+| [Codex installation and usage](#codex-installation) | Codex desktop, CLI, and IDE extension users |
+| [Command-line guide](CLI.md) | Codex CLI, installer, Python script, and companion renderer users |
+| [ChatGPT guide](CHATGPT.md) | Web users sharing the guide through a link, pasted text, or an upload |
+| [Agent instructions (Chinese)](SKILL.md) | Codex and agents adapting the complete workflow |
+| [Direction compilation and image invocation (Chinese)](references/prompt-execution.md) | Operators preparing direction files, image jobs, and generation records |
+| [Local renderer workflow (Chinese)](references/offline-workflow.md) | Developers with a renderer project who need deterministic output or source-layer composition |
+| [Local renderer development (Chinese)](references/codex-execution.md) | Developers installing or integrating the companion renderer |
+| [Example gallery](references/example-gallery.md) | Readers exploring composition and material rendering |
 
-## 包内结构
+<a id="包内结构"></a>
+
+## Package layout
 
 ```text
 siuyu-lightbox-still-life/
-├── SKILL.md                 # Codex 与适配 Agent 的执行说明
-├── README.md                # 项目介绍、Codex 安装与各渠道入口
-├── CLI.md                   # Codex CLI、安装工具与本地脚本说明
-├── CHATGPT.md               # ChatGPT 网页普通 Chat 的创作说明
-├── ASSET_SOURCES.md         # 配图来源
-├── agents/openai.yaml       # 名称、图标与默认调用
-├── assets/                  # 配置样例、摄影预设与生成图片
-├── references/              # 图库，以及构图、光线、结构和检查方法
-├── scripts/                 # 安装、编译和检查脚本
-└── evals/                   # 行为评估场景
+├── SKILL.md                 # Agent instructions, in Chinese
+├── README.md                # English introduction and installation
+├── README.zh-CN.md          # Chinese introduction and installation
+├── CLI.md                   # English command-line guide
+├── CLI.zh-CN.md             # Chinese command-line guide
+├── CHATGPT.md               # English guide for regular ChatGPT Chat
+├── CHATGPT.zh-CN.md          # Chinese guide for regular ChatGPT Chat
+├── ASSET_SOURCES.md         # Image information, in Chinese
+├── agents/openai.yaml       # Name, icons, and default invocation
+├── assets/                  # Configurations, presets, and generated images
+├── references/              # English and Chinese galleries; detailed guidance
+├── scripts/                 # Installation, compilation, and checks
+└── evals/                   # Behavioral evaluation scenarios
 ```
 
-## 常见问题
+<a id="常见问题"></a>
 
-**一定要上传照片吗？** 如果想保留某件物品的外形，请上传它的照片；如果是探索新的设计，可以从文字开始。附上多张参考时，请说明哪张用于确认物件结构，哪张用于参考光线、颜色或构图。
+## Frequently asked questions
 
-**能指定比例和像素尺寸吗？** 默认横幅为 16:9，竖幅为 9:16，也接受其他比例或目标像素尺寸。实际尺寸取决于图像工具的输出，交付记录会注明。随包案例的原生尺寸为 1672×941 或 941×1672，与目标比例有像素取整造成的细小差异。
+**Do I need a photograph?** Attach a photo when you want to preserve a particular object's appearance. For a new design, start with a written idea. With multiple references, identify which establish structure and which guide lighting, color, or composition.
 
-**每次都会采用同样的摆法吗？** 摄影预设提供光线和材料的处理方式，具体物件、图稿和布局根据本次要求设计。修改已有图片时，可以说明哪些位置、颜色或材料需要保持。
+**Can I specify an aspect ratio or pixel dimensions?** The defaults are 16:9 landscape and 9:16 portrait; other ratios and target dimensions are supported as requests. The actual output depends on the image tool and is recorded on delivery. Included examples are natively 1672×941 or 941×1672, with a small rounding difference from the target ratios.
 
-**案例图片可以下载吗？** 可以。十九张生成图片随仓库保存在 `assets/` 中，克隆或下载 ZIP 后即可在本地查看，生成来源见 [素材来源](ASSET_SOURCES.md)。
+**Will every image use the same arrangement?** Presets guide lighting and materials. Objects, drawings, and layout are designed for your request. When editing an existing image, specify which positions, colors, or materials to preserve.
 
-## 配图与发布信息
+**Can I download the examples?** Yes. All nineteen generated images are included under `assets/` and are available when you clone the repository or download its ZIP. See [image information (Chinese)](ASSET_SOURCES.md).
 
-随包的十九张静物图片均由 AI 图像工具生成。九组横竖案例与底光硫酸纸展示图分别呈现器物结构、纸层和材料细节。各图的生成方式与图片信息见 [配图说明](ASSET_SOURCES.md)。当前版本为 `1.0.0-rc.1`。
+<a id="配图与发布信息"></a>
+
+## Images and release information
+
+The nineteen still-life images in this package were generated with an AI image tool. The nine landscape/portrait pairs and the transmitted-paper showcase explore object structure, paper layers, and materials. See [image details (Chinese)](ASSET_SOURCES.md) for their generation information. The current version is `1.0.0-rc.1`.

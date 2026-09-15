@@ -1,114 +1,146 @@
-# 在 ChatGPT 网页 Chat 中使用 Siuyu Lightbox Still Life
+<a id="在-chatgpt-网页-chat-中使用-siuyu-lightbox-still-life"></a>
 
-这份文档适合在 ChatGPT 网页版的普通 Chat 对话中直接读取、粘贴或上传。它将光台静物的创作流程整理成可以在对话中使用的说明。创作依据以用户本次要求和实际可见的附件为准。
+# Use Siuyu Lightbox Still Life in ChatGPT on the web
 
-需要本地安装时，请看 [Codex 安装说明](README.md#codex-安装)；在终端操作时，请看 [Codex CLI 使用说明](CLI.md#codex-cli)。
+[简体中文](CHATGPT.zh-CN.md) | [English](CHATGPT.md)
 
-## 开始使用
+Read, paste, or upload this guide into a regular Chat conversation in ChatGPT. It describes a light-table still-life workflow that can be followed directly in the conversation. The user's current request and the attachments actually available to the model establish the creative brief.
 
-在 ChatGPT 新建普通 Chat 对话，上传物件照片或描述想法，再发送：
+For a local installation, see [Codex installation](README.md#codex-installation). For terminal use, see the [Codex CLI guide](CLI.md#codex-cli).
 
-```text
-请读取 https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md，
-在当前对话中按这份说明处理我的附件和要求。
-本次主体：[填写物件]。
-画幅与数量：[例如一张 16:9 横版]。
-需要保留：[填写外形、颜色、结构或已有布局]。
-希望呈现：[填写设计稿、底光透射、柔光纸层、工具等]。
-请实际生成图片，并按我的反馈继续调整。
-```
+<a id="开始使用"></a>
 
-也可以先发送仓库主页，请模型打开本文件。链接的作用是提供当前对话的创作上下文；重复使用时，可以重新附上文档。
+## Get started
 
-### 链接读取与图片生成
-
-链接读取失败时，把本文件全文复制进对话，或下载后作为附件上传，再发送任务。当前对话只能处理文字时，可以索取完整提示词，交给自己选用的图像工具；需要直接成图时，使用支持图像生成的对话。具体能力见 [ChatGPT 图像功能说明](https://learn.chatgpt.com/docs/image-generation)。
-
-## 对话中的工作方式
-
-先读取用户要求和当前能访问的材料。能查看的附件逐张观察；需要但无法查看的图片或文档应明确说明。本页采用自然语言创作流程。具备文件和 Python 执行能力、且用户需要结构化记录时，可进一步使用 [Python 方向编译流程](references/prompt-execution.md)；实际执行过的步骤据实说明。
-
-用户要求生成或编辑图片，并且当前对话有图像工具时，调用该工具取得图片。只有文本能力时，提供可复制提示词和附件使用顺序。用户只要提示词或分析时，交付对应内容。
-
-具体能力依套餐、平台和工作区设置而定。普通 Chat 按当前 ChatGPT 消息及图像功能的用量规则使用；ChatGPT Work 与 Codex 共享额度，见 [官方用量说明](https://learn.chatgpt.com/docs/pricing)。
-
-## 创作流程
-
-### 1. 明确主体与保留项
-
-识别主体的现实类别、组成部件和连接方式。先写清轮廓、厚度、开口、关节、附件和承托，再安排表面工艺。产品照片用于确认具体外形；风格参考用于确认本次采用的光线、颜色或摆放关系。只有文字时，依据用户设定建立具体对象。
-
-修改已有图片时，明确哪些对象、位置、比例、颜色和纸边需要保持。比如长链配小吊坠的项链，应同时保留链条的长度感、细度、连接环和吊坠相对尺度。
-
-### 2. 组织整幅画面
-
-默认制作底光透射的光台研究静物：从明亮乳白、略偏冷的发光台面正上方垂直俯拍，相机光轴垂直台面，画面四周为连续的承载面。主体先被看见，设计稿、材料样片和有用途的工具围绕主体形成清楚的观看顺序。用户明确指定其他风格或沿用已确认效果时，按照该要求执行。
-
-每张图稿都对应主体的一项可见特征，例如轮廓、结构、纹饰或材料。让物件之间的距离、摆向、分组和留白共同服务画面。横版与竖版分别组织；用户指定的图幅与数量优先。
-
-主体、必要工具和纸张完整入镜，四周留有余量。纸张采用真实完整的长方形或正方形；需要端正摆放时，四角为直角、对边平行，顶边和底边水平。需要特写时按用户选择的细节取景。
-
-### 3. 明确底光和纸层
-
-底光是默认画面的主要光源，从乳白扩散面向上穿过薄纸或半透明材料。单层纸呈现自身灰度，交叠区域更暗，覆盖区域内的下层铅笔线条更淡。纸边、单层、叠层和下层线稿共同表达透光。仅要求柔光箱、硫酸纸或描图纸时，继续使用这组底光关系；明确选择柔光纸层档案时，再调整为更柔和细微的层次。
-
-金属等不透明实体保留自身暗部、反射和与台面的接触关系。光线、影子、遮挡和材料厚度属于同一个场景。柔光效果应保留可辨的物件表面与层次。
-
-### 4. 建立可信的细节
-
-按每件物品的实际功能检查形状与连接。例如圆嘴钳由两只锥形钳嘴、相接的转轴和两条握柄组成；镊子有连接的双臂和匹配的尖端；链条由连续相扣的链节构成。
-
-金属表现应随材料与表面处理变化：金色金属具有温暖反射，钢制工具具有银灰暗面与窄亮边，刻丝或拉丝具有明确方向。纸张保留适当纤维和薄边；所有器物有可信厚度、尺度、支撑和接触阴影。
-
-### 5. 整理提示词并成像
-
-把已经确定的内容整理成一份完整提示词，包含：
-
-- 图幅、数量、目标尺寸和画面用途。
-- 主体结构、材料、细节、相对比例与保留项。
-- 主体、图稿、纸层、样片和工具的位置关系。
-- 机位、底光、反射、纸层透射与接触阴影。
-- 本轮最需要检查的部位和完整取景要求。
-
-编辑图片时，将当前待修改图片作为明确目标。多张附件各有具体用途，交付的提示词说明附件顺序。用户只调整细节时，沿用其已确定的构图和主体比例。
-
-画面中的文字只包含用户要求或当前作品需要的内容，并落在明确的纸张、包装或实物表面上。
-
-### 6. 检查与交付
-
-能查看成图时，先检查整幅构图、主体身份、物件完整性、纸层和光线，再放大观察链节、尖端、转轴、纹理、边缘与接触。发现具体问题后，在本次授权范围内修整。生成结果、看图判断和用户选择分别说明。
-
-按用户要求交付图片或提示词。尺寸以实际文件为准；经过放大处理的图片写明最终尺寸和处理方式。当前无法生成、查看或读取尺寸时，准确说明尚未完成的环节。
-
-## 常用指令
-
-### 生成一张光台静物图
+Start a regular Chat conversation in ChatGPT, attach photographs or describe your idea, and send:
 
 ```text
-使用 Siuyu Lightbox Still Life 的对话流程，根据附件生成一张 16:9 静物图。
-主体保留真实结构与材料，旁边安排对应设计稿和完整矩形描图纸。
-从正上方垂直俯拍，乳白台面铺满画面，光从下方向上穿过纸张。
-纸层交叠处更暗，下层线稿透过上层纸张后更淡。
-物件之间留出自然间距，主体和所有纸边完整入镜。请实际生成一张图片。
+Read https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md
+and follow this guide to work with my attachments and request in this conversation.
+Subject: [describe the object].
+Format and quantity: [for example, one 16:9 landscape image].
+Preserve: [shape, color, structure, or an existing layout].
+Show: [design drawings, transmitted light, soft paper layers, tools, or other details].
+Generate the image and continue refining it with my feedback.
 ```
 
-### 为已有图片整理放大指令
+You can also share the repository homepage and ask the model to open this guide. The link supplies creative context for the current conversation. Share the guide again when you need it in another conversation.
+
+<a id="链接读取与图片生成"></a>
+
+### Reading links and generating images
+
+If the link cannot be read, paste this guide in full or upload the downloaded document, then send your request. If the conversation only supports text, ask for a complete prompt to use with your chosen image tool. To create the image directly, use a conversation with image generation available. See the [ChatGPT image guide](https://learn.chatgpt.com/docs/image-generation).
+
+<a id="对话中的工作方式"></a>
+
+## Working in the conversation
+
+Read the user's request and the currently accessible materials first. Inspect each available attachment, and clearly identify any necessary image or document that cannot be viewed. This guide uses natural-language creative directions. When file access and Python are available and the user wants structured records, the [direction compilation workflow (Chinese)](references/prompt-execution.md) can also be used. Describe only steps that were actually performed.
+
+When the user requests image generation or editing and an image tool is available, invoke it and obtain an image. In a text-only environment, deliver a copyable prompt and the intended attachment order. If the user requests only a prompt or analysis, deliver that requested content.
+
+Available capabilities depend on the plan, platform, and workspace settings. Regular Chat follows ChatGPT's current messaging and image limits. ChatGPT Work and Codex share usage limits; see the [official usage guide](https://learn.chatgpt.com/docs/pricing).
+
+<a id="创作流程"></a>
+
+## Creative workflow
+
+<a id="1-明确主体与保留项"></a>
+
+### 1. Define the subject and what to preserve
+
+Identify the object's real-world category, parts, and connections. Establish the silhouette, thickness, openings, joints, accessories, and support before describing the finish. Product photographs establish a specific object's shape. Style references establish the lighting, color, or arrangement to use. For a written brief, develop a concrete object from the user's description.
+
+When editing, specify which objects, positions, proportions, colors, and paper edges must remain. For example, a long necklace with a small pendant should retain its length, slender chain, connecting rings, and pendant-to-chain proportions.
+
+<a id="2-组织整幅画面"></a>
+
+### 2. Organize the complete image
+
+The default is a still life with transmitted light from below: a perpendicular top-down view of a bright, milky, slightly cool luminous table. The camera's optical axis is perpendicular to the surface, and the same continuous tabletop reaches all image edges. Establish the subject as the first point of attention, then arrange matching drawings, material samples, and useful tools into a clear viewing order. Follow the user's explicit choice of another style or a previously approved appearance.
+
+Each drawing should correspond to a visible feature of the subject, such as its contour, structure, ornament, or material. Use spacing, orientation, grouping, and negative space to support the composition. Compose landscape and portrait images separately. The user's requested format and quantity take priority.
+
+Keep the subject, required tools, and complete paper sheets inside the frame, with space around them. Use physically complete rectangular or square sheets with four right-angle corners and parallel opposite edges. When aligned upright, their top and bottom edges are horizontal. Frame close-ups around the detail selected by the user.
+
+<a id="3-明确底光和纸层"></a>
+
+### 3. Establish transmitted light and paper layers
+
+The main light comes from below the milky diffusing surface, passing upward through thin paper or translucent material. A single sheet has its own density; overlaps are darker, and lower pencil lines become paler where an upper sheet covers them. Paper boundaries, single layers, overlaps, and covered drawing lines together make transmission visible. Requests for a lightbox, tracing paper, or translucent paper alone use these default lighting relationships. An explicit request for the soft paper archive style calls for subtler, softer tonal separation.
+
+Opaque objects such as metal retain dark tones, reflections, and credible contact with the table. Lighting, shadows, occlusion, and material thickness belong to the same physical scene. Soft lighting must still reveal surfaces and layers clearly.
+
+<a id="4-建立可信的细节"></a>
+
+### 4. Build credible details
+
+Check each object's form and connections against its actual function. Round-nose pliers have two tapered jaws, a connecting pivot, and two handles. Tweezers have connected arms and matching tips. A chain consists of continuously interlinked components.
+
+Metal appearance follows its material and finish: gold has warm reflections, steel tools have silver-gray dark surfaces and narrow highlights, and fine engraving or brushing has a clear direction. Paper retains appropriate fibers and thin edges. Every object has plausible thickness, scale, support, and contact shadows.
+
+<a id="5-整理提示词并成像"></a>
+
+### 5. Assemble the prompt and generate
+
+Combine the chosen direction into one complete prompt covering:
+
+- Format, quantity, target dimensions, and intended use.
+- Subject structure, materials, details, relative scale, and preservation requirements.
+- Placement of the subject, drawings, paper layers, samples, and tools.
+- Viewpoint, light from below, reflections, paper transmission, and contact shadows.
+- The most important details to inspect and the required complete framing.
+
+For an edit, identify the current image as the specific target. Assign a clear purpose to each attachment and state their order in the delivered prompt. If the user is refining details, preserve the established composition and subject proportions.
+
+Any visible text must serve the user's request or the current artwork and appear on a defined paper, package, or physical surface.
+
+<a id="6-检查与交付"></a>
+
+### 6. Inspect and deliver
+
+When the generated image can be viewed, check the complete composition, subject identity, object boundaries, paper layers, and lighting first. Then inspect chain links, tool tips, pivots, textures, edges, and contact at a larger scale. Correct specific issues within the authorized scope. Distinguish the generated result, visual assessment, and the user's selection.
+
+Deliver the images or prompts requested. Report dimensions from the actual file. For an upscale, state the resulting dimensions and the method used. If generation, viewing, or reading dimensions is unavailable, identify the unfinished step accurately.
+
+<a id="常用指令"></a>
+
+## Copyable requests
+
+<a id="生成一张光台静物图"></a>
+
+### Generate a light-table still life
 
 ```text
-请根据这张图整理一份忠实放大的提示词。
-保持当前构图、物件数量、位置、比例、纸张四边和透光关系。
-具体说明产品纹理、工具结构、金属反射及接触阴影应如何保持清晰。
-目标为 [填写像素尺寸]，交付完整可复制的提示词。
+Use the Siuyu Lightbox Still Life conversation workflow to create a 16:9 still life from my attachments.
+Preserve the subject's real structure and materials. Arrange matching design drawings on complete rectangular tracing paper.
+Use a perpendicular top-down view and a milky tabletop filling the frame, with light passing upward through the paper.
+Make overlaps darker and lower sketch lines paler where they are covered.
+Keep natural spacing and the subject and all paper edges fully in frame. Generate one complete image.
 ```
 
-## 进一步阅读
+<a id="为已有图片整理放大指令"></a>
 
-需要更细的判断时，再按本次任务读取：
+### Prepare an upscaling prompt for an existing image
 
-- [图像美术指导](references/image-art-direction.md)：主次、分组、视觉重量与留白。
-- [全场景实物真实性](references/physical-realism.md)：结构、尺度、连接和材料。
-- [柔光纸层档案](references/diffused-paper-archive.md)：底光、薄纸、叠层与线稿。
-- [取景与清晰范围](references/camera-framing.md)：画幅、对焦与关键细节。
-- [完整 Skill 流程](SKILL.md)：在具备对应工具的环境中保存文件并运行脚本。
+```text
+Write a faithful upscaling prompt for this image.
+Preserve the composition, object count, positions, proportions, all four paper edges, and transmitted-light relationships.
+Describe how to retain clear product textures, tool construction, metallic reflections, and contact shadows.
+The target size is [pixel dimensions]. Deliver one complete copyable prompt.
+```
 
-平台能力可查阅 OpenAI 的 [ChatGPT 使用说明](https://learn.chatgpt.com/docs/use-chatgpt)、[图像生成说明](https://learn.chatgpt.com/docs/image-generation) 和 [联网检索说明](https://learn.chatgpt.com/docs/web-search)。
+<a id="进一步阅读"></a>
+
+## Further guidance
+
+These detailed documents are maintained in Chinese. Read the ones relevant to the current task:
+
+- [Image art direction](references/image-art-direction.md): hierarchy, grouping, visual weight, and negative space.
+- [Physical realism](references/physical-realism.md): structure, scale, connections, and materials.
+- [Paper layers and transmission](references/diffused-paper-archive.md): light from below, thin paper, overlaps, and drawings.
+- [Framing and focus](references/camera-framing.md): aspect ratio, focus, and essential details.
+- [Complete skill workflow](SKILL.md): saving files and running scripts when the required tools are available.
+
+For platform capabilities, see OpenAI's guides to [using ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt), [image generation](https://learn.chatgpt.com/docs/image-generation), and [web search](https://learn.chatgpt.com/docs/web-search).
