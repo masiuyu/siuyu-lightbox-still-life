@@ -1,6 +1,6 @@
 interface:
   display_name: "Siuyu Lightbox Still Life"
-  short_description: "默认底光透射的光台静物，呈现完整纸层、真实物件与横竖构图"
+  short_description: "Create lightbox still lifes with translucent paper and objects"
   icon_small: "./assets/brand/siuyu-mark.svg"
   icon_large: "./assets/brand/siuyu-mark.svg"
   brand_color: "#174B46"
