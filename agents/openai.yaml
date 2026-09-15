@@ -1,7 +1,7 @@
 interface:
   display_name: "Siuyu Lightbox Still Life"
-  short_description: "将主体做成光台研究静物，呈现硫酸纸透光、真实结构与横竖构图"
+  short_description: "默认底光透射的光台静物，呈现完整纸层、真实物件与横竖构图"
   icon_small: "./assets/brand/siuyu-mark.svg"
   icon_large: "./assets/brand/siuyu-mark.svg"
   brand_color: "#174B46"
-  default_prompt: "Use $siuyu-lightbox-still-life for visual direction and create an overhead light-table research still life from my subjects and references, with subject-derived studies or purposeful props, visible transmitting layers, credible physical materials, and a complete composition; generate and inspect the image."
+  default_prompt: "Use $siuyu-lightbox-still-life for visual direction and create a top-down transmitted-light still life on a luminous milky tabletop, with my subject, related translucent studies, darker paper overlaps, credible opaque materials, complete rectangular sheets and deliberate spacing; generate and inspect the image."
