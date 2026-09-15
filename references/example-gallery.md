@@ -1,6 +1,6 @@
 # 配套示例图库
 
-以下案例按主题并排展示横竖构图。另见 [底光硫酸纸展示图](../assets/showcase/transmitted-paper.png) 及其 [来源记录](../assets/showcase/provenance.json)，观察明亮台面、深色实体与纸层透射密度的关系。安装与用法见 [项目介绍](../README.md)。
+以下案例按主题并排展示横竖构图。另见 [底光硫酸纸展示图](../assets/showcase/transmitted-paper.png) 及其 [来源记录](../assets/showcase/provenance.json)，观察明亮台面、深色实体与纸层透射密度的关系。使用入口：[Codex 安装](../README.md#codex-安装) · [Codex 图像创作](../README.md#codex-使用) · [Codex CLI](../CLI.md#codex-cli) · [ChatGPT 网页 Chat](../CHATGPT.md)。
 
 图库收录九组主题，每组分别安排横幅和竖幅。通过玻璃杯、咖啡勺、瓷杯和纸张，展示透光、反射、表面纹理及工作台操作。
 

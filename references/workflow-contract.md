@@ -1,6 +1,6 @@
 # Workflow Contract
 
-Scope: Explicit offline renderer operation or implementation. Enter through [Offline workflow](offline-workflow.md) for the local runtime contract.
+Scope: Operation or implementation of the separate local renderer project. In this document, CLI means the renderer package `@lightbox/cli`. Its prerequisites and command environment are described in [Renderer CLI](../CLI.md#renderer-cli). Enter through [Local renderer workflow](offline-workflow.md) for the runtime contract.
 
 ## Contents
 

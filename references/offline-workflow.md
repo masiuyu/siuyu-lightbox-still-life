@@ -1,10 +1,12 @@
 # 离线与精确源图层工作流
 
-此文档适用于用户明确选择本地确定性渲染或精确源图层合成的任务。它描述已有 CLI 的实际运行协议。成像任务的默认路线由上级 [Skill 入口](../SKILL.md) 决定。
+此文档适用于已有配套本地渲染器工程，并明确选择确定性渲染或精确源图层合成的任务。下文的 CLI 专指该工程的 `@lightbox/cli`；本 Skill 中的 Shell 脚本负责调用它。运行需要单独准备渲染器工程及其 Node.js、pnpm 和工程依赖。命令分类与工程定位见 [渲染器 CLI 说明](../CLI.md#renderer-cli)。
+
+Codex 常规图像创作从 [Agent 执行说明](../SKILL.md) 进入；ChatGPT 网页普通 Chat 使用 [网页创作说明](../CHATGPT.md)。
 
 ## 选择本地项目
 
-执行 `scripts/verify_project.py --repo <repo> --json`，区分 `bootstrapReady` 与 `productionReady`。已有项目可用时按以下步骤执行；用户请求开发项目时读取 [工程执行](codex-execution.md) 和指定的 [实现任务](implementation-plan.md)。
+在本地终端执行 `python3 <skill-dir>/scripts/verify_project.py --repo <renderer-repo> --json`，其中 `<skill-dir>` 是本 Skill 的实际目录，`<renderer-repo>` 是配套渲染器工程目录。区分 `bootstrapReady` 与 `productionReady`。已有项目可用时按以下步骤执行；用户请求开发项目时读取 [工程执行](codex-execution.md) 和指定的 [实现任务](implementation-plan.md)。
 
 ## 素材与方向
 
