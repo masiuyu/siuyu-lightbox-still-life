@@ -13,7 +13,7 @@
     "scene": {
       "carrier": "Exactly three study pieces: one complete stainless-steel coffee spoon, one large thin tracing-paper sheet with a precise graphite spoon drawing, and one smaller rectangular tracing-paper overlay.",
       "state": "static",
-      "intent": "A dedicated illuminated softbox-table study of a real coffee spoon and overlapping translucent drawings",
+      "intent": "A transmitted-light study of a real coffee spoon and its graphite contour on complete overlapping tracing papers",
       "support": "The listed objects have the ordinary material thickness and stable contacts of their recognizable product type. Paper rests on the same continuous horizontal surface; any lifted piece is supported by the stated hands. The physical subject preserves its complete functional parts and continuous construction.",
       "activity": []
     },
@@ -51,7 +51,7 @@
     "selection_reason": "The selected grouping makes the real object recognizable first, connects each study to a specific structural feature and organizes clear visual hierarchy within the requested format."
   },
   "design": {
-    "idea": "A dedicated illuminated softbox-table study of a real coffee spoon and overlapping translucent drawings",
+    "idea": "A transmitted-light study of a real coffee spoon and its graphite contour on complete overlapping tracing papers",
     "pairings": [
       {
         "sources": [],
@@ -62,19 +62,17 @@
         "purpose": "Connect the subject and its related study within one deliberate material composition."
       }
     ],
-    "composition": "Compose a complete 16:9 horizontal overhead still life. The full spoon lies on a gentle diagonal in the left third. One full tracing sheet on the right carries its complete corresponding graphite outline. One smaller translucent rectangle lies wholly within that sheet and crosses the actual graphite neck and handle. The real metal subject is visually dominant through its reflective contrast; all three complete pieces have generous continuous opal-tabletop margins. The optical axis is perpendicular to the tabletop and the sensor is parallel to it.",
-    "materials": "The spoon is credible formed stainless steel: a smooth shallow hollow bowl with a continuous thin rounded rim, a gradual neck transition and a slim satin handle. A broad neutral reflection sweeps through the concave bowl and a darker neighboring reflection makes its depth legible; the fine brushed handle keeps subtle directional texture. Two tracing-paper sheets have delicate fibers, clean thin edges and geometric graphite drawings. The upper sheet attenuates and softens lower graphite only within the actual overlap. The warm-white diffusing tabletop stays clean and smooth, with short soft shadows at the actual spoon and paper contact points. The horizontal softbox light-table has a smooth opal-white diffusing top lit evenly from within. Its exposed surface has a warm neutral luminous value, each single tracing-paper layer slightly attenuates the transmitted light, and the overlapping region has a clearly legible gentle step in optical density. Keep broad diffuse light, realistic exposure, local contact shading and graphite detail simultaneously visible.",
-    "palette": "A controlled neutral palette: luminous warm-white tabletop, pale translucent paper, graphite and the stated authentic product colors. Reflection brightness and material density set a clear primary and secondary hierarchy. Color accents, when specified, stay on their stated materials."
+    "composition": "Compose a complete 16:9 horizontal overhead still life. The full spoon lies on a gentle diagonal in the left third. One full tracing sheet on the right carries its complete corresponding graphite outline. One smaller translucent rectangle lies wholly within that sheet and crosses the actual graphite neck and handle. The real metal subject is visually dominant through its reflective contrast; all three complete pieces have generous continuous opal-tabletop margins. The optical axis is perpendicular to the tabletop and the sensor is parallel to it. Both sheets are complete physical rectangles with four right-angle corners and parallel opposite edges; place their top and bottom edges horizontally, with all corners inside the canvas.",
+    "materials": "The spoon is credible formed stainless steel: a smooth shallow hollow bowl with a continuous thin rounded rim, a gradual neck transition and a slim satin handle. A broad neutral reflection sweeps through the concave bowl and a darker neighboring reflection makes its depth legible; the fine brushed handle keeps subtle directional texture. Two tracing-paper sheets have delicate fibers, clean thin edges and geometric graphite drawings. The upper sheet attenuates and softens lower graphite only within the actual overlap. The milky-white diffusing tabletop stays clean and smooth, with short soft shadows at the actual spoon and paper contact points. The horizontal softbox light-table has a smooth opal-white diffusing top lit evenly from within. Its exposed surface has a slightly cool neutral luminous value, each single tracing-paper layer slightly attenuates the transmitted light, and the overlapping region has a clearly legible gentle step in optical density. Keep broad diffuse light, realistic exposure, local contact shading and graphite detail simultaneously visible.",
+    "palette": "A controlled neutral palette: luminous milky-white tabletop with a restrained cool-neutral cast, pale translucent paper, graphite and the stated authentic product colors. Reflection brightness and material density set a clear primary and secondary hierarchy. Color accents, when specified, stay on their stated materials."
   },
   "photography": {
-    "profile": "diffused_paper_archive",
+    "profile": "transmitted_inventory",
     "camera_format": "Full-frame digital photography with a 16:9 horizontal output composition.",
     "shot_scale": "Complete real spoon and two related tracing sheets within a continuous luminous tabletop margin.",
     "viewpoint": "Exact perpendicular overhead view; sensor parallel to the horizontal diffusing tabletop.",
     "focus_and_depth": "Keep the recognizable subject structure, required material edges and corresponding paper study readable at delivery size. The main subject has a crisp coherent silhouette; scattering through covering paper explains the softer covered graphite.",
-    "visible_result": "A recognizable real coffee spoon, a precise related graphite contour and an explicit paper transmission comparison on a clean continuous opal light-table surface.",
-    "lighting_setup": "The large horizontal softbox-table emits even warm-neutral 5000 K diffused light from beneath the opal tabletop. The lower sheet, small upper overlay and exposed diffuser retain three subtly distinct transmission values. A gentle broad overhead-left diffusion reflection reveals the steel spoon bowl and satin handle. Keep the transmitted surface as the dominant environmental light; preserve the covered graphite rather than bleaching it.",
-    "exposure_intent": "Expose the opal tabletop below clipping, keeping subtle paper fibers, denser overlap, both exposed and softened covered graphite, and the opaque spoon clearly visible."
+    "visible_result": "A recognizable real steel coffee spoon with readable dark reflections, a corresponding graphite contour and distinct single-versus-overlapped paper transmission on a luminous milky, slightly cool tabletop; every object and rectangular paper edge is inside the composition."
   },
   "review_targets": [
     "Record the actual native width and height and compare them with the requested 16:9 horizontal format.",
@@ -84,6 +82,7 @@
     "The softbox-table diffuser reads as an evenly illuminated opal-white surface through visible transmitted-light density differences in its tracing-paper layers.",
     "The small upper rectangle covers actual continuous graphite strokes; covered sections are visibly softer and lower in contrast than uncovered sections of those same strokes.",
     "The real opaque spoon has a hollow oval bowl, smooth continuous neck and complete satin handle, clearly distinct from the light-transmitting papers.",
-    "All three pieces have complete readable perimeters within the continuous luminous tabletop field."
+    "All three pieces have complete readable perimeters within the continuous luminous tabletop field.",
+    "Each tracing-paper sheet has four right-angle corners and parallel opposite edges; the top and bottom edges are horizontal, and the full rectangular sheet lies within the image with luminous tabletop margin."
   ]
 }
