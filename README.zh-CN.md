@@ -2,13 +2,15 @@
 
 [简体中文](README.zh-CN.md) | [English](README.md)
 
-**用光台静物图，呈现物件的结构与质感。**
+**从材料、媒介与光，发展每一次创作的观看方式。**
 
 Siuyu Lightbox Still Life 是面向 Codex 的图像创作 Skill。上传物件照片和风格参考，或从文字想法开始，设计构图、生成图片，再检查结构、光线和材料细节。仓库也提供适合 ChatGPT 网页普通 Chat 阅读的创作说明。
 
-默认风格是**底光透射**：从明亮乳白、略偏冷的光台正上方俯拍，把主体与对应图稿、材料样片有序摆放。光从下方穿过纸张和薄片，交叠处更暗，被覆盖的线稿更淡；实体保留暗部与真实反光。纸张采用完整矩形，主体、工具和纸张四周留出余量。你也可以指定柔光纸层、单件主视觉、操作场景或材质特写。
+开放桌面创作先确定观看问题，再共同选择实物材料、研究媒介、构图和光色。研究稿可以采用透明片刻线、织样、木面刻痕、蜡的正负形、技术拆解或数字图面，具体选择服务本轮主体。简短光台请求采用**底光透射**：乳白台面从下方照亮薄层，实体保留暗部、反射和接触；选用纸层时检查交叠密度及下层线条。完整静物保留必要轮廓与余量。
 
-Codex 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.0.0-rc.1`
+也可以指定印刷编辑构图：实物与纸面图片组合、网点摄影，或直接印在织物上的图形。印刷工艺、分色、承载材质和底色分别选择，画幅沿用本轮要求。详见 [印刷方向](references/print-direction.md) 与 [可选本地印刷工具](modules/print/README.md)。
+
+Codex 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.3.0-rc.3`
 
 [Codex 安装](#codex-安装) · [Codex 使用](#codex-使用) · [Codex CLI](#codex-cli-使用) · [ChatGPT 网页版](#chatgpt-网页版使用) · [完整图库](references/example-gallery.zh-CN.md)
 
@@ -24,6 +26,43 @@ Codex 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.
 | Codex CLI | 安装 Skill，在终端启动 `codex` 后输入任务 | [Codex CLI 使用](#codex-cli-使用) |
 | ChatGPT 网页普通 Chat | 把文档链接与参考图发进对话，按说明创作 | [ChatGPT 网页版使用](#chatgpt-网页版使用) |
 | 本地脚本、配套渲染器 | 在终端执行对应程序，编译方向、检查记录或运行渲染器 | [命令行工具说明](CLI.zh-CN.md) |
+
+## 可以创作什么
+
+| 图像任务 | 当前可见示例 | 可以继续指定 |
+|---|---|---|
+| 光台与研究静物 | 九组横竖案例及底光硫酸纸 | 主体、图稿媒介、透射、材料和画幅 |
+| 产品与材料摄影 | 金属扣件与织带 | 表面处理、光型、取景和接触 |
+| 情境叙事摄影 | 雨夜门口递出外套 | 人物动作、观看位置、环境及光色 |
+| 水彩插画与群像 | 社区温室 | 绘画媒介、投影、活动关系和密度 |
+| 印刷与结构表达 | 自然语言方向和印刷工具 | 工艺、分色、载体及结构阅读，具体图像逐次评审 |
+
+以下三张为本次实际生成的样张。点开图片查看原生文件，参数与评审见图片下方；新任务按其实际结果判断。
+
+### 材料与产品摄影
+
+[![材料与产品摄影](assets/showcase/20261027/buckle-photo/preview.jpg)](assets/showcase/20261027/buckle-photo/image.png)
+
+喷砂金属、织带纹理和孔边接触共同说明材料。
+
+[Direction](assets/showcase/20261027/buckle-photo/direction.md) · [Arguments](assets/showcase/20261027/buckle-photo/tool-call.json) · [Review](assets/showcase/20261027/buckle-photo/review.md) · [Provenance](assets/showcase/20261027/buckle-photo/provenance.json)
+
+### 情境叙事摄影
+
+[![情境叙事摄影](assets/showcase/20261027/rainy-doorway/preview.jpg)](assets/showcase/20261027/rainy-doorway/image.png)
+
+递接外套的动作、人物承托与室内外光共同形成故事。
+
+[Direction](assets/showcase/20261027/rainy-doorway/direction.md) · [Arguments](assets/showcase/20261027/rainy-doorway/tool-call.json) · [Review](assets/showcase/20261027/rainy-doorway/review.md) · [Provenance](assets/showcase/20261027/rainy-doorway/provenance.json)
+
+### 水彩插画与群像
+
+[![水彩插画与群像](assets/showcase/20261027/greenhouse-groups/preview.jpg)](assets/showcase/20261027/greenhouse-groups/image.png)
+
+透视、透明叠色和多人工作关系共同组织场景。
+
+[Direction](assets/showcase/20261027/greenhouse-groups/direction.md) · [Arguments](assets/showcase/20261027/greenhouse-groups/tool-call.json) · [Review](assets/showcase/20261027/greenhouse-groups/review.md) · [Provenance](assets/showcase/20261027/greenhouse-groups/provenance.json)
+
 
 ## Codex 安装
 
@@ -52,6 +91,14 @@ npx skills add https://github.com/masiuyu/siuyu-lightbox-still-life --skill siuy
 这里使用第三方 [skills 安装工具](https://github.com/vercel-labs/skills)，`--agent codex` 指定目标软件，当前项目的安装入口为 `.agents/skills/`。完成后在同一项目中打开 Codex。
 
 下载 ZIP 或使用 Python 脚本安装到用户目录，请看 [Codex 其他安装方式](#codex-其他安装方式)。
+
+当前判断方法把内容的存在位置、成像方式和载体共同确定，再选择材料、光与机位。局部编辑使用明确主图与参考分工；灯光方向、柔硬、光量、灯色和白平衡分别说明。详见 [执行方式](references/prompt-execution.md)、[材料](references/material-color.md) 与 [光路](references/lighting-optics.md)。方法接入与实际成图效果按各任务记录分别验证。
+
+[复合材料案例](references/material-construction-cases.md) 把基材、涂层、加工方向、角度色和薄壁透光接到具体设计与观察：木件、金属组件、薄膜书夹、灯罩、釉面、纤维和印墨分别选择形、光与取景。案例方向用于发展新任务，图片效果按实际生成结果判断。
+
+默认按 [视觉层级与 Smooth Control](references/visual-hierarchy-smooth-control.md) 先确定主视觉目标，再组织构图、关键光色材质及必要细节。整体过渡、块面和空间保持清楚，真实摄影保留肤质、材料、接触及环境；微距、明确风格和局部编辑按各自任务处理。编译脚本逐字传递本张采用的方向。
+
+[观看目的与成像选择](references/restaged-print-world-editorial.md) 把创作决定连接起来：要分辨表面，就给材料安排合适的受光面；要看懂结构，就选择能读到连接的视向与图形；要理解人物关系，就通过动作、距离和空间组织信息。配色、投影、密度和媒介随任务选择。随包方向可编译；扣件摄影、雨夜动作和温室群像已附当前样张及评审，装配说明继续按结构阅读目标验证；[方法来源与贡献](references/method-sources.md) 记录具体研究启发及使用范围。
 
 ## Codex 使用
 
@@ -85,17 +132,17 @@ codex
 
 在打开的 Codex 交互界面中输入 `/skills` 检查已加载的 Skill，再发送上方 [Codex 使用示例](#codex-使用)。带图片启动、直接传入任务及脚本用法见 [命令行使用说明](CLI.zh-CN.md#codex-cli)。
 
-## 五种画面方向
+## 按观看任务选择方向
 
 | 画面方向 | 适合怎样的画面 |
 |---|---|
-| **底光透射（默认）** | 明亮乳白光台从下方照亮纸张和透明薄片，交叠处更暗，下层线稿更淡，实体物件保留表面反光与暗部。 |
+| **底光透射（光台基线）** | 明亮乳白光台从下方照亮纸张和透明薄片，交叠处更暗，下层线稿更淡，实体物件保留表面反光与暗部。 |
 | 柔光纸层 | 乳白台面上铺着描图纸，用柔和光线呈现纸张纹理，以及下层线条透过上层纸张的效果。 |
 | 色场主视觉 | 用大面积的统一底色衬托物件，例如以蓝灰色台面突出白瓷杯的轮廓与明暗。 |
 | 工作台动作 | 把描图、摆放或手持纸稿的动作放入画面，表现手、工具与物件的实际接触。 |
 | 材质近摄 | 靠近物件，观察金属反光、拉丝纹理或纸张纤维，围绕指定细节安排取景。 |
 
-直接描述主体即可采用底光透射默认风格；也可以按表中的其他方向提出要求。图稿、样片、工具和摆放方式围绕本次主体设计，横竖画幅分别安排完整构图。
+表中是可用的起点。开放探索按 [视觉语言](references/visual-language.md) 选择图像形成方式，以 [研究媒介](references/study-artifacts.md) 组织图稿，再用 [材料形成](references/material-process-atlas.md) 与光共同实现。系列可选择一致关系；多方向探索则比较实际的媒介、形体、空间和明暗差异，横竖分别构图。
 
 ## 横幅与竖幅，分别构图
 
@@ -107,7 +154,9 @@ codex
 
 ## 随包提供的案例
 
-图库收录九组主题，每组各有一张横幅和一张竖幅，共十八张图片。你可以在 [完整图库](references/example-gallery.zh-CN.md) 中并排查看构图，并打开每张图的生成记录和看图记录。
+以下为既有光台图片证据，各自说明对应任务。新增媒介方法的实际效果依据后续获授权的成图与评审积累。
+
+原有光台图库收录九组主题，每组各有一张横幅和一张竖幅，共十八张图片；加上底光硫酸纸和三张跨题材新样张，当前包共有二十二张独立成图。你可以在 [完整图库](references/example-gallery.zh-CN.md) 中并排查看构图，并打开每张图的生成记录和看图记录。
 
 | 案例 | 观察重点 |
 |---|---|
@@ -120,6 +169,12 @@ codex
 | [手持咖啡勺图稿](references/example-gallery.zh-CN.md#example-07) | 双手托起纸稿时的纸张弯曲，以及下层线条在覆盖区域内外的深浅。 |
 | [棉纸字形压纹](references/example-gallery.zh-CN.md#example-08) | 字母压纹的深浅、纸张纤维与切边。 |
 | [柔光箱透光纸层](references/example-gallery.zh-CN.md#example-09) | 单层纸与叠层纸的明暗差别，以及跨过纸边界的铅笔线条。 |
+
+## 自然语言工作方式
+
+直接说明主体、图幅、要保留的内容和希望看见的效果。AI 查看来源后，用自然语言保存 direction.md，讲清每张参考的用途、物件之间的关系、制作与光照，再执行并看图。
+
+常规方向文件采用“参考图片”和“成像说明”两段，观察和取舍放在工作记录。`lightbox.py compile` 原样传递正文与图片顺序，`check` 核对指纹，`review` 汇总实际观察。编译、成像、视觉评审和用户接受分别有证据。详见 [执行方式](references/prompt-execution.md) 与 [迁移说明](references/interface-migration.md)。
 
 ## 它怎样工作
 
@@ -187,7 +242,7 @@ Skill 提供创作流程与配套脚本。各软件负责提供文件访问、�
 |---|---|
 | Codex 桌面端、CLI、IDE 扩展的完整流程 | Codex 能加载 Skill、读写文件并查看图片；Python 3.10 或更新版本；实际成图需要可调用的图像生成工具 |
 | 通过 `npx skills` 安装 | 终端、Node.js 与 npm；安装命令指定 Codex |
-| 运行仓库 Python 脚本 | 本地 Python 3.10 或更新版本，脚本使用标准库；各命令的输入与输出见 [Python 脚本说明](CLI.zh-CN.md#python-scripts) |
+| 运行仓库 Python 脚本 | 本地 Python 3.10 或更新版本；方向与评审命令使用标准库，图片证据命令另需 Pillow；各命令的输入与输出见 [Python 脚本说明](CLI.zh-CN.md#python-scripts) |
 | ChatGPT 网页普通 Chat | 能读取链接、粘贴文本或上传文档；实际成图需要当前对话支持图像生成 |
 | 配套本地渲染器 | 单独准备并验证渲染器工程、Node.js、pnpm 及工程依赖，见 [渲染器 CLI](CLI.zh-CN.md#renderer-cli) |
 
@@ -272,8 +327,40 @@ siuyu-lightbox-still-life/
 
 **每次都会采用同样的摆法吗？** 摄影预设提供光线和材料的处理方式，具体物件、图稿和布局根据本次要求设计。修改已有图片时，可以说明哪些位置、颜色或材料需要保持。
 
-**案例图片可以下载吗？** 可以。十九张生成图片随仓库保存在 `assets/` 中，克隆或下载 ZIP 后即可在本地查看，生成来源见 [素材来源](ASSET_SOURCES.md)。
+**案例图片可以下载吗？** 可以。二十二张独立成图随仓库保存在 `assets/` 中，克隆或下载 ZIP 后即可在本地查看，生成来源见 [素材来源](ASSET_SOURCES.md)。
 
 ## 配图与发布信息
 
-随包的十九张静物图片均由 AI 图像工具生成。九组横竖案例与底光硫酸纸展示图分别呈现器物结构、纸层和材料细节。各图的生成方式与图片信息见 [配图说明](ASSET_SOURCES.md)。当前版本为 `1.0.0-rc.1`。
+随包的二十二张独立成图均由 AI 图像工具生成。九组横竖案例、底光硫酸纸和三张新样张呈现器物结构、材料、人物关系与绘画表现；网页预览是对应图片的格式导出。各图的生成方式与图片信息见 [配图说明](ASSET_SOURCES.md)。当前版本为 `1.3.0-rc.3`。
+
+## 形式发展与材料比较
+
+开放创作先明确观者要发现什么，再选择展开、穿孔、折弯、叠层或分色。系列固定主体与研究的对应，横竖重新构图；整体身份与微观墨层可以分给不同图片。见 [形式发展](references/design-development.md)、[六组案例学习](references/case-derived-lessons.md) 与 [开口研究样例](assets/opening-study.example.md)。本轮案例方法已接入说明与方向准备，新图效果仍需对应测试。
+
+[墨层结构小样](assets/ink-layer-study.example.md) 用连续底墨块和独立结构墨检验层序，再迁移回目标图形；该小样当前为待执行方向。
+
+## 跨题材的材料、灯光与风格方法
+
+[材料指导](references/material-color.md) 分别处理颜色覆盖、反射、纹理尺度和实际形状，用金属、陶器、玻璃、木材、织物与纸张示范判断。[灯光指导](references/lighting-optics.md) 为光分配可见任务，并检查同场相互影响。[风格迁移](references/style-transfer.md) 保留当前主体身份，将选定视觉关系落实到新材料与画幅。[釉陶](assets/ceramic-surface-study.example.md) 和 [玻璃](assets/glass-volume-study.example.md) 两份示例方向已经准备，实际图片效果待测试。
+
+## 创作关系与按需调用
+
+[创意判断](references/creative-judgment.md) 将已有专业知识用于当前选择：提出能组织全图的主张，比较代价与实现条件，提前记录关键预期，再依据实际图片决定下一动作。已有方案可以继续深化，用户认可的内容按实际范围保留。
+
+[创作调用](references/creative-orchestration.md) 把任务、主体特征、视觉主张、形式、材料、光与机位连接起来，并说明出现问题后返回哪个环节。复杂任务按需展开，明确的局部修改直接进入对应模块。[美术指导](references/image-art-direction.md) 补充概念、大形、色场、留白与继续观看的关系；[提示词模式](references/prompt-patterns.md) 将选定决定写成可执行画面；[机位与运动](references/camera-and-motion.md) 区分静态时刻、视角、物件和灯光变化。
+
+[玻璃主视觉](assets/open-form-hero.example.md) 与 [双色艺术图面](assets/open-form-artprint.example.md) 示范不同媒介中的形式与材料选择，当前为已准备的方向。实际图片与视频效果分别由对应产物验证。
+
+## 从光场到交付图片
+
+[成像处理](references/image-development.md) 把场景与曝光、色调、最终观看连接起来，补充发光物和关键阅读区的判断。[材料指导](references/material-color.md) 说明纹理怎样沿局部表面延续；[机位与运动](references/camera-and-motion.md) 区分稳定实体关系与各视角的投影。[创作调用](references/creative-orchestration.md) 按材质、灯光、机位、裁区、媒介或调色的实际改变，选择需要重查的决定。方法已经接入，视觉改善按实际输出验证。
+
+## 已有图片、调用与评审的对应
+
+可选的 [图片证据](references/image-evidence.md) 工作流连接编译包、保存的 imagegen 参数、原生图及评审，并能逐像素核对索引中的原生裁区、复查留存后的文件变化。该功能需要 Pillow；常规方向编译和评审沿现有接口执行。视觉质量与用户接受继续使用各自证据。
+
+## 尺寸与观看的共同判断
+
+[取景](references/camera-framing.md) 合并旋转物件的完整布局，分开判断实体大小、画面占比和细节像素；扩大视场后复查材料线索与光。[模型建构](references/model-construction.md) 把人物或动物的识别特征落实到所选成品工艺，[材料判断](references/material-color.md) 让颜色、反光和起伏由相容成因解释，并检查比较样片。[机位与运动](references/camera-and-motion.md) 检查途中覆盖、新显表面和最终播放。本地方法已接入，新增图像与视频效果按实际产物验证。
+
+需要重复计算时，可选用 [取景预检](references/framing-preflight.md) 的 `lightbox.py framing`：按明确依据或设计假设，检查旋转矩形、边缘余量与细节像素。它只计算计划，方向和图像执行继续采用自然语言接口。

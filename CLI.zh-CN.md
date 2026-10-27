@@ -62,52 +62,59 @@ npx skills add https://github.com/masiuyu/siuyu-lightbox-still-life --skill siuy
 
 <a id="python-scripts"></a>
 
-## 本仓库的 Python 脚本
+## 自然语言方向与本地脚本
 
-需要 Python 3.10 或更新版本。以下相对路径命令在本仓库根目录执行，也就是包含 `SKILL.md` 的目录。
+Python 3.10 或更新版本即可运行常规方向和评审接口。以下命令在包含 SKILL.md 的包目录执行。
 
-| 脚本 | 实际作用与输出 |
-|---|---|
-| `scripts/install_skill.py` | 复制完整 Skill 到指定目录，支持备份已有版本 |
-| `scripts/validate_skill.py` | 校验 Skill 包结构、文档链接、样例和编译器 |
-| `scripts/build_image_job.py` | 读取 `direction.json`，输出含提示词与参考图片顺序的 `image-job.json` |
-| `scripts/validate_image_review.py` | 检查已有生成记录中视觉评审条目和汇总状态是否一致 |
-| `scripts/verify_project.py` | 检查另行准备的本地渲染器工程条件 |
-
-包校验：
+让 AI 先查看实际来源，写好 direction.md。把本轮图片逐行放在“参考图片”段，完整提示词写在“成像说明”段，Image N 按图片出现顺序对应。观察、取舍和授权依据保留在其他段落。完整写法见 [执行说明](references/prompt-execution.md)。
 
 ```bash
-python3 scripts/validate_skill.py .
+python3 scripts/lightbox.py compile /absolute/path/direction.md --output-dir /absolute/path/new-version
+python3 scripts/lightbox.py check /absolute/path/new-version
 ```
 
-编译已经准备好的方向文件：
+这会保存方向副本、实际提示词、图像工具参数、图片顺序和指纹。输出目录必须是新版本。编译后由 Codex 将 image-job.json 原样传入实际可用图像工具，取得原生图片，再查看全图和原生细节。
 
 ```bash
-python3 scripts/build_image_job.py /absolute/path/direction.json --output /absolute/path/image-job.json
+python3 scripts/lightbox.py review /absolute/path/review.md
 ```
 
-取得任务 JSON 后，由 Codex 或适配的 Agent 将其中的提示词与图片顺序传入图像生成工具。方向字段、调用接口和记录方法见 [Python 方向编译与成像调用](references/prompt-execution.md)。
+review.md 的核心表记录位置、所见、要求与结论。检查核对汇总一致性，实际像素由看图判断。样例见 [评审文件](assets/review.example.md)。
 
-检查已经保存的生成与看图记录：
+### 已有图片的证据对应
+
+实际生成和看图后，带 Pillow 的 Python 环境可连接编译包、真实 imagegen 参数、原生图与本轮评审：
 
 ```bash
+python3 scripts/lightbox.py evidence /absolute/path/compiled --call /absolute/path/tool-call.json --image /absolute/path/image.png --review /absolute/path/review.md --output /absolute/path/new-evidence.json
+python3 scripts/lightbox.py check-evidence /absolute/path/new-evidence.json
+```
+
+可用 `--detail-index` 逐像素核对原生裁区，用 `--execution` 留存实际执行附件。检查针对文件状态与像素对应，生成真实性、视觉判断和用户接受继续分别确认。详见 [图片证据](references/image-evidence.md)。
+
+### 既有记录与包维护
+
+```bash
+python3 scripts/lightbox.py migrate /absolute/path/direction.json --output /absolute/path/new-direction.md
+python3 scripts/build_image_job.py /absolute/path/direction.json --output /absolute/path/new-job.json
 python3 scripts/validate_image_review.py /absolute/path/generation-record.json
+python3 scripts/validate_skill.py .
+python3 -B scripts/test_natural_direction.py
+python3 -B scripts/test_image_evidence.py
 ```
 
-这项检查核对记录的一致性，图像质量仍由实际打开图片后判断。
+迁移保持旧编译正文与参考顺序，设计内容由本轮任务复核。旧文件继续保留。安装脚本沿 [安装说明](README.zh-CN.md#codex-其他安装方式) 使用，程序验证只覆盖实际执行的检查。[迁移说明](references/interface-migration.md) 列出当前接口和证据边界。
 
 <a id="renderer-cli"></a>
 
-## 配套本地渲染器 CLI
+## 精确印刷与配套渲染器
 
-本节面向需要确定性渲染、精确源图层合成或工程开发的用户。`@lightbox/cli` 属于另行准备的渲染器工程，运行前需要该工程及其 Node.js、pnpm 和依赖；本仓库提供 Skill、文档与调用脚本。
+精确处理同样先从自然语言目标开始。AI 确定实际算法、源图面、透明边界、尺寸与输出，再生成程序需要的内部参数卡。保存这些实际参数和报告，打开输出图检查。内置印刷算法见 [印刷工具](modules/print/README.md)。
 
-先在本地终端核对渲染器工程：
+另行准备的配套渲染器使用自己的运行协议，先核对实际工程：
 
 ```bash
-python3 /absolute/path/siuyu-lightbox-still-life/scripts/verify_project.py --repo /absolute/path/lightbox-archive --json
+python3 scripts/verify_project.py --repo /absolute/path/lightbox-archive --json
 ```
 
-本 Skill 的 `ingest.sh`、`preview.sh`、`review.sh`、`final.sh` 通过 `pnpm --filter @lightbox/cli` 调用工程。脚本按 `LIGHTBOX_REPO_ROOT` 指定的路径定位渲染器，或从当前目录向上寻找包含 `pnpm-workspace.yaml` 与 `apps/cli/package.json` 的工程根目录。
-
-已具备工程时，按 [本地渲染器工作流](references/offline-workflow.md) 执行；需要开发或集成工程时，按 [本地渲染器工程开发](references/codex-execution.md) 处理。
+具体执行见 [本地工作流](references/offline-workflow.md)，工程开发见 [工程执行](references/codex-execution.md)。

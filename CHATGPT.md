@@ -4,108 +4,103 @@
 
 [简体中文](CHATGPT.zh-CN.md) | [English](CHATGPT.md)
 
-Read, paste, or upload this guide into a regular Chat conversation in ChatGPT. It describes a light-table still-life workflow that can be followed directly in the conversation. The user's current request and the attachments actually available to the model establish the creative brief.
+Use this conversation guide for reference-driven tabletop imagery, lightbox studies, material hero images and print compositions. Start with the current request and accessible attachments. Develop the viewing idea through material, study medium, composition and light. Preserve an existing product according to its sources; develop new concepts within the open brief.
 
-For a local installation, see [Codex installation](README.md#codex-installation). For terminal use, see the [Codex CLI guide](CLI.md#codex-cli).
+For local use, see [installation](README.md#codex-installation) and the [CLI guide](CLI.md#codex-cli).
 
 <a id="开始使用"></a>
 
 ## Get started
 
-Start a regular Chat conversation in ChatGPT, attach photographs or describe your idea, and send:
+Attach your subject and references, then send:
 
 ```text
-Read
+Read this guide and work with my current attachments:
 https://github.com/masiuyu/siuyu-lightbox-still-life/blob/main/CHATGPT.md
-and follow this guide to work with my attachments and request in this
-conversation.
-Subject: [describe the object].
-Format and quantity: [for example, one 16:9 landscape image].
-Preserve: [shape, color, structure, or an existing layout].
-Show: [design drawings, transmitted light, soft paper layers, tools, or
-other details].
-Generate the image and continue refining it with my feedback.
+Subject and purpose: [describe].
+Preserve: [shape, material, color, text or existing layout].
+Open choices: [material, study medium, composition, light and color].
+Deliver: [analysis / prompt / one image in the requested format].
+Explain the viewing idea briefly, then execute within this scope.
 ```
-
-You can also share the repository homepage and ask the model to open this guide. The link supplies creative context for the current conversation. Share the guide again when you need it in another conversation.
 
 <a id="链接读取与图片生成"></a>
 
 ### Reading links and generating images
 
-If the link cannot be read, paste this guide in full or upload the downloaded document, then send your request. If the conversation only supports text, ask for a complete prompt to use with your chosen image tool. To create the image directly, use a conversation with image generation available. See the [ChatGPT image guide](https://learn.chatgpt.com/docs/image-generation).
+If the link cannot be read, paste or upload the guide. Use the tools actually available. Obtain a real image when generation is requested, authorized and available; deliver analysis or a copyable prompt when that is the requested output or only text is supported. See the [official image guide](https://learn.chatgpt.com/docs/image-generation) for platform capabilities.
 
 <a id="对话中的工作方式"></a>
 
 ## Working in the conversation
 
-Read the user's request and the currently accessible materials first. Inspect each available attachment, and clearly identify any necessary image or document that cannot be viewed. This guide uses natural-language creative directions. When file access and Python are available and the user wants structured records, the [direction compilation workflow (Chinese)](references/prompt-execution.md) can also be used. Describe only steps that were actually performed.
+Inspect each accessible attachment and state its use. Product images establish identity and keep requirements; style references supply selected visual relationships; an edit has a specific target. Locate the artwork window inside a screenshot and analyze its visible forms, material cues and light. Keep interface context in the source notes.
 
-When the user requests image generation or editing and an image tool is available, invoke it and obtain an image. In a text-only environment, deliver a copyable prompt and the intended attachment order. If the user requests only a prompt or analysis, deliver that requested content.
+Read the latest feedback before selecting the next action. Local changes preserve compatible established decisions. Distinguish generated results, visual assessment and user acceptance.
 
-Available capabilities depend on the plan, platform, and workspace settings. Regular Chat follows ChatGPT's current messaging and image limits. ChatGPT Work and Codex share usage limits; see the [official usage guide](https://learn.chatgpt.com/docs/pricing).
+For a local edit, choose one base image and name the specific contribution of every other reference. State the change, necessary integration and preserved content directly. Text, light and internal structures follow their chosen space and image-formation mechanism. Resolve softness, intensity, light color and final color separately. A cross-scene series keeps useful viewing relationships while each material follows its own optical behavior.
+
+For composite materials, establish the substrate, surface layers and connections before assigning shape, light and viewing conditions. Use the [construction cases](references/material-construction-cases.md) for grain under varnish, differently brushed components, thin-film angle color and translucent thin walls. Assess visible relationships from the image and manufacturing claims from their corresponding evidence.
 
 <a id="创作流程"></a>
 
 ## Creative workflow
 
+Use [viewing purpose and image formation](references/restaged-print-world-editorial.md) to decide what the viewer should recognize, understand or feel. Connect source requirements, viewpoint, material, light and graphic information to that purpose. Choose medium, projection, density, color and necessary words for the task. [Method sources and contributions](references/method-sources.md) identify specific research influences.
+
 <a id="1-明确主体与保留项"></a>
 
 ### 1. Define the subject and what to preserve
 
-Identify the object's real-world category, parts, and connections. Establish the silhouette, thickness, openings, joints, accessories, and support before describing the finish. Product photographs establish a specific object's shape. Style references establish the lighting, color, or arrangement to use. For a written brief, develop a concrete object from the user's description.
-
-When editing, specify which objects, positions, proportions, colors, and paper edges must remain. For example, a long necklace with a small pendant should retain its length, slender chain, connecting rings, and pendant-to-chain proportions.
+Identify silhouette, parts, openings, connections, material and required text. Preserve an existing object according to its actual sources. For a new model, select recognizable features, then design volume, fabrication, dimensions, color and support. Hidden internals, material formulas and manufacturing performance require their own evidence.
 
 <a id="2-组织整幅画面"></a>
 
 ### 2. Organize the complete image
 
-The default is a still life with transmitted light from below: a perpendicular top-down view of a bright, milky, slightly cool luminous table. The camera's optical axis is perpendicular to the surface, and the same continuous tabletop reaches all image edges. Establish the subject as the first point of attention, then arrange matching drawings, material samples, and useful tools into a clear viewing order. Follow the user's explicit choice of another style or a previously approved appearance.
+Use existing design, art, craft and photography knowledge to choose a visible relationship that organizes the image. Compare advantages, tradeoffs and feasibility when a choice is needed; deepen established directions within the accepted scope. Use [creative judgment](references/creative-judgment.md) to state the critical expectation before generation and choose the next action from actual observations.
 
-Each drawing should correspond to a visible feature of the subject, such as its contour, structure, ornament, or material. Use spacing, orientation, grouping, and negative space to support the composition. Compose landscape and portrait images separately. The user's requested format and quantity take priority.
+State what the viewer should discover. An open-ring theme could study cord bending, mirror curvature, a negative impression or a contour revealed behind an interface. Each question changes the study medium, material, space and light. Choose a connection that belongs to the subject; write only the selected image in the final prompt.
 
-Keep the subject, required tools, and complete paper sheets inside the frame, with space around them. Use physically complete rectangular or square sheets with four right-angle corners and parallel opposite edges. When aligned upright, their top and bottom edges are horizontal. Frame close-ups around the detail selected by the user.
+Choose the study artifact for its question: line drawing, engraved transparent overlay, technical diagram, textile sample, incised wood, wax impression, contact-scan imagery or digital graphics. Define what it explains, its carrier and placement. Pairing, enclosure, radial organization, grids, foreground revelation and concentrated detail offer different reading paths. Give each supporting element a concrete contribution. See [visual language](references/visual-language.md) and [study artifacts](references/study-artifacts.md), maintained in Chinese.
+
+Images on tabletop paper can use scan effects, subtle graphic glow, perspective diagrams, X-ray-style structural revelation or thermal-style false color. Choose the language for the current question. Keep the paper's own boundary, material, placement and lighting distinct from the depth, transparency and light effects depicted in its image.
+
+A complete still life keeps required contours and margins. Explicit details and art images use their chosen window. Default landscape is 16:9 and portrait 9:16; the user's dimensions take priority. Recompose each format. Select shared relationships for a series; compare actual medium, form, space and light differences for exploratory directions.
 
 <a id="3-明确底光和纸层"></a>
 
 ### 3. Establish transmitted light and paper layers
 
-The main light comes from below the milky diffusing surface, passing upward through thin paper or translucent material. A single sheet has its own density; overlaps are darker, and lower pencil lines become paler where an upper sheet covers them. Paper boundaries, single layers, overlaps, and covered drawing lines together make transmission visible. Requests for a lightbox, tracing paper, or translucent paper alone use these default lighting relationships. An explicit request for the soft paper archive style calls for subtler, softer tonal separation.
+A simple lightbox request uses a perpendicular overhead view and a continuous milky luminous surface. Light passes through selected translucent materials; opaque objects retain dark tones, reflections and contact. For tracing-paper layers, inspect single and overlapping density and the same existing line becoming paler across a covering edge. A complete sheet rotates with its drawing.
 
-Opaque objects such as metal retain dark tones, reflections, and credible contact with the table. Lighting, shadows, occlusion, and material thickness belong to the same physical scene. Soft lighting must still reveal surfaces and layers clearly.
+Open tabletop and hero briefs choose light for the material: reflected shapes reveal metal curvature, transmission and thick edges define transparent volume, directional surface light reveals stitches and incisions. Specify each principal light's target and result, then inspect neighboring surfaces. Locate graphic gradients, glow, surface scattering and camera defocus separately.
 
 <a id="4-建立可信的细节"></a>
 
 ### 4. Build credible details
 
-Check each object's form and connections against its actual function. Round-nose pliers have two tapered jaws, a connecting pivot, and two handles. Tweezers have connected arms and matching tips. A chain consists of continuously interlinked components.
+Distinguish color coverage, reflection, relief, overall form and transmission, then judge their combined result. Let construction determine detail: wood grain follows each component, stitches attach to fabric, cord has a diameter and bend, wax has thickness and impression edges. Material can form the graphic itself. See [material processes](references/material-process-atlas.md).
 
-Metal appearance follows its material and finish: gold has warm reflections, steel tools have silver-gray dark surfaces and narrow highlights, and fine engraving or brushing has a clear direction. Paper retains appropriate fibers and thin edges. Every object has plausible thickness, scale, support, and contact shadows.
+Use [visual hierarchy and Smooth Control](references/visual-hierarchy-smooth-control.md) by default: establish large forms, tonal areas and space, then let necessary detail appear at the material's viewing scale. Photographic work retains natural skin variation, material cues, contact and environment; focus and motion determine local softness. Respect the user's specified style, material and local edit scope.
+
+Distinguish objects, intervening media and images on carriers. Schematic internals, scan stretching and false color follow their declared image language; physical objects follow their own materials. Give essential details enough native area. A native crop and an independently generated close-up provide different evidence.
 
 <a id="5-整理提示词并成像"></a>
 
 ### 5. Assemble the prompt and generate
 
-Combine the chosen direction into one complete prompt covering:
+Write complete prose in the order of subject hierarchy, composition, key light-color-material relationships, and a few necessary details. Give the frame one primary visual goal and preserve the required identity, space, format and image content. Name attachments Image 1, Image 2 in supplied order and state each purpose. Locate authorized visible text on its carrier. Keep analysis and execution records in the accompanying notes.
 
-- Format, quantity, target dimensions, and intended use.
-- Subject structure, materials, details, relative scale, and preservation requirements.
-- Placement of the subject, drawings, paper layers, samples, and tools.
-- Viewpoint, light from below, reflections, paper transmission, and contact shadows.
-- The most important details to inspect and the required complete framing.
-
-For an edit, identify the current image as the specific target. Assign a clear purpose to each attachment and state their order in the delivered prompt. If the user is refining details, preserve the established composition and subject proportions.
-
-Any visible text must serve the user's request or the current artwork and appear on a defined paper, package, or physical surface.
+Check compatible content, material, space, time and text through [prompt patterns](references/prompt-patterns.md). For edits, identify the current change and neighboring keep requirements; use original identity sources for structural rebuilding. Actual calls, quantities and corrections follow the authorized scope.
 
 <a id="6-检查与交付"></a>
 
 ### 6. Inspect and deliver
 
-When the generated image can be viewed, check the complete composition, subject identity, object boundaries, paper layers, and lighting first. Then inspect chain links, tool tips, pivots, textures, edges, and contact at a larger scale. Correct specific issues within the authorized scope. Distinguish the generated result, visual assessment, and the user's selection.
+Use the original request and sources to assess identity, viewing idea, hierarchy, space and required completeness. At native scale inspect the connections, edges, medium, reflections and layers relevant to this image. Pass requires visible evidence; a contradiction requires revision; an unreadable core relationship remains unverified. Exploratory directions are compared against their selected differences. Written directions establish design choices.
 
-Deliver the images or prompts requested. Report dimensions from the actual file. For an upscale, state the resulting dimensions and the method used. If generation, viewing, or reading dimensions is unavailable, identify the unfinished step accurately.
+Deliver actual images, dimensions and files, the selected direction and material limitations. Respect the review boundary. The default is one comparison followed by at most two focused corrections, within the user's authorization. Preserve the actual visual conclusion when stopping.
 
 <a id="常用指令"></a>
 
@@ -116,15 +111,12 @@ Deliver the images or prompts requested. Report dimensions from the actual file.
 ### Generate a light-table still life
 
 ```text
-Use the Siuyu Lightbox Still Life conversation workflow to create a 16:9
-still life from my attachments.
-Preserve the subject's real structure and materials. Arrange matching design
-drawings on complete rectangular tracing paper.
-Use a perpendicular top-down view and a milky tabletop filling the frame,
-with light passing upward through the paper.
-Make overlaps darker and lower sketch lines paler where they are covered.
-Keep natural spacing and the subject and all paper edges fully in frame.
-Generate one complete image.
+Create one 16:9 lightbox study from my attachments.
+Preserve the subject's structure and material; choose study artifacts and
+media that explain it. Use a perpendicular overhead view and continuous
+milky light from below through selected translucent layers. Keep the subject
+and necessary study artifacts complete with readable gaps. Generate one image
+and inspect the actual result.
 ```
 
 <a id="为已有图片整理放大指令"></a>
@@ -132,24 +124,18 @@ Generate one complete image.
 ### Prepare an upscaling prompt for an existing image
 
 ```text
-Write a faithful upscaling prompt for this image.
-Preserve the composition, object count, positions, proportions, all four
-paper edges, and transmitted-light relationships.
-Describe how to retain clear product textures, tool construction, metallic
-reflections, and contact shadows.
-The target size is [pixel dimensions]. Deliver one complete copyable prompt.
+Write a faithful upscaling prompt for this image, targeting [pixel dimensions].
+Preserve composition, identity, proportions, medium and light. Explain how to
+retain the important textures and edges. State which details the native image
+actually contains.
 ```
+
+For exploration: “Develop different viewing questions for this theme. Choose each direction's study medium, material construction, space and light. Explain the concrete differences; deliver written directions first.”
 
 <a id="进一步阅读"></a>
 
 ## Further guidance
 
-These detailed documents are maintained in Chinese. Read the ones relevant to the current task:
+Read the relevant Chinese guides: [creative workflow](references/creative-orchestration.md), [art direction](references/image-art-direction.md), [materials](references/material-color.md), [light](references/lighting-optics.md), [framing](references/camera-framing.md) and [image development](references/image-development.md). Use [paper layers](references/diffused-paper-archive.md), [print](references/print-direction.md) or [style transfer](references/style-transfer.md) for those tasks.
 
-- [Image art direction](references/image-art-direction.md): hierarchy, grouping, visual weight, and negative space.
-- [Physical realism](references/physical-realism.md): structure, scale, connections, and materials.
-- [Paper layers and transmission](references/diffused-paper-archive.md): light from below, thin paper, overlaps, and drawings.
-- [Framing and focus](references/camera-framing.md): aspect ratio, focus, and essential details.
-- [Complete skill workflow](SKILL.md): saving files and running scripts when the required tools are available.
-
-For platform capabilities, see OpenAI's guides to [using ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt), [image generation](https://learn.chatgpt.com/docs/image-generation), and [web search](https://learn.chatgpt.com/docs/web-search).
+The full [Skill](SKILL.md) covers local work. With files and Python, list local image links under `## 参考图片` in direction.md and the actual prompt under `## 成像说明`, then [compile and check](references/prompt-execution.md). Use [image evidence](references/image-evidence.md) with saved actual calls, native images and reviews; use optional [framing calculations](references/framing-preflight.md) for repeated layout planning. Explicit shot requests use [camera and motion](references/camera-and-motion.md), with actual video reviewed separately.
