@@ -2,13 +2,15 @@
 
 [简体中文](README.zh-CN.md) | [English](README.md)
 
-**Reveal form and texture through light.**
+**Develop each image through material, medium and light.**
 
-A Codex skill for creating lightbox still-life images, with a companion guide for ChatGPT. Start with a reference photo or a written idea, arrange the subject with matching sketches and material samples, then generate and refine the composition, lighting, and physical details.
+A Codex skill for reference-driven still lifes, product imagery, art-directed scenes, illustration and editorial print compositions, with a companion guide for ChatGPT. Begin with what the viewer should discover, then choose the object, study medium, composition, material and light together. Generate and inspect the actual result.
 
-The default style is **transmitted light from below**: a top-down view of a bright, milky, slightly cool light table. Light passes through tracing paper and translucent sheets; overlaps become darker and covered sketch lines become paler. Opaque objects retain their dark tones and natural reflections. Complete rectangular sheets, objects, and tools sit comfortably within the frame. You can also request soft paper layers, a single-object hero image, a workbench action, or a material close-up.
+Open tabletop briefs choose a study medium for the question: engraved transparent overlays, stitched samples, incised wood, wax impressions, technical diagrams or digital imagery can each change the composition and lighting. A simple lightbox request uses **transmitted light from below**, a milky luminous table and readable opaque surfaces. Paper-layer studies inspect overlap density and covered lines. Complete still lifes keep the required objects and boundaries comfortably inside the frame. See [visual language](references/visual-language.md), [study artifacts](references/study-artifacts.md) and [material processes](references/material-process-atlas.md); these detailed guides are in Chinese.
 
-Codex invocation: `$siuyu-lightbox-still-life` · Author: siuyu · Version: `1.0.0-rc.1`
+You can also request editorial print compositions: real objects with paper reproductions, halftone photographs, or graphics printed directly onto cloth. Choose the print process, color separation, carrier material and carrier color independently; the requested aspect ratio still governs the image. See the [print workflow](references/print-direction.md) and [optional local print tools](modules/print/README.md).
+
+Codex invocation: `$siuyu-lightbox-still-life` · Author: siuyu · Version: `1.3.0-rc.3`
 
 [Install in Codex](#codex-installation) · [Use in Codex](#codex-usage) · [Codex CLI](#codex-cli-usage) · [ChatGPT web](#chatgpt-web-usage) · [Full gallery](references/example-gallery.md)
 
@@ -28,6 +30,43 @@ Codex invocation: `$siuyu-lightbox-still-life` · Author: siuyu · Version: `1.0
 | Local scripts or the companion renderer | Run the relevant program to compile directions, check records, or operate the renderer | [Command-line guide](CLI.md) |
 
 <a id="codex-安装"></a>
+
+## What you can create
+
+| Image task | Current visual example | Further choices |
+|---|---|---|
+| Lightbox and research still lifes | Nine landscape/portrait studies and transmitted paper | Subject, study medium, transmission, material and format |
+| Product and material photography | Metal buckle and woven strap | Surface, light, framing and contact |
+| Narrative scene photography | An exchange at a rainy doorway | Actions, viewpoint, environment and light |
+| Watercolor illustration and groups | A community greenhouse | Medium, projection, activities and density |
+| Print and structural communication | Natural-language directions and print tools | Process, separations, substrate and structural readability; inspect each result |
+
+Three AI-generated examples with native files, actual arguments and visual reviews. Open each image for its native version. New tasks need their own image review.
+
+### Material and product photography
+
+[![Material and product photography](assets/showcase/20261027/buckle-photo/preview.jpg)](assets/showcase/20261027/buckle-photo/image.png)
+
+Read metal, woven fibers and contact through shape and light.
+
+[Direction](assets/showcase/20261027/buckle-photo/direction.md) · [Arguments](assets/showcase/20261027/buckle-photo/tool-call.json) · [Review](assets/showcase/20261027/buckle-photo/review.md) · [Provenance](assets/showcase/20261027/buckle-photo/provenance.json)
+
+### Narrative scene photography
+
+[![Narrative scene photography](assets/showcase/20261027/rainy-doorway/preview.jpg)](assets/showcase/20261027/rainy-doorway/image.png)
+
+An exchange, physical support and indoor/outdoor light make the relationship visible.
+
+[Direction](assets/showcase/20261027/rainy-doorway/direction.md) · [Arguments](assets/showcase/20261027/rainy-doorway/tool-call.json) · [Review](assets/showcase/20261027/rainy-doorway/review.md) · [Provenance](assets/showcase/20261027/rainy-doorway/provenance.json)
+
+### Watercolor illustration and groups
+
+[![Watercolor illustration and groups](assets/showcase/20261027/greenhouse-groups/preview.jpg)](assets/showcase/20261027/greenhouse-groups/image.png)
+
+Perspective, transparent washes and connected activities organize the scene.
+
+[Direction](assets/showcase/20261027/greenhouse-groups/direction.md) · [Arguments](assets/showcase/20261027/greenhouse-groups/tool-call.json) · [Review](assets/showcase/20261027/greenhouse-groups/review.md) · [Provenance](assets/showcase/20261027/greenhouse-groups/provenance.json)
+
 
 ## Codex installation
 
@@ -66,6 +105,14 @@ This uses the third-party [skills installer](https://github.com/vercel-labs/skil
 For a ZIP download or installation into your user directory with Python, see [other Codex installation methods](#other-codex-installation-methods).
 
 <a id="codex-使用"></a>
+
+Current guidance connects where content exists, how it becomes an image, and the chosen carrier before resolving material, light and camera. Local edits use one base image and explicit reference roles; direction, source size, intensity, light color and white balance are separate decisions. See [execution](references/prompt-execution.md), [materials](references/material-color.md) and [lighting](references/lighting-optics.md). Each task records method checks and actual image evidence separately.
+
+The [composite material cases](references/material-construction-cases.md) connect substrates, coatings, machining direction, angle color and thin-wall transmission to concrete design and observation choices. Wood, metal components, a thin-film clip, a lampshade, glaze, fibers and print each use suitable shape, light and framing. These directions support new tasks; image effects are assessed from actual generated results.
+
+By default, [visual hierarchy and Smooth Control](references/visual-hierarchy-smooth-control.md) establish one primary visual goal, followed by composition, key light-color-material relationships and necessary detail. Keep large transitions, tonal areas and space clear while preserving photographic skin, materials, contact and environment. Macro studies, specified styles and local edits follow their actual scope. The compiler transports the authored direction verbatim.
+
+[Viewing purpose and image formation](references/restaged-print-world-editorial.md) connect decisions across a task. Surface comparison calls for useful lit areas; structural explanation calls for readable connections and projection; a scene calls for actions, distances and a coherent space. Choose color, density and medium for that purpose. Portable directions cover buckle photography, assembly, a rainy doorway and a greenhouse. Photography, the doorway and watercolor have reviewed image examples; assembly remains a structural-readability task to validate. [Method sources and contributions](references/method-sources.md) record specific research influences and usage scope.
 
 ## Codex usage
 
@@ -110,17 +157,17 @@ Enter `/skills` in the Codex interface to check the loaded skills, then send one
 
 <a id="五种画面方向"></a>
 
-## Five visual directions
+## Choose a direction for the viewing task
 
 | Direction | Visual emphasis |
 |---|---|
-| **Transmitted light (default)** | A bright milky table lights paper and translucent sheets from below. Overlaps become darker, covered sketch lines become paler, and opaque objects retain reflections and dark tones. |
+| **Transmitted light (lightbox baseline)** | A bright milky table lights paper and translucent sheets from below. Overlaps become darker, covered sketch lines become paler, and opaque objects retain reflections and dark tones. |
 | Soft paper layers | Tracing paper on a milky surface, with subtle texture and lower drawings visible through the upper sheets. |
 | Color-field hero image | A broad field of color supports the subject, such as a blue-gray surface framing the shape and shading of a white porcelain cup. |
 | Workbench action | Drawing, arranging, or holding a sheet, with credible contact between hands, tools, and objects. |
 | Material close-up | Reflections, brushed metal, paper fibers, or another selected detail, framed at a useful scale. |
 
-Describe your subject to use the default transmitted-light style, or request another direction. Drawings, samples, tools, and placement are designed around the current subject. Landscape and portrait images receive their own complete compositions.
+These are starting points. For open exploration, choose a viewing idea and study medium, then resolve material construction, space and light. A consistent series preserves its selected relationships; exploratory directions compare concrete changes in form, medium, composition and light. Compose each format separately.
 
 <a id="横幅与竖幅分别构图"></a>
 
@@ -136,7 +183,9 @@ Each format has its own arrangement of the subject, drawings, and paper layers. 
 
 ## Included examples
 
-The gallery contains nine subjects and studies, each with a landscape and portrait image: eighteen images in total. Open the [full gallery](references/example-gallery.md) to compare the compositions and inspect each image's original generation and review records.
+These existing lightbox images document their own tasks. The added medium methods require their own authorized images and visual reviews.
+
+The original lightbox gallery contains nine subjects and studies, each with a landscape and portrait image: eighteen images. The transmitted-paper image and three new cross-subject examples bring the package to twenty-two independent images. Open the [full gallery](references/example-gallery.md) to compare the compositions and inspect each image's original generation and review records.
 
 | Example | What to look for |
 |---|---|
@@ -151,6 +200,12 @@ The gallery contains nine subjects and studies, each with a landscape and portra
 | [Translucent paper on a lightbox](references/example-gallery.md#example-09) | Single and overlapping paper densities, with a pencil line continuing across an overlay boundary. |
 
 <a id="它怎样工作"></a>
+
+## Natural-language workflow
+
+Describe the subject, format, preservation requirements and visible result. The AI views the actual sources and writes direction.md as complete prose about image uses, object relationships, construction, materials and light.
+
+The reference-images section lists local images in order; the image-instructions section contains the exact prompt. Observations and selection notes stay in other sections. `lightbox.py compile` transports that prompt and order, `check` verifies the saved bundle, and `review` summarizes actual observations. Compilation, image generation, visual review and user acceptance retain separate evidence. See [execution](references/prompt-execution.md) and [migration](references/interface-migration.md).
 
 ## How it works
 
@@ -235,7 +290,7 @@ The skill supplies the creative workflow and supporting scripts. The host softwa
 |---|---|
 | Full workflow in Codex desktop, CLI, or IDE extension | Skill loading, local file access, and image viewing; Python 3.10 or newer; an available image tool for generation |
 | Installation with `npx skills` | A terminal, Node.js, and npm; select Codex in the installation command |
-| Repository Python scripts | Local Python 3.10 or newer; scripts use the standard library. See [script inputs and outputs](CLI.md#python-scripts). |
+| Repository Python scripts | Local Python 3.10 or newer; direction and review commands use the standard library. Image evidence commands also need Pillow. See [script inputs and outputs](CLI.md#python-scripts). |
 | Regular ChatGPT Chat on the web | Access to the guide through a link, pasted text, or an uploaded document; image generation must be available to produce images |
 | Companion local renderer | A separately prepared renderer project with Node.js, pnpm, and its dependencies; see [renderer CLI](CLI.md#renderer-cli) |
 
@@ -334,10 +389,42 @@ siuyu-lightbox-still-life/
 
 **Will every image use the same arrangement?** Presets guide lighting and materials. Objects, drawings, and layout are designed for your request. When editing an existing image, specify which positions, colors, or materials to preserve.
 
-**Can I download the examples?** Yes. All nineteen generated images are included under `assets/` and are available when you clone the repository or download its ZIP. See [image information (Chinese)](ASSET_SOURCES.md).
+**Can I download the examples?** Yes. All twenty-two independent generated images are included under `assets/` and are available when you clone the repository or download its ZIP. See [image information (Chinese)](ASSET_SOURCES.md).
 
 <a id="配图与发布信息"></a>
 
 ## Images and release information
 
-The nineteen still-life images in this package were generated with an AI image tool. The nine landscape/portrait pairs and the transmitted-paper showcase explore object structure, paper layers, and materials. See [image details (Chinese)](ASSET_SOURCES.md) for their generation information. The current version is `1.0.0-rc.1`.
+The twenty-two independent images in this package were generated with an AI image tool. Nine landscape/portrait pairs, transmitted paper and three new examples explore objects, materials, human relationships and painting. Web previews are format exports of corresponding images. See [image details (Chinese)](ASSET_SOURCES.md) for their generation information. The current version is `1.3.0-rc.3`.
+
+## Developing form and material comparisons
+
+Choose what the viewer should recognize or compare, then describe concrete operations such as unfolding, perforation, bending, layering or ink separation. Keep subject relationships across a series while recomposing each aspect ratio. Assign overall identity and microscopic surface evidence to appropriate views. See the Chinese [design guide](references/design-development.md), [six case studies](references/case-derived-lessons.md) and [opening study](assets/opening-study.example.md). These methods have been applied to directions; new image results require their own tests.
+
+The [ink-layer study](assets/ink-layer-study.example.md) tests a separate ink line over a continuous base coat before transferring the material construction to a target graphic. It is a prepared direction awaiting its image test.
+
+## Material, lighting and style across subjects
+
+The Chinese [material guide](references/material-color.md) separates color coverage, reflection, texture scale and physical shape, with examples for metal, ceramic, glass, wood, cloth and paper. The [lighting guide](references/lighting-optics.md) assigns visible jobs to light and checks their interactions. The [style transfer guide](references/style-transfer.md) preserves subject identity while adapting visual relationships to new materials and formats. Prepared [ceramic](assets/ceramic-surface-study.example.md) and [glass](assets/glass-volume-study.example.md) directions demonstrate the method; their image results remain to be tested.
+
+## Creative relationships and focused routing
+
+The Chinese [creative judgment guide](references/creative-judgment.md) applies existing expertise to the current decision: choose an idea that organizes the image, resolve tradeoffs, state a critical expected observation, then use the actual result to choose the next action. Deepen established directions while preserving the user's accepted scope.
+
+The Chinese [creative workflow](references/creative-orchestration.md) connects the task, subject, visual idea, form, material, light and viewpoint, then routes visible failures to the relevant decision. Use only the modules needed for the current task. [Art direction](references/image-art-direction.md) develops visual weight, color fields, negative space and further discovery. [Prompt patterns](references/prompt-patterns.md) express selected decisions; [camera and motion](references/camera-and-motion.md) distinguishes viewpoint, framing, object and lighting changes.
+
+Prepared [glass hero](assets/open-form-hero.example.md) and [two-color artwork](assets/open-form-artprint.example.md) directions explore the same basic form through different media. Their image effects await actual generation; temporal effects need their own sequence evidence.
+
+## From light to the delivered image
+
+The Chinese [image development guide](references/image-development.md) connects the scene to exposure, color treatment and final viewing, including emissive products and protected reading areas. [Material guidance](references/material-color.md) follows texture directions over local surfaces; [camera guidance](references/camera-and-motion.md) separates stable scene relationships from each view’s projection. The [workflow](references/creative-orchestration.md) identifies which decisions need another check after a material, light, camera, crop, medium or grading change. These methods are integrated; visual improvements require actual outputs.
+
+## Saved images, calls and reviews
+
+The optional [image evidence workflow](references/image-evidence.md) binds a compiled job, saved imagegen arguments, a native still and its review. It can compare indexed crops pixel for pixel with their native source, then recheck file changes against the saved record. These commands require Pillow; ordinary direction compilation and review retain their existing interface. Visual quality and user acceptance continue to rely on their own evidence.
+
+## Scale and viewing conditions
+
+[Framing](references/camera-framing.md) combines the bounds of rotated objects and distinguishes physical size, frame coverage and detail pixels. Recheck material cues and light coverage after widening the view. [Model construction](references/model-construction.md) translates recognition features into the chosen fabrication language; [materials](references/material-color.md) connects color, reflection and relief through compatible causes and corresponding samples. [Camera and motion](references/camera-and-motion.md) checks coverage during movement, newly revealed surfaces and final playback. These methods are integrated locally; new image and video effects require actual outputs.
+
+For repeated calculations, the optional [framing preflight](references/framing-preflight.md) command, `lightbox.py framing`, estimates rotated rectangle bounds, margins and detail pixels from declared dimensions or design assumptions. It evaluates the plan; directions and image execution keep their natural-language interface.

@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "default_process_preset": "fine_uncoated_offset",
+  "default_art_direction_preset": "restrained_editorial",
+  "control_scale": {
+    "minimum": 0,
+    "maximum": 100,
+    "meaning": "Relative visual direction for GPT-Image-2 and ChatGPT Images 2.0, not an API parameter or measured press specification"
+  },
+  "process_control_keys": [
+    "source_fidelity",
+    "geometry_lock",
+    "material_separation",
+    "screen_visibility",
+    "paper_fiber_visibility",
+    "ink_absorption",
+    "dot_gain",
+    "edge_softness",
+    "ink_load_variation",
+    "midtone_retention",
+    "shadow_openness",
+    "color_restraint",
+    "registration_variance",
+    "surface_wear"
+  ],
+  "art_control_keys": [
+    "physical_realism",
+    "material_separation",
+    "layout_restraint",
+    "graphic_flatness",
+    "palette_boldness",
+    "type_assertiveness",
+    "asymmetry",
+    "annotation_density"
+  ],
+  "process_presets": {
+    "fine_uncoated_offset": {
+      "label": "Fine uncoated offset",
+      "execution_class": "image2_perceptual_plus_clustered_am_renderer",
+      "summary": "Image-first, high-frequency offset reproduction on quiet uncoated stock with open middle values and restrained absorption.",
+      "recommended_for": ["photographic fidelity", "portraits", "products", "editorial still life", "subtle material realism"],
+      "allowed_screen_modes": ["fine_color_AM", "fine_monochrome_AM", "FM_stochastic"],
+      "prompt_anchors": [
+        "The bounded photographic image is formed by a fine high-frequency screen while the carrier, real objects, paper borders, and solid type retain their own material behavior.",
+        "Paper channels remain open through three-quarter tones; black reads as absorbed gray-black ink rather than a sealed digital mass.",
+        "Paper tooth, slight dot gain, and ink-load variation are close-view evidence, not the first visual event."
+      ],
+      "default_controls": {
+        "source_fidelity": 94,
+        "geometry_lock": 97,
+        "material_separation": 95,
+        "screen_visibility": 18,
+        "paper_fiber_visibility": 17,
+        "ink_absorption": 24,
+        "dot_gain": 12,
+        "edge_softness": 14,
+        "ink_load_variation": 8,
+        "midtone_retention": 90,
+        "shadow_openness": 86,
+        "color_restraint": 68,
+        "registration_variance": 2,
+        "surface_wear": 0
+      },
+      "allowed_ranges": {
+        "source_fidelity": [82, 100],
+        "geometry_lock": [90, 100],
+        "material_separation": [88, 100],
+        "screen_visibility": [8, 30],
+        "paper_fiber_visibility": [8, 30],
+        "ink_absorption": [10, 38],
+        "dot_gain": [4, 24],
+        "edge_softness": [5, 26],
+        "ink_load_variation": [2, 18],
+        "midtone_retention": [78, 100],
+        "shadow_openness": [72, 100],
+        "color_restraint": [48, 88],
+        "registration_variance": [0, 10],
+        "surface_wear": [0, 10]
+      },
+      "renderer_defaults": {
+        "supported_reproductions": ["monochrome_am", "subtractive_cmyk_am"],
+        "cells_per_short_edge": 840,
+        "dot_gain": 0.008,
+        "max_coverage": 0.66,
+        "jitter_fraction": 0.018,
+        "ink_load_variation": 0.015,
+        "edge_softness_px": 0.16,
+        "dot_shape_roughness": 0.035,
+        "paper_tooth_strength": 0.08,
+        "gamma": 1.42,
+        "cmyk_angles_degrees": {"cyan": 15, "magenta": 75, "yellow": 0, "black": 45}
+      },
+      "tradeoff": "Most faithful and refined; the screen deliberately remains secondary at normal size."
+    },
+    "refined_visible_offset": {
+      "label": "Refined visible offset",
+      "execution_class": "image2_perceptual_plus_clustered_am_renderer",
+      "summary": "A visibly screened but still editorial offset reproduction with moderate rosette presence and controlled tonal reduction.",
+      "recommended_for": ["visible print mechanism", "graphic photography", "editorial covers", "controlled screen presence"],
+      "allowed_screen_modes": ["fine_color_AM", "fine_monochrome_AM"],
+      "prompt_anchors": [
+        "The screen is perceptible at normal viewing size but remains subordinate to faces, objects, and reading order.",
+        "Midtones visibly resolve into organized dots without flattening into poster bands.",
+        "Registration stays clean and paper absorption remains restrained."
+      ],
+      "default_controls": {
+        "source_fidelity": 90,
+        "geometry_lock": 96,
+        "material_separation": 94,
+        "screen_visibility": 36,
+        "paper_fiber_visibility": 19,
+        "ink_absorption": 27,
+        "dot_gain": 17,
+        "edge_softness": 17,
+        "ink_load_variation": 10,
+        "midtone_retention": 84,
+        "shadow_openness": 80,
+        "color_restraint": 62,
+        "registration_variance": 4,
+        "surface_wear": 1
+      },
+      "allowed_ranges": {
+        "source_fidelity": [78, 100],
+        "geometry_lock": [88, 100],
+        "material_separation": [86, 100],
+        "screen_visibility": [26, 50],
+        "paper_fiber_visibility": [8, 34],
+        "ink_absorption": [12, 42],
+        "dot_gain": [8, 32],
+        "edge_softness": [7, 32],
+        "ink_load_variation": [3, 22],
+        "midtone_retention": [68, 96],
+        "shadow_openness": [62, 94],
+        "color_restraint": [38, 82],
+        "registration_variance": [0, 14],
+        "surface_wear": [0, 12]
+      },
+      "renderer_defaults": {
+        "supported_reproductions": ["monochrome_am", "subtractive_cmyk_am"],
+        "cells_per_short_edge": 620,
+        "dot_gain": 0.014,
+        "max_coverage": 0.68,
+        "jitter_fraction": 0.022,
+        "ink_load_variation": 0.018,
+        "edge_softness_px": 0.18,
+        "dot_shape_roughness": 0.045,
+        "paper_tooth_strength": 0.12,
+        "gamma": 1.35,
+        "cmyk_angles_degrees": {"cyan": 15, "magenta": 75, "yellow": 0, "black": 45}
+      },
+      "tradeoff": "More obvious print character, with modest loss of tiny photographic detail."
+    },
+    "screenprint_spot": {
+      "label": "Spot-color screenprint",
+      "execution_class": "image2_perceptual",
+      "summary": "Two to four opaque stencil-printed spot colors with firm ink deposits, deliberate tonal steps, and optional screened image regions.",
+      "recommended_for": ["bold graphic work", "pop direction", "limited palettes", "large type", "flat shapes"],
+      "allowed_screen_modes": ["spot_screenprint"],
+      "prompt_anchors": [
+        "Use two to four named spot inks with opaque deposits and purposeful overprint rather than process-color photographic smoothness.",
+        "Mesh and stencil evidence stays subtle in solid areas; screened dots appear only where a source image requires tonal reproduction.",
+        "Edges have minute ink deposit character while silhouettes, type, and registration remain intentional."
+      ],
+      "default_controls": {
+        "source_fidelity": 82,
+        "geometry_lock": 95,
+        "material_separation": 91,
+        "screen_visibility": 48,
+        "paper_fiber_visibility": 12,
+        "ink_absorption": 18,
+        "dot_gain": 22,
+        "edge_softness": 18,
+        "ink_load_variation": 9,
+        "midtone_retention": 62,
+        "shadow_openness": 66,
+        "color_restraint": 28,
+        "registration_variance": 6,
+        "surface_wear": 0
+      },
+      "allowed_ranges": {
+        "source_fidelity": [60, 94],
+        "geometry_lock": [86, 100],
+        "material_separation": [82, 100],
+        "screen_visibility": [30, 72],
+        "paper_fiber_visibility": [4, 30],
+        "ink_absorption": [6, 38],
+        "dot_gain": [10, 42],
+        "edge_softness": [8, 38],
+        "ink_load_variation": [2, 28],
+        "midtone_retention": [40, 78],
+        "shadow_openness": [42, 82],
+        "color_restraint": [5, 55],
+        "registration_variance": [0, 22],
+        "surface_wear": [0, 18]
+      },
+      "renderer_defaults": null,
+      "tradeoff": "Strong physical graphic character; continuous photographic nuance is intentionally reduced."
+    },
+    "risograph_spot": {
+      "label": "Risograph spot-color editorial",
+      "execution_class": "image2_perceptual",
+      "summary": "Two or three translucent spot inks on porous stock with controlled overprint, modest registration variation, and economical editorial rhythm.",
+      "recommended_for": ["handmade color", "small editions", "illustration", "youthful editorial systems"],
+      "allowed_screen_modes": ["riso_spot_dither"],
+      "prompt_anchors": [
+        "Use two or three named translucent spot inks whose overlaps create secondary colors.",
+        "Keep registration variation small and directional rather than random damage.",
+        "Porous paper and ink density variation are visible close up while the page remains designed and clean."
+      ],
+      "default_controls": {
+        "source_fidelity": 76,
+        "geometry_lock": 93,
+        "material_separation": 88,
+        "screen_visibility": 38,
+        "paper_fiber_visibility": 25,
+        "ink_absorption": 34,
+        "dot_gain": 24,
+        "edge_softness": 25,
+        "ink_load_variation": 18,
+        "midtone_retention": 66,
+        "shadow_openness": 68,
+        "color_restraint": 34,
+        "registration_variance": 18,
+        "surface_wear": 3
+      },
+      "allowed_ranges": {
+        "source_fidelity": [55, 90],
+        "geometry_lock": [82, 100],
+        "material_separation": [78, 98],
+        "screen_visibility": [24, 62],
+        "paper_fiber_visibility": [12, 44],
+        "ink_absorption": [18, 52],
+        "dot_gain": [12, 46],
+        "edge_softness": [12, 48],
+        "ink_load_variation": [8, 36],
+        "midtone_retention": [42, 82],
+        "shadow_openness": [44, 84],
+        "color_restraint": [8, 62],
+        "registration_variance": [8, 38],
+        "surface_wear": [0, 20]
+      },
+      "renderer_defaults": null,
+      "tradeoff": "Warm and tactile, but color overlap and registration variation reduce exact photographic fidelity."
+    },
+    "photogravure_monochrome": {
+      "label": "Monochrome photogravure",
+      "execution_class": "image2_perceptual",
+      "summary": "Quiet monochrome photomechanical reproduction with long tonal scale, ink-rich shadows, and restrained paper tooth.",
+      "recommended_for": ["portrait depth", "landscape", "monochrome luxury", "subtle archival reproduction"],
+      "allowed_screen_modes": ["gravure_cells"],
+      "prompt_anchors": [
+        "Use one restrained ink family with a long tonal scale and fine photomechanical cell character.",
+        "Keep highlights delicate and middle values continuous in perception while shadows remain open enough to show form.",
+        "The result is a clean contemporary reproduction, with material evidence rather than theatrical aging."
+      ],
+      "default_controls": {
+        "source_fidelity": 91,
+        "geometry_lock": 97,
+        "material_separation": 93,
+        "screen_visibility": 13,
+        "paper_fiber_visibility": 20,
+        "ink_absorption": 23,
+        "dot_gain": 11,
+        "edge_softness": 16,
+        "ink_load_variation": 8,
+        "midtone_retention": 93,
+        "shadow_openness": 78,
+        "color_restraint": 96,
+        "registration_variance": 0,
+        "surface_wear": 0
+      },
+      "allowed_ranges": {
+        "source_fidelity": [82, 100],
+        "geometry_lock": [90, 100],
+        "material_separation": [86, 100],
+        "screen_visibility": [5, 28],
+        "paper_fiber_visibility": [8, 34],
+        "ink_absorption": [10, 38],
+        "dot_gain": [4, 24],
+        "edge_softness": [7, 32],
+        "ink_load_variation": [2, 20],
+        "midtone_retention": [82, 100],
+        "shadow_openness": [64, 92],
+        "color_restraint": [88, 100],
+        "registration_variance": [0, 4],
+        "surface_wear": [0, 8]
+      },
+      "renderer_defaults": null,
+      "tradeoff": "Excellent tonal depth and restraint; unsuitable when lively multicolor separation is central."
+    }
+  },
+  "art_direction_presets": {
+    "restrained_editorial": {
+      "label": "Restrained editorial",
+      "summary": "Quiet hierarchy, material-led color, disciplined whitespace, and typography that supports rather than performs.",
+      "compatible_processes": ["fine_uncoated_offset", "refined_visible_offset", "screenprint_spot", "risograph_spot", "photogravure_monochrome"],
+      "prompt_anchors": [
+        "Use one decisive focal subject, one supporting read, and abundant calm space.",
+        "Let physical material and source evidence determine color; avoid decorative motifs without a source relationship.",
+        "Typography, when authorized, uses at most two voices and remains informational."
+      ],
+      "default_controls": {
+        "physical_realism": 94,
+        "material_separation": 95,
+        "layout_restraint": 90,
+        "graphic_flatness": 12,
+        "palette_boldness": 24,
+        "type_assertiveness": 22,
+        "asymmetry": 42,
+        "annotation_density": 10
+      },
+      "tradeoff": "Highest material credibility and longevity; deliberately avoids spectacle."
+    },
+    "pop_graphic": {
+      "label": "Pop graphic",
+      "summary": "Large flat color relationships, bold scale jumps, concise display type, and a clear image-versus-shape rhythm without imitating a named artist.",
+      "compatible_processes": ["fine_uncoated_offset", "refined_visible_offset", "screenprint_spot", "risograph_spot"],
+      "prompt_anchors": [
+        "Build one large graphic color event and one dominant subject rather than filling the page with equal motifs.",
+        "Use a concise two-to-four-color relationship, decisive crop, and bold display type only when copy is authorized.",
+        "Keep source identity and physical boundaries intact; graphic simplification must be deliberate, not a generic comic treatment."
+      ],
+      "default_controls": {
+        "physical_realism": 68,
+        "material_separation": 86,
+        "layout_restraint": 56,
+        "graphic_flatness": 78,
+        "palette_boldness": 84,
+        "type_assertiveness": 80,
+        "asymmetry": 64,
+        "annotation_density": 18
+      },
+      "tradeoff": "Immediate visual impact; sacrifices some quiet tonal nuance and demands tighter copy discipline."
+    },
+    "modernist_grid": {
+      "label": "Modernist grid",
+      "summary": "Measured alignment, asymmetric grid tension, objective sans typography, and controlled geometric intervals.",
+      "compatible_processes": ["fine_uncoated_offset", "refined_visible_offset", "screenprint_spot", "risograph_spot", "photogravure_monochrome"],
+      "prompt_anchors": [
+        "Use an explicit grid with unequal modules, disciplined alignments, and one controlled break in the system.",
+        "Prefer neutral sans typography and exact spacing relationships over decorative lettering.",
+        "Geometric order must organize the supplied content rather than invent unrelated circles or diagrams."
+      ],
+      "default_controls": {
+        "physical_realism": 78,
+        "material_separation": 90,
+        "layout_restraint": 82,
+        "graphic_flatness": 46,
+        "palette_boldness": 48,
+        "type_assertiveness": 60,
+        "asymmetry": 58,
+        "annotation_density": 24
+      },
+      "tradeoff": "Clear and systematic; can feel impersonal when the source relationship is weak."
+    },
+    "scientific_plate": {
+      "label": "Scientific plate",
+      "summary": "Evidence-led plate composition with a primary specimen, restrained notation, measured margins, and exact information hierarchy.",
+      "compatible_processes": ["fine_uncoated_offset", "refined_visible_offset", "screenprint_spot", "risograph_spot", "photogravure_monochrome"],
+      "prompt_anchors": [
+        "Treat the subject as evidence: one primary specimen, one or two supporting views, and only authorized labels.",
+        "Use measured margins, small neutral type, precise leaders only when they point to real source features, and ample paper field.",
+        "Every annotation must carry information; decoration cannot masquerade as data."
+      ],
+      "default_controls": {
+        "physical_realism": 88,
+        "material_separation": 92,
+        "layout_restraint": 88,
+        "graphic_flatness": 28,
+        "palette_boldness": 20,
+        "type_assertiveness": 30,
+        "asymmetry": 30,
+        "annotation_density": 58
+      },
+      "tradeoff": "Strong evidence structure; requires real labels and can become sterile if annotations are invented."
+    }
+  },
+  "recommendation_sets": {
+    "generic_print": [
+      {"process": "fine_uncoated_offset", "art": "restrained_editorial", "label": "Refined editorial print", "reason": "Safest image-first default with believable paper, ink, and material separation.", "tradeoff": "The screen remains intentionally subtle."},
+      {"process": "fine_uncoated_offset", "art": "pop_graphic", "label": "Polished pop offset", "reason": "Adds bold composition and color while retaining fine photographic reproduction.", "tradeoff": "More graphic and less quiet than the default."},
+      {"process": "screenprint_spot", "art": "pop_graphic", "label": "Physical pop screenprint", "reason": "Uses opaque spot inks and stencil logic when the printing process itself should be visible.", "tradeoff": "Reduces photographic tonal nuance."}
+    ],
+    "photographic_fidelity": [
+      {"process": "fine_uncoated_offset", "art": "restrained_editorial", "label": "Fine editorial offset", "reason": "Preserves faces, product geometry, middle values, and source color relationships.", "tradeoff": "Close inspection is needed to read the screen."},
+      {"process": "photogravure_monochrome", "art": "restrained_editorial", "label": "Monochrome tonal depth", "reason": "Best when portrait or landscape modeling matters more than color.", "tradeoff": "Commits the image to one ink family."},
+      {"process": "refined_visible_offset", "art": "modernist_grid", "label": "Visible modernist offset", "reason": "Shows more screen structure within a controlled editorial system.", "tradeoff": "Tiny source detail is slightly reduced."}
+    ],
+    "bold_graphic": [
+      {"process": "fine_uncoated_offset", "art": "pop_graphic", "label": "Polished pop offset", "reason": "Keeps source detail while shifting layout, scale, color, and type toward a bold Pop direction.", "tradeoff": "The process remains refined rather than obviously handmade."},
+      {"process": "screenprint_spot", "art": "pop_graphic", "label": "Spot-color pop screenprint", "reason": "Makes opaque ink layers and stencil logic part of the design.", "tradeoff": "Photographic gradients are deliberately simplified."},
+      {"process": "risograph_spot", "art": "pop_graphic", "label": "Riso pop edition", "reason": "Adds translucent spot-color overlap and modest registration character.", "tradeoff": "Exact color and edge fidelity are lower."}
+    ],
+    "handmade_color": [
+      {"process": "risograph_spot", "art": "restrained_editorial", "label": "Quiet riso editorial", "reason": "Balances porous stock and spot-color overlap with a disciplined composition.", "tradeoff": "Registration and color overlap are intentionally less exact."},
+      {"process": "screenprint_spot", "art": "modernist_grid", "label": "Modernist screenprint", "reason": "Uses strong spot inks inside a measured grid.", "tradeoff": "Tonal images need purposeful simplification."},
+      {"process": "fine_uncoated_offset", "art": "scientific_plate", "label": "Clean evidence plate", "reason": "Offers tactile paper and disciplined information without strong process artifacts.", "tradeoff": "Less visibly handmade."}
+    ],
+    "monochrome_depth": [
+      {"process": "photogravure_monochrome", "art": "restrained_editorial", "label": "Quiet photogravure", "reason": "Prioritizes long tonal scale and ink-rich photographic depth.", "tradeoff": "Color is removed."},
+      {"process": "fine_uncoated_offset", "art": "scientific_plate", "label": "Monochrome evidence offset", "reason": "Retains precise forms and supports restrained factual annotation.", "tradeoff": "More analytic than atmospheric."},
+      {"process": "refined_visible_offset", "art": "modernist_grid", "label": "Visible monochrome grid", "reason": "Makes the screen and layout system more explicit.", "tradeoff": "Less tonal subtlety than the first option."}
+    ]
+  }
+}

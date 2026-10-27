@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that an image review's declared summary follows its core conclusions."""
+"""Check core conclusions in a Markdown review or an existing JSON generation record."""
 from __future__ import annotations
 
 import argparse
@@ -45,10 +45,14 @@ def validate_record(record: dict) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("record", type=Path, help="Generation record containing visual_review")
+    parser.add_argument("record", type=Path, help="review.md or an existing generation-record.json containing visual_review")
     args = parser.parse_args()
     try:
-        result = validate_record(json.loads(args.record.read_text(encoding="utf-8")))
+        if args.record.suffix.lower() == ".md":
+            from natural_direction import validate_markdown_review
+            result = validate_markdown_review(args.record.read_text(encoding="utf-8-sig"))
+        else:
+            result = validate_record(json.loads(args.record.read_text(encoding="utf-8")))
     except (OSError, ValueError) as error:
         print(json.dumps({"record_consistent": False, "error": str(error)}, ensure_ascii=False))
         return 1

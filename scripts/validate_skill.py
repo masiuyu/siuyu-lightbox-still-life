@@ -12,16 +12,45 @@ from pathlib import Path
 REQUIRED = {
     "SKILL.md",
     "README.md",
+    "index.html",
     "ASSET_SOURCES.md",
     "agents/openai.yaml",
     "references/image-art-direction.md",
     "references/prompt-execution.md",
     "references/photography.md",
     "references/material-color.md",
+    "references/visual-language.md",
+    "references/material-process-atlas.md",
+    "references/study-artifacts.md",
     "references/object-relations.md",
     "scripts/build_image_job.py",
+    "scripts/lightbox.py",
+    "scripts/framing_plan.py",
+    "scripts/test_framing_plan.py",
+    "references/framing-preflight.md",
+    "scripts/image_evidence.py",
+    "scripts/test_image_evidence.py",
+    "references/image-evidence.md",
+    "scripts/natural_direction.py",
+    "scripts/legacy_image_job.py",
+    "scripts/test_natural_direction.py",
+    "scripts/print_direction.py",
+    "scripts/test_print_direction.py",
+    "references/print-direction.md",
+    "assets/print-direction.example.json",
+    "modules/print/README.md",
+    "modules/print/LICENSE",
+    "modules/print/references/material-library.json",
+    "modules/print/references/print-style-presets.json",
+    "modules/print/scripts/style_profiles.py",
+    "modules/print/scripts/carrier_materials.py",
     "scripts/validate_image_review.py",
     "assets/image-direction.example.json",
+    "assets/image-direction.example.md",
+    "assets/print-direction.example.md",
+    "assets/review.example.md",
+    "references/interface-migration.md",
+    "evals/behavior-cases.md",
     "assets/photography-profiles.json",
     "references/offline-workflow.md",
     "references/workflow-contract.md",
@@ -100,7 +129,7 @@ def main() -> None:
         fail("frontmatter must contain only name and description")
     name = frontmatter["name"]
     description = frontmatter["description"]
-    if name != "siuyu-lightbox-still-life" or not re.fullmatch(r"[a-z0-9-]{1,64}", name):
+    if name != skill.name or not re.fullmatch(r"[a-z0-9-]{1,64}", name):
         fail("invalid skill name")
     if not description.startswith("Use when") or len(description) > 1024:
         fail("description must start with 'Use when' and be <=1024 characters")
@@ -118,6 +147,7 @@ def main() -> None:
         visited.add(document)
         markdown = document.read_text(encoding="utf-8")
         markdown = re.sub(r"```.*?```", "", markdown, flags=re.DOTALL)
+        markdown = re.sub(r"(`+)([^`\n]*?)\1", lambda item: " " * len(item.group(0)), markdown)
         for link in re.findall(r"\[[^\]]+\]\(([^)]+)\)", markdown):
             if re.match(r"^[a-z][a-z0-9+.-]*://", link):
                 continue
@@ -157,7 +187,7 @@ def main() -> None:
 
     image_job = subprocess.run(
         [sys.executable, "-B", str(skill / "scripts/build_image_job.py"),
-         str(skill / "assets/image-direction.example.json")],
+         str(skill / "assets/image-direction.example.md")],
         capture_output=True, text=True, check=False,
     )
     if image_job.returncode != 0:
@@ -166,12 +196,22 @@ def main() -> None:
     if not isinstance(compiled_job.get("prompt"), str) or not compiled_job["prompt"].strip():
         fail("image direction example must emit a prompt")
 
+    for example in ("print-direction.example.md", "review.example.md"):
+        command = ([sys.executable, "-B", str(skill / "scripts/lightbox.py"), "review", str(skill / "assets" / example)]
+                   if example == "review.example.md" else
+                   [sys.executable, "-B", str(skill / "scripts/build_image_job.py"), str(skill / "assets" / example)])
+        run = subprocess.run(command, capture_output=True, text=True, check=False)
+        if run.returncode:
+            fail(f"natural-language example failed: {example}: {run.stdout} {run.stderr}")
+        json.loads(run.stdout)
+
     compiler = skill / "scripts" / "compile_generation_description.py"
     direction_example = skill / "assets" / "visual-direction.example.json"
     manifest_example = skill / "assets" / "asset-manifest.example.json"
     workflow_example = skill / "assets" / "workflow.example.json"
     compiler_command = [
         sys.executable,
+        "-B",
         str(compiler),
         str(direction_example),
         "--manifest",
@@ -231,6 +271,7 @@ def main() -> None:
             fail(f"eval {case_id} has an empty expected_output")
         if not isinstance(case["files"], list):
             fail(f"eval {case_id} files must be a list")
+    # Source archives support the documented Python and shell interpreter calls.
     for script in (skill / "scripts").iterdir():
         if script.suffix in {".py", ".sh"} and not os.access(script, os.R_OK):
             fail(f"script is not readable: {script.name}")

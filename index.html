@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Siuyu Lightbox Still Life：从观看目的选择材料、构图与光色，创作产品摄影、人物场景、水彩插画、光台与印刷图片。">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>Siuyu Lightbox Still Life · 光台研究静物</title>
+  <link rel="icon" href="assets/brand/siuyu-mark.svg" type="image/svg+xml">
+  <style>
+    :root{--paper:#f6f5ef;--ink:#1d302d;--muted:#68716a;--line:#d6dbd1;--green:#174b46;--accent:#b3522d;--serif:Georgia,"Times New Roman",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-underline-offset:4px}button{font:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}img{display:block;width:100%;height:auto}p,h1,h2,h3,figure{margin:0}button:disabled{cursor:default}::selection{background:#ccd8bc}
+    .wrap{width:min(1320px,calc(100% - 88px));margin-inline:auto}.topbar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:23px 0;gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:21px;font-weight:650;letter-spacing:-.7px}.brand img{width:31px;height:31px}.nav{display:flex;gap:30px;align-items:center;font-size:13px}.nav a{text-decoration:none}.nav a:hover{color:var(--accent)}.version{font:11px/1.5 ui-monospace,monospace;color:var(--muted)}
+    .hero{padding-top:46px}.eyebrow{font:11px/1.5 ui-monospace,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:9px}.dot{width:6px;height:6px;background:var(--accent);border-radius:50%}.hero-title{display:grid;grid-template-columns:1.5fr 1fr;align-items:end;gap:50px;margin:26px 0 38px}h1{font:clamp(55px,6.8vw,98px)/.98 var(--serif);font-weight:400;letter-spacing:-5px}.hero-title h1 span{display:block;font-style:italic;font-size:.65em;line-height:1.4;letter-spacing:-2.5px}.hero-copy{max-width:385px;padding-bottom:6px}.hero-copy .lead{font-size:22px;font-weight:500;line-height:1.7;margin-bottom:13px;letter-spacing:.3px}.hero-copy p{color:var(--muted)}.hero-figure{border:1px solid var(--line)}.hero-figure img{aspect-ratio:1672/941;object-fit:contain}.caption{display:flex;justify-content:space-between;gap:25px;font-size:11px;color:var(--muted);padding-top:13px}.caption .caps{font:11px/1.7 ui-monospace,monospace;letter-spacing:1px}.hero-actions{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:25px 0 35px;border-bottom:1px solid var(--line)}.actions{display:flex;align-items:center;gap:25px}.button{display:inline-flex;align-items:center;justify-content:center;gap:30px;background:var(--green);color:white;padding:12px 22px;border:1px solid var(--green);text-decoration:none;font-size:13px}.button:hover{background:#246057}.text-link{font-size:13px}.invocation{font:12px/1.5 ui-monospace,monospace;color:var(--muted);overflow-wrap:anywhere}
+    .section{padding:78px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:30px}.section-label{font:11px/1.4 ui-monospace,monospace;letter-spacing:1.5px;color:var(--accent);margin-bottom:14px}h2{font-weight:500;font-size:32px;line-height:1.35;letter-spacing:-.6px}.section-intro{max-width:425px;color:var(--muted);font-size:14px}.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:45px;margin-top:43px}.principle{border-top:1px solid var(--line);padding-top:19px}.small-number{font:12px ui-monospace,monospace;color:var(--accent)}.principle h3{font-size:19px;font-weight:500;margin:18px 0 12px}.principle p{color:var(--muted);font-size:14px}
+    .gallery-top{display:flex;justify-content:space-between;align-items:center;gap:25px;margin:35px 0 23px}.switch{display:inline-flex;border:1px solid var(--green);padding:3px;gap:3px}.switch button{border:0;padding:9px 19px;font-size:12px;background:transparent;color:var(--green);min-height:39px}.switch button[aria-pressed="true"]{background:var(--green);color:#fff}.gallery-note{font-size:12px;color:var(--muted)}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px 22px}.study{min-width:0}.study-image{display:block;background:#eaece3;border:1px solid var(--line);text-decoration:none;overflow:hidden}.study img{aspect-ratio:1672/941;object-fit:contain;transition:opacity .15s}.gallery[data-orientation="portrait"] .study img{aspect-ratio:941/1672}.study-image:hover img{opacity:.88}.study-heading{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-top:13px}.study h3{font-size:15px;font-weight:500}.study .number{font:10px ui-monospace,monospace;color:var(--accent)}.study p{font-size:12px;color:var(--muted);margin-top:6px}.gallery-footer{font-size:12px;color:var(--muted);margin-top:30px;display:flex;justify-content:space-between;gap:25px}
+    .directions{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:35px}.direction{border-top:1px solid var(--line);padding-top:19px}.direction .en{font:italic 17px var(--serif);color:var(--accent)}.direction h3{font-size:16px;font-weight:500;margin:12px 0 8px}.direction p{font-size:12px;color:var(--muted)}
+    .start-section{display:grid;grid-template-columns:.85fr 1.15fr;gap:75px}.start-copy p{color:var(--muted);font-size:14px;margin-top:22px;max-width:325px}.start-content{min-width:0}.step{border-top:1px solid var(--line);padding:20px 0 26px}.step h3{font-size:16px;font-weight:500;margin-bottom:10px}.step h3 span{font:11px ui-monospace,monospace;color:var(--accent);margin-right:10px}.step p{font-size:13px;color:var(--muted)}pre{margin:16px 0;background:#eaece4;border:1px solid var(--line);padding:17px 19px;font:12px/1.9 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}code{font-family:ui-monospace,monospace;overflow-wrap:anywhere}.prompt-box{background:var(--green);padding:24px;color:white;margin-top:16px}.prompt-box textarea{display:block;width:100%;height:150px;resize:vertical;background:transparent;border:0;padding:0;color:white;font:13px/1.95 var(--sans)}.copy-row{display:flex;gap:15px;justify-content:space-between;align-items:center;margin-top:18px}.copy-button{color:var(--green);background:var(--paper);border:1px solid var(--paper);padding:8px 18px;font-size:12px;min-height:38px}.copy-status{font-size:12px;color:#d4e5dd}.notes{display:flex;gap:17px;flex-wrap:wrap;font-size:12px;margin-top:10px}
+    .faq{display:grid;grid-template-columns:.85fr 1.15fr;gap:75px}.faq details{border-top:1px solid var(--line);padding:20px 0}.faq details:last-child{border-bottom:1px solid var(--line)}summary{cursor:pointer;font-size:14px;padding-right:25px}.faq details p{font-size:13px;color:var(--muted);margin-top:16px;max-width:95%}.footer{padding:30px 0 35px;display:flex;gap:25px;justify-content:space-between;align-items:start;font-size:11px;color:var(--muted)}.footer-brand{font:italic 26px var(--serif);color:var(--green);margin-bottom:5px}.footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end}.footer .credit{max-width:620px;text-align:right;margin-top:13px}noscript{display:block;color:var(--muted);font-size:13px;margin-bottom:20px}
+    @media(min-width:1500px){h1{font-size:106px}}
+    @media(max-width:1000px){.wrap{width:calc(100% - 56px)}.hero-title{grid-template-columns:1.2fr 1fr;gap:30px}h1{letter-spacing:-3px}.hero-copy .lead{font-size:19px}.hero-copy p{font-size:13px}.principles{gap:28px}.directions{grid-template-columns:repeat(3,1fr)}.start-section,.faq{gap:40px;grid-template-columns:.8fr 1.2fr}}
+    @media(max-width:700px){.wrap{width:calc(100% - 36px)}.topbar{padding:18px 0}.nav{gap:18px}.nav .version{display:none}.brand{font-size:19px}.brand img{width:26px;height:26px}.hero{padding-top:32px}.hero-title{display:block;margin:25px 0}h1{font-size:66px;letter-spacing:-3.5px}.hero-copy{margin-top:28px;max-width:100%}.hero-copy .lead{font-size:19px;margin-bottom:8px}.hero-copy p{font-size:13px}.caption{font-size:10px;gap:15px}.caption .caps{font-size:9px;flex-shrink:0}.hero-actions{align-items:start;flex-direction:column;padding-bottom:28px;gap:17px}.invocation{font-size:11px}.section{padding:49px 0}.section-head{display:block;margin-bottom:22px}h2{font-size:27px}.section-intro{margin-top:20px;font-size:13px}.principles{grid-template-columns:1fr;gap:24px;margin-top:30px}.principle{display:grid;grid-template-columns:28px 1fr;gap:0 15px}.principle h3{margin:0 0 9px;font-size:17px}.principle p{grid-column:2;font-size:13px}.small-number{padding-top:5px}.gallery-top{align-items:start;flex-direction:column;gap:12px;margin-top:24px}.gallery{grid-template-columns:1fr;gap:27px}.gallery[data-orientation="portrait"]{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 12px}.gallery[data-orientation="portrait"] h3{font-size:13px}.gallery[data-orientation="portrait"] p{font-size:11px}.gallery-footer{display:block}.gallery-footer a{display:inline-block;margin-top:8px}.directions{grid-template-columns:repeat(2,1fr);gap:26px 20px}.start-section,.faq{grid-template-columns:1fr;gap:28px}.start-copy p{max-width:100%}.prompt-box{padding:19px}.prompt-box textarea{height:183px;font-size:12px}.footer{display:block}.footer-links{justify-content:flex-start;margin-top:23px;gap:17px}.footer .credit{text-align:left;line-height:1.8}}
+    @media(max-width:380px){h1{font-size:57px}.nav{gap:13px;font-size:12px}.switch button{padding-inline:15px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  
+    .capabilities-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}.capability-card{min-width:0}.capability-card img{width:100%;height:auto;aspect-ratio:auto;border:1px solid var(--line)}.capability-card h3{font-size:20px;font-weight:500;margin:18px 0 10px}.capability-card p{color:var(--muted);font-size:14px}.capability-links{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;margin-top:14px}@media(max-width:860px){.capabilities-grid{grid-template-columns:1fr;gap:38px}}
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="Siuyu 首页"><img src="assets/brand/siuyu-mark.svg" alt="">siuyu.</a>
+    <nav class="nav" aria-label="主要导航"><a href="#styles">新样张</a><a href="#examples">光台案例</a><a href="#start">安装与使用</a><span class="version">v1.3.0-rc.3</span></nav>
+  </header>
+  <main id="top" class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <div class="eyebrow"><span class="dot"></span>A skill for light, objects &amp; material studies</div>
+      <div class="hero-title">
+        <h1 id="title"><span>Siuyu</span>Lightbox<br>Still Life.</h1>
+        <div class="hero-copy"><p class="lead">让材料可见，<br>让画面讲述关系。</p><p>从你的主体与参考出发，为产品、人物场景和绘画选择合适的形体、空间、媒介与光色。用自然语言执行，再以真实图片检查。</p></div>
+      </div>
+      <figure class="hero-figure"><a href="assets/showcase/transmitted-paper.png" aria-label="查看剪刀与硫酸纸的底光透射原图"><img src="assets/showcase/transmitted-paper.png" width="1672" height="941" alt="剪刀、石墨轮廓图、交叠硫酸纸与蓝色薄片铺在透光台上，亮底衬托深色实体。" fetchpriority="high"></a></figure>
+      <div class="caption"><span class="caps">STUDY 00 / TRANSMITTED LIGHT</span><span>剪刀 · 硫酸纸 · 石墨 · 蓝色薄片</span></div>
+      <div class="hero-actions"><div class="actions"><a class="button" href="#start">安装与开始 <span aria-hidden="true">↗</span></a><a class="text-link" href="#examples">浏览光台案例</a></div><code class="invocation">$siuyu-lightbox-still-life</code></div>
+    </section>
+    <section class="section" id="styles" aria-labelledby="styles-title">
+      <div class="section-head"><div><p class="section-label">NEW IMAGE STUDIES / 2026.10</p><h2 id="styles-title">产品、场景与绘画</h2></div><p class="section-intro">观看目的决定机位、材料、光与图像语言。三张实际生成的样张，分别阅读接触、人物关系和群体活动。</p></div>
+      <div class="capabilities-grid">
+        <article class="capability-card"><a href="assets/showcase/20261027/buckle-photo/image.png"><img src="assets/showcase/20261027/buckle-photo/preview.jpg" width="1448" height="1086" alt="材料与产品摄影：喷砂金属、织带纹理和孔边接触共同说明材料。" loading="lazy"></a><h3>材料与产品摄影</h3><p>喷砂金属、织带纹理和孔边接触共同说明材料。</p><div class="capability-links"><a href="assets/showcase/20261027/buckle-photo/direction.md">方向</a><a href="assets/showcase/20261027/buckle-photo/review.md">评审</a><a href="assets/showcase/20261027/buckle-photo/provenance.json">图片记录</a></div></article>
+        <article class="capability-card"><a href="assets/showcase/20261027/rainy-doorway/image.png"><img src="assets/showcase/20261027/rainy-doorway/preview.jpg" width="1122" height="1402" alt="情境叙事摄影：递接外套的动作、人物承托与室内外光共同形成故事。" loading="lazy"></a><h3>情境叙事摄影</h3><p>递接外套的动作、人物承托与室内外光共同形成故事。</p><div class="capability-links"><a href="assets/showcase/20261027/rainy-doorway/direction.md">方向</a><a href="assets/showcase/20261027/rainy-doorway/review.md">评审</a><a href="assets/showcase/20261027/rainy-doorway/provenance.json">图片记录</a></div></article>
+        <article class="capability-card"><a href="assets/showcase/20261027/greenhouse-groups/image.png"><img src="assets/showcase/20261027/greenhouse-groups/preview.jpg" width="1536" height="1024" alt="水彩插画与群像：透视、透明叠色和多人工作关系共同组织场景。" loading="lazy"></a><h3>水彩插画与群像</h3><p>透视、透明叠色和多人工作关系共同组织场景。</p><div class="capability-links"><a href="assets/showcase/20261027/greenhouse-groups/direction.md">方向</a><a href="assets/showcase/20261027/greenhouse-groups/review.md">评审</a><a href="assets/showcase/20261027/greenhouse-groups/provenance.json">图片记录</a></div></article>
+      </div>
+      <p class="gallery-note" style="margin-top:24px">样张由 AI 图像工具生成，点开可查看原生图片。<a href="references/method-sources.md">方法来源与贡献</a> · <a href="references/print-direction.md">印刷与结构表达</a></p>
+    </section>
+    <section class="section" aria-labelledby="approach-title">
+      <div class="section-head"><div><p class="section-label">01 / THE APPROACH</p><h2 id="approach-title">从一个物件，展开一场研究。</h2></div><p class="section-intro">从主体的轮廓、构造与材料找到观看问题。研究媒介、空间和光色共同决定它怎样被发现，按本次任务选择机位与表达。</p></div>
+      <div class="principles">
+        <article class="principle"><span class="small-number">01</span><h3>先看懂物件</h3><p>识别主体的实际部件、结构和比例，再决定实物、模型或图稿的呈现方式。</p></article>
+        <article class="principle"><span class="small-number">02</span><h3>让材料回应光线</h3><p>线圈、刻痕、压印与透明层各自形成图形；材料、构图和光共同支持本次观看问题。</p></article>
+        <article class="principle"><span class="small-number">03</span><h3>组织完整的构图</h3><p>主体、图稿和样片各有位置与用途。用分组、间距和留白建立清楚的观看顺序。</p></article>
+      </div>
+    </section>
+    <section id="examples" class="section" aria-labelledby="examples-title">
+      <div class="section-head"><div><p class="section-label">02 / SELECTED STUDIES</p><h2 id="examples-title">同一主题，两种画幅。</h2></div><p class="section-intro">九组案例分别设计横幅与竖幅。切换画幅，观察物件、纸层和留白怎样重新组织。点击图片查看原图。</p></div>
+      <div class="gallery-top"><div class="switch" role="group" aria-label="案例画幅"><button type="button" data-orientation="landscape" aria-pressed="true" aria-controls="gallery">16:9 横幅</button><button type="button" data-orientation="portrait" aria-pressed="false" aria-controls="gallery">9:16 竖幅</button></div><span id="gallery-status" class="gallery-note" role="status">横向展开物件与研究材料</span></div>
+      <noscript>当前展示横幅案例。横竖原图均可通过完整图库查看。</noscript>
+      <div id="gallery" class="gallery" data-orientation="landscape">
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/01-glass-cup/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/01-glass-cup/portrait/image.png" data-title="玻璃杯透光研究">
+          <a class="study-image" href="assets/examples/real-objects-20260913/01-glass-cup/landscape/image.png" aria-label="查看玻璃杯透光研究横幅原图"><img src="assets/examples/real-objects-20260913/01-glass-cup/landscape/image.png" width="1672" height="941" alt="玻璃杯透光研究，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>玻璃杯透光研究</h3><span class="number">01</span></div><p>杯口、杯底与把手的连贯结构，比较玻璃样片交叠和图稿中圆口、把手及杯壁截面的对应。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/02-spoon-paper/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/02-spoon-paper/portrait/image.png" data-title="咖啡勺轮廓与纸层研究">
+          <a class="study-image" href="assets/examples/real-objects-20260913/02-spoon-paper/landscape/image.png" aria-label="查看咖啡勺轮廓与纸层研究横幅原图"><img src="assets/examples/real-objects-20260913/02-spoon-paper/landscape/image.png" width="1672" height="941" alt="咖啡勺轮廓与纸层研究，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>咖啡勺轮廓与纸层研究</h3><span class="number">02</span></div><p>现实咖啡勺的凹勺碗、勺颈和长柄，以及对应的石墨轮廓、勺碗截面和纸层关系。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/03-porcelain-cup/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/03-porcelain-cup/portrait/image.png" data-title="瓷杯色场主视觉">
+          <a class="study-image" href="assets/examples/real-objects-20260913/03-porcelain-cup/landscape/image.png" aria-label="查看瓷杯色场主视觉横幅原图"><img src="assets/examples/real-objects-20260913/03-porcelain-cup/landscape/image.png" width="1672" height="941" alt="瓷杯色场主视觉，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>瓷杯色场主视觉</h3><span class="number">03</span></div><p>完整白瓷杯与杯碟的同心结构、侧把和接触，比较灰蓝桌面与白瓷的面积关系；杯内盛有咖啡。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/04-spoon-drawing/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/04-spoon-drawing/portrait/image.png" data-title="咖啡勺描绘操作">
+          <a class="study-image" href="assets/examples/real-objects-20260913/04-spoon-drawing/landscape/image.png" aria-label="查看咖啡勺描绘操作横幅原图"><img src="assets/examples/real-objects-20260913/04-spoon-drawing/landscape/image.png" width="1672" height="941" alt="咖啡勺描绘操作，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>咖啡勺描绘操作</h3><span class="number">04</span></div><p>稳纸手、握笔手与石墨笔尖的实际接触，以及完整实物、主图稿和下层研究的对应。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/05-spoon-finish-detail/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/05-spoon-finish-detail/portrait/image.png" data-title="咖啡勺表面近摄">
+          <a class="study-image" href="assets/examples/real-objects-20260913/05-spoon-finish-detail/landscape/image.png" aria-label="查看咖啡勺表面近摄横幅原图"><img src="assets/examples/real-objects-20260913/05-spoon-finish-detail/landscape/image.png" width="1672" height="941" alt="咖啡勺表面近摄，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>咖啡勺表面近摄</h3><span class="number">05</span></div><p>近看完整咖啡勺的连续凹面反射、薄边、收窄勺颈与细拉丝长柄，保持现实器物的整体辨识。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/06-spoon-finish-comparison/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/06-spoon-finish-comparison/portrait/image.png" data-title="咖啡勺工艺比较">
+          <a class="study-image" href="assets/examples/real-objects-20260913/06-spoon-finish-comparison/landscape/image.png" aria-label="查看咖啡勺工艺比较横幅原图"><img src="assets/examples/real-objects-20260913/06-spoon-finish-comparison/landscape/image.png" width="1672" height="941" alt="咖啡勺工艺比较，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>咖啡勺工艺比较</h3><span class="number">06</span></div><p>比较现实咖啡勺、抛光和拉丝钢样、石墨排线；小覆盖纸作用于实际排线，显示清楚的覆盖差别。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/07-held-spoon-study/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/07-held-spoon-study/portrait/image.png" data-title="手持咖啡勺图稿">
+          <a class="study-image" href="assets/examples/real-objects-20260913/07-held-spoon-study/landscape/image.png" aria-label="查看手持咖啡勺图稿横幅原图"><img src="assets/examples/real-objects-20260913/07-held-spoon-study/landscape/image.png" width="1672" height="941" alt="手持咖啡勺图稿，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>手持咖啡勺图稿</h3><span class="number">07</span></div><p>双手对同一纸张的支撑、轻微弯曲与高差；下层椭圆研究横过上层纸边界，露出与被覆部分可直接比较。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/08-cotton-paper-embossing/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/08-cotton-paper-embossing/portrait/image.png" data-title="棉纸字形压纹近景">
+          <a class="study-image" href="assets/examples/real-objects-20260913/08-cotton-paper-embossing/landscape/image.png" aria-label="查看棉纸字形压纹近景横幅原图"><img src="assets/examples/real-objects-20260913/08-cotton-paper-embossing/landscape/image.png" width="1672" height="941" alt="棉纸字形压纹近景，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>棉纸字形压纹近景</h3><span class="number">08</span></div><p>常规衬线 A 的完整字形、棉纸浅压纹、纤维、切边与侧向软光，比较主体纸卡和背衬纸的厚度关系。</p>
+        </article>
+        <article class="study" data-landscape="assets/examples/real-objects-20260913/09-softbox-paper-study/landscape/image.png" data-portrait="assets/examples/real-objects-20260913/09-softbox-paper-study/portrait/image.png" data-title="柔光箱透光纸层研究">
+          <a class="study-image" href="assets/examples/real-objects-20260913/09-softbox-paper-study/landscape/image.png" aria-label="查看柔光箱透光纸层研究横幅原图"><img src="assets/examples/real-objects-20260913/09-softbox-paper-study/landscape/image.png" width="1672" height="941" alt="柔光箱透光纸层研究，横幅构图" loading="lazy"></a>
+          <div class="study-heading"><h3>柔光箱透光纸层研究</h3><span class="number">09</span></div><p>铺满画面的乳白柔光箱扩散面；连续石墨轮廓穿过小覆盖纸，在单层与叠层区域呈现明确的透光差别。</p>
+        </article>
+      </div>
+      <div class="gallery-footer"><span>十八张实际 AI 成图 · 横竖分别构图 · 随包本地浏览</span><a href="references/example-gallery.md">完整图库与观察说明 ↗</a></div>
+    </section>
+    <section class="section" aria-labelledby="directions-title">
+      <div class="section-head"><div><p class="section-label">03 / LIGHT &amp; COMPOSITION</p><h2 id="directions-title">为主题选择合适的光线。</h2></div><p class="section-intro">选择当前研究的媒介和观看方式。下方是常用起点，更多方法见 <a href="references/visual-language.md">视觉语言</a>、<a href="references/study-artifacts.md">研究媒介</a>与<a href="references/material-process-atlas.md">材料形成</a>。</p></div>
+      <div class="directions">
+        <article class="direction"><span class="en">Transmitted light</span><h3>底光透射</h3><p>明亮光台、深色实体，以及薄纸和色片的透射密度。</p></article>
+        <article class="direction"><span class="en">Diffused paper</span><h3>柔光纸层</h3><p>乳白扩散面、轻柔纸纹，以及被覆盖后变淡的笔迹。</p></article>
+        <article class="direction"><span class="en">Color field</span><h3>色场主视觉</h3><p>用集中的主体、明确的色场与有限的搭配形成重点。</p></article>
+        <article class="direction"><span class="en">At work</span><h3>工作台动作</h3><p>描绘、摆放或手持图稿，让工具与实际操作相接。</p></article>
+        <article class="direction"><span class="en">Material detail</span><h3>材质近摄</h3><p>靠近表面，观察金属反射、纸张纤维和工艺细节。</p></article>
+      </div>
+    </section>
+    <section id="start" class="section start-section" aria-labelledby="start-title">
+      <div class="start-copy"><p class="section-label">04 / GET STARTED</p><h2 id="start-title">把主体交给它。<br>从一句话开始。</h2><p>适用于具备图片查看与图像生成工具的 Codex 环境。编译脚本使用 Python 3.10 及以上版本的标准库。</p><div class="notes"><a href="README.md">完整使用说明 ↗</a><a href="ASSET_SOURCES.md">配图来源 ↗</a></div></div>
+      <div class="start-content">
+        <div class="step"><h3><span>01</span>解压并安装</h3><p>将安装包解压，进入 <code>siuyu-lightbox-still-life</code> 文件夹，运行：</p><pre><code>python3 scripts/validate_skill.py .
+python3 scripts/install_skill.py</code></pre><p>默认装入 <code>~/.codex/skills/siuyu-lightbox-still-life</code>。安装后重新加载 Skills 或重新打开 Codex。</p></div>
+        <div class="step"><h3><span>02</span>附上主体或参考，发送请求</h3><p>可以从产品照片、物件参考或一个文字概念开始。AI 记录来源用途与画面关系，再按同一方向执行并看图。</p><div class="prompt-box"><textarea id="prompt" aria-label="可复制的生成请求" readonly>使用 $siuyu-lightbox-still-life，根据附件生成一张 16:9 光台研究静物图。
+以主体实物和对应图稿组织画面，硫酸纸铺在透光箱上，光线从下面透入。
+主体结构清楚，桌面连续干净，物件完整，留白有层次。
+实际生成图片并查看结果。</textarea><div class="copy-row"><span id="copy-status" class="copy-status" role="status">选中后按 ⌘C 或 Ctrl+C 复制</span><button class="copy-button" id="copy-prompt" type="button">选中请求 ↗</button></div></div></div>
+        <div class="step"><h3><span>03</span>查看图片，继续细化</h3><p>图像生成后，检查实际结构、构图与材料关系。你可以继续指定光线、搭配或局部细节，也可以为同一主体设计竖幅。</p></div>
+      </div>
+    </section>
+    <section class="section faq" aria-labelledby="faq-title">
+      <div><p class="section-label">05 / GOOD TO KNOW</p><h2 id="faq-title">开始前的几个细节。</h2></div>
+      <div>
+        <details><summary>只有文字想法，可以生成吗？</summary><p>可以。描述主体、画幅和想研究的特征即可。具体主体照片用于确定身份；风格参考按光线、颜色或布局的用途参与设计。</p></details>
+        <details><summary>图片和案例是否随包提供？</summary><p>包内有九组十八张横竖案例，以及一张底光硫酸纸展示图。每张图都保留来源与生成说明，解压后可以本地浏览。</p></details>
+        <details><summary>还能指定其他画幅与精确尺寸吗？</summary><p>可以指定目标画幅和尺寸，交付时核对图像工具返回的实际像素。当前横竖案例的原生尺寸为 1672×941 和 941×1672，与 16:9、9:16 存在整数取整差。</p></details>
+        <details><summary>怎样更新已安装的同名版本？</summary><p>在新包目录运行 <code>python3 scripts/install_skill.py --backup-existing</code>。此前版本完整保存在 Skills 目录旁的 <code>skill-backups/</code>，脚本输出实际保存位置。</p></details>
+        <details><summary>这个 Skill 提供哪些能力？</summary><p>它提供主体判断、美术与摄影指导、自然语言方向执行和结果检查流程，也支持纸面照片与织物印花。图像生成由运行环境中的工具完成；需要本地确定性渲染时，另行准备配套工程，参见 <a href="references/offline-workflow.md">离线工作流</a>。</p></details>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><div><div class="footer-brand">siuyu.</div>Lightbox Still Life · v1.3.0-rc.3</div><div><div class="footer-links"><a href="README.md">使用说明</a><a href="ASSET_SOURCES.md">配图来源</a><a href="SKILL.md">Skill 入口</a><a href="#top">回到顶部 ↑</a></div><p class="credit">本页展示光台、材料摄影、人物叙事及水彩 AI 生成样张。实际方向与评审随图片保存，底光展示图的参考见配图来源。<br>介绍组织参考 <a href="https://github.com/op7418/guizang-ppt-skill">guizang-ppt-skill</a>，文案与页面为本项目编写。</p></div></footer>
+  <script>
+    const gallery = document.getElementById('gallery');
+    const orientationButtons = document.querySelectorAll('.switch button');
+    for (const button of orientationButtons) button.addEventListener('click', () => {
+      const orientation = button.dataset.orientation;
+      gallery.dataset.orientation = orientation;
+      for (const control of orientationButtons) control.setAttribute('aria-pressed', String(control === button));
+      for (const study of gallery.querySelectorAll('.study')) {
+        const link = study.querySelector('.study-image');
+        const img = link.querySelector('img');
+        const portrait = orientation === 'portrait';
+        img.src = study.dataset[orientation];
+        img.alt = `${study.dataset.title}，${portrait ? '竖幅' : '横幅'}构图`;
+        img.width = portrait ? 941 : 1672;
+        img.height = portrait ? 1672 : 941;
+        link.href = img.getAttribute('src');
+        link.setAttribute('aria-label', `查看${img.alt}原图`);
+      }
+      document.getElementById('gallery-status').textContent = orientation === 'portrait' ? '沿纵向重新安排主体、纸层与留白' : '横向展开物件与研究材料';
+    });
+    document.getElementById('copy-prompt').addEventListener('click', () => {
+      const prompt = document.getElementById('prompt');
+      prompt.focus();
+      prompt.select();
+      document.getElementById('copy-status').textContent = '请求已选中，请按 ⌘C 或 Ctrl+C 复制';
+    });
+  </script>
+</body>
+</html>

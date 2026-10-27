@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "route": "B_object_print_artifacts",
+  "input": "composition-proof.png",
+  "output": "halftone-cmyk-zones.png",
+  "output_scale": 2,
+  "screen": {
+    "cells_per_short_edge": 840,
+    "angle_degrees": 45,
+    "supersample": 4,
+    "dot_gain": 0.008,
+    "max_coverage": 0.66,
+    "jitter_fraction": 0.018,
+    "ink_load_variation": 0.015,
+    "edge_softness_px": 0.16,
+    "dot_shape_roughness": 0.035,
+    "seed": 731
+  },
+  "zones": [
+    {
+      "name": "bounded_color_photograph",
+      "polygons": [[[0.09, 0.18], [0.46, 0.15], [0.51, 0.59], [0.13, 0.63]]],
+      "exclusions": [],
+      "paper_rgb": [225, 219, 205],
+      "ink_rgb": [58, 60, 58],
+      "black_point": 18,
+      "white_point": 240,
+      "gamma": 1.42,
+      "paper_texture_strength": 0.65,
+      "paper_tooth_strength": 0.08,
+      "preserve_lighting": 0.0,
+      "reproduction": "subtractive_cmyk_am",
+      "channel_angles_degrees": {"cyan": 15, "magenta": 75, "yellow": 0, "black": 45},
+      "channel_inks_rgb": {
+        "cyan": [55, 174, 194],
+        "magenta": [205, 64, 132],
+        "yellow": [235, 202, 54],
+        "black": [58, 60, 58]
+      },
+      "prefilter": {
+        "contrast": 1.02,
+        "lightness": 0.02,
+        "blur_px": 0.25,
+        "black_generation": 0.72
+      }
+    }
+  ]
+}

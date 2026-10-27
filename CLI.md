@@ -75,56 +75,59 @@ This installs the skill for Codex in the current project, available through `.ag
 
 <a id="python-scripts"></a>
 
-<a id="本仓库的-python-脚本"></a>
+## Natural-language directions and local scripts
 
-## Repository Python scripts
+Python 3.10 or newer is sufficient for the regular direction and review interface. Run the following commands from the package directory containing SKILL.md.
 
-Requires Python 3.10 or newer. Run the following relative-path commands from this repository's root, the directory containing `SKILL.md`.
-
-| Script | Purpose and output |
-|---|---|
-| `scripts/install_skill.py` | Copies the complete skill to the chosen directory and can back up an existing version |
-| `scripts/validate_skill.py` | Validates the skill package, documentation links, examples, and compiler |
-| `scripts/build_image_job.py` | Reads `direction.json` and produces `image-job.json` with the prompt and ordered reference images |
-| `scripts/validate_image_review.py` | Checks that visual review entries and the overall status agree in an existing generation record |
-| `scripts/verify_project.py` | Checks prerequisites for a separately prepared local renderer project |
-
-Validate the package:
+The AI first views the actual sources and authors direction.md. List local Markdown image links under Reference images, and write the complete prompt under Image instructions. Image N follows the image-list order. Keep observations, alternatives and authorization evidence in other sections. See [execution](references/prompt-execution.md).
 
 ```bash
-python3 scripts/validate_skill.py .
+python3 scripts/lightbox.py compile /absolute/path/direction.md --output-dir /absolute/path/new-version
+python3 scripts/lightbox.py check /absolute/path/new-version
 ```
 
-Compile a direction file you have prepared:
+The new directory contains the replayable direction, exact prompt, native image-tool arguments, input order and fingerprints. Codex then passes image-job.json to the available image tool, saves the native image and inspects the whole frame and native details. Compilation itself does not generate an image.
 
 ```bash
-python3 scripts/build_image_job.py /absolute/path/direction.json --output /absolute/path/image-job.json
+python3 scripts/lightbox.py review /absolute/path/review.md
 ```
 
-Codex or an adapted agent passes the resulting prompt and ordered images to its image tool. For direction fields, invocation, and records, see [direction compilation and image invocation (Chinese)](references/prompt-execution.md).
+The core table records position, observation, requirement and conclusion. The checker validates the summary; the operator inspects actual pixels. See the [review example](assets/review.example.md).
 
-Check a saved generation and visual review record:
+### Saved image evidence
+
+After generation and visual review, a Python environment with Pillow can bind the compiled job, actual imagegen arguments, native still and review to a new record:
 
 ```bash
+python3 scripts/lightbox.py evidence /absolute/path/compiled --call /absolute/path/tool-call.json --image /absolute/path/image.png --review /absolute/path/review.md --output /absolute/path/new-evidence.json
+python3 scripts/lightbox.py check-evidence /absolute/path/new-evidence.json
+```
+
+Add `--detail-index` for exact native-crop verification and `--execution` to bind a saved execution attachment. This checks saved files and pixel correspondence; actual generation evidence, visual judgment and user acceptance remain separate. See the Chinese [image evidence guide](references/image-evidence.md).
+
+### Existing records and maintenance
+
+```bash
+python3 scripts/lightbox.py migrate /absolute/path/direction.json --output /absolute/path/new-direction.md
+python3 scripts/build_image_job.py /absolute/path/direction.json --output /absolute/path/new-job.json
 python3 scripts/validate_image_review.py /absolute/path/generation-record.json
+python3 scripts/validate_skill.py .
+python3 -B scripts/test_natural_direction.py
+python3 -B scripts/test_image_evidence.py
 ```
 
-This checks consistency in the record. Image quality is assessed by opening and inspecting the actual image.
+Migration retains the old compiled prompt and reference order. Recheck the design against the current task and sources. Preserve previous files. Use the installer through the [installation guide](README.md#codex-installation). See [migration](references/interface-migration.md) for interface and evidence boundaries.
 
 <a id="renderer-cli"></a>
 
-<a id="配套本地渲染器-cli"></a>
+## Precise print processing and companion renderer
 
-## Companion local renderer CLI
+Begin precise processing with the same natural-language objective. The AI selects the supported algorithm, source plane, alpha boundary, dimensions and output, then creates the backend's machine parameter card. Preserve those actual parameters and reports, and inspect the output image. See the [print tools](modules/print/README.md).
 
-For deterministic rendering, precise source-layer composition, or renderer development. `@lightbox/cli` belongs to a separately prepared renderer project and requires that project, Node.js, pnpm, and its dependencies. This repository supplies the skill, documentation, and wrapper scripts.
-
-Check the renderer project from a local terminal first:
+The separately prepared companion renderer has its own runtime contract. Check the actual project first:
 
 ```bash
-python3 /absolute/path/siuyu-lightbox-still-life/scripts/verify_project.py --repo /absolute/path/lightbox-archive --json
+python3 scripts/verify_project.py --repo /absolute/path/lightbox-archive --json
 ```
 
-The skill's `ingest.sh`, `preview.sh`, `review.sh`, and `final.sh` call the project through `pnpm --filter @lightbox/cli`. They locate the renderer using `LIGHTBOX_REPO_ROOT`, or search upward from the current directory for a project containing `pnpm-workspace.yaml` and `apps/cli/package.json`.
-
-With the project ready, follow the [local renderer workflow (Chinese)](references/offline-workflow.md). For development or integration, use the [renderer development guide (Chinese)](references/codex-execution.md).
+Follow the [local workflow](references/offline-workflow.md) for operation and [engineering workflow](references/codex-execution.md) for explicit development.

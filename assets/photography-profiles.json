@@ -83,5 +83,22 @@
     "focus_and_depth": "Place the focal plane through the chosen physical texture, marking or join. Keep the required near and far parts readable and allow deliberate falloff elsewhere. Use a static focus-stack appearance only when a greater depth range is part of the brief.",
     "support_and_motion": "Rigid overhead macro support or copy stand, static subject, remote release. Keep subject and lighting fixed for any planned focus stack.",
     "visible_result": "The selected finish and join remain readable at output size, with source-consistent texture scale, coherent reflection transitions and continuous necessary edges through the chosen close-focus depth."
+  },
+  "print_editorial": {
+    "camera_format": "Simulated full-frame digital still camera, 36 x 24 mm sensor; orientation and effective image area follow the authored output crop.",
+    "lens": "Rectilinear normal prime lens with controlled distortion",
+    "focal_length_mm": 50,
+    "iso": 100,
+    "aperture_f": 8,
+    "shutter_seconds": 0.125,
+    "white_balance_k": 5200,
+    "lighting_mode": "continuous",
+    "shot_scale": "Complete editorial arrangement on the authored paper or woven carrier, with a clear first read and deliberate supporting images. The authored output ratio and complete required boundaries govern framing.",
+    "viewpoint": "Strict top-down overhead view: the camera is directly above the main support plane, its optical axis points perpendicularly down at the plane, and its sensor is parallel to that plane. Adjust camera height, subject placement and crop so the visible product surfaces and surrounding colors carry their authored visual weights. Object height and position account for the perspective within this overhead view.",
+    "lighting_setup": "Neutral 5200 K broad soft light from above camera-left reveals fine woven relief, matte ink and the separate finish of each real object. A restrained opposite fill preserves open middle values and short contact shadows. The opaque carrier is illuminated by reflected light; its weave remains subordinate to the composition.",
+    "exposure_intent": "Retain the chosen carrier dye, open printed middle values, substantially opaque ink fills and the material-specific reflections of real objects. Keep paper tooth and cloth fibers distinct.",
+    "focus_and_depth": "Keep source-identifying features, paper corners, print boundaries and necessary material transitions readable at delivery size. The printed image lies in its declared substrate plane.",
+    "support_and_motion": "Rigid overhead stand, static object and carrier, remote release.",
+    "visible_result": "A composed overhead editorial still life with distinct real objects, paper reproductions and carrier ink where authored; coherent reflected light reveals each material at its appropriate scale."
   }
 }
