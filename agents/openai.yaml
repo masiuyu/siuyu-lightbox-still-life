@@ -1,7 +1,7 @@
 interface:
   display_name: "Siuyu Lightbox Still Life"
-  short_description: "Create lightbox still lifes with translucent paper and objects"
+  short_description: "Direct tabletop imagery through material, medium and light"
   icon_small: "./assets/brand/siuyu-mark.svg"
   icon_large: "./assets/brand/siuyu-mark.svg"
   brand_color: "#174B46"
-  default_prompt: "Use $siuyu-lightbox-still-life for visual direction and create a top-down transmitted-light still life on a luminous milky tabletop, with my subject, related translucent studies, darker paper overlaps, credible opaque materials, complete rectangular sheets and deliberate spacing; generate and inspect the image."
+  default_prompt: "Use $siuyu-lightbox-still-life for visual direction: inspect my references, develop the viewing idea through form, study medium, material, composition and light, then execute and review within my requested scope."
