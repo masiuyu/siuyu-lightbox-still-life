@@ -1,0 +1,112 @@
+{
+  "intent": "Create one 9:16 vertical editorial botanical print composition: two fern fronds printed directly on book cloth and a smaller related paper study.",
+  "operation": "concept",
+  "inputs": [],
+  "decisions": {
+    "scope": "directed",
+    "content_scope": {
+      "kind": "subject_study",
+      "basis": "The brief asks for fern structures and a related printed study on cloth."
+    },
+    "identity_sources": [],
+    "subject_basis": "Two authored fern fronds with continuous central stems and paired leaflets; recognize each as a flat printed botanical image.",
+    "scene": {
+      "carrier": "Opaque fine book cloth carrying two spot-printed fern fronds and one bounded paper study.",
+      "state": "static",
+      "intent": "Compare the same botanical structure through two print surfaces.",
+      "support": "Cloth lies flat on a studio board; the complete paper rests on that surface.",
+      "activity": []
+    },
+    "candidates": [
+      {
+        "id": "botanical-print",
+        "source_relations": [
+          "subject_structure"
+        ],
+        "lens": "botanical structure",
+        "cue": "The fronds offer repeated leaflets and two unequal central axes.",
+        "basis": "The authored fern structures provide both the carrier graphic and the paper study.",
+        "proposal": "Make the two fronds the main carrier print and use a small paper image to compare a single leaflet group.",
+        "contribution": "Connect the subject through visible repeated structures and clearly different printing surfaces.",
+        "scene_fit": "The fronds share the carrier plane; the small rectangular paper adds one readable physical layer."
+      }
+    ],
+    "selected": [
+      "botanical-print"
+    ],
+    "selection_reason": "The two larger printed fronds establish the subject; the smaller paper image explains its structure."
+  },
+  "design": {
+    "idea": "Two related forms across woven ink and fine printed paper.",
+    "pairings": [
+      {
+        "sources": [],
+        "decisions": [
+          "botanical-print"
+        ],
+        "relation": "The two fern fronds on cloth share their leaflet pattern with the small paper study.",
+        "purpose": "Create a main subject and a legible supporting comparison."
+      }
+    ],
+    "composition": "Complete 9:16 vertical composition, viewed perpendicularly from above. Two unequal fern fronds cross gently in the upper two thirds; a complete smaller rectangular paper study sits below to the right. Preserve continuous cloth margins and readable boundaries.",
+    "materials": "Fine opaque book cloth with restrained crossed fibers; substantial warm cream and deep olive spot inks follow the same carrier relief. A thin uncoated rectangular paper sheet carries a small botanical reproduction and has its own paper edge and soft contact shadow.",
+    "palette": "Muted green cloth supports cream and deep olive carrier inks; a neutral ivory paper study uses restrained source-consistent green reproduction.",
+    "print": {
+      "layout": "carrier_transfer",
+      "art_direction": {
+        "preset": "restrained_editorial",
+        "selection_basis": "Quiet botanical comparison on a woven field.",
+        "control_overrides": {}
+      },
+      "carrier": {
+        "material_id": "tight_book_cloth",
+        "base_rgb": [
+          72,
+          95,
+          78
+        ],
+        "color_basis": "Authored muted green supports the warm cream fronds and lets the smaller ivory paper read second."
+      },
+      "zones": [
+        {
+          "id": "fern-carrier",
+          "surface": "carrier_print",
+          "sources": [],
+          "treatment": "Two authored fern silhouettes with continuous central stems and paired leaflets are flat warm cream and deep olive deposited ink on the woven carrier.",
+          "style_selection": {
+            "process_preset": "screenprint_spot",
+            "art_direction_preset": "restrained_editorial",
+            "selection_basis": "Use the selected process to express this surface and preserve the authored leaf structure.",
+            "control_overrides": {}
+          },
+          "screen_mode": "spot_screenprint",
+          "color_separation": "spot"
+        },
+        {
+          "id": "leaflet-paper",
+          "surface": "paper_print",
+          "sources": [],
+          "treatment": "A bounded small uncoated-paper image repeats the fern leaflet structure with a restrained green palette and fine tone-dependent screen.",
+          "style_selection": {
+            "process_preset": "fine_uncoated_offset",
+            "art_direction_preset": "restrained_editorial",
+            "selection_basis": "Use the selected process to express this surface and preserve the authored leaf structure.",
+            "control_overrides": {}
+          },
+          "screen_mode": "fine_color_AM",
+          "color_separation": "cmyk"
+        }
+      ]
+    }
+  },
+  "photography": {
+    "profile": "print_editorial"
+  },
+  "review_targets": [
+    "Requested 9:16 format and all required frond and paper boundaries remain readable.",
+    "Two fern fronds read as carrier ink with recognizable paired leaflets and continuous stems.",
+    "The ink follows the same fiber relief as the cloth while broad fills remain substantially opaque.",
+    "The paper image, edges and contact share one plane; paper tooth and woven carrier have distinct structures.",
+    "Fine print evidence supports a clear whole-frame hierarchy at normal size."
+  ]
+}
