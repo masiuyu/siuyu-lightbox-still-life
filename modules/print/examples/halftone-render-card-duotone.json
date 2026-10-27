@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "route": "B_object_print_artifacts",
+  "input": "composition-proof.png",
+  "output": "halftone-duotone-zones.png",
+  "output_scale": 2,
+  "screen": {
+    "cells_per_short_edge": 720,
+    "angle_degrees": 45,
+    "supersample": 4,
+    "dot_gain": 0.014,
+    "max_coverage": 0.64,
+    "jitter_fraction": 0.036,
+    "ink_load_variation": 0.038,
+    "edge_softness_px": 0.16,
+    "dot_shape_roughness": 0.07,
+    "seed": 731
+  },
+  "zones": [
+    {
+      "name": "bounded_two_ink_photograph",
+      "polygons": [[[0.09, 0.18], [0.46, 0.15], [0.51, 0.59], [0.13, 0.63]]],
+      "exclusions": [],
+      "paper_rgb": [235, 230, 216],
+      "ink_rgb": [58, 60, 58],
+      "black_point": 18,
+      "white_point": 240,
+      "gamma": 1.25,
+      "paper_texture_strength": 0.65,
+      "paper_tooth_strength": 0.17,
+      "preserve_lighting": 0.0,
+      "reproduction": "spot_duotone_am",
+      "spot_angles_degrees": {"midtone": 22.5, "shadow": 67.5},
+      "spot_inks_rgb": {
+        "midtone": [213, 137, 47],
+        "shadow": [45, 92, 91]
+      },
+      "spot_split": 0.54,
+      "prefilter": {
+        "contrast": 1.08,
+        "lightness": 0.03,
+        "blur_px": 0.22,
+        "black_generation": 0.6
+      }
+    }
+  ]
+}
