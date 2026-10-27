@@ -39,8 +39,7 @@ def copy_skill(source: Path, target_root: Path, backup_existing: bool) -> Path:
             raise FileExistsError(f"backup destination already exists: {backup}")
         shutil.move(str(destination), str(backup))
         print(f"Previous version preserved at {backup}")
-    shutil.copytree(source, destination, symlinks=False,
-                    ignore=shutil.ignore_patterns(".git", "__pycache__", ".DS_Store"))
+    shutil.copytree(source, destination, symlinks=False)
     return destination
 
 
