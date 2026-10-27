@@ -1,0 +1,25 @@
+{
+  "tool": "image_gen.imagegen",
+  "model": "NOT_DISCLOSED",
+  "input_image_count": 0,
+  "generation_calls": 1,
+  "direction": "direction.md",
+  "actual_arguments": "tool-call.json",
+  "native": {
+    "file": "image.png",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 3271098,
+    "sha256": "18de384c04cae05c3a3eb6ec92291b1358bfb59d18960392c084ea43933a5de5"
+  },
+  "web_preview": {
+    "file": "preview.jpg",
+    "operation": "JPEG format export; original dimensions retained",
+    "bytes": 711415,
+    "sha256": "7ab8e39013e8bb7f80b9c8c349498c8d2a2150df078a396564258ba0dae5b059"
+  },
+  "visual_review": "PASS",
+  "review": "review.md",
+  "user_acceptance": "PENDING_USER_REVIEW",
+  "role": "AI-generated visual example for the stated viewing task"
+}
