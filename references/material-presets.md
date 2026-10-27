@@ -1,5 +1,7 @@
 # Material Presets
 
+This is a backend reference for the existing companion renderer. Begin the task with the natural-language [current workflow](offline-workflow.md), then use this protocol only when adapting that runtime. Ordinary image creation follows the [Markdown direction interface](prompt-execution.md).
+
 Scope: Explicit offline renderer operation or implementation. Enter through [Offline workflow](offline-workflow.md) for the local runtime contract.
 
 ## Contents

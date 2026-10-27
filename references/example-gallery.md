@@ -1,5 +1,7 @@
 # Example gallery
 
+Current tasks use the [natural-language direction](prompt-execution.md). The images, JSON directions and reviews below retain their original execution evidence; adopt them only for the current requested reference purpose.
+
 [简体中文](example-gallery.zh-CN.md) | [English](example-gallery.md)
 
 Explore landscape and portrait compositions grouped by subject. The [transmitted-paper showcase](../assets/showcase/transmitted-paper.png) and its [generation record](../assets/showcase/provenance.json) offer another view of the relationship between a luminous table, dark objects, and paper transmission.
@@ -24,6 +26,34 @@ All images below were generated from written descriptions with an AI image tool.
 | [Embossed letter on cotton paper](#example-08) | Look at the complete serif letter A, shallow embossing in cotton paper, fibers, cut edges, and soft side lighting. Compare the thickness of the main card and its backing sheet. |
 | [Translucent paper on a lightbox](#example-09) | Look at the milky diffusing lightbox surface filling the frame. A continuous graphite contour passes beneath a smaller sheet, revealing clear transmission differences between single and overlapping layers. |
 
+
+## Current examples across subjects
+
+Three AI-generated images with native files, actual arguments and visual reviews.
+
+### Material and product photography
+
+[![Material and product photography](../assets/showcase/20261027/buckle-photo/preview.jpg)](../assets/showcase/20261027/buckle-photo/image.png)
+
+Read metal, woven fibers and contact through shape and light.
+
+[Direction](../assets/showcase/20261027/buckle-photo/direction.md) · [Arguments](../assets/showcase/20261027/buckle-photo/tool-call.json) · [Review](../assets/showcase/20261027/buckle-photo/review.md) · [Provenance](../assets/showcase/20261027/buckle-photo/provenance.json)
+
+### Narrative scene photography
+
+[![Narrative scene photography](../assets/showcase/20261027/rainy-doorway/preview.jpg)](../assets/showcase/20261027/rainy-doorway/image.png)
+
+An exchange, physical support and indoor/outdoor light make the relationship visible.
+
+[Direction](../assets/showcase/20261027/rainy-doorway/direction.md) · [Arguments](../assets/showcase/20261027/rainy-doorway/tool-call.json) · [Review](../assets/showcase/20261027/rainy-doorway/review.md) · [Provenance](../assets/showcase/20261027/rainy-doorway/provenance.json)
+
+### Watercolor illustration and groups
+
+[![Watercolor illustration and groups](../assets/showcase/20261027/greenhouse-groups/preview.jpg)](../assets/showcase/20261027/greenhouse-groups/image.png)
+
+Perspective, transparent washes and connected activities organize the scene.
+
+[Direction](../assets/showcase/20261027/greenhouse-groups/direction.md) · [Arguments](../assets/showcase/20261027/greenhouse-groups/tool-call.json) · [Review](../assets/showcase/20261027/greenhouse-groups/review.md) · [Provenance](../assets/showcase/20261027/greenhouse-groups/provenance.json)
 
 <a id="example-01"></a>
 ## 01 · Glass cup transmission study

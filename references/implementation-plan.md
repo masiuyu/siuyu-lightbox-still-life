@@ -1,5 +1,7 @@
 # Siuyu Lightbox Still Life MVP Implementation Plan
 
+This is a backend reference for the existing companion renderer. Begin the task with the natural-language [current workflow](offline-workflow.md), then use this protocol only when adapting that runtime. Ordinary image creation follows the [Markdown direction interface](prompt-execution.md).
+
 Scope: Explicit offline renderer operation or implementation. Enter through [Offline workflow](offline-workflow.md) for the local runtime contract.
 
 > **PREBUILT SKILL PACKAGE:** The canonical `siuyu-lightbox-still-life` skill is already bundled with this plan. In Task 17, copy the installed skill directory into the repository, preserve its `agents/`, `references/`, `scripts/`, and `assets/` contents, then add or adapt repository-local tests. Do not rewrite the skill from memory.

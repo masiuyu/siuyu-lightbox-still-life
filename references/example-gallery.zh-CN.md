@@ -1,5 +1,7 @@
 # 配套示例图库
 
+当前任务采用 [自然语言方向](prompt-execution.md)。下方图片、JSON 方向和评审保留各自原始执行证据，按本轮明确采用的参考用途读取。
+
 [简体中文](example-gallery.zh-CN.md) | [English](example-gallery.md)
 
 以下案例按主题并排展示横竖构图。另见 [底光硫酸纸展示图](../assets/showcase/transmitted-paper.png) 及其 [来源记录](../assets/showcase/provenance.json)，观察明亮台面、深色实体与纸层透射密度的关系。使用入口：[Codex 安装](../README.zh-CN.md#codex-安装) · [Codex 图像创作](../README.zh-CN.md#codex-使用) · [Codex CLI](../CLI.zh-CN.md#codex-cli) · [ChatGPT 网页 Chat](../CHATGPT.zh-CN.md)。
@@ -7,6 +9,34 @@
 图库收录九组主题，每组分别安排横幅和竖幅。通过玻璃杯、咖啡勺、瓷杯和纸张，展示透光、反射、表面纹理及工作台操作。
 
 以下图片均由 AI 图像工具根据文字描述生成。目标画幅为横向 16:9、竖向 9:16，实际尺寸分别为 1672×941 与 941×1672。每张图附有构图方案、生成参数、图片信息和细节观察，方便查看具体做法。
+
+## 当前跨题材样张
+
+以下三张 AI 生成图各附原生文件、实际参数与可见评审。
+
+### 材料与产品摄影
+
+[![材料与产品摄影](../assets/showcase/20261027/buckle-photo/preview.jpg)](../assets/showcase/20261027/buckle-photo/image.png)
+
+喷砂金属、织带纹理和孔边接触共同说明材料。
+
+[Direction](../assets/showcase/20261027/buckle-photo/direction.md) · [Arguments](../assets/showcase/20261027/buckle-photo/tool-call.json) · [Review](../assets/showcase/20261027/buckle-photo/review.md) · [Provenance](../assets/showcase/20261027/buckle-photo/provenance.json)
+
+### 情境叙事摄影
+
+[![情境叙事摄影](../assets/showcase/20261027/rainy-doorway/preview.jpg)](../assets/showcase/20261027/rainy-doorway/image.png)
+
+递接外套的动作、人物承托与室内外光共同形成故事。
+
+[Direction](../assets/showcase/20261027/rainy-doorway/direction.md) · [Arguments](../assets/showcase/20261027/rainy-doorway/tool-call.json) · [Review](../assets/showcase/20261027/rainy-doorway/review.md) · [Provenance](../assets/showcase/20261027/rainy-doorway/provenance.json)
+
+### 水彩插画与群像
+
+[![水彩插画与群像](../assets/showcase/20261027/greenhouse-groups/preview.jpg)](../assets/showcase/20261027/greenhouse-groups/image.png)
+
+透视、透明叠色和多人工作关系共同组织场景。
+
+[Direction](../assets/showcase/20261027/greenhouse-groups/direction.md) · [Arguments](../assets/showcase/20261027/greenhouse-groups/tool-call.json) · [Review](../assets/showcase/20261027/greenhouse-groups/review.md) · [Provenance](../assets/showcase/20261027/greenhouse-groups/provenance.json)
 
 ## 选择示例
 

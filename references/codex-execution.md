@@ -1,35 +1,19 @@
-# 本地渲染器工程执行
+# 从自然语言需求进入工程工作
 
-此文档供 Codex 或其他开发 Agent 执行配套本地渲染器的开发、工程安装或集成任务。终端中的 Python 命令需要 Python 3.10 或更新版本，`<skill-dir>` 替换为本 Skill 的实际目录。
+用户明确要求开发、安装或集成本地渲染器时，先读取实际项目与约定，说明目标行为和范围，再完成对应代码与验证。正常图片制作沿 [主入口](../SKILL.md) 的自然语言方向执行。
 
-安装本 Skill 请看 [Codex 安装说明](../README.md#codex-安装)，终端调用请看 [Codex CLI 使用](../CLI.md#codex-cli)。常规图片制作从 [Agent 执行说明](../SKILL.md) 进入，ChatGPT 网页普通 Chat 使用 [网页创作说明](../CHATGPT.md)。
+## 核对项目与任务
 
-## 现有项目
+读取项目 AGENTS.md、当前记录和用户要求。verify_project.py 可以检查工程条件。需要实施计划时按本轮范围读取 [现有计划](implementation-plan.md)；它描述配套工程，具体任务由用户请求决定。
 
-先读取项目的 AGENTS.md 和用户指定任务。按该任务完成实现与对应验证。`python3 <skill-dir>/scripts/verify_project.py --repo <renderer-repo> --json` 可核对本地工程条件。
+需要创建工程交接文件时，prepare_codex_handoff.py 将指定计划与任务带入真实目录。开发结果按实际代码、命令、产物和未完成项报告。
 
-实现计划按需读取 [实现任务](implementation-plan.md)。任务范围由当前用户请求决定；开发结果采用对应的代码、命令和产物证据报告。
+## 安装与同步
 
-## 新项目交接
+首次空目标可以使用 install_skill.py。更新已有安装时保留完整备份，再按具体文件同步；目标中的其他资料继续保留。实际可写范围与用户授权决定同步位置，核对 canonical 来源与发现入口。
 
-```bash
-python3 <skill-dir>/scripts/prepare_codex_handoff.py   --repo /path/to/lightbox-archive   --task 1   --copy-plan   --output /path/to/lightbox-archive/CODEX_KICKOFF.md
-```
+同步后核对实际文件与哈希，当前会话重新读取更新内容。名称、版本、界面提示和用户说明采用同一工作方式。
 
-只在用户确实需要建立本地工程时运行。
+## 验证与停止
 
-## Codex Skill 的安装与同步
-
-本 Skill 的安装目录、备份和更新命令统一见 [Codex 其他安装方式](../README.md#codex-其他安装方式)。需要自选目录时，使用安装脚本的 `--target-root` 指定 Codex 能发现的 Skills 根目录。
-
-同步后核对本次实际改动文件。已打开的会话在需要时重新读取 Skill，后续任务加载新的安装内容。配套渲染器的安装和依赖按其工程文档执行。
-
-## 验证
-
-```bash
-python3 <skill-dir>/scripts/validate_skill.py <skill-dir>
-```
-
-执行改动涉及的测试和类型检查。与图片效果有关的改动，还需实际调用图像工具并检查结果。
-
-本地 schema、素材和审批协议见 [离线工作流](offline-workflow.md)。
+运行 validate_skill.py 及改动涉及的接口或工程检查。程序结果只说明其检查范围。图像效果需要对应实际成像授权和原生观察，用户审阅节点按当前要求停止。工程协议按需进入 [本地工作流](offline-workflow.md)。
