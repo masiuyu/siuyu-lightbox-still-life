@@ -271,9 +271,10 @@ def main() -> None:
             fail(f"eval {case_id} has an empty expected_output")
         if not isinstance(case["files"], list):
             fail(f"eval {case_id} files must be a list")
+    # Source archives support the documented Python and shell interpreter calls.
     for script in (skill / "scripts").iterdir():
-        if script.suffix in {".py", ".sh"} and not os.access(script, os.X_OK):
-            fail(f"script is not executable: {script.name}")
+        if script.suffix in {".py", ".sh"} and not os.access(script, os.R_OK):
+            fail(f"script is not readable: {script.name}")
 
     print(f"VALID: {skill}")
 
