@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/halftone-render-card.schema.json",
+  "title": "Deterministic Halftone Zone Render Card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "route", "input", "output", "output_scale", "screen", "zones"],
+  "properties": {
+    "version": {"const": 1},
+    "route": {"type": "string", "enum": ["B_object_print_artifacts", "D_full_frame_reproduction"]},
+    "input": {"type": "string", "minLength": 1},
+    "output": {"type": "string", "minLength": 1},
+    "output_scale": {"type": "integer", "enum": [1, 2]},
+    "screen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cells_per_short_edge", "angle_degrees", "supersample", "dot_gain", "max_coverage", "jitter_fraction", "ink_load_variation", "edge_softness_px", "seed"],
+      "properties": {
+        "cells_per_short_edge": {"type": "integer", "minimum": 180, "maximum": 960},
+        "angle_degrees": {"type": "number", "minimum": -45, "maximum": 45},
+        "supersample": {"type": "integer", "enum": [2, 4]},
+        "dot_gain": {"type": "number", "minimum": -0.03, "maximum": 0.1},
+        "max_coverage": {"type": "number", "minimum": 0.5, "maximum": 0.76},
+        "jitter_fraction": {"type": "number", "minimum": 0, "maximum": 0.1},
+        "ink_load_variation": {"type": "number", "minimum": 0, "maximum": 0.08},
+        "edge_softness_px": {"type": "number", "minimum": 0, "maximum": 0.45},
+        "dot_shape_roughness": {"type": "number", "minimum": 0, "maximum": 0.15},
+        "seed": {"type": "integer"}
+      }
+    },
+    "zones": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "polygons", "exclusions", "paper_rgb", "ink_rgb", "black_point", "white_point", "gamma", "paper_texture_strength", "preserve_lighting"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "polygons": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/polygon"}},
+          "exclusions": {"type": "array", "items": {"$ref": "#/$defs/polygon"}},
+          "paper_rgb": {"$ref": "#/$defs/rgb"},
+          "ink_rgb": {"$ref": "#/$defs/rgb"},
+          "black_point": {"type": "integer", "minimum": 0, "maximum": 120},
+          "white_point": {"type": "integer", "minimum": 135, "maximum": 255},
+          "gamma": {"type": "number", "minimum": 0.65, "maximum": 1.8},
+          "paper_texture_strength": {"type": "number", "minimum": 0, "maximum": 3},
+          "paper_tooth_strength": {"type": "number", "minimum": 0, "maximum": 0.25},
+          "preserve_lighting": {"type": "number", "minimum": 0, "maximum": 0.25},
+          "screen_angle_degrees": {"type": "number", "minimum": -90, "maximum": 90},
+          "reproduction": {"type": "string", "enum": ["monochrome_am", "spot_duotone_am", "subtractive_cmyk_am"]},
+          "channel_angles_degrees": {
+            "type": "object", "additionalProperties": false,
+            "required": ["cyan", "magenta", "yellow", "black"],
+            "properties": {
+              "cyan": {"type": "number", "minimum": -90, "maximum": 90},
+              "magenta": {"type": "number", "minimum": -90, "maximum": 90},
+              "yellow": {"type": "number", "minimum": -90, "maximum": 90},
+              "black": {"type": "number", "minimum": -90, "maximum": 90}
+            }
+          },
+          "channel_inks_rgb": {
+            "type": "object", "additionalProperties": false,
+            "required": ["cyan", "magenta", "yellow", "black"],
+            "properties": {
+              "cyan": {"$ref": "#/$defs/rgb"},
+              "magenta": {"$ref": "#/$defs/rgb"},
+              "yellow": {"$ref": "#/$defs/rgb"},
+              "black": {"$ref": "#/$defs/rgb"}
+            }
+          },
+          "spot_angles_degrees": {
+            "type": "object", "additionalProperties": false,
+            "required": ["midtone", "shadow"],
+            "properties": {
+              "midtone": {"type": "number", "minimum": -90, "maximum": 90},
+              "shadow": {"type": "number", "minimum": -90, "maximum": 90}
+            }
+          },
+          "spot_inks_rgb": {
+            "type": "object", "additionalProperties": false,
+            "required": ["midtone", "shadow"],
+            "properties": {
+              "midtone": {"$ref": "#/$defs/rgb"},
+              "shadow": {"$ref": "#/$defs/rgb"}
+            }
+          },
+          "spot_split": {"type": "number", "minimum": 0.35, "maximum": 0.75},
+          "prefilter": {
+            "type": "object", "additionalProperties": false,
+            "required": ["contrast", "lightness", "blur_px", "black_generation"],
+            "properties": {
+              "contrast": {"type": "number", "minimum": 0.75, "maximum": 1.35},
+              "lightness": {"type": "number", "minimum": -0.2, "maximum": 0.2},
+              "blur_px": {"type": "number", "minimum": 0, "maximum": 2},
+              "black_generation": {"type": "number", "minimum": 0, "maximum": 1}
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"reproduction": {"const": "subtractive_cmyk_am"}}, "required": ["reproduction"]},
+            "then": {"required": ["channel_angles_degrees", "channel_inks_rgb"]}
+          },
+          {
+            "if": {"properties": {"reproduction": {"const": "spot_duotone_am"}}, "required": ["reproduction"]},
+            "then": {"required": ["spot_angles_degrees", "spot_inks_rgb", "spot_split"]}
+          }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "coordinate": {"type": "number", "minimum": 0, "maximum": 1},
+    "point": {"type": "array", "prefixItems": [{"$ref": "#/$defs/coordinate"}, {"$ref": "#/$defs/coordinate"}], "items": false},
+    "polygon": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/point"}},
+    "rgb": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0, "maximum": 255}, {"type": "integer", "minimum": 0, "maximum": 255}, {"type": "integer", "minimum": 0, "maximum": 255}], "items": false}
+  }
+}
