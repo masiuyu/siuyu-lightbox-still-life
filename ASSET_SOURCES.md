@@ -33,3 +33,7 @@
 `assets/showcase/20261027/` 收录材料摄影、雨夜人物叙事与温室水彩三张独立成图。实际生成工具为内置 image_gen.imagegen，三次调用的图像输入数量均为零，模型名称按工具未披露记录。每例保留 image.png 原生图、direction.md、tool-call.json、review.md 与 provenance.json；preview.jpg 由原生文件按原尺寸导出 JPEG，供网页显示。
 
 三张原生尺寸分别为 1448×1086、1122×1402 和 1536×1024。记录中的 SHA256 对应实际文件，可见评审由主助手查看全图与原生细节后填写；用户接受沿真实反馈记录。具体图像由当前任务文字形成，方法研究的来源归属见 [方法来源与贡献](references/method-sources.md)。
+
+## 展示页字体
+
+展示页的西文采用 Schibsted Grotesk 可变字体（400–900），由 Bakken & Bæck / Henrik Kongsvoll 设计，字体文件来自 [Google Fonts 官方源](https://github.com/google/fonts/tree/main/ofl/schibstedgrotesk)。本地位置为 assets/site/fonts/SchibstedGrotesk.ttf，[OFL 许可](assets/site/fonts/OFL.txt) 随包提供；项目版权归属见许可原文。中文使用设备现有中文字体。
