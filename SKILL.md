@@ -1,11 +1,13 @@
 ---
 name: siuyu-lightbox-still-life
-description: Use when creating or editing reference-driven still-life images, product and material studies, or art-directed scenes and editorial imagery. Connect the viewing purpose to subject identity, composition, material, light and image formation; execute natural-language directions and review actual results. Lightbox requests use transmitted light. Precise local compositing and renderer development use their focused workflows.
+description: Use when creating or editing reference-driven lightbox still lifes, soft-lit product and material studies, and physical editorial compositions. Develop composition, material, luminous backgrounds and light together; execute natural-language directions and review actual results. Adapt other media and scenes when requested, preserving the chosen series relationships. Precise compositing and renderer development use focused workflows.
 ---
 
 # Siuyu Lightbox Still Life
 
 把用户的主体组织成一幅有明确观看意图、材料与表现相容的图片。先理解来源和任务，再共同选择形式、研究媒介、空间、光色与成像方式；用完整自然语言交给图像工具，并以实际成图检验。
+
+延续本 Skill 系列或为它制作展示时，先读 [连续柔光与材料陈列](references/lightstage-language.md)，确定本轮共同保留的光场、轮廓或材料窗口、空间疏密和材料关系，再发展新题材与构图。俯拍发光台、侧视陈列及局部材料镜头分别选择，背景明暗与色彩、反射和透射、实体受光各有分工。用户明确的独立摄影、绘画或其他视觉要求按该产物执行。
 
 主动运用已有的设计、艺术、工艺和摄影知识解决当前问题：提出能组织全图的主张，选择有作用的形式与观看方式，比较代价并完成取舍。开放探索与方案深化按 [创意判断](references/creative-judgment.md) 检查关键决定、实现条件及预期观察；具体技法根据本次对象选择。
 
@@ -46,6 +48,8 @@ description: Use when creating or editing reference-driven still-life images, pr
 说明谁是主角，哪项主体特征对应哪件研究物，它们如何分组、摆放、接触及留下空隙。按发现顺序选择并置、围合、放射、网格、局部密集与大空区等组织；辅助物各有可见贡献。主体模型先确定高宽长、主要体块和连接，再安排占比；各媒介按自己的厚度、柔软度、尺度与承托参与空间。
 
 材料与光用因果关系写清楚：哪块表面是什么样，光从哪里来，产生怎样的反射、透射或微小阴影，这个结果在哪个位置看得见。分开判断颜色覆盖、反射响应、局部起伏与整体形状，再检查它们在同一场景中的共同结果；为主要光面说明作用部位和可见任务，同时复查对邻近表面的影响。复合材料先说明基材、覆盖及连接，再选观察条件；清漆、拉丝组件、角度色与半透薄壁按 [构造案例](references/material-construction-cases.md) 选择各层的具体任务。需要的细节必须在最终原生图中有足够面积；关键处很小时安排合适的取景或独立细节任务。
+
+产品摄影把这些决定落到同一镜头：先选材料或结构窗口，再确定机位、主体与道具的深度和遮挡，随后安排背景、有效反射面及焦点。透明体分别处理背景透射、内部色层与表面亮暗；完整主视觉、贴近特写和轴向研究各有观看任务。按 [产品镜头协同](references/photography.md#产品镜头把材料位置与光一起确定) 写入方向，并核对相邻阅读区及系列身份。
 
 完整布局按各件实际摆向合并四边范围；扩大取景后重查细节面积与主要光面。人物或动物转为模型时，让识别特征采用本轮成品工艺，表面及样片共同支持所选材料。缩略主次、原生细节与最终观看尺寸分别检查；动态任务还检查运动途中最大偏移处。
 
@@ -91,6 +95,8 @@ python3 <skill-dir>/scripts/lightbox.py check /path/to/new-version
 跨界比较先选一条既有线索，明确它与孔边或覆盖边界的交点，再追踪露出段与覆盖段。材料层序难以判定且定向处理仍未成立时，按印刷判断准备独立结构小样，先建立可观察的上下关系，再迁移到目标图形；实际图片范围与次数遵循当前任务授权。
 
 再检查本轮观看任务：要发现的差异具体在哪里成立，辅助物是否解释了对应特征，比较参照是否可用，系列是否保留共同关系。独立新生成的近景记录自己的模拟结果；同一全图的原生裁区用于检查该图实际包含的细节。
+
+系列展示把任务结果与共同视觉关系分别列为核心项：在具体光场、轮廓、材料和空间位置指出联系，连同主体与结构一起判定。全图比较、原生细节和用户审阅各自保留实际结论。
 
 在 `review.md` 用一张表记录检查位置、实际所见、应有结果和结论。看见要求成立时写“通过”；有可见矛盾时写“需要修正”；关键处看不清时写“待确认”。
 

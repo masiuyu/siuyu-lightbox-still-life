@@ -2,17 +2,19 @@
 
 [简体中文](README.zh-CN.md) | [English](README.md)
 
-**Develop each image through material, medium and light.**
+**Shape materials, silhouettes and negative space in a continuous field of soft light.**
 
-A Codex skill for reference-driven still lifes, product imagery, art-directed scenes, illustration and editorial print compositions, with a companion guide for ChatGPT. Begin with what the viewer should discover, then choose the object, study medium, composition, material and light together. Generate and inspect the actual result.
+A Codex skill for reference-driven lightbox still lifes, soft-lit material arrangements and physical editorial compositions, with a companion guide for ChatGPT. Begin with what the viewer should discover, then choose the object, study medium, composition, material and light together. Generate and inspect the actual result.
 
 Open tabletop briefs choose a study medium for the question: engraved transparent overlays, stitched samples, incised wood, wax impressions, technical diagrams or digital imagery can each change the composition and lighting. A simple lightbox request uses **transmitted light from below**, a milky luminous table and readable opaque surfaces. Paper-layer studies inspect overlap density and covered lines. Complete still lifes keep the required objects and boundaries comfortably inside the frame. See [visual language](references/visual-language.md), [study artifacts](references/study-artifacts.md) and [material processes](references/material-process-atlas.md); these detailed guides are in Chinese.
 
 You can also request editorial print compositions: real objects with paper reproductions, halftone photographs, or graphics printed directly onto cloth. Choose the print process, color separation, carrier material and carrier color independently; the requested aspect ratio still governs the image. See the [print workflow](references/print-direction.md) and [optional local print tools](modules/print/README.md).
 
-Codex invocation: `$siuyu-lightbox-still-life` · Author: siuyu · Version: `1.3.0-rc.3`
+Codex invocation: `$siuyu-lightbox-still-life` · Author: siuyu · Version: `1.3.0-rc.5`
 
-[Install in Codex](#codex-installation) · [Use in Codex](#codex-usage) · [Codex CLI](#codex-cli-usage) · [ChatGPT web](#chatgpt-web-usage) · [Full gallery](references/example-gallery.md)
+[Install in Codex](#codex-installation) · [Use in Codex](#codex-usage) · [Codex CLI](#codex-cli-usage) · [ChatGPT web](#chatgpt-web-usage) · [Full gallery](references/example-gallery.md) · [Interactive showcase](https://masiuyu.github.io/siuyu-lightbox-still-life/)
+
+Version rc.5 coordinates the material observation, camera viewpoint, prop placement, diffused light field and focus in one shot. It adds portable directions for a complete product view, a material close-up and an overhead glass study; their image results are evaluated after execution.
 
 ![Scissors and tracing paper illuminated from below](assets/showcase/transmitted-paper.png)
 
@@ -33,40 +35,21 @@ Codex invocation: `$siuyu-lightbox-still-life` · Author: siuyu · Version: `1.3
 
 ## What you can create
 
-| Image task | Current visual example | Further choices |
+Build a series through a controlled light field, silhouettes or material windows, material differences and purposeful spatial density. Subject, color, viewpoint, material state and composition can change with each brief. See [soft-lit material staging](references/lightstage-language.md), in Chinese.
+
+| Direction | Relationships that form the image | Current evidence |
 |---|---|---|
-| Lightbox and research still lifes | Nine landscape/portrait studies and transmitted paper | Subject, study medium, transmission, material and format |
-| Product and material photography | Metal buckle and woven strap | Surface, light, framing and contact |
-| Narrative scene photography | An exchange at a rainy doorway | Actions, viewpoint, environment and light |
-| Watercolor illustration and groups | A community greenhouse | Medium, projection, activities and density |
-| Print and structural communication | Natural-language directions and print tools | Process, separations, substrate and structural readability; inspect each result |
+| Light-table research still lifes | Luminous table, physical objects and study media | Nine landscape/portrait studies and the transmitted-paper showcase |
+| Sculptural material arrangements | Bright diffused backgrounds, coils, drapes, stacks and support | Written guidance and directions; new images await execution |
+| Product and mixed-material imagery | Broad soft light, reflected light/dark shapes and negative space | Existing metal and glass studies; [buckle lightstage direction](assets/lightstage-material-hero.example.md) awaits an image |
+| Graphic and print studies | Paper, cloth, film or screens carrying painting, print and structural imagery | Directions and tools, with review of each actual image |
+| Process and object-led storytelling | Material states, making sequences, hands and tool contact | Existing workbench examples; new subjects retain the chosen series relationships |
 
-Three AI-generated examples with native files, actual arguments and visual reviews. Open each image for its native version. New tasks need their own image review.
+A softbox can provide broad reflections on the object, while a luminous table or diffused backdrop shapes the whole composition. Choose overhead or side views for the observation needed. Review both the task result and the shared visual relationships before selecting series images.
 
-### Material and product photography
+Product views connect material, camera, props and light. Choose the thickness, liquid level, connection or reflection to read, then arrange viewpoint, depth, background gradient and focus. Transparent objects distinguish background color, internal transmission and surface highlights. Three new written directions cover a [complete hero](assets/optical-product-hero.example.md), [material close-up](assets/optical-product-macro.example.md) and [overhead material grouping](assets/optical-material-overhead.example.md). They compile; their actual images await execution. See [product-view coordination](references/photography.md#产品镜头把材料位置与光一起确定), in Chinese.
 
-[![Material and product photography](assets/showcase/20261027/buckle-photo/preview.jpg)](assets/showcase/20261027/buckle-photo/image.png)
-
-Read metal, woven fibers and contact through shape and light.
-
-[Direction](assets/showcase/20261027/buckle-photo/direction.md) · [Arguments](assets/showcase/20261027/buckle-photo/tool-call.json) · [Review](assets/showcase/20261027/buckle-photo/review.md) · [Provenance](assets/showcase/20261027/buckle-photo/provenance.json)
-
-### Narrative scene photography
-
-[![Narrative scene photography](assets/showcase/20261027/rainy-doorway/preview.jpg)](assets/showcase/20261027/rainy-doorway/image.png)
-
-An exchange, physical support and indoor/outdoor light make the relationship visible.
-
-[Direction](assets/showcase/20261027/rainy-doorway/direction.md) · [Arguments](assets/showcase/20261027/rainy-doorway/tool-call.json) · [Review](assets/showcase/20261027/rainy-doorway/review.md) · [Provenance](assets/showcase/20261027/rainy-doorway/provenance.json)
-
-### Watercolor illustration and groups
-
-[![Watercolor illustration and groups](assets/showcase/20261027/greenhouse-groups/preview.jpg)](assets/showcase/20261027/greenhouse-groups/image.png)
-
-Perspective, transparent washes and connected activities organize the scene.
-
-[Direction](assets/showcase/20261027/greenhouse-groups/direction.md) · [Arguments](assets/showcase/20261027/greenhouse-groups/tool-call.json) · [Review](assets/showcase/20261027/greenhouse-groups/review.md) · [Provenance](assets/showcase/20261027/greenhouse-groups/provenance.json)
-
+The [full gallery](references/example-gallery.md) retains native images and execution records. [Task exploration records](references/example-gallery.md#task-exploration-records) document separate material close-up, narrative photography and watercolor results. Explicit requests for standalone media are created and reviewed against their own brief.
 
 ## Codex installation
 
@@ -112,7 +95,7 @@ The [composite material cases](references/material-construction-cases.md) connec
 
 By default, [visual hierarchy and Smooth Control](references/visual-hierarchy-smooth-control.md) establish one primary visual goal, followed by composition, key light-color-material relationships and necessary detail. Keep large transitions, tonal areas and space clear while preserving photographic skin, materials, contact and environment. Macro studies, specified styles and local edits follow their actual scope. The compiler transports the authored direction verbatim.
 
-[Viewing purpose and image formation](references/restaged-print-world-editorial.md) connect decisions across a task. Surface comparison calls for useful lit areas; structural explanation calls for readable connections and projection; a scene calls for actions, distances and a coherent space. Choose color, density and medium for that purpose. Portable directions cover buckle photography, assembly, a rainy doorway and a greenhouse. Photography, the doorway and watercolor have reviewed image examples; assembly remains a structural-readability task to validate. [Method sources and contributions](references/method-sources.md) record specific research influences and usage scope.
+[Viewing purpose and image formation](references/restaged-print-world-editorial.md) connect decisions across a task. Surface comparison calls for useful lit areas; structural explanation calls for readable connections and projection; a scene calls for actions, distances and a coherent space. Choose color, density and medium for that purpose. Portable directions cover material, structural and standalone media tasks. Existing images retain reviews of their respective goals; series selection additionally checks the chosen light field, silhouettes, space and material relationships. [Method sources and contributions](references/method-sources.md) record specific research influences and usage scope.
 
 ## Codex usage
 
@@ -395,7 +378,7 @@ siuyu-lightbox-still-life/
 
 ## Images and release information
 
-The twenty-two independent images in this package were generated with an AI image tool. Nine landscape/portrait pairs, transmitted paper and three new examples explore objects, materials, human relationships and painting. Web previews are format exports of corresponding images. See [image details (Chinese)](ASSET_SOURCES.md) for their generation information. The current version is `1.3.0-rc.3`.
+The twenty-two independent images in this package were generated with an AI image tool. Nine landscape/portrait pairs, transmitted paper and three new examples explore objects, materials, human relationships and painting. Web previews are format exports of corresponding images. See [image details (Chinese)](ASSET_SOURCES.md) for their generation information. The current version is `1.3.0-rc.5`.
 
 ## Developing form and material comparisons
 

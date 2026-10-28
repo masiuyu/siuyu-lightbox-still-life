@@ -76,6 +76,8 @@ A simple lightbox request uses a perpendicular overhead view and a continuous mi
 
 Open tabletop and hero briefs choose light for the material: reflected shapes reveal metal curvature, transmission and thick edges define transparent volume, directional surface light reveals stitches and incisions. Specify each principal light's target and result, then inspect neighboring surfaces. Locate graphic gradients, glow, surface scattering and camera defocus separately.
 
+For product heroes and material details, [coordinate the view](references/photography.md#产品镜头把材料位置与光一起确定): select the material or structural window, choose camera position and object/prop depth, then arrange background, reflected shapes and focus. Distinguish background color, internal transmission and surface highlights in transparent objects. Review the complete hero and close-up within their own scope, retaining the chosen [series relationships](references/lightstage-language.md).
+
 <a id="4-建立可信的细节"></a>
 
 ### 4. Build credible details
