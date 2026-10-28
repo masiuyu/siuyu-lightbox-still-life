@@ -10,7 +10,7 @@ Explore landscape and portrait compositions grouped by subject. The [transmitted
 
 Nine studies, each composed separately in landscape and portrait, explore transmission, reflection, surface texture, and workbench actions through glass cups, coffee spoons, porcelain, and paper.
 
-All images below were generated from written descriptions with an AI image tool. The target formats are 16:9 landscape and 9:16 portrait; native dimensions are 1672×941 and 941×1672. Each image links to its original direction, image job, generation record, and visual review. The records retain the language and content used at generation time.
+The nine paired studies were generated from written descriptions with an AI image tool. Their target formats are 16:9 landscape and 9:16 portrait; native dimensions are 1672×941 and 941×1672. Each image links to its original direction, image job, generation record, and visual review. The records retain the language and content used at generation time.
 
 ## Browse the examples
 
@@ -27,9 +27,9 @@ All images below were generated from written descriptions with an AI image tool.
 | [Translucent paper on a lightbox](#example-09) | Look at the milky diffusing lightbox surface filling the frame. A continuous graphite contour passes beneath a smaller sheet, revealing clear transmission differences between single and overlapping layers. |
 
 
-## Current examples across subjects
+## Task exploration records
 
-Three AI-generated images with native files, actual arguments and visual reviews.
+These three AI-generated task explorations retain native files, actual arguments and reviews of their respective goals. Series selection also checks the shared light field, silhouettes, space and material relationships in [soft-lit material staging](lightstage-language.md).
 
 ### Material and product photography
 
