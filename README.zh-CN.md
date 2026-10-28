@@ -2,17 +2,19 @@
 
 [简体中文](README.zh-CN.md) | [English](README.md)
 
-**从材料、媒介与光，发展每一次创作的观看方式。**
+**在连续柔光中，让形态、材料与空隙形成画面。**
 
-Siuyu Lightbox Still Life 是面向 Codex 的图像创作 Skill。上传物件照片和风格参考，或从文字想法开始，设计构图、生成图片，再检查结构、光线和材料细节。仓库也提供适合 ChatGPT 网页普通 Chat 阅读的创作说明。
+Siuyu Lightbox Still Life 是面向 Codex 的光台、柔光材料静物与实体编辑构图 Skill。上传物件照片和风格参考，或从文字想法开始，设计构图、生成图片，再检查结构、光线和材料细节。仓库也提供适合 ChatGPT 网页普通 Chat 阅读的创作说明。
 
 开放桌面创作先确定观看问题，再共同选择实物材料、研究媒介、构图和光色。研究稿可以采用透明片刻线、织样、木面刻痕、蜡的正负形、技术拆解或数字图面，具体选择服务本轮主体。简短光台请求采用**底光透射**：乳白台面从下方照亮薄层，实体保留暗部、反射和接触；选用纸层时检查交叠密度及下层线条。完整静物保留必要轮廓与余量。
 
 也可以指定印刷编辑构图：实物与纸面图片组合、网点摄影，或直接印在织物上的图形。印刷工艺、分色、承载材质和底色分别选择，画幅沿用本轮要求。详见 [印刷方向](references/print-direction.md) 与 [可选本地印刷工具](modules/print/README.md)。
 
-Codex 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.3.0-rc.3`
+Codex 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.3.0-rc.5`
 
-[Codex 安装](#codex-安装) · [Codex 使用](#codex-使用) · [Codex CLI](#codex-cli-使用) · [ChatGPT 网页版](#chatgpt-网页版使用) · [完整图库](references/example-gallery.zh-CN.md)
+[Codex 安装](#codex-安装) · [Codex 使用](#codex-使用) · [Codex CLI](#codex-cli-使用) · [ChatGPT 网页版](#chatgpt-网页版使用) · [完整图库](references/example-gallery.zh-CN.md) · [交互展示页](https://masiuyu.github.io/siuyu-lightbox-still-life/)
+
+rc.5 把材料观察、机位、道具位置、扩散光场和焦点放在同一镜头里共同安排，新增完整产品主视觉、材料特写与玻璃试片俯拍的便携方向。这些方向的实际效果在后续成图中分别评审。
 
 ![剪刀与硫酸纸的底光透射研究](assets/showcase/transmitted-paper.png)
 
@@ -29,40 +31,21 @@ Codex 调用名：`$siuyu-lightbox-still-life` · 作者：siuyu · 版本：`1.
 
 ## 可以创作什么
 
-| 图像任务 | 当前可见示例 | 可以继续指定 |
+以受控制的光场、轮廓或材料窗口、材料差异和有目的的空间疏密形成系列。主体、颜色、机位、材料状态与构图随每次任务发展；具体方法见 [柔光场景与材料陈列](references/lightstage-language.md)。
+
+| 画面方向 | 形成画面的关系 | 当前依据 |
 |---|---|---|
-| 光台与研究静物 | 九组横竖案例及底光硫酸纸 | 主体、图稿媒介、透射、材料和画幅 |
-| 产品与材料摄影 | 金属扣件与织带 | 表面处理、光型、取景和接触 |
-| 情境叙事摄影 | 雨夜门口递出外套 | 人物动作、观看位置、环境及光色 |
-| 水彩插画与群像 | 社区温室 | 绘画媒介、投影、活动关系和密度 |
-| 印刷与结构表达 | 自然语言方向和印刷工具 | 工艺、分色、载体及结构阅读，具体图像逐次评审 |
+| 光台研究静物 | 发光台、实体与研究媒介共同组织平面关系 | 九组横竖案例及底光硫酸纸展示图 |
+| 侧视材料陈列 | 明亮扩散背景衬托盘卷、垂坠、堆叠与承托 | 已有方法与方向，具体新图待实际执行 |
+| 产品与复合材料主视觉 | 宽柔光、亮暗反射与空隙区分硬质部件、织物或透明体 | 既有金属与玻璃研究；[扣件柔光方向](assets/lightstage-material-hero.example.md)待成图 |
+| 图面与印刷研究 | 纸、布、薄片或屏幕承载绘画、单色印刷和结构影像 | 对应方向与工具，按各次实际图像评审 |
+| 制作过程与物件叙事 | 材料状态、加工次序、手与工具的接触呈现关系 | 既有工作台动作案例，新主题按相同系列关系发展 |
 
-以下三张为本次实际生成的样张。点开图片查看原生文件，参数与评审见图片下方；新任务按其实际结果判断。
+柔光箱可以为实体提供宽亮反射，发光台或扩散背景则参与整幅构图。俯拍与侧视按观察目标选择，材料用自己的反射、透射、形变和接触说明身份。系列挑选同时检查任务效果与共同视觉关系。
 
-### 材料与产品摄影
+产品镜头进一步联合选择材料、机位、道具与光：先定要读到的厚边、液位、连接或反射，再安排视角、前后位置、背景渐变和清晰区域。透明体把背景色、内部透射色与表面亮带分别处理。当前三份新设计方向为 [完整主视觉](assets/optical-product-hero.example.md)、[材料特写](assets/optical-product-macro.example.md) 和 [重复试片俯拍](assets/optical-material-overhead.example.md)，均可编译，实际图片待执行。详见 [产品镜头协同](references/photography.md#产品镜头把材料位置与光一起确定)。
 
-[![材料与产品摄影](assets/showcase/20261027/buckle-photo/preview.jpg)](assets/showcase/20261027/buckle-photo/image.png)
-
-喷砂金属、织带纹理和孔边接触共同说明材料。
-
-[Direction](assets/showcase/20261027/buckle-photo/direction.md) · [Arguments](assets/showcase/20261027/buckle-photo/tool-call.json) · [Review](assets/showcase/20261027/buckle-photo/review.md) · [Provenance](assets/showcase/20261027/buckle-photo/provenance.json)
-
-### 情境叙事摄影
-
-[![情境叙事摄影](assets/showcase/20261027/rainy-doorway/preview.jpg)](assets/showcase/20261027/rainy-doorway/image.png)
-
-递接外套的动作、人物承托与室内外光共同形成故事。
-
-[Direction](assets/showcase/20261027/rainy-doorway/direction.md) · [Arguments](assets/showcase/20261027/rainy-doorway/tool-call.json) · [Review](assets/showcase/20261027/rainy-doorway/review.md) · [Provenance](assets/showcase/20261027/rainy-doorway/provenance.json)
-
-### 水彩插画与群像
-
-[![水彩插画与群像](assets/showcase/20261027/greenhouse-groups/preview.jpg)](assets/showcase/20261027/greenhouse-groups/image.png)
-
-透视、透明叠色和多人工作关系共同组织场景。
-
-[Direction](assets/showcase/20261027/greenhouse-groups/direction.md) · [Arguments](assets/showcase/20261027/greenhouse-groups/tool-call.json) · [Review](assets/showcase/20261027/greenhouse-groups/review.md) · [Provenance](assets/showcase/20261027/greenhouse-groups/provenance.json)
-
+[完整图库](references/example-gallery.zh-CN.md) 保留原生图及执行记录；[任务探索记录](references/example-gallery.zh-CN.md#任务探索记录) 收录材料近景、情境摄影与水彩的各自结果。用户指定独立媒介作品时，按该任务创作和评审。
 
 ## Codex 安装
 
@@ -98,7 +81,7 @@ npx skills add https://github.com/masiuyu/siuyu-lightbox-still-life --skill siuy
 
 默认按 [视觉层级与 Smooth Control](references/visual-hierarchy-smooth-control.md) 先确定主视觉目标，再组织构图、关键光色材质及必要细节。整体过渡、块面和空间保持清楚，真实摄影保留肤质、材料、接触及环境；微距、明确风格和局部编辑按各自任务处理。编译脚本逐字传递本张采用的方向。
 
-[观看目的与成像选择](references/restaged-print-world-editorial.md) 把创作决定连接起来：要分辨表面，就给材料安排合适的受光面；要看懂结构，就选择能读到连接的视向与图形；要理解人物关系，就通过动作、距离和空间组织信息。配色、投影、密度和媒介随任务选择。随包方向可编译；扣件摄影、雨夜动作和温室群像已附当前样张及评审，装配说明继续按结构阅读目标验证；[方法来源与贡献](references/method-sources.md) 记录具体研究启发及使用范围。
+[观看目的与成像选择](references/restaged-print-world-editorial.md) 把创作决定连接起来：要分辨表面，就给材料安排合适的受光面；要看懂结构，就选择能读到连接的视向与图形；要理解人物关系，就通过动作、距离和空间组织信息。配色、投影、密度和媒介随任务选择。随包方向可编译；已有任务图像和各自评审见图库，系列展示按柔光、材料与空间的共同关系选择；[方法来源与贡献](references/method-sources.md) 记录具体研究启发及使用范围。
 
 ## Codex 使用
 
@@ -331,7 +314,7 @@ siuyu-lightbox-still-life/
 
 ## 配图与发布信息
 
-随包的二十二张独立成图均由 AI 图像工具生成。九组横竖案例、底光硫酸纸和三张新样张呈现器物结构、材料、人物关系与绘画表现；网页预览是对应图片的格式导出。各图的生成方式与图片信息见 [配图说明](ASSET_SOURCES.md)。当前版本为 `1.3.0-rc.3`。
+随包的二十二张独立成图均由 AI 图像工具生成。九组横竖案例、底光硫酸纸和三张新样张呈现器物结构、材料、人物关系与绘画表现；网页预览是对应图片的格式导出。各图的生成方式与图片信息见 [配图说明](ASSET_SOURCES.md)。当前版本为 `1.3.0-rc.5`。
 
 ## 形式发展与材料比较
 
